@@ -185,7 +185,7 @@ func _physics_process(delta):
 		if glob.pressure == 0: boiltemp = melttemp
 		else: boiltemp = bt[protons]
 	else:
-		density = 1000*mass/(protons*2) / pow(glob.temperature/293.15,0.1)
+		density = 1000.0*mass/(protons*2) / pow(glob.temperature/293.15,0.1)
 		melttemp = 1500
 		boiltemp = 3000
 	
@@ -256,7 +256,7 @@ func _physics_process(delta):
 	elif protons in range(37,55): max_electrons = 54
 	elif protons in range(55,87): max_electrons = 86
 	elif protons in range(87,119): max_electrons = 118
-	else: max_electrons = 140 + (32*floor((protons-140)/32)) + 32
+	else: max_electrons = 140 + (32*floor((protons-140.0)/32)) + 32
 	if electrons > max_electrons:
 		electrons -= 1
 		emit("electron")
@@ -1455,7 +1455,7 @@ func decay_into(mode,explode):
 		emit("positron")
 		emit("neutrino")
 	if mode == 4:
-		spawn_catto(protons-protons/2,neutrons-neutrons/2,electrons-electrons/2,0)
+		spawn_catto(protons-protons/2.0,neutrons-neutrons/2.0,electrons-electrons/2.0,0)
 		protons /= 2
 		neutrons /= 2
 		electrons /= 2

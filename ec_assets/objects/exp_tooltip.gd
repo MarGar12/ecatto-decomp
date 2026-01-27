@@ -7,6 +7,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if get_tree().paused or glob.inv_open: mouse_filter = Control.MOUSE_FILTER_IGNORE
 	else: mouse_filter = Control.MOUSE_FILTER_PASS

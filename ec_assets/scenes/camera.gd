@@ -95,8 +95,8 @@ func _process(delta):
 		get_tree().paused = glob.pause
 	
 	$ui/pause.visible = glob.pause
-	$ui/pause/mus_volume/label.text = "Music volume: " + str(glob.music_volume * 100)
-	$ui/pause/sfx_volume/label.text = "Sound volume: " + str(glob.sfx_volume * 100)
+	$ui/pause/mus_volume/label.text = "Music volume: " + str(glob.music_volume * 100).pad_decimals(0)
+	$ui/pause/sfx_volume/label.text = "Sound volume: " + str(glob.sfx_volume * 100).pad_decimals(0)
 	$ui/pause/t_speed/label.text = "Temperature slider speed: " + str(glob.t_speed)
 	if glob.fusion_threshold < 3: $ui/pause/fus_thres/label.text = "Fusion threshold: " + str(glob.fusion_threshold)
 	else: $ui/pause/fus_thres/label.text = "No fusion"
@@ -150,7 +150,7 @@ func _on_clone_pressed():
 func _on_blackhole_pressed():
 	glob.tool = 7
 
-func _on_anim_animation_finished(anim_name):
+func _on_anim_animation_finished(_anim_name):
 	$tool/anim.play("idle")
 
 func _on_preset_item_selected(index):

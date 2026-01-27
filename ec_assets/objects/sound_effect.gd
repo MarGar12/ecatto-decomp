@@ -8,5 +8,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	volume_db = base_vol - (1-glob.sfx_volume)**4 * 80

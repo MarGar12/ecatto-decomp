@@ -13,6 +13,7 @@ var gravity = 9.81
 var spawning = null
 var inv_open = false
 var spawn_nucleus = false
+@warning_ignore("shadowed_global_identifier")
 var tool = 0
 
 var cattos = 0
@@ -43,5 +44,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

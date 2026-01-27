@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Label.text = str(get_index()) #debug stuff
 	
 	$hidden.visible = unlocked == false
@@ -64,5 +64,5 @@ func spawn_catto(p,n,e):
 	instance.player_spawned = true
 	get_tree().current_scene.add_child(instance)
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton: glob.inv_open = false
