@@ -1,11 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://doo4twaenuuae"]
+[gd_scene format=3 uid="uid://doo4twaenuuae"]
 
-[ext_resource type="Script" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
+[ext_resource type="Script" uid="uid://bc1rc5b28x8gk" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b4enfkw6gpio2" path="res://ec_assets/textures/backgrounds/milkyway.png" id="2"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://bl3bbd6kmwijl" path="res://ec_assets/textures/ui/button_blackhole1.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="5"]
-[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="6"]
+[ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
 [ext_resource type="AudioStream" uid="uid://b31mtssx7wdyt" path="res://ec_assets/sounds/pop.mp3" id="7"]
 [ext_resource type="AudioStream" uid="uid://b2l31ex487oxl" path="res://ec_assets/sounds/nova.mp3" id="8"]
 
@@ -305,8 +305,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yewl5"]
 _data = {
-"RESET": SubResource("Animation_reuq6"),
-"cruncc": SubResource("Animation_f1g5s")
+&"RESET": SubResource("Animation_reuq6"),
+&"cruncc": SubResource("Animation_f1g5s")
 }
 
 [sub_resource type="Gradient" id="Gradient_7ufrq"]
@@ -319,20 +319,20 @@ width = 200
 
 [sub_resource type="Gradient" id="Gradient_2xlou"]
 
-[node name="big_crunch" type="Node2D"]
+[node name="big_crunch" type="Node2D" unique_id=1239795719]
 script = ExtResource("1")
 
-[node name="bg" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="." unique_id=1357117420]
 self_modulate = Color(0, 0, 0, 1)
 scale = Vector2(500, 500)
 texture = SubResource("GradientTexture2D_fw8ni")
 
-[node name="spacetime" type="CPUParticles2D" parent="."]
+[node name="spacetime" type="CPUParticles2D" parent="." unique_id=2126000528]
 texture_filter = 2
 scale = Vector2(200, 200)
 amount = 100
-local_coords = true
 texture = SubResource("GradientTexture2D_n5g0c")
+local_coords = true
 spread = 180.0
 gravity = Vector2(0, 0)
 radial_accel_min = -500.0
@@ -342,22 +342,22 @@ scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_r681i")
 color_ramp = SubResource("Gradient_yqpml")
 
-[node name="milkyway" type="Sprite2D" parent="."]
+[node name="milkyway" type="Sprite2D" parent="." unique_id=818552007]
 texture_filter = 2
 rotation = -0.785398
 texture = ExtResource("2")
 offset = Vector2(128, 80)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=302447477]
 
-[node name="blackhole" type="Node2D" parent="."]
+[node name="blackhole" type="Node2D" parent="." unique_id=2053911276]
 texture_filter = 2
 
-[node name="gas" type="CPUParticles2D" parent="blackhole"]
+[node name="gas" type="CPUParticles2D" parent="blackhole" unique_id=2012077911]
 material = ExtResource("3")
 scale = Vector2(6, 6)
-local_coords = true
 texture = ExtResource("4")
+local_coords = true
 gravity = Vector2(0, 0)
 angular_velocity_min = 180.0
 angular_velocity_max = 180.0
@@ -366,40 +366,38 @@ angle_max = 720.0
 color_ramp = SubResource("Gradient_0kqrk")
 color_initial_ramp = SubResource("Gradient_q44m3")
 
-[node name="sprite" type="Sprite2D" parent="blackhole"]
+[node name="sprite" type="Sprite2D" parent="blackhole" unique_id=883628588]
 texture = SubResource("GradientTexture2D_lhfwd")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "cruncc"
-libraries = {
-"": SubResource("AnimationLibrary_yewl5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024107478]
+libraries/ = SubResource("AnimationLibrary_yewl5")
+autoplay = &"cruncc"
 
-[node name="pew" type="AudioStreamPlayer2D" parent="."]
+[node name="pew" type="AudioStreamPlayer2D" parent="." unique_id=600556836]
 stream = ExtResource("5")
 volume_db = 5.0
 pitch_scale = 0.5
 attenuation = 0.0
 script = ExtResource("6")
 
-[node name="pop" type="AudioStreamPlayer2D" parent="."]
+[node name="pop" type="AudioStreamPlayer2D" parent="." unique_id=1609730984]
 stream = ExtResource("7")
 attenuation = 0.0
 script = ExtResource("6")
 
-[node name="succ" type="AudioStreamPlayer2D" parent="."]
+[node name="succ" type="AudioStreamPlayer2D" parent="." unique_id=845946452]
 stream = ExtResource("8")
 pitch_scale = 0.25
 attenuation = 0.0
 script = ExtResource("6")
 
-[node name="stars" type="CPUParticles2D" parent="."]
+[node name="stars" type="CPUParticles2D" parent="." unique_id=1832114817]
 material = ExtResource("3")
 scale = Vector2(15, 15)
 amount = 100
+texture = SubResource("GradientTexture1D_ylcly")
 speed_scale = 0.2
 local_coords = true
-texture = SubResource("GradientTexture1D_ylcly")
 spread = 180.0
 gravity = Vector2(0, 0)
 radial_accel_min = -500.0
@@ -408,4 +406,4 @@ scale_amount_min = 0.0
 scale_amount_curve = SubResource("Curve_r681i")
 color_ramp = SubResource("Gradient_2xlou")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished" flags=19]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

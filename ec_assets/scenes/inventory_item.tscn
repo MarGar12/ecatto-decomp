@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ycmppe36no44"]
+[gd_scene format=3 uid="uid://ycmppe36no44"]
 
-[ext_resource type="Script" path="res://ec_assets/scenes/inventory_item.gd" id="1"]
+[ext_resource type="Script" uid="uid://gj3s4c2xkbgn" path="res://ec_assets/scenes/inventory_item.gd" id="1"]
 
 [sub_resource type="Gradient" id="Gradient_rvsur"]
 colors = PackedColorArray(0.501961, 0.501961, 0.501961, 1, 1, 1, 1, 1)
@@ -27,22 +27,22 @@ metadata/_snap_enabled = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipyfj"]
 size = Vector2(50, 50)
 
-[node name="inventory_item" type="Area2D"]
+[node name="inventory_item" type="Area2D" unique_id=1167835098]
 script = ExtResource("1")
 
-[node name="hidden" type="Sprite2D" parent="."]
+[node name="hidden" type="Sprite2D" parent="." unique_id=1554986131]
 visible = false
 texture = SubResource("GradientTexture2D_xc5lq")
 
-[node name="select" type="Sprite2D" parent="."]
+[node name="select" type="Sprite2D" parent="." unique_id=169156551]
 visible = false
 z_index = 1
 texture = SubResource("GradientTexture2D_vqaqo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1596698436]
 shape = SubResource("RectangleShape2D_ipyfj")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=465021873]
 visible = false
 offset_left = -16.0
 offset_top = -16.0
@@ -51,6 +51,6 @@ offset_bottom = 7.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1"
 
-[connection signal="input_event" from="." to="." method="_on_input_event" flags=19]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=19]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=19]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

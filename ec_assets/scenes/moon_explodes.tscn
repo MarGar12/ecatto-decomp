@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dioxlcx4dila5"]
+[gd_scene format=3 uid="uid://dioxlcx4dila5"]
 
-[ext_resource type="Script" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
+[ext_resource type="Script" uid="uid://bc1rc5b28x8gk" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://d2hpxx50pjljv" path="res://ec_assets/textures/items/earth2.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://rvpkhvj24e1p" path="res://ec_assets/textures/items/moon.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://ba0taq7r543vb" path="res://ec_assets/sounds/kablam.wav" id="4"]
-[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="5"]
+[ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="5"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="6"]
 [ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://dlar3qfeiy57n" path="res://ec_assets/textures/items/asteroid1.png" id="8"]
@@ -169,18 +169,18 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbexg"]
 _data = {
-"RESET": SubResource("Animation_rr7j8"),
-"kablam": SubResource("Animation_oh41x")
+&"RESET": SubResource("Animation_rr7j8"),
+&"kablam": SubResource("Animation_oh41x")
 }
 
-[node name="moon_explodes" type="Node2D"]
+[node name="moon_explodes" type="Node2D" unique_id=1521733515]
 script = ExtResource("1")
 
-[node name="bg" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="." unique_id=731964097]
 scale = Vector2(500, 500)
 texture = SubResource("GradientTexture2D_i1k2j")
 
-[node name="stars" type="CPUParticles2D" parent="."]
+[node name="stars" type="CPUParticles2D" parent="." unique_id=246283114]
 scale = Vector2(10, 10)
 amount = 500
 lifetime = 5.0
@@ -192,35 +192,35 @@ scale_amount_min = 0.0
 scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_tumqg")
 
-[node name="earth" type="Sprite2D" parent="."]
+[node name="earth" type="Sprite2D" parent="." unique_id=1335349995]
 texture_filter = 2
 position = Vector2(-256, 128)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2")
 
-[node name="moon" type="Sprite2D" parent="."]
+[node name="moon" type="Sprite2D" parent="." unique_id=553175559]
 texture_filter = 2
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=731215392]
 
-[node name="boom" type="AudioStreamPlayer2D" parent="."]
+[node name="boom" type="AudioStreamPlayer2D" parent="." unique_id=2019412311]
 stream = ExtResource("4")
 volume_db = 5.0
 attenuation = 0.0
 script = ExtResource("5")
 
-[node name="explosion" type="CPUParticles2D" parent="."]
+[node name="explosion" type="CPUParticles2D" parent="." unique_id=2107861557]
 texture_filter = 2
 material = ExtResource("6")
 scale = Vector2(10, 10)
+texture = ExtResource("7")
 lifetime = 5.0
 one_shot = true
 explosiveness = 1.0
 lifetime_randomness = 0.9
 local_coords = true
-texture = ExtResource("7")
 spread = 180.0
 gravity = Vector2(0, 0)
 radial_accel_min = -100.0
@@ -229,15 +229,15 @@ scale_amount_min = 0.0
 scale_amount_curve = SubResource("Curve_v8tie")
 color_ramp = SubResource("Gradient_bxs2c")
 
-[node name="asteroids" type="CPUParticles2D" parent="."]
+[node name="asteroids" type="CPUParticles2D" parent="." unique_id=1589013618]
 scale = Vector2(0.5, 0.5)
 emitting = false
 amount = 20
+texture = ExtResource("8")
 lifetime = 10.0
 one_shot = true
 explosiveness = 1.0
 local_coords = true
-texture = ExtResource("8")
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 50.0
@@ -249,16 +249,14 @@ angle_max = 720.0
 scale_amount_min = 0.0
 color = Color(1, 0.501961, 0, 1)
 
-[node name="flash" type="Sprite2D" parent="."]
+[node name="flash" type="Sprite2D" parent="." unique_id=1983361589]
 texture_filter = 2
 material = ExtResource("6")
 scale = Vector2(1e-05, 1e-05)
 texture = SubResource("GradientTexture2D_lvtmg")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "kablam"
-libraries = {
-"": SubResource("AnimationLibrary_mbexg")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1579264409]
+libraries/ = SubResource("AnimationLibrary_mbexg")
+autoplay = &"kablam"
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished" flags=19]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

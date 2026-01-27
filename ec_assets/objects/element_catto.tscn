@@ -1,6 +1,6 @@
-[gd_scene load_steps=259 format=3 uid="uid://dvflfi5dbjpsy"]
+[gd_scene format=3 uid="uid://dvflfi5dbjpsy"]
 
-[ext_resource type="Script" path="res://ec_assets/scenes/element_catto.gd" id="1"]
+[ext_resource type="Script" uid="uid://c0jv2s5ep0li5" path="res://ec_assets/scenes/element_catto.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dewifyoafbuuf" path="res://ec_assets/textures/trans_grad.png" id="2"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://cq1x0akuk5cv0" path="res://ec_assets/textures/effects/33.png" id="4"]
@@ -185,7 +185,7 @@
 [ext_resource type="Texture2D" uid="uid://b0yr4qsx7odb7" path="res://ec_assets/textures/cattos/elements/isotopes/mo95-hair.png" id="183"]
 [ext_resource type="Texture2D" uid="uid://c8sx267d38auf" path="res://ec_assets/textures/cattos/elements/isotopes/mo100-hair.png" id="184"]
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="185"]
-[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="186"]
+[ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="186"]
 [ext_resource type="AudioStream" uid="uid://bn62jh7uyajvo" path="res://ec_assets/sounds/metal_solid_impact_soft3.wav" id="187"]
 [ext_resource type="AudioStream" uid="uid://c0osvdf5eipag" path="res://ec_assets/sounds/metal_solid_impact_hard1.wav" id="188"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="189"]
@@ -194,7 +194,7 @@
 [ext_resource type="AudioStream" uid="uid://k26pg2olhd84" path="res://ec_assets/sounds/geiger3.wav" id="192"]
 [ext_resource type="AudioStream" uid="uid://0x47lc2jnom3" path="res://ec_assets/sounds/MAUW.wav" id="193"]
 [ext_resource type="AudioStream" uid="uid://dv1o11u6h0anu" path="res://ec_assets/sounds/anime_spark_thing.wav" id="194"]
-[ext_resource type="Script" path="res://ec_assets/objects/exp_tooltip.gd" id="195"]
+[ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="195"]
 
 [sub_resource type="Gradient" id="Gradient_wu5qn"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -1079,8 +1079,8 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jcj6t"]
 _data = {
-"RESET": SubResource("Animation_p6dpr"),
-"blink": SubResource("Animation_b8eeh")
+&"RESET": SubResource("Animation_p6dpr"),
+&"blink": SubResource("Animation_b8eeh")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e437r"]
@@ -1217,9 +1217,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o142q"]
 _data = {
-"RESET": SubResource("Animation_rhuro"),
-"grabbed": SubResource("Animation_efqmx"),
-"idle": SubResource("Animation_iafc3")
+&"RESET": SubResource("Animation_rhuro"),
+&"grabbed": SubResource("Animation_efqmx"),
+&"idle": SubResource("Animation_iafc3")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ywayt"]
@@ -1283,8 +1283,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ab68v"]
 _data = {
-"RESET": SubResource("Animation_3ui1t"),
-"glow": SubResource("Animation_xcfdw")
+&"RESET": SubResource("Animation_3ui1t"),
+&"glow": SubResource("Animation_xcfdw")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0gkw"]
@@ -1323,22 +1323,22 @@ metadata/_snap_enabled = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjfhd"]
 radius = 400.0
 
-[node name="element_catto" type="CharacterBody2D"]
+[node name="element_catto" type="CharacterBody2D" unique_id=1931923626]
 input_pickable = true
 script = ExtResource("1")
 
-[node name="transgrad" type="Sprite2D" parent="."]
+[node name="transgrad" type="Sprite2D" parent="." unique_id=1705412530]
 visible = false
 texture = ExtResource("2")
 
-[node name="rift" type="CPUParticles2D" parent="."]
+[node name="rift" type="CPUParticles2D" parent="." unique_id=2033023764]
 z_index = -1
 texture_filter = 2
 material = ExtResource("3")
 emitting = false
 amount = 20
-lifetime = 2.0
 texture = ExtResource("4")
+lifetime = 2.0
 spread = 180.0
 gravity = Vector2(0, 0)
 angle_max = 720.0
@@ -1346,7 +1346,7 @@ scale_amount_min = 0.0
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_wu5qn")
 
-[node name="radiation" type="CPUParticles2D" parent="."]
+[node name="radiation" type="CPUParticles2D" parent="." unique_id=921882693]
 modulate = Color(0.25098, 0.501961, 1, 1)
 z_index = -1
 texture_filter = 2
@@ -1361,13 +1361,13 @@ scale_amount_min = 0.0
 scale_amount_max = 20.0
 color_ramp = SubResource("Gradient_wu5qn")
 
-[node name="gas" type="CPUParticles2D" parent="."]
+[node name="gas" type="CPUParticles2D" parent="." unique_id=1755665318]
 modulate = Color(1, 1, 1, 0.25098)
 texture_filter = 2
 emitting = false
 amount = 50
-lifetime = 2.0
 texture = SubResource("GradientTexture2D_tq6tf")
+lifetime = 2.0
 emission_shape = 1
 emission_sphere_radius = 30.0
 spread = 180.0
@@ -1378,12 +1378,12 @@ scale_amount_max = 5.0
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_tl3br")
 
-[node name="br_miasma" type="CPUParticles2D" parent="."]
+[node name="br_miasma" type="CPUParticles2D" parent="." unique_id=1716803021]
 texture_filter = 2
 emitting = false
 amount = 10
-lifetime = 2.0
 texture = ExtResource("5")
+lifetime = 2.0
 spread = 180.0
 gravity = Vector2(0, -20)
 initial_velocity_max = 10.0
@@ -1393,13 +1393,13 @@ scale_amount_curve = SubResource("Curve_wt8nb")
 color = Color(0.183594, 0.113281, 0.109375, 1)
 color_ramp = SubResource("Gradient_tl3br")
 
-[node name="cloud" type="CPUParticles2D" parent="."]
+[node name="cloud" type="CPUParticles2D" parent="." unique_id=715569140]
 self_modulate = Color(1, 1, 1, 0.627451)
 emitting = false
 amount = 16
+texture = ExtResource("6")
 lifetime = 2.0
 local_coords = true
-texture = ExtResource("6")
 emission_shape = 3
 emission_rect_extents = Vector2(24, 16)
 spread = 180.0
@@ -1410,38 +1410,38 @@ angle_max = 30.0
 scale_amount_min = 0.5
 color_ramp = SubResource("Gradient_tl3br")
 
-[node name="face" type="Node2D" parent="cloud"]
+[node name="face" type="Node2D" parent="cloud" unique_id=1297054731]
 visible = false
 
-[node name="eye1" type="AnimatedSprite2D" parent="cloud/face"]
+[node name="eye1" type="AnimatedSprite2D" parent="cloud/face" unique_id=15756796]
 position = Vector2(-12, 4)
 sprite_frames = ExtResource("7")
 animation = &"isotopes"
 
-[node name="eye2" type="AnimatedSprite2D" parent="cloud/face"]
+[node name="eye2" type="AnimatedSprite2D" parent="cloud/face" unique_id=1901400853]
 position = Vector2(12, 4)
 sprite_frames = ExtResource("7")
 animation = &"isotopes"
 flip_h = true
 
-[node name="eye3" type="AnimatedSprite2D" parent="cloud/face"]
+[node name="eye3" type="AnimatedSprite2D" parent="cloud/face" unique_id=1757186375]
 visible = false
 position = Vector2(0, -10)
 sprite_frames = ExtResource("7")
 speed_scale = 0.0
 flip_h = true
 
-[node name="eye_mu" type="Sprite2D" parent="cloud/face"]
+[node name="eye_mu" type="Sprite2D" parent="cloud/face" unique_id=1377987447]
 visible = false
 position = Vector2(0, 4)
 texture = ExtResource("8")
 
-[node name="drip" type="CPUParticles2D" parent="."]
+[node name="drip" type="CPUParticles2D" parent="." unique_id=1326289151]
 position = Vector2(0, -8)
 emitting = false
 amount = 10
-lifetime = 2.0
 texture = SubResource("GradientTexture2D_ei52p")
+lifetime = 2.0
 emission_shape = 3
 emission_rect_extents = Vector2(20, 10)
 spread = 180.0
@@ -1451,16 +1451,16 @@ scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_sghvv")
 color = Color(1, 0, 0, 1)
 
-[node name="nucleus" type="Node2D" parent="."]
+[node name="nucleus" type="Node2D" parent="." unique_id=1906005118]
 visible = false
 position = Vector2(0, -12)
 
-[node name="body" type="AnimatedSprite2D" parent="nucleus"]
+[node name="body" type="AnimatedSprite2D" parent="nucleus" unique_id=2005514906]
 sprite_frames = SubResource("SpriteFrames_h6iw6")
 frame = 109
 speed_scale = 0.0
 
-[node name="glow" type="Sprite2D" parent="nucleus/body"]
+[node name="glow" type="Sprite2D" parent="nucleus/body" unique_id=1389148955]
 visible = false
 modulate = Color(0.501961, 0.752941, 1, 0.501961)
 show_behind_parent = true
@@ -1469,54 +1469,54 @@ material = ExtResource("3")
 scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_8ls13")
 
-[node name="plus" type="Node2D" parent="nucleus"]
+[node name="plus" type="Node2D" parent="nucleus" unique_id=1967323908]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -4)
 
-[node name="h" type="Sprite2D" parent="nucleus/plus"]
+[node name="h" type="Sprite2D" parent="nucleus/plus" unique_id=1108335134]
 texture = SubResource("GradientTexture1D_vusgp")
 
-[node name="v" type="Sprite2D" parent="nucleus/plus"]
+[node name="v" type="Sprite2D" parent="nucleus/plus" unique_id=1868420913]
 rotation = 1.5708
 texture = SubResource("GradientTexture1D_vusgp")
 
-[node name="clock" type="Node2D" parent="nucleus"]
+[node name="clock" type="Node2D" parent="nucleus" unique_id=1115981955]
 position = Vector2(0, 3)
 rotation = -1.5708
 
-[node name="h" type="Sprite2D" parent="nucleus/clock"]
+[node name="h" type="Sprite2D" parent="nucleus/clock" unique_id=1710975231]
 scale = Vector2(0.7, 0.7)
 texture = SubResource("GradientTexture1D_18mva")
 offset = Vector2(5, 0)
 
-[node name="m" type="Sprite2D" parent="nucleus/clock"]
+[node name="m" type="Sprite2D" parent="nucleus/clock" unique_id=833711463]
 rotation = 1.5708
 scale = Vector2(0.85, 0.85)
 texture = SubResource("GradientTexture1D_18mva")
 offset = Vector2(5, 0)
 
-[node name="s" type="Sprite2D" parent="nucleus/clock"]
+[node name="s" type="Sprite2D" parent="nucleus/clock" unique_id=1585353799]
 rotation = 2.0944
 texture = SubResource("GradientTexture1D_18mva")
 offset = Vector2(5, 0)
 
-[node name="face" type="Node2D" parent="nucleus"]
+[node name="face" type="Node2D" parent="nucleus" unique_id=34632782]
 
-[node name="eye1" type="AnimatedSprite2D" parent="nucleus/face"]
+[node name="eye1" type="AnimatedSprite2D" parent="nucleus/face" unique_id=1408318848]
 position = Vector2(-9, 4)
 sprite_frames = ExtResource("7")
 animation = &"isotopes"
 
-[node name="eye2" type="AnimatedSprite2D" parent="nucleus/face"]
+[node name="eye2" type="AnimatedSprite2D" parent="nucleus/face" unique_id=872014072]
 position = Vector2(9, 4)
 sprite_frames = ExtResource("7")
 animation = &"isotopes"
 flip_h = true
 
-[node name="model" type="Node2D" parent="."]
+[node name="model" type="Node2D" parent="." unique_id=138311281]
 position = Vector2(0, -32)
 
-[node name="select" type="Sprite2D" parent="model"]
+[node name="select" type="Sprite2D" parent="model" unique_id=1314739250]
 visible = false
 modulate = Color(1, 1, 1, 0.501961)
 z_index = -1
@@ -1526,14 +1526,14 @@ position = Vector2(0, 24)
 scale = Vector2(3, 3)
 texture = SubResource("GradientTexture2D_0hom1")
 
-[node name="tail" type="AnimatedSprite2D" parent="model"]
+[node name="tail" type="AnimatedSprite2D" parent="model" unique_id=55190854]
 position = Vector2(0, 64)
 sprite_frames = SubResource("SpriteFrames_bhg3s")
 animation = &"isotopes"
 speed_scale = 0.0
 offset = Vector2(-32, -32)
 
-[node name="no_fuse" type="CPUParticles2D" parent="model/tail"]
+[node name="no_fuse" type="CPUParticles2D" parent="model/tail" unique_id=2061475168]
 material = ExtResource("3")
 position = Vector2(-32, -24)
 emitting = false
@@ -1547,41 +1547,41 @@ scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_hq7rn")
 color_ramp = SubResource("Gradient_njpht")
 
-[node name="dy_laser" type="Node2D" parent="model/tail"]
+[node name="dy_laser" type="Node2D" parent="model/tail" unique_id=1338869579]
 visible = false
 position = Vector2(-53, -43.5)
 
-[node name="point" type="Sprite2D" parent="model/tail/dy_laser"]
+[node name="point" type="Sprite2D" parent="model/tail/dy_laser" unique_id=974732738]
 texture_filter = 2
 material = ExtResource("3")
 texture = SubResource("GradientTexture2D_xoqvw")
 
-[node name="ray" type="Sprite2D" parent="model/tail/dy_laser"]
+[node name="ray" type="Sprite2D" parent="model/tail/dy_laser" unique_id=1478094783]
 texture_filter = 2
 material = ExtResource("3")
 texture = SubResource("GradientTexture1D_ojm1y")
 offset = Vector2(-250, 0)
 
-[node name="body" type="AnimatedSprite2D" parent="model"]
+[node name="body" type="AnimatedSprite2D" parent="model" unique_id=1678524136]
 sprite_frames = ExtResource("145")
 frame = 20
 speed_scale = 0.0
 
-[node name="scars" type="AnimatedSprite2D" parent="model/body"]
+[node name="scars" type="AnimatedSprite2D" parent="model/body" unique_id=133561395]
 sprite_frames = ExtResource("146")
 speed_scale = 0.0
 
-[node name="ca_fangs" type="AnimatedSprite2D" parent="model/body"]
+[node name="ca_fangs" type="AnimatedSprite2D" parent="model/body" unique_id=1416227134]
 sprite_frames = SubResource("SpriteFrames_uk3db")
 
-[node name="ra_glow" type="Sprite2D" parent="model"]
+[node name="ra_glow" type="Sprite2D" parent="model" unique_id=1778998080]
 visible = false
 texture = ExtResource("149")
 
-[node name="effects" type="Node2D" parent="model"]
+[node name="effects" type="Node2D" parent="model" unique_id=1236897230]
 position = Vector2(0, 32)
 
-[node name="orbit" type="Sprite2D" parent="model/effects"]
+[node name="orbit" type="Sprite2D" parent="model/effects" unique_id=896061889]
 visible = false
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
 z_index = -1
@@ -1589,13 +1589,13 @@ texture_filter = 2
 position = Vector2(0, 8)
 texture = SubResource("GradientTexture2D_i7h5w")
 
-[node name="rf_electrons" type="CPUParticles2D" parent="model/effects"]
+[node name="rf_electrons" type="CPUParticles2D" parent="model/effects" unique_id=1421809688]
 visible = false
 z_index = -1
 position = Vector2(0, 8)
 amount = 2
-local_coords = true
 texture = ExtResource("150")
+local_coords = true
 emission_shape = 4
 emission_points = PackedVector2Array(-32, -16, 32, 16)
 emission_colors = PackedColorArray()
@@ -1605,13 +1605,13 @@ orbit_velocity_max = 0.5
 radial_accel_min = -1000.0
 scale_amount_curve = SubResource("Curve_5osm4")
 
-[node name="bh_electrons" type="CPUParticles2D" parent="model/effects"]
+[node name="bh_electrons" type="CPUParticles2D" parent="model/effects" unique_id=705211702]
 visible = false
 z_index = -1
 position = Vector2(0, 8)
 amount = 2
-local_coords = true
 texture = ExtResource("150")
+local_coords = true
 emission_shape = 4
 emission_points = PackedVector2Array(0, -32)
 emission_colors = PackedColorArray()
@@ -1621,12 +1621,12 @@ orbit_velocity_min = 1.0
 orbit_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_5osm4")
 
-[node name="rg_electrons" type="CPUParticles2D" parent="model/effects"]
+[node name="rg_electrons" type="CPUParticles2D" parent="model/effects" unique_id=1255596794]
 visible = false
 position = Vector2(0, -14)
 amount = 111
-local_coords = true
 texture = SubResource("GradientTexture2D_58w8o")
+local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(24, 14)
 spread = 180.0
@@ -1635,12 +1635,12 @@ scale_amount_min = 0.0
 scale_amount_curve = SubResource("Curve_5osm4")
 color = Color(0, 0.752941, 1, 1)
 
-[node name="au_electrons" type="CPUParticles2D" parent="model/effects"]
+[node name="au_electrons" type="CPUParticles2D" parent="model/effects" unique_id=667808352]
 visible = false
 position = Vector2(0, -14)
 amount = 79
-local_coords = true
 texture = SubResource("GradientTexture2D_58w8o")
+local_coords = true
 emission_shape = 3
 emission_rect_extents = Vector2(24, 14)
 spread = 180.0
@@ -1649,35 +1649,35 @@ scale_amount_min = 0.0
 scale_amount_curve = SubResource("Curve_5osm4")
 color = Color(1, 1, 0, 1)
 
-[node name="rg_nucleus" type="Sprite2D" parent="model/effects"]
+[node name="rg_nucleus" type="Sprite2D" parent="model/effects" unique_id=1401291759]
 visible = false
 modulate = Color(0, 0.627451, 1, 1)
 position = Vector2(0, -13)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("151")
 
-[node name="au_nucleus" type="Sprite2D" parent="model/effects"]
+[node name="au_nucleus" type="Sprite2D" parent="model/effects" unique_id=2053544116]
 visible = false
 position = Vector2(0, -13)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("152")
 
-[node name="cn_earth" type="Sprite2D" parent="model/effects"]
+[node name="cn_earth" type="Sprite2D" parent="model/effects" unique_id=1994860635]
 visible = false
 position = Vector2(0, 16)
 texture = ExtResource("153")
 
-[node name="face" type="Node2D" parent="model"]
+[node name="face" type="Node2D" parent="model" unique_id=1261381371]
 position = Vector2(0, 24)
 
-[node name="spot" type="AnimatedSprite2D" parent="model/face"]
+[node name="spot" type="AnimatedSprite2D" parent="model/face" unique_id=1146695334]
 visible = false
 position = Vector2(0, -4)
 sprite_frames = ExtResource("154")
 frame = 11
 speed_scale = 0.0
 
-[node name="dy_dosi" type="Label" parent="model/face/spot"]
+[node name="dy_dosi" type="Label" parent="model/face/spot" unique_id=895158340]
 visible = false
 modulate = Color(0.785156, 0.996094, 0.695313, 1)
 offset_left = -9.0
@@ -1692,37 +1692,37 @@ horizontal_alignment = 2
 vertical_alignment = 1
 clip_text = true
 
-[node name="charge" type="Node2D" parent="model/face"]
+[node name="charge" type="Node2D" parent="model/face" unique_id=1176797501]
 visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(0, -12)
 scale = Vector2(1.5, 1.5)
 
-[node name="h" type="Sprite2D" parent="model/face/charge"]
+[node name="h" type="Sprite2D" parent="model/face/charge" unique_id=284080886]
 texture = SubResource("GradientTexture1D_vusgp")
 
-[node name="v" type="Sprite2D" parent="model/face/charge"]
+[node name="v" type="Sprite2D" parent="model/face/charge" unique_id=373624405]
 rotation = 1.5708
 texture = SubResource("GradientTexture1D_vusgp")
 
-[node name="mt_glasses" type="Sprite2D" parent="model/face"]
+[node name="mt_glasses" type="Sprite2D" parent="model/face" unique_id=1332295107]
 visible = false
 position = Vector2(0, -28)
 texture = ExtResource("156")
 
-[node name="eye1" type="AnimatedSprite2D" parent="model/face"]
+[node name="eye1" type="AnimatedSprite2D" parent="model/face" unique_id=1081601559]
 position = Vector2(-14, -4)
 sprite_frames = ExtResource("7")
 speed_scale = 0.0
 
-[node name="sonar" type="CPUParticles2D" parent="model/face/eye1"]
+[node name="sonar" type="CPUParticles2D" parent="model/face/eye1" unique_id=848351228]
 visible = false
 texture_filter = 2
 material = ExtResource("3")
 amount = 1
+texture = SubResource("GradientTexture1D_qld60")
 lifetime = 2.0
 local_coords = true
-texture = SubResource("GradientTexture1D_qld60")
 gravity = Vector2(0, 0)
 angular_velocity_min = -180.0
 angular_velocity_max = -180.0
@@ -1730,24 +1730,24 @@ angle_min = 90.0
 angle_max = 90.0
 color_ramp = SubResource("Gradient_ye2n6")
 
-[node name="bolt" type="AnimatedSprite2D" parent="model/face/eye1"]
+[node name="bolt" type="AnimatedSprite2D" parent="model/face/eye1" unique_id=657098381]
 visible = false
 show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_tj16w")
 
-[node name="eye2" type="AnimatedSprite2D" parent="model/face"]
+[node name="eye2" type="AnimatedSprite2D" parent="model/face" unique_id=1526202159]
 position = Vector2(14, -4)
 sprite_frames = ExtResource("7")
 speed_scale = 0.0
 flip_h = true
 
-[node name="bolt" type="AnimatedSprite2D" parent="model/face/eye2"]
+[node name="bolt" type="AnimatedSprite2D" parent="model/face/eye2" unique_id=1073232008]
 visible = false
 show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_tj16w")
 flip_h = true
 
-[node name="eye3" type="AnimatedSprite2D" parent="model/face"]
+[node name="eye3" type="AnimatedSprite2D" parent="model/face" unique_id=863249097]
 visible = false
 position = Vector2(0, -16)
 sprite_frames = ExtResource("7")
@@ -1755,7 +1755,7 @@ animation = &"shut"
 speed_scale = 0.0
 flip_h = true
 
-[node name="eye4" type="AnimatedSprite2D" parent="model/face"]
+[node name="eye4" type="AnimatedSprite2D" parent="model/face" unique_id=300879714]
 visible = false
 position = Vector2(0, -2)
 scale = Vector2(0.5, 0.5)
@@ -1763,58 +1763,56 @@ sprite_frames = ExtResource("7")
 speed_scale = 0.0
 flip_h = true
 
-[node name="pupils" type="Node2D" parent="model/face"]
+[node name="pupils" type="Node2D" parent="model/face" unique_id=260610558]
 visible = false
 position = Vector2(0, -4)
 
-[node name="pupil1" type="AnimatedSprite2D" parent="model/face/pupils"]
+[node name="pupil1" type="AnimatedSprite2D" parent="model/face/pupils" unique_id=1783433320]
 position = Vector2(-14, 0)
 sprite_frames = SubResource("SpriteFrames_rs16y")
 
-[node name="pupil2" type="AnimatedSprite2D" parent="model/face/pupils"]
+[node name="pupil2" type="AnimatedSprite2D" parent="model/face/pupils" unique_id=2051919102]
 position = Vector2(14, 0)
 sprite_frames = SubResource("SpriteFrames_rs16y")
 
-[node name="pupil3" type="AnimatedSprite2D" parent="model/face/pupils"]
+[node name="pupil3" type="AnimatedSprite2D" parent="model/face/pupils" unique_id=129269533]
 visible = false
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_rs16y")
 
-[node name="eye_mu" type="Sprite2D" parent="model/face"]
+[node name="eye_mu" type="Sprite2D" parent="model/face" unique_id=1416213936]
 visible = false
 position = Vector2(0, -6)
 texture = ExtResource("8")
 
-[node name="es_snout" type="Sprite2D" parent="model/face"]
+[node name="es_snout" type="Sprite2D" parent="model/face" unique_id=1489066650]
 visible = false
 position = Vector2(0, 4.5)
 texture = ExtResource("164")
 
-[node name="mouth" type="AnimatedSprite2D" parent="model/face"]
+[node name="mouth" type="AnimatedSprite2D" parent="model/face" unique_id=64345380]
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 12)
 sprite_frames = SubResource("SpriteFrames_lioc7")
 animation = &"neon"
 speed_scale = 0.0
 
-[node name="fangs" type="Sprite2D" parent="model/face/mouth"]
+[node name="fangs" type="Sprite2D" parent="model/face/mouth" unique_id=472363195]
 visible = false
 show_behind_parent = true
 position = Vector2(0, -4)
 texture = ExtResource("170")
 
-[node name="anim" type="AnimationPlayer" parent="model/face"]
-autoplay = "blink"
-libraries = {
-"": SubResource("AnimationLibrary_jcj6t")
-}
+[node name="anim" type="AnimationPlayer" parent="model/face" unique_id=1791552021]
+libraries/ = SubResource("AnimationLibrary_jcj6t")
+autoplay = &"blink"
 
-[node name="glasses" type="AnimatedSprite2D" parent="model/face"]
+[node name="glasses" type="AnimatedSprite2D" parent="model/face" unique_id=1407142788]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_e437r")
 frame = 2
 
-[node name="facetext" type="Label" parent="model/face"]
+[node name="facetext" type="Label" parent="model/face" unique_id=391513565]
 visible = false
 offset_left = -20.0
 offset_top = -12.5
@@ -1829,19 +1827,19 @@ vertical_alignment = 1
 clip_text = true
 uppercase = true
 
-[node name="db_rings" type="Sprite2D" parent="model"]
+[node name="db_rings" type="Sprite2D" parent="model" unique_id=952368071]
 visible = false
 texture = ExtResource("179")
 
-[node name="fire" type="CPUParticles2D" parent="model"]
+[node name="fire" type="CPUParticles2D" parent="model" unique_id=1398779654]
 modulate = Color(1, 1, 1, 0.25098)
 texture_filter = 2
 material = ExtResource("3")
 position = Vector2(0, 32)
 emitting = false
 amount = 100
-speed_scale = 2.0
 texture = SubResource("GradientTexture2D_tq6tf")
+speed_scale = 2.0
 emission_shape = 3
 emission_rect_extents = Vector2(15, 30)
 spread = 180.0
@@ -1852,7 +1850,7 @@ scale_amount_max = 5.0
 color = Color(1, 0.376471, 0, 1)
 color_ramp = SubResource("Gradient_tl3br")
 
-[node name="sc_glow" type="Sprite2D" parent="model"]
+[node name="sc_glow" type="Sprite2D" parent="model" unique_id=978840197]
 visible = false
 modulate = Color(1, 1, 0.752941, 0.627451)
 texture_filter = 2
@@ -1861,7 +1859,7 @@ position = Vector2(0, 16)
 scale = Vector2(5, 5)
 texture = SubResource("GradientTexture2D_yrwi3")
 
-[node name="ce_flame" type="CPUParticles2D" parent="model"]
+[node name="ce_flame" type="CPUParticles2D" parent="model" unique_id=100929774]
 texture_filter = 2
 material = ExtResource("3")
 position = Vector2(-3, -3)
@@ -1873,21 +1871,19 @@ scale_amount_min = 2.0
 scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_2s3rw")
 
-[node name="anim" type="AnimationPlayer" parent="model"]
-autoplay = "idle"
+[node name="anim" type="AnimationPlayer" parent="model" unique_id=2037670204]
+libraries/ = SubResource("AnimationLibrary_o142q")
+autoplay = &"idle"
 playback_default_blend_time = 0.25
-libraries = {
-"": SubResource("AnimationLibrary_o142q")
-}
 
-[node name="hair" type="AnimatedSprite2D" parent="model"]
+[node name="hair" type="AnimatedSprite2D" parent="model" unique_id=1489458162]
 visible = false
 sprite_frames = SubResource("SpriteFrames_ywayt")
 animation = &"isotopes"
 autoplay = "default"
 speed_scale = 0.0
 
-[node name="tempglow" type="Sprite2D" parent="."]
+[node name="tempglow" type="Sprite2D" parent="." unique_id=46457954]
 modulate = Color(0, 0, 0, 0)
 texture_filter = 2
 material = ExtResource("3")
@@ -1895,41 +1891,39 @@ position = Vector2(0, -8)
 scale = Vector2(5, 5)
 texture = SubResource("GradientTexture2D_yrwi3")
 
-[node name="heat" type="AnimationPlayer" parent="."]
+[node name="heat" type="AnimationPlayer" parent="." unique_id=365368090]
 root_node = NodePath("../model")
-autoplay = "glow"
-playback_process_mode = 2
-libraries = {
-"": SubResource("AnimationLibrary_ab68v")
-}
+callback_mode_process = 2
+libraries/ = SubResource("AnimationLibrary_ab68v")
+autoplay = &"glow"
 
-[node name="col_head" type="CollisionShape2D" parent="."]
+[node name="col_head" type="CollisionShape2D" parent="." unique_id=1223632229]
 position = Vector2(0, -12)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_m0gkw")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="col_body" type="CollisionShape2D" parent="."]
+[node name="col_body" type="CollisionShape2D" parent="." unique_id=951256850]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_iv1ir")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="col_cloud" type="CollisionShape2D" parent="."]
+[node name="col_cloud" type="CollisionShape2D" parent="." unique_id=694272344]
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_m0gkw")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="info" type="Node2D" parent="."]
+[node name="info" type="Node2D" parent="." unique_id=1108170205]
 z_index = 5
 texture_filter = 2
 
-[node name="bg" type="Sprite2D" parent="info"]
+[node name="bg" type="Sprite2D" parent="info" unique_id=744838029]
 modulate = Color(1, 1, 1, 0.752941)
 position = Vector2(0, -96)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("GradientTexture2D_xv0rh")
 
-[node name="name" type="Label" parent="info"]
+[node name="name" type="Label" parent="info" unique_id=1659512975]
 offset_left = -320.0
 offset_top = -96.0
 offset_right = 960.0
@@ -1939,7 +1933,7 @@ theme_override_font_sizes/font_size = 24
 text = "Boinkium"
 horizontal_alignment = 1
 
-[node name="type" type="Label" parent="info"]
+[node name="type" type="Label" parent="info" unique_id=887167468]
 offset_left = -40.0
 offset_top = -82.0
 offset_right = 120.0
@@ -1949,7 +1943,7 @@ theme_override_font_sizes/font_size = 12
 text = "nonmetal"
 horizontal_alignment = 1
 
-[node name="density" type="Label" parent="info"]
+[node name="density" type="Label" parent="info" unique_id=415602345]
 offset_left = -64.0
 offset_top = -74.0
 offset_right = 192.0
@@ -1959,7 +1953,7 @@ theme_override_font_sizes/font_size = 12
 text = "density: doopid <3"
 horizontal_alignment = 1
 
-[node name="symbol" type="Label" parent="info"]
+[node name="symbol" type="Label" parent="info" unique_id=1547375141]
 offset_left = -320.0
 offset_top = -152.0
 offset_right = 960.0
@@ -1970,7 +1964,7 @@ text = "Bo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="num" type="Label" parent="info"]
+[node name="num" type="Label" parent="info" unique_id=317619252]
 offset_left = -40.0
 offset_top = -112.0
 offset_right = 120.0
@@ -1980,7 +1974,7 @@ theme_override_font_sizes/font_size = 18
 text = "X"
 vertical_alignment = 1
 
-[node name="mass" type="Label" parent="info"]
+[node name="mass" type="Label" parent="info" unique_id=12393707]
 offset_left = -40.0
 offset_top = -144.0
 offset_right = 120.0
@@ -1990,7 +1984,7 @@ theme_override_font_sizes/font_size = 18
 text = "X"
 vertical_alignment = 1
 
-[node name="electrons" type="Label" parent="info"]
+[node name="electrons" type="Label" parent="info" unique_id=1544875943]
 offset_left = -40.0
 offset_top = -144.0
 offset_right = 120.0
@@ -2001,7 +1995,7 @@ text = "1e"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="halflife" type="Label" parent="info"]
+[node name="halflife" type="Label" parent="info" unique_id=768747577]
 offset_left = -128.0
 offset_top = -152.0
 offset_right = 384.0
@@ -2012,88 +2006,88 @@ text = "stable"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="clank1" type="AudioStreamPlayer2D" parent="."]
+[node name="clank1" type="AudioStreamPlayer2D" parent="." unique_id=1470305259]
 stream = ExtResource("185")
 volume_db = 5.0
 pitch_scale = 2.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="clank2" type="AudioStreamPlayer2D" parent="."]
+[node name="clank2" type="AudioStreamPlayer2D" parent="." unique_id=1835167580]
 stream = ExtResource("187")
 volume_db = -5.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="clank3" type="AudioStreamPlayer2D" parent="."]
+[node name="clank3" type="AudioStreamPlayer2D" parent="." unique_id=1404533066]
 stream = ExtResource("188")
 volume_db = -10.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="splash" type="AudioStreamPlayer2D" parent="."]
+[node name="splash" type="AudioStreamPlayer2D" parent="." unique_id=1122395909]
 stream = ExtResource("189")
 pitch_scale = 2.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="poof" type="AudioStreamPlayer2D" parent="."]
+[node name="poof" type="AudioStreamPlayer2D" parent="." unique_id=928574825]
 stream = ExtResource("190")
 pitch_scale = 1.5
 script = ExtResource("186")
 
-[node name="spawn" type="AudioStreamPlayer2D" parent="."]
+[node name="spawn" type="AudioStreamPlayer2D" parent="." unique_id=664180717]
 stream = ExtResource("191")
 volume_db = 5.0
 script = ExtResource("186")
 
-[node name="geiger" type="AudioStreamPlayer2D" parent="."]
+[node name="geiger" type="AudioStreamPlayer2D" parent="." unique_id=1967377537]
 stream = ExtResource("192")
 pitch_scale = 1.5
 max_distance = 1000.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="meow" type="AudioStreamPlayer2D" parent="."]
+[node name="meow" type="AudioStreamPlayer2D" parent="." unique_id=1204071832]
 stream = ExtResource("193")
 volume_db = 5.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="sparkle" type="AudioStreamPlayer2D" parent="."]
+[node name="sparkle" type="AudioStreamPlayer2D" parent="." unique_id=2130213333]
 stream = ExtResource("194")
 volume_db = 5.0
 attenuation = 0.0
 script = ExtResource("186")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=212484836]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=158834011]
 shape = SubResource("CapsuleShape2D_l0cgr")
 debug_color = Color(1, 0, 0, 0)
 
-[node name="flash" type="Sprite2D" parent="."]
+[node name="flash" type="Sprite2D" parent="." unique_id=688877872]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 2
 material = ExtResource("3")
 scale = Vector2(4, 4)
 texture = SubResource("GradientTexture2D_1n242")
 
-[node name="range" type="Area2D" parent="."]
+[node name="range" type="Area2D" parent="." unique_id=6949106]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range" unique_id=432746452]
 shape = SubResource("CircleShape2D_xjfhd")
 debug_color = Color(1, 1, 0, 0)
 
-[node name="veryclose" type="Area2D" parent="."]
+[node name="veryclose" type="Area2D" parent="." unique_id=1797433958]
 position = Vector2(0, -16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="veryclose"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="veryclose" unique_id=1818852197]
 scale = Vector2(0.25, 0.25)
 shape = SubResource("CircleShape2D_xjfhd")
 debug_color = Color(1, 1, 0, 0)
 
-[node name="credit" type="Label" parent="."]
+[node name="credit" type="Label" parent="." unique_id=1584325250]
 process_mode = 3
 clip_contents = true
 offset_left = -32.0
@@ -2103,14 +2097,14 @@ offset_bottom = 32.0
 mouse_filter = 1
 script = ExtResource("195")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=19]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=19]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered" flags=19]
-[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered" flags=19]
-[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited" flags=19]
-[connection signal="area_entered" from="range" to="." method="_on_range_body_entered" flags=19]
-[connection signal="area_exited" from="range" to="." method="_on_range_body_exited" flags=19]
-[connection signal="body_entered" from="range" to="." method="_on_range_body_entered" flags=19]
-[connection signal="body_exited" from="range" to="." method="_on_range_body_exited" flags=19]
-[connection signal="area_entered" from="veryclose" to="." method="_on_veryclose_body_entered" flags=19]
-[connection signal="area_exited" from="veryclose" to="." method="_on_veryclose_body_exited" flags=19]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="area_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="area_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="area_entered" from="veryclose" to="." method="_on_veryclose_body_entered"]
+[connection signal="area_exited" from="veryclose" to="." method="_on_veryclose_body_exited"]
