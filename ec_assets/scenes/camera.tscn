@@ -1,0 +1,1423 @@
+[gd_scene load_steps=57 format=3 uid="uid://cc5lnxjqdlpj"]
+
+[ext_resource type="Script" path="res://ec_assets/scenes/camera.gd" id="1"]
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="3"]
+[ext_resource type="Script" path="res://ec_assets/scenes/tool.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://vusx86pq23so" path="res://ec_assets/textures/items/fissionhammer.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b3x6ul25y1e0p" path="res://ec_assets/textures/items/tweezers.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bta61q2ohiy3j" path="res://ec_assets/textures/items/electromagnet.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://coxajiloq6hkx" path="res://ec_assets/textures/items/lightbulb.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://k8lfan0aik10" path="res://ec_assets/textures/items/weakray.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://n04s8a81j0tc" path="res://ec_assets/textures/effects/star0.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://chebagp7xhj3p" path="res://ec_assets/textures/items/cloner.png" id="11"]
+[ext_resource type="AudioStream" uid="uid://ckam1vuco2qlq" path="res://ec_assets/sounds/BFDI big hit.wav" id="12"]
+[ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="13"]
+[ext_resource type="Texture2D" uid="uid://bl3bbd6kmwijl" path="res://ec_assets/textures/ui/button_blackhole1.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://c7rqiitedl4if" path="res://ec_assets/textures/ui/button_hammer1.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://703agkweh6iq" path="res://ec_assets/textures/ui/button_hammer2.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://5yc6rnc3cgsk" path="res://ec_assets/textures/ui/button_tweezers1.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://u1xukxn7reno" path="res://ec_assets/textures/ui/button_tweezers2.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://c23nl0plv83e0" path="res://ec_assets/textures/ui/button_emagnet1.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://bqkr03yr14oa0" path="res://ec_assets/textures/ui/button_emagnet2.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://c8vna1x6rocqn" path="res://ec_assets/textures/ui/button_lightbulb1.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cji1hap7qbsex" path="res://ec_assets/textures/ui/button_lightbulb2.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://cj1pa11tslero" path="res://ec_assets/textures/ui/button_weakray1.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://bn7q1vwssccgj" path="res://ec_assets/textures/ui/button_weakray2.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://bxd1ugjy655al" path="res://ec_assets/textures/ui/button_clone1.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://paboh37q2yap" path="res://ec_assets/textures/ui/button_clone2.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://mbp7wsvtxk8h" path="res://ec_assets/textures/ui/button_blackhole2.png" id="27"]
+[ext_resource type="Script" path="res://ec_assets/scenes/inventory.gd" id="28"]
+[ext_resource type="Texture2D" uid="uid://sgjm3hkfarr1" path="res://ec_assets/textures/ui/inventory_table.png" id="29"]
+[ext_resource type="PackedScene" uid="uid://ycmppe36no44" path="res://ec_assets/scenes/inventory_item.tscn" id="30"]
+[ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="31"]
+[ext_resource type="Texture2D" uid="uid://c0htsm0kwp16b" path="res://ec_assets/textures/ui/button_quit1.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://mmjoxs6e55y1" path="res://ec_assets/textures/ui/button_quit2.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://bqm0ak32mqpfx" path="res://ec_assets/textures/ui/button_help1.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://bagn32hjk26y2" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
+
+[sub_resource type="Curve" id="Curve_cgg83"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_wqnog"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_qchlo"]
+offsets = PackedFloat32Array(0.1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hk7pl"]
+gradient = SubResource("Gradient_qchlo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_hy7sp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.523599]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weakray/glow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weakray/glow:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lightbulb/glow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ah5vl"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hammer:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.523599, -0.558505]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weakray/glow:self_modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.501961)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weakray/glow:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_ffapq"]
+resource_name = "use"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.8, 1),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [-1.5708, -0.785398, -0.523599]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weakray/glow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weakray/glow:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lightbulb/glow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rhjh"]
+_data = {
+"RESET": SubResource("Animation_hy7sp"),
+"idle": SubResource("Animation_ah5vl"),
+"use": SubResource("Animation_ffapq")
+}
+
+[sub_resource type="Gradient" id="Gradient_yu83d"]
+offsets = PackedFloat32Array(0, 0.503311, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_hrdoy"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_dyq06"]
+offsets = PackedFloat32Array(0.9, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cm5rk"]
+gradient = SubResource("Gradient_dyq06")
+width = 96
+height = 96
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdojg"]
+radius = 16.0
+
+[sub_resource type="Gradient" id="Gradient_c1p4g"]
+offsets = PackedFloat32Array(0.9, 1)
+colors = PackedColorArray(0, 0, 0, 0.784314, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hpdug"]
+gradient = SubResource("Gradient_c1p4g")
+width = 160
+height = 32
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_lidxi"]
+offsets = PackedFloat32Array(0.9, 1)
+colors = PackedColorArray(0.25098, 0.25098, 0.25098, 0.784314, 0.25098, 0.25098, 0.25098, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ke6j"]
+gradient = SubResource("Gradient_lidxi")
+width = 160
+height = 32
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_wlnef"]
+offsets = PackedFloat32Array(0, 0.05, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0.12549, 0.12549, 0.12549, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4n70a"]
+gradient = SubResource("Gradient_wlnef")
+width = 950
+height = 160
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_r4n5t"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r7ohn"]
+gradient = SubResource("Gradient_r4n5t")
+fill_from = Vector2(1, 1)
+
+[node name="camera" type="Camera2D"]
+process_mode = 3
+process_priority = -1
+zoom = Vector2(2, 2)
+script = ExtResource("1")
+
+[node name="spawning" type="CPUParticles2D" parent="."]
+material = ExtResource("2")
+scale = Vector2(3, 3)
+amount = 3
+lifetime = 1.5
+local_coords = true
+texture = ExtResource("3")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_cgg83")
+color = Color(1, 1, 1, 0.501961)
+color_ramp = SubResource("Gradient_wqnog")
+
+[node name="tool" type="Area2D" parent="."]
+z_index = 1
+script = ExtResource("4")
+
+[node name="hammer" type="Sprite2D" parent="tool"]
+visible = false
+position = Vector2(120, -48)
+rotation = -0.523599
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5")
+offset = Vector2(0, -32)
+
+[node name="tweezers" type="Sprite2D" parent="tool"]
+visible = false
+position = Vector2(79, -45.5)
+rotation = -0.523599
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6")
+
+[node name="emagnet" type="Sprite2D" parent="tool"]
+visible = false
+position = Vector2(83, -44)
+rotation = 0.785398
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7")
+
+[node name="lightbulb" type="Sprite2D" parent="tool"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8")
+offset = Vector2(0, 2)
+
+[node name="glow" type="Sprite2D" parent="tool/lightbulb"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+material = ExtResource("2")
+scale = Vector2(4, 4)
+texture = SubResource("GradientTexture2D_hk7pl")
+
+[node name="weakray" type="Sprite2D" parent="tool"]
+visible = false
+position = Vector2(96, -56)
+rotation = -2.0944
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9")
+
+[node name="glow" type="Sprite2D" parent="tool/weakray"]
+modulate = Color(0.501961, 1, 0.25098, 1)
+texture_filter = 2
+material = ExtResource("2")
+position = Vector2(0, -57)
+scale = Vector2(2, 2)
+texture = ExtResource("10")
+
+[node name="cloner" type="Sprite2D" parent="tool"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11")
+
+[node name="anim" type="AnimationPlayer" parent="tool"]
+autoplay = "idle"
+playback_default_blend_time = 0.02
+libraries = {
+"": SubResource("AnimationLibrary_6rhjh")
+}
+
+[node name="hammernoise" type="AudioStreamPlayer2D" parent="tool"]
+stream = ExtResource("12")
+volume_db = -5.0
+max_distance = 5000.0
+
+[node name="raynoise" type="AudioStreamPlayer2D" parent="tool"]
+stream = ExtResource("13")
+volume_db = 8.0
+max_distance = 5000.0
+
+[node name="hint" type="Label" parent="tool"]
+modulate = Color(1, 1, 1, 0.501961)
+texture_filter = 2
+offset_left = -128.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 90.0
+text = "Right-click to disable"
+horizontal_alignment = 1
+
+[node name="blackhole" type="Node2D" parent="tool"]
+visible = false
+z_index = -1
+texture_filter = 2
+
+[node name="gas" type="CPUParticles2D" parent="tool/blackhole"]
+material = ExtResource("2")
+scale = Vector2(6, 6)
+local_coords = true
+texture = ExtResource("14")
+gravity = Vector2(0, 0)
+angular_velocity_min = 180.0
+angular_velocity_max = 180.0
+radial_accel_min = -100.0
+angle_max = 720.0
+color_ramp = SubResource("Gradient_yu83d")
+color_initial_ramp = SubResource("Gradient_hrdoy")
+
+[node name="sprite" type="Sprite2D" parent="tool/blackhole"]
+texture = SubResource("GradientTexture2D_cm5rk")
+
+[node name="col" type="CollisionShape2D" parent="tool"]
+shape = SubResource("CircleShape2D_sdojg")
+
+[node name="ui" type="Node2D" parent="."]
+z_index = 5
+
+[node name="topleft" type="Node2D" parent="ui"]
+z_index = 10
+texture_filter = 2
+position = Vector2(-288, -160)
+
+[node name="hammer" type="TextureButton" parent="ui/topleft"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("15")
+texture_pressed = ExtResource("16")
+texture_hover = ExtResource("16")
+
+[node name="tweezers" type="TextureButton" parent="ui/topleft"]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 80.0
+offset_bottom = 40.0
+texture_normal = ExtResource("17")
+texture_pressed = ExtResource("18")
+texture_hover = ExtResource("18")
+
+[node name="emagnet" type="TextureButton" parent="ui/topleft"]
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 40.0
+texture_normal = ExtResource("19")
+texture_pressed = ExtResource("20")
+texture_hover = ExtResource("20")
+
+[node name="flashlight" type="TextureButton" parent="ui/topleft"]
+offset_left = 128.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 40.0
+texture_normal = ExtResource("21")
+texture_pressed = ExtResource("22")
+texture_hover = ExtResource("22")
+
+[node name="weakray" type="TextureButton" parent="ui/topleft"]
+offset_left = 168.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 40.0
+texture_normal = ExtResource("23")
+texture_pressed = ExtResource("24")
+texture_hover = ExtResource("24")
+
+[node name="clone" type="TextureButton" parent="ui/topleft"]
+offset_left = 208.0
+offset_top = 8.0
+offset_right = 240.0
+offset_bottom = 40.0
+texture_normal = ExtResource("25")
+texture_pressed = ExtResource("26")
+texture_hover = ExtResource("26")
+
+[node name="blackhole" type="TextureButton" parent="ui/topleft"]
+offset_left = 248.0
+offset_top = 8.0
+offset_right = 280.0
+offset_bottom = 40.0
+texture_normal = ExtResource("14")
+texture_pressed = ExtResource("27")
+texture_hover = ExtResource("27")
+
+[node name="tooldesc" type="Label" parent="ui/topleft"]
+visible = false
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 288.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 16
+text = "FISSION HAMMER
+Splits an element's mass in half."
+autowrap_mode = 2
+
+[node name="topright" type="Node2D" parent="ui"]
+z_index = 10
+texture_filter = 2
+position = Vector2(288, -160)
+scale = Vector2(0.5, 0.5)
+
+[node name="rate" type="Label" parent="ui/topright"]
+offset_left = -512.0
+offset_top = 8.0
+offset_right = -232.0
+offset_bottom = 34.0
+text = "time rate: 1"
+horizontal_alignment = 2
+
+[node name="temp" type="Label" parent="ui/topright"]
+offset_left = -512.0
+offset_top = 32.0
+offset_right = -136.0
+offset_bottom = 58.0
+text = "temperature: 300K"
+horizontal_alignment = 2
+
+[node name="pres" type="Label" parent="ui/topright"]
+offset_left = -512.0
+offset_top = 56.0
+offset_right = -136.0
+offset_bottom = 82.0
+text = "pressure: 1 atm"
+horizontal_alignment = 2
+
+[node name="grav" type="Label" parent="ui/topright"]
+offset_left = -512.0
+offset_top = 80.0
+offset_right = -136.0
+offset_bottom = 106.0
+text = "gravity: 1g"
+horizontal_alignment = 2
+
+[node name="rateslider" type="HSlider" parent="ui/topright"]
+offset_left = -224.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 32.0
+min_value = -10.0
+max_value = 0.0
+
+[node name="tempslider" type="HSlider" parent="ui/topright"]
+offset_left = -128.0
+offset_top = 32.0
+offset_right = -8.0
+offset_bottom = 56.0
+min_value = -10.0
+max_value = 10.0
+
+[node name="presslider" type="HSlider" parent="ui/topright"]
+offset_left = -128.0
+offset_top = 56.0
+offset_right = -8.0
+offset_bottom = 80.0
+max_value = 5.0
+step = 0.05
+value = 1.0
+
+[node name="gravslider" type="HSlider" parent="ui/topright"]
+offset_left = -128.0
+offset_top = 80.0
+offset_right = -8.0
+offset_bottom = 104.0
+max_value = 5.0
+step = 0.01
+value = 1.0
+
+[node name="preset" type="OptionButton" parent="ui/topright"]
+offset_left = -128.0
+offset_top = 144.0
+offset_right = 32.0
+offset_bottom = 176.0
+scale = Vector2(0.75, 0.75)
+alignment = 1
+item_count = 5
+selected = 1
+popup/item_0/text = "custom"
+popup/item_0/id = 0
+popup/item_1/text = "standard"
+popup/item_1/id = 1
+popup/item_2/text = "the Moon"
+popup/item_2/id = 2
+popup/item_3/text = "deep space"
+popup/item_3/id = 3
+popup/item_4/text = "Sun core"
+popup/item_4/id = 4
+
+[node name="reset" type="TextureButton" parent="ui/topright"]
+offset_left = -128.0
+offset_top = 112.0
+offset_right = 32.0
+offset_bottom = 144.0
+scale = Vector2(0.75, 0.75)
+texture_normal = SubResource("GradientTexture2D_hpdug")
+texture_hover = SubResource("GradientTexture2D_8ke6j")
+
+[node name="text" type="Label" parent="ui/topright/reset"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+text = "reset conditions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="center" type="Node2D" parent="ui"]
+z_index = 10
+
+[node name="inventory" type="Node2D" parent="ui/center"]
+visible = false
+texture_filter = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("28")
+
+[node name="bg" type="Sprite2D" parent="ui/center/inventory"]
+position = Vector2(0, 8)
+texture = ExtResource("29")
+
+[node name="proton" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, -257)
+
+[node name="neutron" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-320, -257)
+
+[node name="electron" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, -257)
+
+[node name="purrcent" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, -257)
+
+[node name="bungy" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, -257)
+
+[node name="mu" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, -257)
+
+[node name="h" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, -159)
+
+[node name="he" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, -159)
+
+[node name="li" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, -110)
+
+[node name="be" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, -110)
+
+[node name="b" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, -110)
+
+[node name="c" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, -110)
+
+[node name="n" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, -110)
+
+[node name="o" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, -110)
+
+[node name="f" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, -110)
+
+[node name="ne" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, -110)
+
+[node name="na" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, -61)
+
+[node name="mg" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, -61)
+
+[node name="al" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, -61)
+
+[node name="si" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, -61)
+
+[node name="p" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, -61)
+
+[node name="s" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, -61)
+
+[node name="cl" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, -61)
+
+[node name="ar" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, -61)
+
+[node name="k" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, -12)
+
+[node name="ca" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, -12)
+
+[node name="sc" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-320, -12)
+
+[node name="ti" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, -12)
+
+[node name="v" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, -12)
+
+[node name="cr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, -12)
+
+[node name="mn" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-124, -12)
+
+[node name="fe" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-75, -12)
+
+[node name="co" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-26, -12)
+
+[node name="ni" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(23, -12)
+
+[node name="cu" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(72, -12)
+
+[node name="zn" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(121, -12)
+
+[node name="ga" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, -12)
+
+[node name="ge" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, -12)
+
+[node name="as" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, -12)
+
+[node name="se" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, -12)
+
+[node name="br" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, -12)
+
+[node name="kr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, -12)
+
+[node name="rb" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, 37)
+
+[node name="sr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, 37)
+
+[node name="y" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-320, 37)
+
+[node name="zr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, 37)
+
+[node name="nb" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, 37)
+
+[node name="mo" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, 37)
+
+[node name="tc" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-124, 37)
+
+[node name="ru" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-75, 37)
+
+[node name="rh" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-26, 37)
+
+[node name="pd" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(23, 37)
+
+[node name="ag" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(72, 37)
+
+[node name="cd" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(121, 37)
+
+[node name="in" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, 37)
+
+[node name="sn" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, 37)
+
+[node name="sb" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, 37)
+
+[node name="te" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, 37)
+
+[node name="i" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, 37)
+
+[node name="xe" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, 37)
+
+[node name="cs" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, 86)
+
+[node name="ba" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, 86)
+
+[node name="la" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, 193)
+
+[node name="ce" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, 193)
+
+[node name="pr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, 193)
+
+[node name="nd" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-124, 193)
+
+[node name="pm" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-75, 193)
+
+[node name="sm" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-26, 193)
+
+[node name="eu" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(23, 193)
+
+[node name="gd" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(72, 193)
+
+[node name="tb" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(121, 193)
+
+[node name="dy" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, 193)
+
+[node name="ho" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, 193)
+
+[node name="er" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, 193)
+
+[node name="tm" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, 193)
+
+[node name="yb" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, 193)
+
+[node name="lu" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, 193)
+
+[node name="hf" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, 86)
+
+[node name="ta" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, 86)
+
+[node name="w" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, 86)
+
+[node name="re" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-124, 86)
+
+[node name="os" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-75, 86)
+
+[node name="ir" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-26, 86)
+
+[node name="pt" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(23, 86)
+
+[node name="au" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(72, 86)
+
+[node name="hg" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(121, 86)
+
+[node name="tl" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, 86)
+
+[node name="pb" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, 86)
+
+[node name="bi" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, 86)
+
+[node name="po" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, 86)
+
+[node name="at" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, 86)
+
+[node name="rn" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, 86)
+
+[node name="fr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-418, 135)
+
+[node name="ra" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-369, 135)
+
+[node name="ac" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, 242)
+
+[node name="th" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, 242)
+
+[node name="pa" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, 242)
+
+[node name="u" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-124, 242)
+
+[node name="np" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-75, 242)
+
+[node name="pu" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-26, 242)
+
+[node name="am" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(23, 242)
+
+[node name="cm" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(72, 242)
+
+[node name="bk" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(121, 242)
+
+[node name="cf" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, 242)
+
+[node name="es" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, 242)
+
+[node name="fm" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, 242)
+
+[node name="md" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, 242)
+
+[node name="no" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, 242)
+
+[node name="lr" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, 242)
+
+[node name="rf" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-271, 135)
+
+[node name="db" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-222, 135)
+
+[node name="sg" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-173, 135)
+
+[node name="bh" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-124, 135)
+
+[node name="hs" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-75, 135)
+
+[node name="mt" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(-26, 135)
+
+[node name="ds" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(23, 135)
+
+[node name="rg" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(72, 135)
+
+[node name="cn" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(121, 135)
+
+[node name="nh" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(170, 135)
+
+[node name="fl" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(219, 135)
+
+[node name="mc" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(268, 135)
+
+[node name="lv" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(317, 135)
+
+[node name="ts" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(366, 135)
+
+[node name="og" parent="ui/center/inventory" instance=ExtResource("30")]
+position = Vector2(415, 135)
+
+[node name="hint" type="Label" parent="ui/center/inventory"]
+offset_left = -288.0
+offset_top = -192.0
+offset_right = 45.0
+offset_bottom = -144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Click & drag to spawn"
+
+[node name="nucleus" type="CheckButton" parent="ui/center/inventory"]
+offset_left = -288.0
+offset_top = -128.0
+offset_right = -244.0
+offset_bottom = -96.0
+tooltip_text = "Toggles whether or not your catto will spawn as a nucleus (no electrons)."
+
+[node name="Label" type="Label" parent="ui/center/inventory/nucleus"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 48.0
+offset_top = -16.0
+offset_right = 160.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 20
+text = "nucleus"
+vertical_alignment = 1
+
+[node name="desc" type="Node2D" parent="ui/center/inventory"]
+visible = false
+z_index = 1
+
+[node name="bg" type="Sprite2D" parent="ui/center/inventory/desc"]
+modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(0, 233)
+texture = SubResource("GradientTexture2D_4n70a")
+
+[node name="name" type="Label" parent="ui/center/inventory/desc"]
+offset_left = -448.0
+offset_top = 176.0
+offset_right = 448.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("31")
+theme_override_font_sizes/font_size = 32
+text = "Hydrogen"
+horizontal_alignment = 1
+
+[node name="text" type="Label" parent="ui/center/inventory/desc"]
+offset_left = -448.0
+offset_top = 224.0
+offset_right = 448.0
+offset_bottom = 266.0
+theme_override_fonts/font = ExtResource("31")
+theme_override_font_sizes/font_size = 20
+text = "Mother of all elements. Readily bonds with many others, but tends to leave the party when a metal comes in. Usually peaceful, but has an explosive side."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="back" type="TextureButton" parent="ui/center/inventory"]
+offset_left = 288.0
+offset_top = -272.0
+offset_right = 448.0
+offset_bottom = -240.0
+texture_normal = SubResource("GradientTexture2D_hpdug")
+texture_hover = SubResource("GradientTexture2D_8ke6j")
+
+[node name="text" type="Label" parent="ui/center/inventory/back"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+text = "Back to game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pause" type="Node2D" parent="ui"]
+process_mode = 3
+visible = false
+z_index = 20
+texture_filter = 2
+scale = Vector2(0.75, 0.75)
+
+[node name="bg" type="Sprite2D" parent="ui/pause"]
+modulate = Color(1, 1, 1, 0.87451)
+scale = Vector2(50, 50)
+texture = SubResource("GradientTexture2D_r7ohn")
+
+[node name="Label" type="Label" parent="ui/pause"]
+modulate = Color(0, 0, 0, 0.752941)
+offset_left = -192.0
+offset_top = -181.333
+offset_right = 192.0
+offset_bottom = -117.333
+theme_override_fonts/font = ExtResource("31")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hint" type="Label" parent="ui/pause"]
+modulate = Color(0, 0, 0, 0.752941)
+offset_left = -192.0
+offset_top = -139.0
+offset_right = 192.0
+offset_bottom = -86.0
+theme_override_font_sizes/font_size = 14
+text = "Hover over a button or slider for more info"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="explosions" type="CheckButton" parent="ui/pause"]
+offset_left = -112.0
+offset_top = -96.0
+offset_right = -68.0
+offset_bottom = -64.0
+tooltip_text = "Toggles explosion effects. Helpful if you're photosensitive."
+button_pressed = true
+
+[node name="label" type="Label" parent="ui/pause/explosions"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -88.0
+offset_right = 40.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "Explosions"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="opaquewalls" type="CheckButton" parent="ui/pause"]
+offset_left = 152.0
+offset_top = -96.0
+offset_right = 196.0
+offset_bottom = -64.0
+tooltip_text = "Particles like photons will be unable to escape the room."
+
+[node name="label" type="Label" parent="ui/pause/opaquewalls"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -112.0
+offset_right = 16.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "Opaque walls"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="mus_volume" type="HSlider" parent="ui/pause"]
+offset_left = 48.0
+offset_top = -56.0
+offset_right = 200.0
+offset_bottom = -40.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="label" type="Label" parent="ui/pause/mus_volume"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -248.0
+offset_top = -8.0
+offset_right = -40.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 16
+text = "Music volume"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="sfx_volume" type="HSlider" parent="ui/pause"]
+offset_left = 48.0
+offset_top = -32.0
+offset_right = 200.0
+offset_bottom = -16.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="label" type="Label" parent="ui/pause/sfx_volume"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -248.0
+offset_top = -8.0
+offset_right = -40.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 16
+text = "Sound effects volume"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="t_speed" type="HSlider" parent="ui/pause"]
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 24.0
+tooltip_text = "Adjusts how fast you can change the temperature."
+min_value = 0.1
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="label" type="Label" parent="ui/pause/t_speed"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -248.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 16
+text = "Temperature slider speed: 1"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="fus_thres" type="HSlider" parent="ui/pause"]
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 200.0
+offset_bottom = 48.0
+tooltip_text = "Adjusts how easily the cattos fuse upon contact."
+max_value = 3.0
+step = 0.05
+value = 1.0
+
+[node name="label" type="Label" parent="ui/pause/fus_thres"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -248.0
+offset_top = -8.0
+offset_right = -40.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 16
+text = "Fusion threshold: 1"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="gaspoof" type="CheckButton" parent="ui/pause"]
+offset_left = -32.0
+offset_top = 56.0
+offset_right = 12.0
+offset_bottom = 88.0
+tooltip_text = "Toggles the gaseous cattos turning into a cloud when they are hit hard enough."
+button_pressed = true
+
+[node name="label" type="Label" parent="ui/pause/gaspoof"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -152.0
+offset_right = 56.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "\"Poofing\" gases"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="weakforce" type="CheckButton" parent="ui/pause"]
+offset_left = -32.0
+offset_top = 80.0
+offset_right = 12.0
+offset_bottom = 112.0
+tooltip_text = "Toggles radioactive decay."
+button_pressed = true
+
+[node name="label" type="Label" parent="ui/pause/weakforce"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -152.0
+offset_right = 56.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "Weak nuclear force"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="end_world" type="CheckButton" parent="ui/pause"]
+offset_left = -32.0
+offset_top = 104.0
+offset_right = 12.0
+offset_bottom = 136.0
+tooltip_text = "Toggles \"world destruction\" cutscenes."
+button_pressed = true
+
+[node name="label" type="Label" parent="ui/pause/end_world"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -152.0
+offset_right = 56.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "Endable world"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="catto_ai" type="CheckButton" parent="ui/pause"]
+offset_left = 136.0
+offset_top = 56.0
+offset_right = 180.0
+offset_bottom = 88.0
+tooltip_text = "Toggles the movement of cattos."
+button_pressed = true
+
+[node name="label" type="Label" parent="ui/pause/catto_ai"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -128.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "Catto AI"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="rotat" type="CheckButton" parent="ui/pause"]
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 180.0
+offset_bottom = 112.0
+tooltip_text = "Toggles whether or not the cattos will automatically rotate."
+button_pressed = true
+
+[node name="label" type="Label" parent="ui/pause/rotat"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -128.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 16
+text = "Catto rotation"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="back" type="TextureButton" parent="ui/pause"]
+offset_left = 16.0
+offset_top = 144.0
+offset_right = 176.0
+offset_bottom = 176.0
+texture_normal = SubResource("GradientTexture2D_hpdug")
+texture_hover = SubResource("GradientTexture2D_8ke6j")
+
+[node name="text" type="Label" parent="ui/pause/back"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+text = "Back to game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings_reset" type="TextureButton" parent="ui/pause"]
+offset_left = -176.0
+offset_top = 144.0
+offset_right = -16.0
+offset_bottom = 176.0
+texture_normal = SubResource("GradientTexture2D_hpdug")
+texture_hover = SubResource("GradientTexture2D_8ke6j")
+
+[node name="text" type="Label" parent="ui/pause/settings_reset"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+text = "Reset all"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="botleft" type="Node2D" parent="ui"]
+texture_filter = 2
+position = Vector2(-288, 160)
+
+[node name="quit" type="TextureButton" parent="ui/botleft"]
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -8.0
+texture_normal = ExtResource("32")
+texture_pressed = ExtResource("33")
+texture_hover = ExtResource("33")
+
+[node name="quit_hint" type="Label" parent="ui/botleft"]
+visible = false
+texture_filter = 2
+offset_left = 8.0
+offset_top = -56.0
+offset_right = 86.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 12
+text = "Quit to menu"
+
+[node name="botright" type="Node2D" parent="ui"]
+texture_filter = 2
+position = Vector2(288, 160)
+
+[node name="help" type="TextureButton" parent="ui/botright"]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+texture_normal = ExtResource("34")
+texture_pressed = ExtResource("35")
+texture_hover = ExtResource("35")
+
+[connection signal="animation_finished" from="tool/anim" to="." method="_on_anim_animation_finished" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/hammer" to="." method="_on_hammer_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/hammer" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/hammer" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/hammer" to="." method="_on_hammer_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/tweezers" to="." method="_on_tweezers_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/tweezers" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/tweezers" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/tweezers" to="." method="_on_tweezers_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/emagnet" to="." method="_on_emagnet_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/emagnet" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/emagnet" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/emagnet" to="." method="_on_emagnet_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/flashlight" to="." method="_on_flashlight_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/flashlight" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/flashlight" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/flashlight" to="." method="_on_flashlight_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/weakray" to="." method="_on_weakray_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/weakray" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/weakray" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/weakray" to="." method="_on_weakray_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/clone" to="." method="_on_clone_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/clone" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/clone" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/clone" to="." method="_on_clone_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/blackhole" to="." method="_on_blackhole_mouse_entered" flags=19]
+[connection signal="mouse_entered" from="ui/topleft/blackhole" to="." method="_on_button_hover" flags=19]
+[connection signal="mouse_exited" from="ui/topleft/blackhole" to="." method="_on_button_unhover" flags=19]
+[connection signal="pressed" from="ui/topleft/blackhole" to="." method="_on_blackhole_pressed" flags=19]
+[connection signal="value_changed" from="ui/topright/rateslider" to="." method="_on_rateslider_value_changed" flags=19]
+[connection signal="value_changed" from="ui/topright/presslider" to="." method="_on_presslider_value_changed" flags=19]
+[connection signal="value_changed" from="ui/topright/gravslider" to="." method="_on_gravslider_value_changed" flags=19]
+[connection signal="item_selected" from="ui/topright/preset" to="." method="_on_preset_item_selected" flags=19]
+[connection signal="pressed" from="ui/topright/reset" to="." method="_on_reset_pressed" flags=19]
+[connection signal="toggled" from="ui/center/inventory/nucleus" to="." method="_on_nucleus_toggled" flags=19]
+[connection signal="pressed" from="ui/center/inventory/back" to="." method="_on_back_pressed" flags=19]
+[connection signal="toggled" from="ui/pause/explosions" to="." method="_on_explosions_toggled" flags=19]
+[connection signal="toggled" from="ui/pause/opaquewalls" to="." method="_on_opaquewalls_toggled" flags=19]
+[connection signal="value_changed" from="ui/pause/mus_volume" to="." method="_on_mus_volume_value_changed" flags=19]
+[connection signal="value_changed" from="ui/pause/sfx_volume" to="." method="_on_sfx_volume_value_changed" flags=19]
+[connection signal="value_changed" from="ui/pause/t_speed" to="." method="_on_t_speed_value_changed" flags=19]
+[connection signal="value_changed" from="ui/pause/fus_thres" to="." method="_on_fus_thres_value_changed" flags=18]
+[connection signal="toggled" from="ui/pause/gaspoof" to="." method="_on_gaspoof_toggled" flags=19]
+[connection signal="toggled" from="ui/pause/weakforce" to="." method="_on_weakforce_toggled" flags=19]
+[connection signal="toggled" from="ui/pause/end_world" to="." method="_on_end_world_toggled" flags=19]
+[connection signal="toggled" from="ui/pause/catto_ai" to="." method="_on_catto_ai_toggled" flags=19]
+[connection signal="toggled" from="ui/pause/rotat" to="." method="_on_rotat_toggled" flags=19]
+[connection signal="pressed" from="ui/pause/back" to="." method="_on_back_pressed" flags=19]
+[connection signal="pressed" from="ui/pause/settings_reset" to="." method="_on_settings_reset_pressed" flags=19]
+[connection signal="mouse_entered" from="ui/botleft/quit" to="." method="_on_quit_mouse_entered" flags=19]
+[connection signal="mouse_exited" from="ui/botleft/quit" to="." method="_on_quit_mouse_exited" flags=19]
+[connection signal="pressed" from="ui/botleft/quit" to="." method="_on_quit_pressed" flags=19]
+[connection signal="pressed" from="ui/botright/help" to="." method="_on_help_pressed" flags=19]

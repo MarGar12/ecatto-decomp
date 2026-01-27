@@ -1,0 +1,411 @@
+[gd_scene load_steps=25 format=3 uid="uid://doo4twaenuuae"]
+
+[ext_resource type="Script" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b4enfkw6gpio2" path="res://ec_assets/textures/backgrounds/milkyway.png" id="2"]
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://bl3bbd6kmwijl" path="res://ec_assets/textures/ui/button_blackhole1.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="5"]
+[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="6"]
+[ext_resource type="AudioStream" uid="uid://b31mtssx7wdyt" path="res://ec_assets/sounds/pop.mp3" id="7"]
+[ext_resource type="AudioStream" uid="uid://b2l31ex487oxl" path="res://ec_assets/sounds/nova.mp3" id="8"]
+
+[sub_resource type="Gradient" id="Gradient_hmkot"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fw8ni"]
+gradient = SubResource("Gradient_hmkot")
+
+[sub_resource type="Gradient" id="Gradient_uqw8o"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n5g0c"]
+gradient = SubResource("Gradient_uqw8o")
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_r681i"]
+_data = [Vector2(0, 1), 0.0, -3.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_yqpml"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_0kqrk"]
+offsets = PackedFloat32Array(0, 0.503311, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_q44m3"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_7hcf7"]
+offsets = PackedFloat32Array(0.9, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lhfwd"]
+gradient = SubResource("Gradient_7hcf7")
+width = 96
+height = 96
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_reuq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pew:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("succ:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("succ:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bg:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("blackhole:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("milkyway:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("milkyway:skew")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("stars:speed_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("spacetime:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_f1g5s"]
+resource_name = "cruncc"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pew:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("succ:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("succ:pitch_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.1, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bg:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("blackhole:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 4.8, 5),
+"transitions": PackedFloat32Array(0.5, 2, 2, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(4, 4), Vector2(1e-05, 1e-05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("milkyway:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(4, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("milkyway:skew")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, -0.785398]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("stars:speed_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.2, 4.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("spacetime:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(4, 5, 5.1),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(200, 200), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yewl5"]
+_data = {
+"RESET": SubResource("Animation_reuq6"),
+"cruncc": SubResource("Animation_f1g5s")
+}
+
+[sub_resource type="Gradient" id="Gradient_7ufrq"]
+offsets = PackedFloat32Array(0, 0.15, 0.16)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ylcly"]
+gradient = SubResource("Gradient_7ufrq")
+width = 200
+
+[sub_resource type="Gradient" id="Gradient_2xlou"]
+
+[node name="big_crunch" type="Node2D"]
+script = ExtResource("1")
+
+[node name="bg" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(500, 500)
+texture = SubResource("GradientTexture2D_fw8ni")
+
+[node name="spacetime" type="CPUParticles2D" parent="."]
+texture_filter = 2
+scale = Vector2(200, 200)
+amount = 100
+local_coords = true
+texture = SubResource("GradientTexture2D_n5g0c")
+spread = 180.0
+gravity = Vector2(0, 0)
+radial_accel_min = -500.0
+angle_max = 720.0
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_r681i")
+color_ramp = SubResource("Gradient_yqpml")
+
+[node name="milkyway" type="Sprite2D" parent="."]
+texture_filter = 2
+rotation = -0.785398
+texture = ExtResource("2")
+offset = Vector2(128, 80)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="blackhole" type="Node2D" parent="."]
+texture_filter = 2
+
+[node name="gas" type="CPUParticles2D" parent="blackhole"]
+material = ExtResource("3")
+scale = Vector2(6, 6)
+local_coords = true
+texture = ExtResource("4")
+gravity = Vector2(0, 0)
+angular_velocity_min = 180.0
+angular_velocity_max = 180.0
+radial_accel_min = -100.0
+angle_max = 720.0
+color_ramp = SubResource("Gradient_0kqrk")
+color_initial_ramp = SubResource("Gradient_q44m3")
+
+[node name="sprite" type="Sprite2D" parent="blackhole"]
+texture = SubResource("GradientTexture2D_lhfwd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "cruncc"
+libraries = {
+"": SubResource("AnimationLibrary_yewl5")
+}
+
+[node name="pew" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5")
+volume_db = 5.0
+pitch_scale = 0.5
+attenuation = 0.0
+script = ExtResource("6")
+
+[node name="pop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7")
+attenuation = 0.0
+script = ExtResource("6")
+
+[node name="succ" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8")
+pitch_scale = 0.25
+attenuation = 0.0
+script = ExtResource("6")
+
+[node name="stars" type="CPUParticles2D" parent="."]
+material = ExtResource("3")
+scale = Vector2(15, 15)
+amount = 100
+speed_scale = 0.2
+local_coords = true
+texture = SubResource("GradientTexture1D_ylcly")
+spread = 180.0
+gravity = Vector2(0, 0)
+radial_accel_min = -500.0
+angle_max = 720.0
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_r681i")
+color_ramp = SubResource("Gradient_2xlou")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished" flags=19]

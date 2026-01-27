@@ -1,0 +1,199 @@
+[gd_scene load_steps=22 format=3 uid="uid://bm3eesem4n8r1"]
+
+[ext_resource type="Script" path="res://ec_assets/objects/quark_gluon_plasma.gd" id="1"]
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="4"]
+[ext_resource type="SpriteFrames" uid="uid://bit7ybgb1ps46" path="res://ec_assets/textures/element_eyes.tres" id="5"]
+[ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="6"]
+[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="7"]
+[ext_resource type="AudioStream" uid="uid://cgibu6a6fvlih" path="res://ec_assets/sounds/cartoonsplort.mp3" id="8"]
+[ext_resource type="Script" path="res://ec_assets/objects/exp_tooltip.gd" id="9"]
+
+[sub_resource type="Curve" id="Curve_amr68"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_0mesb"]
+offsets = PackedFloat32Array(0, 0.25, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_fl2kr"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oiglx"]
+gradient = SubResource("Gradient_fl2kr")
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_cu76t"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_b37e5"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30pp0"]
+size = Vector2(30, 40)
+
+[sub_resource type="Gradient" id="Gradient_f2wvs"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lcrh8"]
+gradient = SubResource("Gradient_f2wvs")
+width = 50
+height = 25
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_a5bfj"]
+offsets = PackedFloat32Array(0.1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8erdj"]
+gradient = SubResource("Gradient_a5bfj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkxkn"]
+radius = 32.0
+
+[node name="quark-gluon-plasma" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1")
+
+[node name="plasma" type="CPUParticles2D" parent="."]
+texture_filter = 2
+material = ExtResource("2")
+amount = 50
+texture = ExtResource("3")
+gravity = Vector2(0, 0)
+angle_max = 720.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_amr68")
+color = Color(0.752941, 0.25098, 1, 0.25098)
+color_ramp = SubResource("Gradient_0mesb")
+
+[node name="quarks" type="CPUParticles2D" parent="."]
+texture_filter = 2
+material = ExtResource("2")
+amount = 50
+texture = SubResource("GradientTexture2D_oiglx")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_cu76t")
+color_initial_ramp = SubResource("Gradient_b37e5")
+
+[node name="nucleus" type="Node2D" parent="."]
+
+[node name="body" type="Sprite2D" parent="nucleus"]
+modulate = Color(1, 0.376471, 1, 1)
+texture = ExtResource("4")
+
+[node name="face" type="Node2D" parent="nucleus"]
+
+[node name="eye1" type="AnimatedSprite2D" parent="nucleus/face"]
+position = Vector2(-9, 4)
+sprite_frames = ExtResource("5")
+
+[node name="eye2" type="AnimatedSprite2D" parent="nucleus/face"]
+position = Vector2(9, 4)
+sprite_frames = ExtResource("5")
+flip_h = true
+
+[node name="col_head" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_30pp0")
+debug_color = Color(1, 1, 1, 0)
+
+[node name="info" type="Node2D" parent="."]
+visible = false
+
+[node name="bg" type="Sprite2D" parent="info"]
+texture_filter = 2
+position = Vector2(0, -52)
+scale = Vector2(3, 3)
+texture = SubResource("GradientTexture2D_lcrh8")
+
+[node name="name" type="Label" parent="info"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = -80.0
+offset_right = 192.0
+offset_bottom = 16.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 32
+text = "Quark-Gluon Plasma"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="type" type="Label" parent="info"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 192.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 16
+text = "exotic matter"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="spawnsnd" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6")
+volume_db = 5.0
+autoplay = true
+script = ExtResource("7")
+
+[node name="blorp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8")
+volume_db = 5.0
+pitch_scale = 1.2
+autoplay = true
+script = ExtResource("7")
+
+[node name="flash" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+material = ExtResource("2")
+scale = Vector2(4, 4)
+texture = SubResource("GradientTexture2D_8erdj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kkxkn")
+
+[node name="desc" type="Label" parent="."]
+process_mode = 3
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+tooltip_text = "Quark-gluon plasma is a hot, dense soup of subatomic particles
+such as the quarks and gluons that give the substance its name.
+This type of matter is thought to have existed in the early moments of the Big Bang.
+QGP is full of violently interacting particles and emits a vast amount of
+electromagnetic radiation.
+High-energy experiments in particle accelerators such as the Large Hadron Collider
+often briefly create this exotic substance in the process of smashing protons together."
+mouse_filter = 1
+script = ExtResource("9")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=19]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=19]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered" flags=19]

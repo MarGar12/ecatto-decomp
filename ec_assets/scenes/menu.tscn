@@ -1,0 +1,2724 @@
+[gd_scene load_steps=56 format=3 uid="uid://dmjepmgjhtmnx"]
+
+[ext_resource type="Script" path="res://ec_assets/scenes/menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d2hpxx50pjljv" path="res://ec_assets/textures/items/earth2.png" id="2"]
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://eg27p4cfqvia" path="res://ec_assets/textures/cattos/elements/ions/ion-h.png" id="4"]
+[ext_resource type="SpriteFrames" uid="uid://csub24rrsmjk5" path="res://ec_assets/textures/element_bodies.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://cia4mumdwj2u8" path="res://ec_assets/textures/cattos/pupil_manganese.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://brbag0g63nkw5" path="res://ec_assets/textures/cattos/mouth_smile0inv.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b4774dqcyfejn" path="res://ec_assets/textures/cattos/eye_tantalum2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bsqhe7jp0ghoi" path="res://ec_assets/textures/cattos/pupil_meitnerium.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dwbsfj002575h" path="res://ec_assets/textures/cattos/elements/solid/rhenium-windshield.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://b2edna0a07oh3" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cgj37e2bm8tf4" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dnx05a512dlwx" path="res://ec_assets/textures/cattos/eye_closed-inv.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://xeebghlja6p6" path="res://ec_assets/textures/cattos/eye_radon.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://ts85eyd3ia6e" path="res://ec_assets/textures/cattos/mouth_frown0.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bq88psidpbm64" path="res://ec_assets/textures/cattos/mouth_smile0.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://wcgou5q1lbui" path="res://ec_assets/textures/cattos/eye_closed.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bbmk8s8t35tor" path="res://ec_assets/textures/cattos/eye_praseodymium.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://crs28up73giep" path="res://ec_assets/textures/cattos/mouth_smile0europium.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://ctac4e6yancb" path="res://ec_assets/textures/cattos/eye_terbium.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bd6eo41q2avy7" path="res://ec_assets/textures/cattos/eye_holmium.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://dlxv1f8wv8elo" path="res://ec_assets/textures/cattos/eye_erbium.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://b8yvev66ha5h6" path="res://ec_assets/textures/cattos/glasses_tm.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://hgi8ndd72ca" path="res://ec_assets/textures/cattos/glasses_lu.png" id="24"]
+[ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="25"]
+[ext_resource type="Texture2D" uid="uid://cmlwem4qyirlx" path="res://ec_assets/textures/cattos/eye_strontium.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://df12h5sl04hvt" path="res://ec_assets/textures/cattos/glasses_he.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://7sxpnlg1qr2o" path="res://ec_assets/textures/cattos/glasses_si.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cdouulrh4ssf6" path="res://ec_assets/textures/cattos/elements/solid/calcium-fangs.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://bhxukmt5oxqsq" path="res://ec_assets/textures/cattos/eye_titanium.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://71fewxrrly7a" path="res://ec_assets/textures/ui/ec_logo.png" id="31"]
+[ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="32"]
+[ext_resource type="Texture2D" uid="uid://dkr4beyexy6qs" path="res://ec_assets/textures/ui/happyholidays.png" id="33"]
+[ext_resource type="AudioStream" uid="uid://tkdjdepy2xty" path="res://ec_assets/music/ElementcattosMenu.ogg" id="34"]
+[ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="35"]
+[ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="36"]
+[ext_resource type="Texture2D" uid="uid://c24blrjfxmn11" path="res://ec_assets/textures/ui/iris.png" id="37"]
+
+[sub_resource type="Gradient" id="Gradient_juton"]
+colors = PackedColorArray(0.87451, 0.87451, 0.87451, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7r2yo"]
+gradient = SubResource("Gradient_juton")
+fill_from = Vector2(0, 0.6)
+fill_to = Vector2(0, 0.4)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_0c68l"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_2rn4b"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_b8rgs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.85)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i3m5k"]
+gradient = SubResource("Gradient_b8rgs")
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_vrnew"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_6163k"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_ca2p6"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ik4wh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gudpv"]
+gradient = SubResource("Gradient_ik4wh")
+width = 10
+
+[sub_resource type="Animation" id="Animation_j5lrl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("main/logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_ychdb"]
+resource_name = "bob"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0872665, -0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_82ydr"]
+resource_name = "bob2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0872665, -0.0872665]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("main/logo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, -48), Vector2(0, -40), Vector2(8, -48), Vector2(0, -40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6aryv"]
+_data = {
+"RESET": SubResource("Animation_j5lrl"),
+"bob": SubResource("Animation_ychdb"),
+"bob2": SubResource("Animation_82ydr")
+}
+
+[sub_resource type="Gradient" id="Gradient_nmcj2"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_um050"]
+gradient = SubResource("Gradient_nmcj2")
+width = 5
+height = 5
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_c88ps"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1")
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 1, 1, 1)
+texture_filter = 2
+scale = Vector2(50, 50)
+texture = SubResource("GradientTexture2D_7r2yo")
+
+[node name="earth" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.12549)
+texture_filter = 2
+position = Vector2(0, -32)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2")
+
+[node name="particles" type="CPUParticles2D" parent="."]
+material = ExtResource("3")
+scale = Vector2(3, 3)
+amount = 50
+lifetime = 10.0
+speed_scale = 2.0
+texture = ExtResource("4")
+emission_shape = 2
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_0c68l")
+color = Color(1, 1, 1, 0.25098)
+color_initial_ramp = SubResource("Gradient_2rn4b")
+
+[node name="cattos4" type="Node2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(2.35, 2.35)
+
+[node name="hf" type="AnimatedSprite2D" parent="cattos4"]
+rotation = -0.261799
+sprite_frames = ExtResource("5")
+frame = 72
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/hf"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/hf"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/hf"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ta" type="AnimatedSprite2D" parent="cattos4"]
+sprite_frames = ExtResource("5")
+frame = 73
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/ta"]
+position = Vector2(-12, -382)
+texture = ExtResource("8")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/ta"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/ta"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="w" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 0.261799
+sprite_frames = ExtResource("5")
+frame = 74
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/w"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/w"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/w"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="re" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 0.523599
+sprite_frames = ExtResource("5")
+frame = 75
+offset = Vector2(0, -400)
+
+[node name="windshield" type="Sprite2D" parent="cattos4/re"]
+position = Vector2(0, -380)
+texture = ExtResource("10")
+
+[node name="eye1" type="Sprite2D" parent="cattos4/re"]
+position = Vector2(-12, -381)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+region_enabled = true
+region_rect = Rect2(0, 0, 15, 10)
+
+[node name="eye2" type="Sprite2D" parent="cattos4/re"]
+position = Vector2(12, -381)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+region_enabled = true
+region_rect = Rect2(0, 0, 15, 10)
+
+[node name="mouth" type="Sprite2D" parent="cattos4/re"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="os" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 0.785398
+sprite_frames = ExtResource("5")
+frame = 76
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/os"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/os"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/os"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="hair" type="Sprite2D" parent="cattos4/os"]
+position = Vector2(0, -400)
+texture = ExtResource("11")
+
+[node name="ir" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 1.0472
+sprite_frames = ExtResource("5")
+frame = 77
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/ir"]
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/ir"]
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye3" type="Sprite2D" parent="cattos4/ir"]
+position = Vector2(0, -388)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/ir"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="pt" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 1.309
+sprite_frames = ExtResource("5")
+frame = 78
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/pt"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/pt"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/pt"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="au" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 1.5708
+sprite_frames = ExtResource("5")
+frame = 79
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/au"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/au"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/au"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="hg" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 1.8326
+sprite_frames = ExtResource("5")
+frame = 80
+offset = Vector2(0, -400)
+
+[node name="drip" type="CPUParticles2D" parent="cattos4/hg"]
+position = Vector2(2.86102e-06, -380)
+lifetime = 2.0
+texture = SubResource("GradientTexture2D_i3m5k")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 10)
+spread = 180.0
+gravity = Vector2(0, 100)
+scale_amount_min = 0.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_vrnew")
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/hg"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/hg"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/hg"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="tl" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 2.0944
+sprite_frames = ExtResource("5")
+frame = 81
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/tl"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/tl"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/tl"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="pb" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 2.35619
+sprite_frames = ExtResource("5")
+frame = 82
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/pb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/pb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/pb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="bi" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 2.61799
+sprite_frames = ExtResource("5")
+frame = 83
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/bi"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/bi"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/bi"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="hair" type="Sprite2D" parent="cattos4/bi"]
+position = Vector2(0, -400)
+texture = ExtResource("12")
+
+[node name="po" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 2.87979
+sprite_frames = ExtResource("5")
+frame = 84
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/po"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/po"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/po"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="at" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 3.14159
+sprite_frames = ExtResource("5")
+frame = 85
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/at"]
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/at"]
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/at"]
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="cattos4/at"]
+position = Vector2(0, -380)
+amount = 100
+lifetime = 2.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(32, 16)
+gravity = Vector2(0, 0)
+scale_amount_max = 30.0
+color_ramp = SubResource("Gradient_6163k")
+color_initial_ramp = SubResource("Gradient_ca2p6")
+
+[node name="rn" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 3.40339
+sprite_frames = ExtResource("5")
+frame = 86
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/rn"]
+position = Vector2(-14, -382)
+texture = ExtResource("13")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/rn"]
+position = Vector2(14, -382)
+texture = ExtResource("14")
+flip_h = true
+
+[node name="fr" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 3.66519
+sprite_frames = ExtResource("5")
+frame = 87
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/fr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="brow" type="Sprite2D" parent="cattos4/fr/eye1"]
+position = Vector2(0, -5)
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/fr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="brow" type="Sprite2D" parent="cattos4/fr/eye2"]
+position = Vector2(0, -5)
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/fr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("15")
+
+[node name="ra" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 3.92699
+sprite_frames = ExtResource("5")
+frame = 88
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/ra"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/ra"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/ra"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="ac" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 4.18879
+sprite_frames = ExtResource("5")
+frame = 89
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/ac"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/ac"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/ac"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="th" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 4.45059
+sprite_frames = ExtResource("5")
+frame = 90
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/th"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/th"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/th"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="pa" type="AnimatedSprite2D" parent="cattos4"]
+rotation = 4.71239
+sprite_frames = ExtResource("5")
+frame = 91
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/pa"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/pa"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/pa"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="u" type="AnimatedSprite2D" parent="cattos4"]
+rotation = -1.309
+sprite_frames = ExtResource("5")
+frame = 92
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/u"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/u"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/u"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="np" type="AnimatedSprite2D" parent="cattos4"]
+rotation = -1.0472
+sprite_frames = ExtResource("5")
+frame = 93
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/np"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/np"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/np"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="pu" type="AnimatedSprite2D" parent="cattos4"]
+rotation = -0.785398
+sprite_frames = ExtResource("5")
+frame = 94
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/pu"]
+modulate = Color(0, 0.501961, 1, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/pu"]
+modulate = Color(0, 0.501961, 1, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/pu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="am" type="AnimatedSprite2D" parent="cattos4"]
+rotation = -0.523599
+sprite_frames = ExtResource("5")
+frame = 95
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos4/am"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos4/am"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos4/am"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="cattos3" type="Node2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(1.75, 1.75)
+
+[node name="cd" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -0.261799
+sprite_frames = ExtResource("5")
+frame = 48
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/cd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/cd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/cd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="in" type="AnimatedSprite2D" parent="cattos3"]
+sprite_frames = ExtResource("5")
+frame = 49
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/in"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/in"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/in"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="sn" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 0.261799
+sprite_frames = ExtResource("5")
+frame = 50
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/sn"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/sn"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/sn"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="sb" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 0.523599
+sprite_frames = ExtResource("5")
+frame = 51
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/sb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/sb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/sb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="te" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 0.785398
+sprite_frames = ExtResource("5")
+frame = 52
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/te"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/te"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/te"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="i" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 1.0472
+sprite_frames = ExtResource("5")
+frame = 53
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/i"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/i"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/i"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="xe" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 1.309
+sprite_frames = ExtResource("5")
+frame = 54
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/xe"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-14, -382)
+texture = ExtResource("17")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/xe"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(14, -382)
+texture = ExtResource("17")
+
+[node name="cs" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 1.5708
+sprite_frames = ExtResource("5")
+frame = 55
+offset = Vector2(0, -428)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/cs"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12.0148, -407.823)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos3/cs/eye1"]
+position = Vector2(0, -6)
+rotation = 0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/cs"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(11.9852, -407.823)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos3/cs/eye2"]
+position = Vector2(0, -6)
+rotation = -0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/cs"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(8, -388.823)
+rotation = -0.523599
+texture = ExtResource("15")
+
+[node name="ba" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 1.8326
+sprite_frames = ExtResource("5")
+frame = 56
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/ba"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos3/ba/eye1"]
+position = Vector2(0, -6)
+rotation = 0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/ba"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos3/ba/eye2"]
+position = Vector2(0, -6)
+rotation = -0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/ba"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="la" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 2.0944
+sprite_frames = ExtResource("5")
+frame = 57
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/la"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/la"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/la"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ce" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 2.35619
+sprite_frames = ExtResource("5")
+frame = 58
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/ce"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/ce"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/ce"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="pr" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 2.61799
+sprite_frames = ExtResource("5")
+frame = 59
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/pr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+texture = ExtResource("18")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/pr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+texture = ExtResource("18")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/pr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="nd" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 2.87979
+sprite_frames = ExtResource("5")
+frame = 60
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/nd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+texture = ExtResource("18")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/nd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+texture = ExtResource("18")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/nd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="pm" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 3.14159
+sprite_frames = ExtResource("5")
+frame = 61
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/pm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/pm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/pm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="sm" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 3.40339
+sprite_frames = ExtResource("5")
+frame = 62
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/sm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/sm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/sm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="eu" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 3.66519
+sprite_frames = ExtResource("5")
+frame = 63
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/eu"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/eu"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/eu"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("19")
+
+[node name="gd" type="AnimatedSprite2D" parent="cattos3"]
+rotation = 3.92699
+sprite_frames = ExtResource("5")
+frame = 64
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/gd"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/gd"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/gd"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="tb" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -2.0944
+sprite_frames = ExtResource("5")
+frame = 65
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/tb"]
+position = Vector2(-12, -382)
+texture = ExtResource("20")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/tb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/tb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="dy" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -1.8326
+sprite_frames = ExtResource("5")
+frame = 66
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/dy"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/dy"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/dy"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ho" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -1.5708
+sprite_frames = ExtResource("5")
+frame = 67
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/ho"]
+position = Vector2(-12, -382)
+texture = ExtResource("21")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/ho"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/ho"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="er" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -1.309
+sprite_frames = ExtResource("5")
+frame = 68
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/er"]
+position = Vector2(-12, -382)
+texture = ExtResource("22")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/er"]
+position = Vector2(12, -382)
+texture = ExtResource("22")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/er"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="tm" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -1.0472
+sprite_frames = ExtResource("5")
+frame = 69
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/tm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/tm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/tm"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="glasses" type="Sprite2D" parent="cattos3/tm"]
+position = Vector2(0, -376)
+texture = ExtResource("23")
+
+[node name="yb" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -0.785398
+sprite_frames = ExtResource("5")
+frame = 70
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos3/yb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos3/yb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos3/yb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="lu" type="AnimatedSprite2D" parent="cattos3"]
+rotation = -0.523599
+sprite_frames = ExtResource("5")
+frame = 71
+offset = Vector2(0, -400)
+
+[node name="clock" type="Sprite2D" parent="cattos3/lu"]
+position = Vector2(0, -375)
+texture = ExtResource("24")
+
+[node name="text" type="Label" parent="cattos3/lu/clock"]
+modulate = Color(0, 1, 0, 1)
+offset_left = -20.0
+offset_top = -12.5
+offset_right = 80.0
+offset_bottom = 22.5
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("25")
+theme_override_font_sizes/font_size = 32
+text = "14:51"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="mouth" type="Sprite2D" parent="cattos3/lu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="cattos2" type="Node2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(1.32, 1.32)
+
+[node name="cr" type="AnimatedSprite2D" parent="cattos2"]
+rotation = -0.261799
+sprite_frames = ExtResource("5")
+frame = 24
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/cr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/cr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/cr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="mn" type="AnimatedSprite2D" parent="cattos2"]
+sprite_frames = ExtResource("5")
+frame = 25
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/mn"]
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/mn"]
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/mn"]
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="fe" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 0.261799
+sprite_frames = ExtResource("5")
+frame = 26
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/fe"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/fe"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/fe"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="co" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 0.523599
+sprite_frames = ExtResource("5")
+frame = 27
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/co"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/co"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/co"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ni" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 0.785398
+sprite_frames = ExtResource("5")
+frame = 28
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/ni"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/ni"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/ni"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="cu" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 1.0472
+sprite_frames = ExtResource("5")
+frame = 29
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/cu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/cu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/cu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="zn" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 1.309
+sprite_frames = ExtResource("5")
+frame = 30
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/zn"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/zn"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/zn"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ga" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 1.5708
+sprite_frames = ExtResource("5")
+frame = 31
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/ga"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/ga"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/ga"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ge" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 1.8326
+sprite_frames = ExtResource("5")
+frame = 32
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/ge"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/ge"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/ge"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="as" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 2.0944
+sprite_frames = ExtResource("5")
+frame = 33
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/as"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos2/as/eye1"]
+position = Vector2(0, -6)
+rotation = 0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/as"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos2/as/eye2"]
+position = Vector2(0, -6)
+rotation = -0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/as"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("15")
+
+[node name="se" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 2.35619
+sprite_frames = ExtResource("5")
+frame = 34
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/se"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/se"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/se"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="br" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 2.61799
+sprite_frames = ExtResource("5")
+frame = 35
+offset = Vector2(0, -400)
+
+[node name="drip" type="CPUParticles2D" parent="cattos2/br"]
+position = Vector2(0, -380)
+lifetime = 2.0
+texture = SubResource("GradientTexture2D_i3m5k")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 10)
+spread = 180.0
+gravity = Vector2(0, 100)
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_vrnew")
+color = Color(0.183594, 0.113281, 0.109375, 1)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/br"]
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/br"]
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/br"]
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="kr" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 2.87979
+sprite_frames = ExtResource("5")
+frame = 36
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/kr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-14, -382)
+texture = ExtResource("17")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/kr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(14, -382)
+texture = ExtResource("17")
+
+[node name="rb" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 3.14159
+sprite_frames = ExtResource("5")
+frame = 37
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/rb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos2/rb/eye1"]
+position = Vector2(0, -6)
+rotation = 0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/rb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos2/rb/eye2"]
+position = Vector2(0, -6)
+rotation = -0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/rb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="sr" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 3.40339
+sprite_frames = ExtResource("5")
+frame = 38
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/sr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="brow" type="Sprite2D" parent="cattos2/sr/eye1"]
+position = Vector2(0, -6)
+rotation = 0.523599
+texture = SubResource("GradientTexture1D_gudpv")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/sr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+texture = ExtResource("26")
+flip_h = true
+
+[node name="mouth" type="Sprite2D" parent="cattos2/sr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="y" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 3.66519
+sprite_frames = ExtResource("5")
+frame = 39
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/y"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/y"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/y"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="zr" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 3.92699
+sprite_frames = ExtResource("5")
+frame = 40
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/zr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/zr"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="nb" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 4.18879
+sprite_frames = ExtResource("5")
+frame = 41
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/nb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/nb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/nb"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="mo" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 4.45059
+sprite_frames = ExtResource("5")
+frame = 42
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/mo"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/mo"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/mo"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("15")
+
+[node name="tc" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 4.71239
+sprite_frames = ExtResource("5")
+frame = 43
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/tc"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/tc"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/tc"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ru" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 4.97419
+sprite_frames = ExtResource("5")
+frame = 44
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/ru"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/ru"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/ru"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="rh" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 5.23599
+sprite_frames = ExtResource("5")
+frame = 45
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/rh"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/rh"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/rh"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="pd" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 5.49779
+sprite_frames = ExtResource("5")
+frame = 46
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/pd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/pd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/pd"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="ag" type="AnimatedSprite2D" parent="cattos2"]
+rotation = 5.75959
+sprite_frames = ExtResource("5")
+frame = 47
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos2/ag"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos2/ag"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos2/ag"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="cattos1" type="Node2D" parent="."]
+position = Vector2(0, -32)
+
+[node name="mu" type="AnimatedSprite2D" parent="cattos1"]
+sprite_frames = ExtResource("5")
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/mu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -382)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/mu"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="h" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 0.261799
+sprite_frames = ExtResource("5")
+frame = 1
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/h"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/h"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/h"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="he" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 0.523599
+sprite_frames = ExtResource("5")
+frame = 2
+offset = Vector2(0, -400)
+
+[node name="glasses" type="Sprite2D" parent="cattos1/he"]
+position = Vector2(0, -376)
+texture = ExtResource("27")
+
+[node name="li" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 0.785398
+sprite_frames = ExtResource("5")
+frame = 3
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/li"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/li"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/li"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="be" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 1.0472
+sprite_frames = ExtResource("5")
+frame = 4
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/be"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/be"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/be"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="b" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 1.309
+sprite_frames = ExtResource("5")
+frame = 5
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/b"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/b"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/b"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="c" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 1.5708
+sprite_frames = ExtResource("5")
+frame = 6
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/c"]
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/c"]
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/c"]
+position = Vector2(0, -363)
+texture = ExtResource("7")
+
+[node name="n" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 1.8326
+sprite_frames = ExtResource("5")
+frame = 7
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/n"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/n"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/n"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="o" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 2.0944
+sprite_frames = ExtResource("5")
+frame = 8
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/o"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/o"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/o"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="f" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 2.35619
+sprite_frames = ExtResource("5")
+frame = 9
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/f"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/f"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/f"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="ne" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 2.61799
+sprite_frames = ExtResource("5")
+frame = 10
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/ne"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-14, -382)
+texture = ExtResource("17")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/ne"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(14, -382)
+texture = ExtResource("17")
+
+[node name="na" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 2.87979
+sprite_frames = ExtResource("5")
+frame = 11
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/na"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/na"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/na"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="mg" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 3.14159
+sprite_frames = ExtResource("5")
+frame = 12
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/mg"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/mg"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/mg"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="al" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 3.40339
+sprite_frames = ExtResource("5")
+frame = 13
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/al"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/al"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/al"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="si" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 3.66519
+sprite_frames = ExtResource("5")
+frame = 14
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/si"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/si"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/si"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="glasses" type="Sprite2D" parent="cattos1/si"]
+position = Vector2(0, -376)
+texture = ExtResource("28")
+
+[node name="p" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 3.92699
+sprite_frames = ExtResource("5")
+frame = 15
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/p"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/p"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/p"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="s" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 4.18879
+sprite_frames = ExtResource("5")
+frame = 16
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/s"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/s"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/s"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="cl" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 4.45059
+sprite_frames = ExtResource("5")
+frame = 17
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/cl"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/cl"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/cl"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="ar" type="AnimatedSprite2D" parent="cattos1"]
+rotation = 4.71239
+sprite_frames = ExtResource("5")
+frame = 18
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/ar"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-14, -382)
+texture = ExtResource("17")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/ar"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(14, -382)
+texture = ExtResource("17")
+
+[node name="k" type="AnimatedSprite2D" parent="cattos1"]
+rotation = -1.309
+sprite_frames = ExtResource("5")
+frame = 19
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/k"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/k"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/k"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="ca" type="AnimatedSprite2D" parent="cattos1"]
+rotation = -1.0472
+sprite_frames = ExtResource("5")
+frame = 20
+offset = Vector2(0, -400)
+
+[node name="fangs" type="Sprite2D" parent="cattos1/ca"]
+texture = ExtResource("29")
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/ca"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/ca"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="sc" type="AnimatedSprite2D" parent="cattos1"]
+rotation = -0.785398
+sprite_frames = ExtResource("5")
+frame = 21
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/sc"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/sc"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/sc"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="ti" type="AnimatedSprite2D" parent="cattos1"]
+rotation = -0.523599
+sprite_frames = ExtResource("5")
+frame = 22
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/ti"]
+position = Vector2(-14, -378)
+texture = ExtResource("30")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/ti"]
+position = Vector2(14, -378)
+texture = ExtResource("30")
+
+[node name="v" type="AnimatedSprite2D" parent="cattos1"]
+rotation = -0.261799
+sprite_frames = ExtResource("5")
+frame = 23
+offset = Vector2(0, -400)
+
+[node name="eye1" type="Sprite2D" parent="cattos1/v"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="eye2" type="Sprite2D" parent="cattos1/v"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(12, -382)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6")
+
+[node name="mouth" type="Sprite2D" parent="cattos1/v"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -363)
+texture = ExtResource("16")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="main" type="Node2D" parent="."]
+texture_filter = 2
+
+[node name="logo" type="Sprite2D" parent="main"]
+texture_filter = 2
+position = Vector2(0, -48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("31")
+
+[node name="version" type="Label" parent="main/logo"]
+self_modulate = Color(1, 1, 1, 0.501961)
+offset_left = -293.333
+offset_top = -48.0
+offset_right = 154.667
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 16
+text = "Alpha 0.13"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="play" type="Button" parent="main"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = 40.0
+offset_right = 64.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+flat = true
+
+[node name="about" type="Button" parent="main"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = 88.0
+offset_right = 64.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "About"
+flat = true
+
+[node name="credits" type="Button" parent="main"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = 136.0
+offset_right = 64.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+flat = true
+
+[node name="quit" type="Button" parent="main"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = 184.0
+offset_right = 64.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+flat = true
+
+[node name="fact" type="Label" parent="main"]
+offset_left = -224.0
+offset_top = -256.0
+offset_right = 224.0
+offset_bottom = -160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 16
+text = "Fact of the day:
+The most common form of hydrogen is protium, an atom with one proton, one electron and no neutrons."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="happyholidays" type="Sprite2D" parent="main"]
+texture_filter = 2
+position = Vector2(576, 320)
+texture = ExtResource("33")
+offset = Vector2(-250, -130)
+
+[node name="about" type="Node2D" parent="."]
+visible = false
+texture_filter = 2
+
+[node name="text" type="Label" parent="about"]
+offset_left = -304.0
+offset_top = -328.0
+offset_right = 304.0
+offset_bottom = 328.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 24
+text = "This is a sandbox where you can play around
+with kitties based on the chemical elements. Each catto's personality and appearance is based on the properties, applications, or sometimes just the namesake, of their respective element.
+
+The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
+
+This project was made by Lily P. Irie and largely made possible by the amazing Element Cattos
+community! Be sure to check out the original
+blog at tumblr.com/elementcattos!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="about"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = -288.0
+offset_right = 64.0
+offset_bottom = -224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "[Back]"
+flat = true
+
+[node name="credits" type="Node2D" parent="."]
+visible = false
+texture_filter = 2
+
+[node name="text" type="Label" parent="credits"]
+offset_left = -288.0
+offset_top = -328.0
+offset_right = 288.0
+offset_bottom = 328.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 24
+text = "Music - Oberorka, Kevin MacLeod
+
+Programming - Oberorka
+
+Spritework - Oberorka, SciphonPylon, Velcrow101, Mobropro, CiaaiK, Shard, ir1sh, truserwav, wk
+
+The author(s) of each catto's design is/are credited when you hover over them, as well as in the ReadMe file"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="credits"]
+texture_filter = 2
+offset_left = -64.0
+offset_top = -288.0
+offset_right = 64.0
+offset_bottom = -224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "[Back]"
+flat = true
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34")
+pitch_scale = 0.7
+autoplay = true
+
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35")
+volume_db = -5.0
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36")
+pitch_scale = 1.5
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "bob"
+speed_scale = 0.7
+libraries = {
+"": SubResource("AnimationLibrary_6aryv")
+}
+
+[node name="snow" type="CPUParticles2D" parent="."]
+texture_filter = 2
+position = Vector2(0, -344)
+amount = 200
+lifetime = 3.0
+speed_scale = 0.25
+texture = SubResource("GradientTexture2D_um050")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1)
+spread = 180.0
+initial_velocity_max = 200.0
+radial_accel_min = -10.0
+radial_accel_max = 10.0
+tangential_accel_min = -1.0
+tangential_accel_max = 1.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_c88ps")
+
+[node name="iris" type="Node2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(500, 500)
+
+[node name="sprite" type="Sprite2D" parent="iris"]
+texture = ExtResource("37")
+
+[node name="sprite2" type="Sprite2D" parent="iris"]
+scale = Vector2(5, 5)
+texture = ExtResource("37")
+
+[node name="sprite3" type="Sprite2D" parent="iris"]
+scale = Vector2(25, 25)
+texture = ExtResource("37")
+
+[node name="sprite4" type="Sprite2D" parent="iris"]
+scale = Vector2(125, 125)
+texture = ExtResource("37")
+
+[node name="sprite5" type="Sprite2D" parent="iris"]
+scale = Vector2(500, 500)
+texture = ExtResource("37")
+
+[node name="sprite6" type="Sprite2D" parent="iris"]
+scale = Vector2(2000, 2000)
+texture = ExtResource("37")
+
+[connection signal="mouse_entered" from="main/play" to="." method="_button_hover" flags=19]
+[connection signal="pressed" from="main/play" to="." method="_button_press" flags=19]
+[connection signal="pressed" from="main/play" to="." method="_on_play_pressed" flags=19]
+[connection signal="mouse_entered" from="main/about" to="." method="_button_hover" flags=19]
+[connection signal="pressed" from="main/about" to="." method="_on_about_pressed" flags=19]
+[connection signal="pressed" from="main/about" to="." method="_button_press" flags=19]
+[connection signal="mouse_entered" from="main/credits" to="." method="_button_hover" flags=19]
+[connection signal="pressed" from="main/credits" to="." method="_button_press" flags=19]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed" flags=19]
+[connection signal="mouse_entered" from="main/quit" to="." method="_button_hover" flags=19]
+[connection signal="pressed" from="main/quit" to="." method="_button_press" flags=19]
+[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed" flags=19]
+[connection signal="mouse_entered" from="about/back" to="." method="_button_hover" flags=19]
+[connection signal="pressed" from="about/back" to="." method="_button_press" flags=19]
+[connection signal="pressed" from="about/back" to="." method="_on_back_pressed" flags=19]
+[connection signal="mouse_entered" from="credits/back" to="." method="_button_hover" flags=19]
+[connection signal="pressed" from="credits/back" to="." method="_button_press" flags=19]
+[connection signal="pressed" from="credits/back" to="." method="_on_back_pressed" flags=19]

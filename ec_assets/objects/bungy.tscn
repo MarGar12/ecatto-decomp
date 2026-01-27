@@ -1,0 +1,1030 @@
+[gd_scene load_steps=167 format=3 uid="uid://d2ppi0lfnno61"]
+
+[ext_resource type="Script" path="res://ec_assets/objects/bungy.gd" id="1"]
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://uhajh6trlqh4" path="res://ec_assets/textures/cattos/bungy/bungy_muonium.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dnxxa5fkhqlml" path="res://ec_assets/textures/cattos/bungy/bungy_hydrogen.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c80ujqoibjkwf" path="res://ec_assets/textures/cattos/bungy/bungy_helium.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bj72cglq16cm7" path="res://ec_assets/textures/cattos/bungy/bungy_lithium.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://uao6bwi5bj2d" path="res://ec_assets/textures/cattos/bungy/bungy_beryllium.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dd0ynx86fvdek" path="res://ec_assets/textures/cattos/bungy/bungy_boron.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b0eud3maslg0i" path="res://ec_assets/textures/cattos/bungy/bungy_carbon.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cdwj4o8aqsf6t" path="res://ec_assets/textures/cattos/bungy/bungy_nitrogen.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://ibgm5t4ue16f" path="res://ec_assets/textures/cattos/bungy/bungy_oxygen.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://jejpyji1ehqf" path="res://ec_assets/textures/cattos/bungy/bungy_fluorine.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://buqavcme8vg4i" path="res://ec_assets/textures/cattos/bungy/bungy-neon.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cxbw8btlbd0s1" path="res://ec_assets/textures/cattos/bungy/bungy-sodium.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://d0lqvanx2imhe" path="res://ec_assets/textures/cattos/bungy/bungy-magnesium.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://m2larnlptd6b" path="res://ec_assets/textures/cattos/bungy/bungy-aluminium.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bnqyjcvg14fwa" path="res://ec_assets/textures/cattos/bungy/bungy-silicon.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bon8y8hkam2al" path="res://ec_assets/textures/cattos/bungy/bungy-phosphorus.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cscidd2aw4x8g" path="res://ec_assets/textures/cattos/bungy/bungy-sulfur.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cg4egvrwb2tad" path="res://ec_assets/textures/cattos/bungy/bungy-chlorine.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://dk0y6v2rkhmoh" path="res://ec_assets/textures/cattos/bungy/bungy-argon.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://c7fywdafqllj5" path="res://ec_assets/textures/cattos/bungy/bungy-potassium.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://ugq8mhtl6e8d" path="res://ec_assets/textures/cattos/bungy/bungy-calcium.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://c587m4f708mec" path="res://ec_assets/textures/cattos/bungy/bungy_scandium.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://x4e7km107mui" path="res://ec_assets/textures/cattos/bungy/bungy-titanium.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://dl87j0h7bjy43" path="res://ec_assets/textures/cattos/bungy/bungy-vanadium.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://dtipq52mk3ryy" path="res://ec_assets/textures/cattos/bungy/bungy_chromium.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://br2prphessdqm" path="res://ec_assets/textures/cattos/bungy/bungy-manganese.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cmg6op6eg2kvx" path="res://ec_assets/textures/cattos/bungy/bungy-iron.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://tfau3w8643o4" path="res://ec_assets/textures/cattos/bungy/bungy-cobalt.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://deq7mt65vyt4s" path="res://ec_assets/textures/cattos/bungy/bungy-nickel.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://8a6gp4tjelic" path="res://ec_assets/textures/cattos/bungy/bungy-copper.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://l0aeb5unf01l" path="res://ec_assets/textures/cattos/bungy/bungy-zinc.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://ugpryh7xne7k" path="res://ec_assets/textures/cattos/bungy/bungy-gallium.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://bk8ycimtuvaja" path="res://ec_assets/textures/cattos/bungy/bungy-germanium.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://dcavo3ytltuc0" path="res://ec_assets/textures/cattos/bungy/bungy_arsenic.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://csrt027jxuvnf" path="res://ec_assets/textures/cattos/bungy/bungy-selenium.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://0iaycm4v7ua1" path="res://ec_assets/textures/cattos/bungy/bungy-bromine.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://vcy3ou82vayg" path="res://ec_assets/textures/cattos/bungy/bungy-krypton.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://cwajeicf4prl6" path="res://ec_assets/textures/cattos/bungy/bungy-rubidium.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://n5v7jfede0tm" path="res://ec_assets/textures/cattos/bungy/bungy-strontium.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://qpsitxo27g8g" path="res://ec_assets/textures/cattos/bungy/bungy-yttrium.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://kg5nhjy1vgox" path="res://ec_assets/textures/cattos/bungy/bungy-zirconium.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://b4q7md8rdp3n4" path="res://ec_assets/textures/cattos/bungy/bungy-niobium.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://clhgr5qp3l466" path="res://ec_assets/textures/cattos/bungy/bungy-molybdenum.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://dr5bv17o4vwcj" path="res://ec_assets/textures/cattos/bungy/bungy-technetium.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://crt4rpj6611mi" path="res://ec_assets/textures/cattos/bungy/bungy-ruthenium.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://bnhtqian6jlxv" path="res://ec_assets/textures/cattos/bungy/bungy-rhodium.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://chsv20srtl4d2" path="res://ec_assets/textures/cattos/bungy/bungy-palladium.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://dvu4ykqe7fwyq" path="res://ec_assets/textures/cattos/bungy/bungy-silver.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://dy0axi8n7fe58" path="res://ec_assets/textures/cattos/bungy/bungy-cadmium.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://bugch2v37kr11" path="res://ec_assets/textures/cattos/bungy/bungy-indium.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://byw57xblw1cuy" path="res://ec_assets/textures/cattos/bungy/bungy-tin.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://wae55ahbqqxp" path="res://ec_assets/textures/cattos/bungy/bungy-antimony.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://ckff1acdhbwpk" path="res://ec_assets/textures/cattos/bungy/bungy-tellurium.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://dqdyofxfrl1bo" path="res://ec_assets/textures/cattos/bungy/bungy-iodine.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://c5oiiq3ap7im" path="res://ec_assets/textures/cattos/bungy/bungy-xenon.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://c63ude8onxixc" path="res://ec_assets/textures/cattos/bungy/bungy-caesium.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://c0bvakcwgjtea" path="res://ec_assets/textures/cattos/bungy/bungy-barium.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://bb55k4mr4nv0h" path="res://ec_assets/textures/cattos/bungy/bungy-lanthanum.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://b6heph4ukecuh" path="res://ec_assets/textures/cattos/bungy/bungy-cerium.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://dsfhbnlur1hsx" path="res://ec_assets/textures/cattos/bungy/bungy-praseodymium.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://ryorcmcq0t3a" path="res://ec_assets/textures/cattos/bungy/bungy-neodymium.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://bnb7851q1nilt" path="res://ec_assets/textures/cattos/bungy/bungy-promethium.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://u6np7tnw84so" path="res://ec_assets/textures/cattos/bungy/bungy-samarium.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://s8kcg7jpj7ig" path="res://ec_assets/textures/cattos/bungy/bungy-europium.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://jxqkcq557ca4" path="res://ec_assets/textures/cattos/bungy/bungy-gadolinium.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://ykhsx45yqxis" path="res://ec_assets/textures/cattos/bungy/bungy-terbium.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://b8r605d30gmwp" path="res://ec_assets/textures/cattos/bungy/bungy_dysprosium.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://bqpgg7oqfj8at" path="res://ec_assets/textures/cattos/bungy/bungy-holmium.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://bsbjhw6h8hvby" path="res://ec_assets/textures/cattos/bungy/bungy-erbium.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://caq876lky813s" path="res://ec_assets/textures/cattos/bungy/bungy-thulium.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://blya62yf2gfay" path="res://ec_assets/textures/cattos/bungy/bungy-ytterbium.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://su6jcu5vl4vo" path="res://ec_assets/textures/cattos/bungy/bungy-lutetium.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://bcdifjgie0fal" path="res://ec_assets/textures/cattos/bungy/bungy-hafnium.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://krt1x8e250yq" path="res://ec_assets/textures/cattos/bungy/bungy-tantalum.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://dwd4xe1tdks0p" path="res://ec_assets/textures/cattos/bungy/bungy-tungsten.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://drpn5kc0xxkyg" path="res://ec_assets/textures/cattos/bungy/bungy-rhenium.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://d2vbhvsk5b6ow" path="res://ec_assets/textures/cattos/bungy/bungy-osmium.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://dtl15gtjl4euc" path="res://ec_assets/textures/cattos/bungy/bungy-iridium.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://byknwpuaenqrt" path="res://ec_assets/textures/cattos/bungy/bungy-platinum.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://ygdnedt7waco" path="res://ec_assets/textures/cattos/bungy/bungy-gold.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://cgvfuo5fvc1k8" path="res://ec_assets/textures/cattos/bungy/bungy-mercury.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://brw6yu6momih8" path="res://ec_assets/textures/cattos/bungy/bungy-thallium.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://cai0qrhd5a3lh" path="res://ec_assets/textures/cattos/bungy/bungy-lead.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://yji7o44b8o04" path="res://ec_assets/textures/cattos/bungy/bungy-bismuth.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://bqsji4qsg8q0k" path="res://ec_assets/textures/cattos/bungy/bungy-polonium.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://fe5c314rih7" path="res://ec_assets/textures/cattos/bungy/bungy-astatine.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://bae47lxbxda5h" path="res://ec_assets/textures/cattos/bungy/bungy-radon.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://c8vdlwc6g4afb" path="res://ec_assets/textures/cattos/bungy/bungy-francium.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://bjf3ms1xmwixs" path="res://ec_assets/textures/cattos/bungy/bungy-radium.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://mrdm6jgjkfx" path="res://ec_assets/textures/cattos/bungy/bungy-actinium.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://daoomy0jj568" path="res://ec_assets/textures/cattos/bungy/bungy-thorium.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://ci4o3eety1xgu" path="res://ec_assets/textures/cattos/bungy/bungy-protactinium.png" id="94"]
+[ext_resource type="Texture2D" uid="uid://cvyawdjfw65lr" path="res://ec_assets/textures/cattos/bungy/bungy-uranium.png" id="95"]
+[ext_resource type="Texture2D" uid="uid://cm2wqgrfuslq5" path="res://ec_assets/textures/cattos/bungy/bungy-neptunium.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://byhgbwr8ck8y" path="res://ec_assets/textures/cattos/bungy/bungy-plutonium.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://b7mn80me6ulws" path="res://ec_assets/textures/cattos/bungy/bungy_americium.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://cmqk2nk6ww0gt" path="res://ec_assets/textures/cattos/bungy/bungy-curium.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://b4mqh117swoej" path="res://ec_assets/textures/cattos/bungy/bungy-berkelium.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://cfrfe480erehc" path="res://ec_assets/textures/cattos/bungy/bungy-einsteinium.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://b21yd8ghasr7v" path="res://ec_assets/textures/cattos/bungy/bungy-fermium.png" id="102"]
+[ext_resource type="Texture2D" uid="uid://cd23dwqkfcdmx" path="res://ec_assets/textures/cattos/bungy/bungy-mendelevium.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://d14368xnnyq5t" path="res://ec_assets/textures/cattos/bungy/bungy-nobelium.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://bx1fx17d34ior" path="res://ec_assets/textures/cattos/bungy/bungy-lawrencium.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://cs7uqqykdtxdp" path="res://ec_assets/textures/cattos/bungy/bungy-rutherfordium.png" id="106"]
+[ext_resource type="Texture2D" uid="uid://b6ocbfw5v33bp" path="res://ec_assets/textures/cattos/bungy/bungy-seaborgium.png" id="107"]
+[ext_resource type="Texture2D" uid="uid://dm14hatkhqijf" path="res://ec_assets/textures/cattos/bungy/bungy-bohrium.png" id="108"]
+[ext_resource type="Texture2D" uid="uid://cc1uo0eownkk1" path="res://ec_assets/textures/cattos/bungy/bungy-hassium.png" id="109"]
+[ext_resource type="Texture2D" uid="uid://gum8xp0e6mqv" path="res://ec_assets/textures/cattos/bungy/bungy-darmstadtium.png" id="110"]
+[ext_resource type="Texture2D" uid="uid://mkhhku2ewi8d" path="res://ec_assets/textures/cattos/bungy/bungy-roentgenium.png" id="111"]
+[ext_resource type="Texture2D" uid="uid://byn7r1l34dbyf" path="res://ec_assets/textures/cattos/bungy/bungy-copernicium.png" id="112"]
+[ext_resource type="Texture2D" uid="uid://82oocdu4imy7" path="res://ec_assets/textures/cattos/bungy/bungy-nihonium.png" id="113"]
+[ext_resource type="Texture2D" uid="uid://cr52xwlyfu11s" path="res://ec_assets/textures/cattos/bungy/bungy-flerovium.png" id="114"]
+[ext_resource type="Texture2D" uid="uid://cs4r7djteulht" path="res://ec_assets/textures/cattos/bungy/bungy-moscovium.png" id="115"]
+[ext_resource type="Texture2D" uid="uid://mwwwtvy7etsf" path="res://ec_assets/textures/cattos/bungy/bungy-livermorium.png" id="116"]
+[ext_resource type="Texture2D" uid="uid://c2scs2ti0f87y" path="res://ec_assets/textures/cattos/bungy/bungy-tennessine.png" id="117"]
+[ext_resource type="Texture2D" uid="uid://60wkq3iirap3" path="res://ec_assets/textures/cattos/bungy/bungy-oganesson.png" id="118"]
+[ext_resource type="Texture2D" uid="uid://5imoln41n2lc" path="res://ec_assets/textures/cattos/bungy/bungy-ununennium.png" id="119"]
+[ext_resource type="Texture2D" uid="uid://bowgyet1tkjde" path="res://ec_assets/textures/cattos/bungy/bungy-h2.png" id="120"]
+[ext_resource type="Texture2D" uid="uid://jfdbh6h58w7m" path="res://ec_assets/textures/cattos/bungy/bungy-h3.png" id="121"]
+[ext_resource type="Texture2D" uid="uid://6bbhsahe5i0u" path="res://ec_assets/textures/cattos/bungy/bungy-h4.png" id="122"]
+[ext_resource type="Texture2D" uid="uid://dabr80nxty5x7" path="res://ec_assets/textures/cattos/bungy/bungy-h5.png" id="123"]
+[ext_resource type="Texture2D" uid="uid://b332qtcbyrks6" path="res://ec_assets/textures/cattos/bungy/bungy-h6.png" id="124"]
+[ext_resource type="Texture2D" uid="uid://dwqh686uu03fv" path="res://ec_assets/textures/cattos/bungy/bungy-h7.png" id="125"]
+[ext_resource type="Texture2D" uid="uid://chwtayduipw48" path="res://ec_assets/textures/cattos/bungy/bungy-he2.png" id="126"]
+[ext_resource type="Texture2D" uid="uid://bjkq28emy7yna" path="res://ec_assets/textures/cattos/bungy/bungy-he3.png" id="127"]
+[ext_resource type="Texture2D" uid="uid://4lhk6iha2xhv" path="res://ec_assets/textures/cattos/bungy/bungy-c14.png" id="128"]
+[ext_resource type="Texture2D" uid="uid://dr36xocdkmdfr" path="res://ec_assets/textures/cattos/other/purrcent-pupil.png" id="129"]
+[ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="130"]
+[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="131"]
+[ext_resource type="AudioStream" uid="uid://bkpolr0wbq53y" path="res://ec_assets/sounds/jump.mp3" id="132"]
+[ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="133"]
+[ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="134"]
+[ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="135"]
+[ext_resource type="AudioStream" uid="uid://k26pg2olhd84" path="res://ec_assets/sounds/geiger3.wav" id="136"]
+[ext_resource type="AudioStream" uid="uid://b31mtssx7wdyt" path="res://ec_assets/sounds/pop.mp3" id="137"]
+
+[sub_resource type="Gradient" id="Gradient_iqw82"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pi6lw"]
+gradient = SubResource("Gradient_iqw82")
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_2krw5"]
+offsets = PackedFloat32Array(0, 0.2, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_xtcev"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.85)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3214m"]
+gradient = SubResource("Gradient_xtcev")
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_cwtup"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_21ouv"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqv56"]
+gradient = SubResource("Gradient_21ouv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ra37b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119")
+}],
+"loop": true,
+"name": &"elements",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("120")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128")
+}],
+"loop": true,
+"name": &"isotopes",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_cok34"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pupils/pupil1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pupils/pupil2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hr2ct"]
+resource_name = "blink"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pupils/pupil1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(4, 0.1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pupils/pupil2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(4, 0.1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c2bnw"]
+_data = {
+"RESET": SubResource("Animation_cok34"),
+"blink": SubResource("Animation_hr2ct")
+}
+
+[sub_resource type="Animation" id="Animation_gmetx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v650i"]
+resource_name = "grabbed"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0174533, 0.0174533]
+}
+
+[sub_resource type="Animation" id="Animation_qh76r"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.02, 0.98)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0v16a"]
+_data = {
+"RESET": SubResource("Animation_gmetx"),
+"grabbed": SubResource("Animation_v650i"),
+"idle": SubResource("Animation_qh76r")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bqtc"]
+size = Vector2(30, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i125"]
+size = Vector2(16, 56)
+
+[sub_resource type="Gradient" id="Gradient_71gb6"]
+offsets = PackedFloat32Array(0.1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6wfoe"]
+gradient = SubResource("Gradient_71gb6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_3ui1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../tempglow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xcfdw"]
+resource_name = "glow"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../tempglow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 6, 10, 20, 100),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0.501961, 0, 0, 0.501961), Color(1, 0.25098, 0, 1), Color(1, 0.752941, 0, 0.752941), Color(1, 1, 1, 0.627451), Color(0, 0.627451, 1, 1), Color(1, 0.627451, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ab68v"]
+_data = {
+"RESET": SubResource("Animation_3ui1t"),
+"glow": SubResource("Animation_xcfdw")
+}
+
+[sub_resource type="Gradient" id="Gradient_vvh5u"]
+offsets = PackedFloat32Array(0.75, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jurf8"]
+gradient = SubResource("Gradient_vvh5u")
+width = 80
+height = 80
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ema2"]
+radius = 24.0
+height = 72.0
+
+[sub_resource type="Gradient" id="Gradient_0lnls"]
+offsets = PackedFloat32Array(0.1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_463md"]
+gradient = SubResource("Gradient_0lnls")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lo34"]
+radius = 250.0
+
+[node name="bungy" type="CharacterBody2D"]
+script = ExtResource("1")
+
+[node name="gas" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+texture_filter = 2
+emitting = false
+amount = 50
+lifetime = 2.0
+texture = SubResource("GradientTexture2D_pi6lw")
+emission_shape = 1
+emission_sphere_radius = 30.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 10.0
+angle_max = 720.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_2krw5")
+
+[node name="drip" type="CPUParticles2D" parent="."]
+position = Vector2(0, -12)
+emitting = false
+amount = 10
+lifetime = 2.0
+texture = SubResource("GradientTexture2D_3214m")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 10)
+spread = 180.0
+gravity = Vector2(0, 100)
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_cwtup")
+
+[node name="model" type="Node2D" parent="."]
+
+[node name="select" type="Sprite2D" parent="model"]
+visible = false
+modulate = Color(1, 1, 1, 0.501961)
+texture_filter = 2
+material = ExtResource("2")
+scale = Vector2(3, 3)
+texture = SubResource("GradientTexture2D_wqv56")
+
+[node name="body" type="AnimatedSprite2D" parent="model"]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_ra37b")
+animation = &"elements"
+autoplay = "elements"
+speed_scale = 0.0
+
+[node name="face" type="Node2D" parent="model"]
+position = Vector2(0, -12)
+
+[node name="pupils" type="Node2D" parent="model/face"]
+
+[node name="pupil1" type="Sprite2D" parent="model/face/pupils"]
+position = Vector2(-10, 0)
+texture = ExtResource("129")
+
+[node name="pupil2" type="Sprite2D" parent="model/face/pupils"]
+position = Vector2(10, 0)
+texture = ExtResource("129")
+
+[node name="anim" type="AnimationPlayer" parent="model/face"]
+autoplay = "blink"
+libraries = {
+"": SubResource("AnimationLibrary_c2bnw")
+}
+
+[node name="anim" type="AnimationPlayer" parent="model"]
+autoplay = "idle"
+playback_default_blend_time = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_0v16a")
+}
+
+[node name="col_head" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_5bqtc")
+debug_color = Color(1, 1, 1, 0)
+
+[node name="col_body" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_6i125")
+debug_color = Color(1, 1, 1, 0)
+
+[node name="tempglow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0)
+texture_filter = 2
+material = ExtResource("2")
+position = Vector2(0, -8)
+scale = Vector2(5, 5)
+texture = SubResource("GradientTexture2D_6wfoe")
+
+[node name="heat" type="AnimationPlayer" parent="."]
+root_node = NodePath("../model")
+autoplay = "glow"
+playback_process_mode = 2
+libraries = {
+"": SubResource("AnimationLibrary_ab68v")
+}
+
+[node name="info" type="Node2D" parent="."]
+z_index = 5
+texture_filter = 2
+
+[node name="bg" type="Sprite2D" parent="info"]
+modulate = Color(1, 1, 1, 0.752941)
+position = Vector2(0, -96)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("GradientTexture2D_jurf8")
+
+[node name="name" type="Label" parent="info"]
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 384.0
+offset_bottom = -48.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 24
+text = "Bungy"
+horizontal_alignment = 1
+
+[node name="type" type="Label" parent="info"]
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 120.0
+offset_bottom = -32.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 12
+text = "bugin (solid)"
+horizontal_alignment = 1
+
+[node name="density" type="Label" parent="info"]
+offset_left = -40.0
+offset_top = -72.0
+offset_right = 120.0
+offset_bottom = -24.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 12
+text = "density: hes sily"
+horizontal_alignment = 1
+
+[node name="symbol" type="Label" parent="info"]
+offset_left = -40.0
+offset_top = -152.0
+offset_right = 120.0
+offset_bottom = -8.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 64
+text = "Bu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="clank1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("130")
+volume_db = 5.0
+pitch_scale = 2.0
+attenuation = 2.0
+script = ExtResource("131")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("132")
+volume_db = 5.0
+attenuation = 2.0
+script = ExtResource("131")
+
+[node name="splash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("133")
+pitch_scale = 2.0
+attenuation = 2.0
+script = ExtResource("131")
+
+[node name="poof" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("134")
+pitch_scale = 1.5
+script = ExtResource("131")
+
+[node name="spawn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("135")
+volume_db = 5.0
+script = ExtResource("131")
+
+[node name="geiger" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("136")
+pitch_scale = 1.5
+max_distance = 1000.0
+attenuation = 2.0
+script = ExtResource("131")
+
+[node name="morph" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("137")
+volume_db = 5.0
+attenuation = 2.0
+script = ExtResource("131")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_8ema2")
+debug_color = Color(1, 0, 0, 0)
+
+[node name="flash" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 2
+material = ExtResource("2")
+scale = Vector2(4, 4)
+texture = SubResource("GradientTexture2D_463md")
+
+[node name="range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_1lo34")
+debug_color = Color(1, 1, 0, 0)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered" flags=19]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered" flags=19]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited" flags=19]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered" flags=19]
