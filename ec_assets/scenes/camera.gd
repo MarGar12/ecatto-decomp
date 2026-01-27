@@ -2,7 +2,7 @@ extends Camera2D
 
 var spawn_sel = 0
 
-var presets = ["custom","standard","the Moon","deep space","Sun core"]
+var presets = ["None","Standard","The Moon","Deep Space","Sun Core"]
 var preset = 1
 
 func _unhandled_input(event):
@@ -29,6 +29,7 @@ func sync_settings():
 	$ui/pause/gaspoof.button_pressed = glob.poof
 	$ui/pause/weakforce.button_pressed = glob.weakforce
 	$ui/pause/end_world.button_pressed = glob.endable_world
+	$ui/pause/hud_scale.button_pressed = glob.hudscaling
 	$ui/pause/catto_ai.button_pressed = glob.catto_ai
 	$ui/pause/rotat.button_pressed = glob.catto_rotat
 
@@ -44,6 +45,21 @@ func _process(delta):
 	$ui/botleft.position.x = -get_window().size.x/4.0
 	$ui/botleft.position.y = get_window().size.y/4.0
 	$ui/botright.position = get_window().size/4.0
+	# Change camera scale based on window size -- from ec+
+	var smult = min(get_window().size.x / 1152.0, get_window().size.y / 648.0)
+	$ui/pause.scale = Vector2.ONE * smult / 1.5
+	if glob.hudscaling == true:
+		$ui/topleft.scale = Vector2.ONE * smult
+		$ui/topright.scale = Vector2.ONE * smult / 1.5
+		$ui/center.scale = Vector2.ONE * smult
+		$ui/botleft.scale = Vector2.ONE * smult
+		$ui/botright.scale = Vector2.ONE * smult
+	else:
+		$ui/topleft.scale = Vector2.ONE
+		$ui/topright.scale = Vector2.ONE 
+		$ui/center.scale = Vector2.ONE
+		$ui/botleft.scale = Vector2.ONE
+		$ui/botright.scale = Vector2.ONE
 	
 	if glob.rate >= 0.001: $ui/topright/rate.text = "time rate: " + str(glob.rate)
 	else: $ui/topright/rate.text = "time rate: 1e" + str($ui/topright/rateslider.value)
@@ -127,6 +143,8 @@ func _on_weakforce_toggled(button_pressed):
 	glob.weakforce = button_pressed
 func _on_end_world_toggled(button_pressed):
 	glob.endable_world = button_pressed
+func _on_hud_scale_toggled(button_pressed):
+	glob.hudscaling = button_pressed
 func _on_catto_ai_toggled(button_pressed):
 	glob.catto_ai = button_pressed
 func _on_rotat_toggled(button_pressed):
@@ -233,12 +251,14 @@ func _on_help_pressed():
 	glob.tutorial = true
 
 func reset_conditions():
-	preset = 1
-	glob.t_power = 0
-	glob.pressure = 1
-	glob.gravity = 9.81
-	$ui/topright/presslider.value = glob.pressure
-	$ui/topright/gravslider.value = glob.gravity/9.81
+	reset_settings()
+	sync_settings()
+	#preset = 1
+	#glob.t_power = 0
+	#glob.pressure = 1
+	#glob.gravity = 9.81
+	#$ui/topright/presslider.value = glob.pressure
+	#$ui/topright/gravslider.value = glob.gravity/9.81
 
 func reset_settings():
 	glob.explosions = true
@@ -252,6 +272,7 @@ func reset_settings():
 	glob.endable_world = true
 	glob.catto_ai = true
 	glob.catto_rotat = true
+	glob.hudscaling = true
 
 func _on_settings_reset_pressed():
 	reset_settings()

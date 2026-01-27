@@ -2481,14 +2481,15 @@ texture = ExtResource("31")
 
 [node name="version" type="Label" parent="main/logo" unique_id=1283657918]
 self_modulate = Color(1, 1, 1, 0.501961)
-offset_left = -293.333
-offset_top = -48.0
-offset_right = 154.667
-offset_bottom = 48.0
+offset_left = -293.33334
+offset_top = -37.333332
+offset_right = 154.66666
+offset_bottom = 58.666668
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("32")
 theme_override_font_sizes/font_size = 16
-text = "Alpha 0.13"
+text = "Alpha 0.13
+Decomp 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -2519,12 +2520,25 @@ theme_override_font_sizes/font_size = 32
 text = "About"
 flat = true
 
+[node name="decompcredits" type="Button" parent="main" unique_id=882773724]
+texture_filter = 2
+offset_left = -111.0
+offset_top = 134.0
+offset_right = 113.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "About Decomp"
+flat = true
+
 [node name="credits" type="Button" parent="main" unique_id=1844929267]
 texture_filter = 2
-offset_left = -64.0
-offset_top = 136.0
-offset_right = 64.0
-offset_bottom = 184.0
+offset_left = -67.0
+offset_top = 177.0
+offset_right = 69.0
+offset_bottom = 225.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2535,9 +2549,9 @@ flat = true
 [node name="quit" type="Button" parent="main" unique_id=2021964447]
 texture_filter = 2
 offset_left = -64.0
-offset_top = 184.0
+offset_top = 221.0
 offset_right = 64.0
-offset_bottom = 232.0
+offset_bottom = 269.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2618,6 +2632,8 @@ text = "Music - Oberorka, Kevin MacLeod
 
 Programming - Oberorka
 
+
+
 Spritework - Oberorka, SciphonPylon, Velcrow101, Mobropro, CiaaiK, Shard, ir1sh, truserwav, wk
 
 The author(s) of each catto's design is/are credited when you hover over them, as well as in the ReadMe file"
@@ -2626,6 +2642,41 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="back" type="Button" parent="credits" unique_id=899434541]
+texture_filter = 2
+offset_left = -64.0
+offset_top = -288.0
+offset_right = 64.0
+offset_bottom = -224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 32
+text = "[Back]"
+flat = true
+
+[node name="decompcredits" type="Node2D" parent="." unique_id=238870511]
+visible = false
+texture_filter = 2
+
+[node name="text" type="Label" parent="decompcredits" unique_id=1627116789]
+offset_left = -288.0
+offset_top = -328.0
+offset_right = 288.0
+offset_bottom = 328.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("32")
+theme_override_font_sizes/font_size = 24
+text = "This decomp mod is made by Mups!
+
+Aimed towards adding cross platform support and moddability! Along with some little modifications I think :P
+
+Find the source code here:
+https://git.gay/mupsie/ecatto-decomp.git"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="decompcredits" unique_id=70607431]
 texture_filter = 2
 offset_left = -64.0
 offset_top = -288.0
@@ -2708,6 +2759,9 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
 [connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
+[connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
+[connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
+[connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
@@ -2720,3 +2774,6 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]

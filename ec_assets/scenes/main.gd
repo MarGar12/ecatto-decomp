@@ -9,13 +9,13 @@ func _ready():
 	glob.pause = false
 	glob.cattos = 0
 	glob.particles = 0
-	get_window().title = "Element Cattos"
+	get_window().title = "Element Cattos Decomp"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#debug stuff
-	get_window().title = "Element Cattos - " + str(glob.cattos) + " cattos, " + str(glob.particles) + " particles (" + str(Engine.get_frames_per_second()).pad_decimals(0) + "fps)"
+	get_window().title = str(glob.cattos) + " Cattos, " + str(glob.particles) + " Particles || " + str(RenderingServer.get_current_rendering_driver_name()) + " " + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS Frame " + str(Engine.get_frames_drawn()).pad_decimals(0)
 	
 	$hint.visible = glob.tutorial
 	$air.self_modulate.a = glob.pressure/5.0
@@ -73,5 +73,5 @@ func _on_ok_pressed():
 
 func _on_xmasart_pressed():
 	$walls/opaque/xmas_art.visible = !$walls/opaque/xmas_art.visible
-	if $walls/opaque/xmas_art.visible: $walls/opaque/xmasart.text = "Xmas art on"
-	else: $walls/opaque/xmasart.text = "Xmas art off"
+	if $walls/opaque/xmas_art.visible: $walls/opaque/xmasart.text = "Christmas Art: on"
+	else: $walls/opaque/xmasart.text = "Christmas Art: off"

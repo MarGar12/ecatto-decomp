@@ -28,6 +28,7 @@ var t_speed = 1.0
 var fusion_threshold = 1.0
 var weakforce = true
 var endable_world = true
+var hudscaling = true
 var poof = true
 var catto_ai = true
 var catto_rotat = true

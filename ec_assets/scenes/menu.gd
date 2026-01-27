@@ -1,6 +1,28 @@
 extends Node2D
 
-var facts = ["Muonium is an exotic element, one of several that you won't find on a real periodic table.","The most common form of Hydrogen is Protium, an atom with one proton, one electron and no neutrons.","Helium's freezing temperature is normally below absolute zero, which means solid Helium is normally impossible.","Lithium and other alkali metals are very reactive, catching fire or even exploding on contact with water.","Pure beryllium is grey. The catto's color is based on emerald, which contains beryllium.","Boron cannot be naturally created through nuclear fusion in stars; he is only produced by cosmic rays and supernovae.","Carbon is the fourth most common element in the universe.","Nitrogen is called Azote in some languages, which means ''no life'' in Ancient Greek.","Oxygen is the third most common element in the universe.","Fluorine is one of the few gases that actually have a colour, in this case a very pale yellow.","Noble gases like Neon never burn.","Sodium is monoisotopic - he only has one stable form, Sodium-23.","Magnesium is good for your body! You can find her in most fruits and vegetables.","Aluminium won't protect you from aliens, sorry.","Silicon is in your walls.","Phosphorus is one of the six most common elements in living things, the others being Hydrogen, Carbon, Nitrogen, Oxygen and Sulfur.","Sulfur tends to form eight-atom rings; she's called Octasulfur when she does that.","Chlorine is a halogen, meaning she's extremely reactive and pretty dangerous. That's why she is used to kill bacteria in pools.","Argon is the third most common element in Earth's atmosphere, after Nitrogen and Oxygen.","Bananas contain a tiny bit of antimatter thanks to Potassium-40, who lives in them and spits out positrons.","Calcium is found not only in milk and bones, but also deep inside the Earth's core.","Science is awesome!"]
+var facts = [ # Formatting yay :3
+	"Muonium is an exotic element, one of several that you won't find on a real periodic table.",
+	"The most common form of Hydrogen is Protium, an atom with one proton, one electron and no neutrons.",
+	"Helium's freezing temperature is normally below absolute zero, which means solid Helium is normally impossible.",
+	"Lithium and other alkali metals are very reactive, catching fire or even exploding on contact with water.",
+	"Pure beryllium is grey. The catto's color is based on emerald, which contains beryllium.",
+	"Boron cannot be naturally created through nuclear fusion in stars; he is only produced by cosmic rays and supernovae.",
+	"Carbon is the fourth most common element in the universe.",
+	"Nitrogen is called Azote in some languages, which means ''no life'' in Ancient Greek.",
+	"Oxygen is the third most common element in the universe.",
+	"Fluorine is one of the few gases that actually have a colour, in this case a very pale yellow.",
+	"Noble gases like Neon never burn.","Sodium is monoisotopic - he only has one stable form, Sodium-23.",
+	"Magnesium is good for your body! You can find her in most fruits and vegetables.",
+	"Aluminium won't protect you from aliens, sorry.",
+	"Silicon is in your walls.",
+	"Phosphorus is one of the six most common elements in living things, the others being Hydrogen, Carbon, Nitrogen, Oxygen and Sulfur.",
+	"Sulfur tends to form eight-atom rings; she's called Octasulfur when she does that.",
+	"Chlorine is a halogen, meaning she's extremely reactive and pretty dangerous. That's why she is used to kill bacteria in pools.",
+	"Argon is the third most common element in Earth's atmosphere, after Nitrogen and Oxygen.",
+	"Bananas contain a tiny bit of antimatter thanks to Potassium-40, who lives in them and spits out positrons.",
+	"Calcium is found not only in milk and bones, but also deep inside the Earth's core.",
+	"Science is awesome!"
+	]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +68,7 @@ func _on_about_pressed():
 func _on_back_pressed():
 	$about.hide()
 	$credits.hide()
+	$decompcredits.hide()
 	$main.show()
 
 func _button_hover():
@@ -56,3 +79,7 @@ func _button_press():
 func _on_credits_pressed():
 	$main.hide()
 	$credits.show()
+
+func _on_decompcredits_pressed():
+	$main.hide()
+	$decompcredits.show()

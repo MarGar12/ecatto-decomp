@@ -15,7 +15,7 @@ func _process(delta):
 	$atom.modulate.a = $bg.self_modulate.v*2
 	
 	loading_status = ResourceLoader.load_threaded_get_status("res://ec_assets/scenes/main.tscn", progress)
-	$Label.text = "Loading\n" + str(floor(progress[0]*100)).pad_decimals(0) + "%"
+	$Label.text = str(floor(progress[0]*100)).pad_decimals(0) + "%"
 	if ResourceLoader.load_threaded_get_status("res://ec_assets/scenes/main.tscn") == ResourceLoader.THREAD_LOAD_LOADED:
 		ResourceLoader.load_threaded_request("res://ec_assets/scenes/earth_explodes.tscn")
 	if ResourceLoader.load_threaded_get_status("res://ec_assets/scenes/earth_explodes.tscn") == ResourceLoader.THREAD_LOAD_LOADED:

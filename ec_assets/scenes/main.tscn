@@ -182,6 +182,7 @@ script = ExtResource("1")
 [node name="bg" type="Node2D" parent="." unique_id=540195463]
 z_index = -20
 texture_filter = 2
+position = Vector2(0, 2413)
 
 [node name="moon" type="Node2D" parent="bg" unique_id=784298813]
 visible = false
@@ -317,9 +318,9 @@ modulate = Color(0.501961, 0.752941, 1, 0.12549)
 z_index = -9
 texture_filter = 2
 material = ExtResource("2")
-position = Vector2(0, -1024)
+position = Vector2(0.0031027058, 199.85938)
 rotation = 3.14159
-scale = Vector2(8, 8)
+scale = Vector2(8, 17.5614)
 texture = SubResource("NoiseTexture2D_non60")
 
 [node name="heat" type="AnimationPlayer" parent="air" unique_id=1468900670]
@@ -328,10 +329,12 @@ libraries/ = SubResource("AnimationLibrary_vwokr")
 autoplay = &"heat"
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=479221538]
+position = Vector2(0, 996)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1215472406]
+position = Vector2(0, 1454)
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
 
 [node name="ceiling" type="StaticBody2D" parent="." unique_id=1287230044]
@@ -341,6 +344,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling" unique_id=755101676]
+position = Vector2(0.99962986, 146)
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
 
 [node name="walls" type="StaticBody2D" parent="." unique_id=1350544310]
@@ -363,16 +367,18 @@ self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
 z_index = -10
 texture_filter = 2
 texture_repeat = 2
-scale = Vector2(4, 4)
+position = Vector2(0, 1221)
+scale = Vector2(4, 8.769531)
 texture = ExtResource("10")
 region_enabled = true
 region_rect = Rect2(0, 0, 1250, 512)
 
 [node name="xmas_art" type="Node2D" parent="walls/opaque" unique_id=283494091]
-scale = Vector2(0.25, 0.25)
+position = Vector2(-2, 101.25969)
+scale = Vector2(0.25, 0.11403118)
 
 [node name="1" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1205613243]
-position = Vector2(-768, 768)
+position = Vector2(-1924, -9)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11")
 
@@ -387,7 +393,7 @@ text = "1ketheboss"
 horizontal_alignment = 2
 
 [node name="2" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1799791625]
-position = Vector2(-160, 424)
+position = Vector2(1901, -744)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13")
 
@@ -403,7 +409,7 @@ text = "CKB"
 horizontal_alignment = 2
 
 [node name="3" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=668046603]
-position = Vector2(584, 768)
+position = Vector2(-1777, -1269)
 texture = ExtResource("14")
 
 [node name="Label" type="Label" parent="walls/opaque/xmas_art/3" unique_id=1067114730]
@@ -418,7 +424,7 @@ text = "Inky"
 horizontal_alignment = 2
 
 [node name="4" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1925541923]
-position = Vector2(1280, 512)
+position = Vector2(809, -1598)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("15")
 
@@ -433,7 +439,7 @@ text = "beehive3465"
 horizontal_alignment = 1
 
 [node name="5" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1489650583]
-position = Vector2(512, 320)
+position = Vector2(-821, -1980)
 texture = ExtResource("16")
 
 [node name="Label" type="Label" parent="walls/opaque/xmas_art/5" unique_id=493214455]
@@ -448,7 +454,7 @@ text = "Mawilite"
 horizontal_alignment = 2
 
 [node name="6" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1712400529]
-position = Vector2(-640, 384)
+position = Vector2(1843, -1977)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17")
 
@@ -506,7 +512,7 @@ theme_override_font_sizes/font_size = 80
 text = "Senchent 2ndary"
 
 [node name="10" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=639985746]
-position = Vector2(-624, -24)
+position = Vector2(4.999939, -2295.9998)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("21")
 
@@ -521,7 +527,7 @@ theme_override_font_sizes/font_size = 192
 text = "Ticktock"
 
 [node name="11" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1684486073]
-position = Vector2(-1320, 736)
+position = Vector2(-1239, -626)
 texture = ExtResource("22")
 
 [node name="Label" type="Label" parent="walls/opaque/xmas_art/11" unique_id=1451113103]
@@ -535,7 +541,7 @@ theme_override_font_sizes/font_size = 32
 text = "Triton"
 
 [node name="12" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=706907897]
-position = Vector2(-1072, -136)
+position = Vector2(-776, -1172)
 texture = ExtResource("23")
 
 [node name="Label" type="Label" parent="walls/opaque/xmas_art/12" unique_id=1205431203]
@@ -549,7 +555,7 @@ theme_override_font_sizes/font_size = 32
 text = "Triton"
 
 [node name="13" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=776240594]
-position = Vector2(-832, -576)
+position = Vector2(-1872, -2270)
 texture = ExtResource("24")
 
 [node name="Label" type="Label" parent="walls/opaque/xmas_art/13" unique_id=1617885040]
@@ -573,7 +579,7 @@ text = "(this one isn't really Xmas-themed but it was the
 first submission to the art competition so :P)"
 
 [node name="14" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1517066860]
-position = Vector2(-256, -512)
+position = Vector2(1885, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("25")
 
@@ -589,24 +595,25 @@ text = "Audiovox Vod10PS2"
 horizontal_alignment = 2
 
 [node name="xmasart" type="Button" parent="walls/opaque" unique_id=1748714895]
-offset_left = -96.0
-offset_top = 154.0
-offset_right = 24.0
-offset_bottom = 185.0
-scale = Vector2(0.4, 0.4)
-text = "Xmas art on"
+offset_left = -28.75
+offset_top = 196.81783
+offset_right = 114.25
+offset_bottom = 227.81784
+scale = Vector2(0.41032258, 0.18356165)
+text = "Christmas Art: on"
 
 [node name="Sprite" type="Sprite2D" parent="walls" unique_id=584762892]
 modulate = Color(1, 1, 1, 0.12549)
 z_index = -10
 texture_filter = 2
 material = ExtResource("2")
-scale = Vector2(8, 8)
+position = Vector2(0, 1224.9999)
+scale = Vector2(8, 17.570313)
 texture = SubResource("GradientTexture2D_mgsi3")
 
 [node name="hint" type="Node2D" parent="." unique_id=410334788]
 texture_filter = 2
-position = Vector2(0, -128)
+position = Vector2(0, 2309)
 
 [node name="Label" type="Label" parent="hint" unique_id=1089568818]
 offset_left = -192.0
@@ -618,7 +625,7 @@ text = "Middle/Right mouse button to drag the camera
 Scroll to zoom
 Space to open/close the periodic table
 Esc to open/close settings
-R to reset the scene"
+R to clear cattos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -644,7 +651,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27")
 
 [node name="camera" parent="." unique_id=1422070259 instance=ExtResource("28")]
-position = Vector2(0, -128)
+position = Vector2(0, 2285)
 
 [node name="music" type="Node" parent="." unique_id=954294831]
 process_mode = 3
