@@ -23,7 +23,7 @@ func _input(event):
 						catto.find_child("model").find_child("anim").play("idle")
 		else:
 			touches.erase(event.index)
-	if (event is InputEventScreenDrag and not glob.dragging and not glob.inv_open and not glob.pause):
+	if (event is InputEventScreenDrag and not glob.dragging and not glob.inv_open and not glob.pause and not glob.tool):
 		if touches.size() > 1:
 			var mean = Vector2.ZERO
 			for p in touches.values():
