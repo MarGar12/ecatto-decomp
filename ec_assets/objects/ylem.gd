@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var dragged = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"): queue_free()
 	
@@ -35,3 +35,7 @@ func _on_mouse_entered():
 	$info.show()
 func _on_mouse_exited():
 	$info.hide()
+
+
+func _on_body_entered(_body: Node2D) -> void:
+	pass # Replace with function body.
