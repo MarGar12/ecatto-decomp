@@ -587,29 +587,29 @@ vertical_alignment = 1
 
 [node name="touchevent" type="Label" parent="ui/topright" unique_id=1893750734]
 offset_left = -246.0
-offset_top = 170.0
+offset_top = 172.0
 offset_right = -8.0
-offset_bottom = 184.0
+offset_bottom = 186.0
 theme_override_font_sizes/font_size = 8
 text = "cam pos: "
 horizontal_alignment = 2
 
-[node name="touch" type="Label" parent="ui/topright" unique_id=1626027757]
-offset_left = -246.0
-offset_top = 194.0
-offset_right = -8.0
-offset_bottom = 206.0
-theme_override_font_sizes/font_size = 8
-text = "touch inputs: "
-horizontal_alignment = 2
-
 [node name="zoom" type="Label" parent="ui/topright" unique_id=1360178743]
 offset_left = -246.0
-offset_top = 182.0
+offset_top = 184.0
 offset_right = -8.0
-offset_bottom = 194.0
+offset_bottom = 196.0
 theme_override_font_sizes/font_size = 8
 text = "zoom: "
+horizontal_alignment = 2
+
+[node name="fps" type="Label" parent="ui/topright" unique_id=66698587]
+offset_left = -246.0
+offset_top = 196.0
+offset_right = -8.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 8
+text = "fps: "
 horizontal_alignment = 2
 
 [node name="rate" type="Label" parent="ui/topright" unique_id=1058331148]
@@ -1111,6 +1111,7 @@ vertical_alignment = 1
 
 [node name="pause" type="Node2D" parent="ui" unique_id=1979951664]
 process_mode = 3
+visible = false
 z_index = 20
 texture_filter = 2
 scale = Vector2(0.75, 0.75)
@@ -1177,7 +1178,7 @@ offset_left = -112.0
 offset_right = 16.0
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 16
-text = "Opaque walls"
+text = "Opaque Walls"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -1191,8 +1192,8 @@ tooltip_text = "Let left click drag the camera."
 [node name="label" type="Label" parent="ui/pause/lcdrag" unique_id=731053359]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = -112.0
-offset_right = 16.0
+offset_left = -117.333374
+offset_right = 10.666626
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 16
 text = "Left Click Drag"

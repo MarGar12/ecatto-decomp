@@ -615,15 +615,15 @@ position = Vector2(0, -128)
 
 [node name="Label" type="Label" parent="hint" unique_id=1089568818]
 offset_left = -280.0
-offset_top = -146.0
+offset_top = -142.0
 offset_right = 279.0
-offset_bottom = 110.0
+offset_bottom = 114.0
 theme_override_fonts/font = ExtResource("12")
-text = "Left/Middle/Right mouse button or touch outside a catto to drag the camera
+text = "Middle/Right mouse button or touch outside a catto to drag the camera
 Scroll or pinch screen to zoom
 Space or press the purr table button to open/close the periodic table
-Esc or press the settings button to open/close settings
-R to clear cattos"
+Esc or press the pause button to open/close settings
+R to reset Catto and Particle count"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -23,13 +23,12 @@ func _input(event):
 						catto.find_child("model").find_child("anim").play("idle")
 		else:
 			touches.erase(event.index)
-	if event is InputEventScreenDrag and glob.dragging == 0 and glob.inv_open == 0 and glob.pause == 0:
+	if (event is InputEventScreenDrag and not glob.dragging and not glob.inv_open and not glob.pause):
 		if touches.size() > 1:
 			var mean = Vector2.ZERO
 			for p in touches.values():
 				mean += p
-			mean /= touches.size()
-			
+				mean /= touches.size()
 			var tdist = 0.0
 			for p in touches.values():
 				tdist += (mean - p).length()
@@ -41,7 +40,6 @@ func _input(event):
 			zoom *= newtdist / tdist
 			if zoom.x < 0.1: zoom = 0.1 * Vector2.ONE
 			if zoom.x > 10: zoom = 10 * Vector2.ONE
-		
 		position -= event.relative / zoom.x / touches.size()
 	if event is InputEventScreenDrag: touches[event.index] = event.position
 
@@ -110,10 +108,10 @@ func _process(delta):
 	$ui/topright/grav.text = "gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
 	
 	$ui/topright/touchevent.text = str(position)
-	$ui/topright/touch.text = str(touches.size())
 	$ui/topright/zoom.text = str(zoom)
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
+	$ui/topright/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + "fps"
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed
@@ -126,7 +124,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("R"):
 		glob.cattos = 0
 		glob.particles = 0
-		reset_conditions()
 	
 	$spawning.global_position = get_global_mouse_position()
 	$spawning.visible = glob.spawning != null
