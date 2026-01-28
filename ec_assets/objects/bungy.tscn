@@ -1,6 +1,6 @@
-[gd_scene load_steps=167 format=3 uid="uid://d2ppi0lfnno61"]
+[gd_scene format=3 uid="uid://d2ppi0lfnno61"]
 
-[ext_resource type="Script" path="res://ec_assets/objects/bungy.gd" id="1"]
+[ext_resource type="Script" uid="uid://dmpoo50pnm1ij" path="res://ec_assets/objects/bungy.gd" id="1"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://uhajh6trlqh4" path="res://ec_assets/textures/cattos/bungy/bungy_muonium.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dnxxa5fkhqlml" path="res://ec_assets/textures/cattos/bungy/bungy_hydrogen.png" id="4"]
@@ -130,7 +130,7 @@
 [ext_resource type="Texture2D" uid="uid://4lhk6iha2xhv" path="res://ec_assets/textures/cattos/bungy/bungy-c14.png" id="128"]
 [ext_resource type="Texture2D" uid="uid://dr36xocdkmdfr" path="res://ec_assets/textures/cattos/other/purrcent-pupil.png" id="129"]
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="130"]
-[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="131"]
+[ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="131"]
 [ext_resource type="AudioStream" uid="uid://bkpolr0wbq53y" path="res://ec_assets/sounds/jump.mp3" id="132"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="133"]
 [ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="134"]
@@ -641,8 +641,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c2bnw"]
 _data = {
-"RESET": SubResource("Animation_cok34"),
-"blink": SubResource("Animation_hr2ct")
+&"RESET": SubResource("Animation_cok34"),
+&"blink": SubResource("Animation_hr2ct")
 }
 
 [sub_resource type="Animation" id="Animation_gmetx"]
@@ -720,9 +720,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0v16a"]
 _data = {
-"RESET": SubResource("Animation_gmetx"),
-"grabbed": SubResource("Animation_v650i"),
-"idle": SubResource("Animation_qh76r")
+&"RESET": SubResource("Animation_gmetx"),
+&"grabbed": SubResource("Animation_v650i"),
+&"idle": SubResource("Animation_qh76r")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bqtc"]
@@ -775,8 +775,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ab68v"]
 _data = {
-"RESET": SubResource("Animation_3ui1t"),
-"glow": SubResource("Animation_xcfdw")
+&"RESET": SubResource("Animation_3ui1t"),
+&"glow": SubResource("Animation_xcfdw")
 }
 
 [sub_resource type="Gradient" id="Gradient_vvh5u"]
@@ -809,16 +809,16 @@ metadata/_snap_enabled = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_1lo34"]
 radius = 250.0
 
-[node name="bungy" type="CharacterBody2D"]
+[node name="bungy" type="CharacterBody2D" unique_id=1885692523]
 script = ExtResource("1")
 
-[node name="gas" type="CPUParticles2D" parent="."]
+[node name="gas" type="CPUParticles2D" parent="." unique_id=317886440]
 modulate = Color(1, 1, 1, 0.25098)
 texture_filter = 2
 emitting = false
 amount = 50
-lifetime = 2.0
 texture = SubResource("GradientTexture2D_pi6lw")
+lifetime = 2.0
 emission_shape = 1
 emission_sphere_radius = 30.0
 spread = 180.0
@@ -828,12 +828,12 @@ angle_max = 720.0
 scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_2krw5")
 
-[node name="drip" type="CPUParticles2D" parent="."]
+[node name="drip" type="CPUParticles2D" parent="." unique_id=921282679]
 position = Vector2(0, -12)
 emitting = false
 amount = 10
-lifetime = 2.0
 texture = SubResource("GradientTexture2D_3214m")
+lifetime = 2.0
 emission_shape = 3
 emission_rect_extents = Vector2(20, 10)
 spread = 180.0
@@ -842,9 +842,9 @@ scale_amount_min = 0.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_cwtup")
 
-[node name="model" type="Node2D" parent="."]
+[node name="model" type="Node2D" parent="." unique_id=1813914760]
 
-[node name="select" type="Sprite2D" parent="model"]
+[node name="select" type="Sprite2D" parent="model" unique_id=1770973355]
 visible = false
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 2
@@ -852,51 +852,47 @@ material = ExtResource("2")
 scale = Vector2(3, 3)
 texture = SubResource("GradientTexture2D_wqv56")
 
-[node name="body" type="AnimatedSprite2D" parent="model"]
+[node name="body" type="AnimatedSprite2D" parent="model" unique_id=1408126862]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_ra37b")
 animation = &"elements"
 autoplay = "elements"
 speed_scale = 0.0
 
-[node name="face" type="Node2D" parent="model"]
+[node name="face" type="Node2D" parent="model" unique_id=1473209873]
 position = Vector2(0, -12)
 
-[node name="pupils" type="Node2D" parent="model/face"]
+[node name="pupils" type="Node2D" parent="model/face" unique_id=1733710696]
 
-[node name="pupil1" type="Sprite2D" parent="model/face/pupils"]
+[node name="pupil1" type="Sprite2D" parent="model/face/pupils" unique_id=818449662]
 position = Vector2(-10, 0)
 texture = ExtResource("129")
 
-[node name="pupil2" type="Sprite2D" parent="model/face/pupils"]
+[node name="pupil2" type="Sprite2D" parent="model/face/pupils" unique_id=1845103132]
 position = Vector2(10, 0)
 texture = ExtResource("129")
 
-[node name="anim" type="AnimationPlayer" parent="model/face"]
-autoplay = "blink"
-libraries = {
-"": SubResource("AnimationLibrary_c2bnw")
-}
+[node name="anim" type="AnimationPlayer" parent="model/face" unique_id=1205528765]
+libraries/ = SubResource("AnimationLibrary_c2bnw")
+autoplay = &"blink"
 
-[node name="anim" type="AnimationPlayer" parent="model"]
-autoplay = "idle"
+[node name="anim" type="AnimationPlayer" parent="model" unique_id=199355904]
+libraries/ = SubResource("AnimationLibrary_0v16a")
+autoplay = &"idle"
 playback_default_blend_time = 0.5
-libraries = {
-"": SubResource("AnimationLibrary_0v16a")
-}
 
-[node name="col_head" type="CollisionShape2D" parent="."]
+[node name="col_head" type="CollisionShape2D" parent="." unique_id=689852961]
 position = Vector2(0, -12)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_5bqtc")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="col_body" type="CollisionShape2D" parent="."]
+[node name="col_body" type="CollisionShape2D" parent="." unique_id=286697328]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_6i125")
 debug_color = Color(1, 1, 1, 0)
 
-[node name="tempglow" type="Sprite2D" parent="."]
+[node name="tempglow" type="Sprite2D" parent="." unique_id=1024742089]
 modulate = Color(0, 0, 0, 0)
 texture_filter = 2
 material = ExtResource("2")
@@ -904,25 +900,23 @@ position = Vector2(0, -8)
 scale = Vector2(5, 5)
 texture = SubResource("GradientTexture2D_6wfoe")
 
-[node name="heat" type="AnimationPlayer" parent="."]
+[node name="heat" type="AnimationPlayer" parent="." unique_id=1064106027]
 root_node = NodePath("../model")
-autoplay = "glow"
-playback_process_mode = 2
-libraries = {
-"": SubResource("AnimationLibrary_ab68v")
-}
+callback_mode_process = 2
+libraries/ = SubResource("AnimationLibrary_ab68v")
+autoplay = &"glow"
 
-[node name="info" type="Node2D" parent="."]
+[node name="info" type="Node2D" parent="." unique_id=2111818521]
 z_index = 5
 texture_filter = 2
 
-[node name="bg" type="Sprite2D" parent="info"]
+[node name="bg" type="Sprite2D" parent="info" unique_id=2058909182]
 modulate = Color(1, 1, 1, 0.752941)
 position = Vector2(0, -96)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("GradientTexture2D_jurf8")
 
-[node name="name" type="Label" parent="info"]
+[node name="name" type="Label" parent="info" unique_id=2099175494]
 offset_left = -128.0
 offset_top = -96.0
 offset_right = 384.0
@@ -932,7 +926,7 @@ theme_override_font_sizes/font_size = 24
 text = "Bungy"
 horizontal_alignment = 1
 
-[node name="type" type="Label" parent="info"]
+[node name="type" type="Label" parent="info" unique_id=1597679941]
 offset_left = -40.0
 offset_top = -80.0
 offset_right = 120.0
@@ -942,7 +936,7 @@ theme_override_font_sizes/font_size = 12
 text = "bugin (solid)"
 horizontal_alignment = 1
 
-[node name="density" type="Label" parent="info"]
+[node name="density" type="Label" parent="info" unique_id=1542813060]
 offset_left = -40.0
 offset_top = -72.0
 offset_right = 120.0
@@ -952,7 +946,7 @@ theme_override_font_sizes/font_size = 12
 text = "density: hes sily"
 horizontal_alignment = 1
 
-[node name="symbol" type="Label" parent="info"]
+[node name="symbol" type="Label" parent="info" unique_id=2086309811]
 offset_left = -40.0
 offset_top = -152.0
 offset_right = 120.0
@@ -963,68 +957,68 @@ text = "Bu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="clank1" type="AudioStreamPlayer2D" parent="."]
+[node name="clank1" type="AudioStreamPlayer2D" parent="." unique_id=2119411637]
 stream = ExtResource("130")
 volume_db = 5.0
 pitch_scale = 2.0
 attenuation = 2.0
 script = ExtResource("131")
 
-[node name="jump" type="AudioStreamPlayer2D" parent="."]
+[node name="jump" type="AudioStreamPlayer2D" parent="." unique_id=1656582991]
 stream = ExtResource("132")
 volume_db = 5.0
 attenuation = 2.0
 script = ExtResource("131")
 
-[node name="splash" type="AudioStreamPlayer2D" parent="."]
+[node name="splash" type="AudioStreamPlayer2D" parent="." unique_id=351953559]
 stream = ExtResource("133")
 pitch_scale = 2.0
 attenuation = 2.0
 script = ExtResource("131")
 
-[node name="poof" type="AudioStreamPlayer2D" parent="."]
+[node name="poof" type="AudioStreamPlayer2D" parent="." unique_id=1814212926]
 stream = ExtResource("134")
 pitch_scale = 1.5
 script = ExtResource("131")
 
-[node name="spawn" type="AudioStreamPlayer2D" parent="."]
+[node name="spawn" type="AudioStreamPlayer2D" parent="." unique_id=638278512]
 stream = ExtResource("135")
 volume_db = 5.0
 script = ExtResource("131")
 
-[node name="geiger" type="AudioStreamPlayer2D" parent="."]
+[node name="geiger" type="AudioStreamPlayer2D" parent="." unique_id=336954679]
 stream = ExtResource("136")
 pitch_scale = 1.5
 max_distance = 1000.0
 attenuation = 2.0
 script = ExtResource("131")
 
-[node name="morph" type="AudioStreamPlayer2D" parent="."]
+[node name="morph" type="AudioStreamPlayer2D" parent="." unique_id=1459486418]
 stream = ExtResource("137")
 volume_db = 5.0
 attenuation = 2.0
 script = ExtResource("131")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=494657854]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=445146566]
 shape = SubResource("CapsuleShape2D_8ema2")
 debug_color = Color(1, 0, 0, 0)
 
-[node name="flash" type="Sprite2D" parent="."]
+[node name="flash" type="Sprite2D" parent="." unique_id=1199747236]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 2
 material = ExtResource("2")
 scale = Vector2(4, 4)
 texture = SubResource("GradientTexture2D_463md")
 
-[node name="range" type="Area2D" parent="."]
+[node name="range" type="Area2D" parent="." unique_id=372443091]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range" unique_id=209944396]
 shape = SubResource("CircleShape2D_1lo34")
 debug_color = Color(1, 1, 0, 0)
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered" flags=19]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered" flags=19]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited" flags=19]
-[connection signal="body_entered" from="range" to="." method="_on_range_body_entered" flags=19]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
