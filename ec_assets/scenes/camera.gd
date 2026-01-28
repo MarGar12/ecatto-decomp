@@ -7,7 +7,7 @@ var preset = 1
 
 var touches = {} # : {int: Vec2}
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and (Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb") or (Input.is_action_pressed("lmb") and not glob.dragging and not glob.tool)):
+	if event is InputEventMouseMotion and (Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb") or (Input.is_action_pressed("lmb") and not glob.dragging and not glob.tool and glob.lcdrag == true )):
 		position.x -= event.relative.x/zoom.x
 		position.y -= event.relative.y/zoom.x
 		
@@ -23,7 +23,7 @@ func _input(event):
 						catto.find_child("model").find_child("anim").play("idle")
 		else:
 			touches.erase(event.index)
-	if (event is InputEventScreenTouch and glob.dragging == 0 and glob.inv_open == 0 and glob.pause == 0):
+	if (event is InputEventScreenDrag and glob.dragging == 0 and glob.inv_open == 0 and glob.pause == 0):
 		if touches.size() > 1:
 			var mean = Vector2.ZERO
 			for p in touches.values():
@@ -65,6 +65,7 @@ func sync_settings():
 	$ui/pause/weakforce.button_pressed = glob.weakforce
 	$ui/pause/end_world.button_pressed = glob.endable_world
 	$ui/pause/hud_scale.button_pressed = glob.hudscaling
+	$ui/pause/lcdrag.button_pressed = glob.lcdrag
 	$ui/pause/catto_ai.button_pressed = glob.catto_ai
 	$ui/pause/rotat.button_pressed = glob.catto_rotat
 
@@ -109,6 +110,7 @@ func _process(delta):
 	$ui/topright/grav.text = "gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
 	
 	$ui/topright/touchevent.text = str(position)
+	$ui/topright/touch.text = str(touches.size())
 	$ui/topright/zoom.text = str(zoom)
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
@@ -188,6 +190,8 @@ func _on_end_world_toggled(button_pressed):
 	glob.endable_world = button_pressed
 func _on_hud_scale_toggled(button_pressed):
 	glob.hudscaling = button_pressed
+func _on_lcdrag_toggled(button_pressed):
+	glob.lcdrag = button_pressed
 func _on_catto_ai_toggled(button_pressed):
 	glob.catto_ai = button_pressed
 func _on_rotat_toggled(button_pressed):

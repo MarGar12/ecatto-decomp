@@ -189,9 +189,13 @@
 [ext_resource type="AudioStream" uid="uid://bn62jh7uyajvo" path="res://ec_assets/sounds/metal_solid_impact_soft3.wav" id="187"]
 [ext_resource type="AudioStream" uid="uid://c0osvdf5eipag" path="res://ec_assets/sounds/metal_solid_impact_hard1.wav" id="188"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="189"]
+[ext_resource type="AudioStream" uid="uid://b3k5j6cg8sura" path="res://ec_assets/sounds/metal_solid_impact_hard4.wav" id="189_67n54"]
 [ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="190"]
+[ext_resource type="AudioStream" uid="uid://bodxp43ucgkmo" path="res://ec_assets/sounds/metal_solid_impact_hard5.wav" id="190_2i7d5"]
 [ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="191"]
+[ext_resource type="AudioStream" uid="uid://b6rvw3g4iro4q" path="res://ec_assets/sounds/metal_solid_impact_soft1.wav" id="191_eofrb"]
 [ext_resource type="AudioStream" uid="uid://k26pg2olhd84" path="res://ec_assets/sounds/geiger3.wav" id="192"]
+[ext_resource type="AudioStream" uid="uid://5sf1i8p3x7vx" path="res://ec_assets/sounds/metal_solid_impact_soft2.wav" id="192_hyml4"]
 [ext_resource type="AudioStream" uid="uid://0x47lc2jnom3" path="res://ec_assets/sounds/MAUW.wav" id="193"]
 [ext_resource type="AudioStream" uid="uid://dv1o11u6h0anu" path="res://ec_assets/sounds/anime_spark_thing.wav" id="194"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="195"]
@@ -2019,7 +2023,31 @@ volume_db = -5.0
 attenuation = 2.0
 script = ExtResource("186")
 
-[node name="clank3" type="AudioStreamPlayer2D" parent="." unique_id=1404533066]
+[node name="clank3" type="AudioStreamPlayer2D" parent="." unique_id=1779731907]
+stream = ExtResource("191_eofrb")
+volume_db = -10.0
+attenuation = 2.0
+script = ExtResource("186")
+
+[node name="clank4" type="AudioStreamPlayer2D" parent="." unique_id=1720883347]
+stream = ExtResource("192_hyml4")
+volume_db = -10.0
+attenuation = 2.0
+script = ExtResource("186")
+
+[node name="clank5" type="AudioStreamPlayer2D" parent="." unique_id=500712649]
+stream = ExtResource("189_67n54")
+volume_db = -10.0
+attenuation = 2.0
+script = ExtResource("186")
+
+[node name="clank6" type="AudioStreamPlayer2D" parent="." unique_id=1969570303]
+stream = ExtResource("190_2i7d5")
+volume_db = -10.0
+attenuation = 2.0
+script = ExtResource("186")
+
+[node name="clank7" type="AudioStreamPlayer2D" parent="." unique_id=1404533066]
 stream = ExtResource("188")
 volume_db = -10.0
 attenuation = 2.0

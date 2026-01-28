@@ -99,6 +99,11 @@ func _process(delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"):
 		queue_free()
+		
+	if glob.cattos <= -1:
+		glob.cattos = 0
+	if glob.particles <= -1:
+		glob.particles = 0
 	
 	$info/electrons.text = str(electrons) + "e"
 	$info/type.text = group + " (" + state + ")"
@@ -112,10 +117,10 @@ func _process(delta):
 	$gas.visible = delta < 0.1 and electrons > 0
 	$drip.visible = delta < 0.1 and electrons > 0
 	
-	if glob.cattos > 5 and $model/face/anim.is_playing(): $model/face/anim.stop()
+	if glob.cattos > 50 and $model/face/anim.is_playing(): $model/face/anim.stop()
 	elif !$model/face/anim.is_playing(): $model/face/anim.play()
 	
-	$range.monitoring = glob.cattos < 30
+	$range.monitoring = glob.cattos < 100
 	
 	#extra effects
 	$model/face/eye1/sonar.visible = protons == 65
@@ -554,9 +559,9 @@ func _physics_process(delta):
 	if abs(velocity.y) > 50:
 		noise = 1
 	if abs(velocity.y) > 250:
-		noise = 2
+		noise = randi_range(2,4)
 	if abs(velocity.y) > 1000:
-		noise = 3
+		noise = randi_range(5,7)
 	if (is_on_floor() or is_on_ceiling()) and noise > 0 and noisetimer <= 0:
 		if state == "solid":
 			if type in ["metal","metalloid"]: get_node("clank"+str(noise)).play()
