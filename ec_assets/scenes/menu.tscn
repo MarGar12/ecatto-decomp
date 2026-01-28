@@ -2756,8 +2756,8 @@ scale = Vector2(2000, 2000)
 texture = ExtResource("37")
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
-[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
 [connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="main/about" to="." method="_button_press"]
@@ -2768,8 +2768,8 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
-[connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
 [connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="about/back" to="." method="_button_press"]
