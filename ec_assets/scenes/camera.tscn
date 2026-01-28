@@ -27,14 +27,20 @@
 [ext_resource type="Texture2D" uid="uid://bxd1ugjy655al" path="res://ec_assets/textures/ui/button_clone1.png" id="25"]
 [ext_resource type="Texture2D" uid="uid://paboh37q2yap" path="res://ec_assets/textures/ui/button_clone2.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://mbp7wsvtxk8h" path="res://ec_assets/textures/ui/button_blackhole2.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://ju1f461ghcd4" path="res://ec_assets/textures/ui/button_table1.png" id="27_xysan"]
+[ext_resource type="Texture2D" uid="uid://c0h6tyfou7mkr" path="res://ec_assets/textures/ui/button_table2.png" id="27_ybjw0"]
 [ext_resource type="Script" uid="uid://cs3tvre87m8d7" path="res://ec_assets/scenes/inventory.gd" id="28"]
 [ext_resource type="Texture2D" uid="uid://sgjm3hkfarr1" path="res://ec_assets/textures/ui/inventory_table.png" id="29"]
 [ext_resource type="PackedScene" uid="uid://ycmppe36no44" path="res://ec_assets/scenes/inventory_item.tscn" id="30"]
 [ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="31"]
 [ext_resource type="Texture2D" uid="uid://c0htsm0kwp16b" path="res://ec_assets/textures/ui/button_quit1.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://coxkkmvate66l" path="res://ec_assets/textures/ui/button_reset1.png" id="32_knf1o"]
 [ext_resource type="Texture2D" uid="uid://mmjoxs6e55y1" path="res://ec_assets/textures/ui/button_quit2.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://1bi34hdn172g" path="res://ec_assets/textures/ui/button_reset2.png" id="33_ybjw0"]
 [ext_resource type="Texture2D" uid="uid://bqm0ak32mqpfx" path="res://ec_assets/textures/ui/button_help1.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://ds12cmak0gfw2" path="res://ec_assets/textures/ui/button_setting1.png" id="34_2158e"]
 [ext_resource type="Texture2D" uid="uid://bagn32hjk26y2" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
 
 [sub_resource type="Curve" id="Curve_cgg83"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
@@ -363,11 +369,11 @@ max_distance = 5000.0
 [node name="hint" type="Label" parent="tool" unique_id=1620204898]
 modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 2
-offset_left = -128.0
-offset_top = 64.0
-offset_right = 128.0
-offset_bottom = 90.0
-text = "Right-click to disable"
+offset_left = -211.0
+offset_top = 65.0
+offset_right = 211.0
+offset_bottom = 91.0
+text = "Right click or press the same button to disable the tool"
 horizontal_alignment = 1
 
 [node name="blackhole" type="Node2D" parent="tool" unique_id=1488270971]
@@ -456,6 +462,15 @@ texture_normal = ExtResource("25")
 texture_pressed = ExtResource("26")
 texture_hover = ExtResource("26")
 
+[node name="elementpicker" type="TextureButton" parent="ui/topleft" unique_id=221781030]
+offset_left = 287.0
+offset_top = 8.0
+offset_right = 319.0
+offset_bottom = 40.0
+texture_normal = ExtResource("27_xysan")
+texture_pressed = ExtResource("27_ybjw0")
+texture_hover = ExtResource("27_ybjw0")
+
 [node name="blackhole" type="TextureButton" parent="ui/topleft" unique_id=64926509]
 offset_left = 248.0
 offset_top = 8.0
@@ -464,6 +479,22 @@ offset_bottom = 40.0
 texture_normal = ExtResource("14")
 texture_pressed = ExtResource("27")
 texture_hover = ExtResource("27")
+
+[node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
+offset_left = 291.0
+offset_top = 27.0
+offset_right = 317.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="cattocount" type="Label" parent="ui/topleft" unique_id=1288670338]
+offset_left = 291.0
+offset_top = 8.0
+offset_right = 316.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 8
+text = "0"
 
 [node name="tooldesc" type="Label" parent="ui/topleft" unique_id=2015836275]
 visible = false
@@ -481,38 +512,6 @@ z_index = 10
 texture_filter = 2
 position = Vector2(288, -160)
 scale = Vector2(0.5, 0.5)
-
-[node name="rate" type="Label" parent="ui/topright" unique_id=1058331148]
-offset_left = -512.0
-offset_top = 8.0
-offset_right = -232.0
-offset_bottom = 34.0
-text = "time rate: 1"
-horizontal_alignment = 2
-
-[node name="temp" type="Label" parent="ui/topright" unique_id=11774986]
-offset_left = -512.0
-offset_top = 32.0
-offset_right = -136.0
-offset_bottom = 58.0
-text = "temperature: 300K"
-horizontal_alignment = 2
-
-[node name="pres" type="Label" parent="ui/topright" unique_id=978493096]
-offset_left = -512.0
-offset_top = 56.0
-offset_right = -136.0
-offset_bottom = 82.0
-text = "pressure: 1 atm"
-horizontal_alignment = 2
-
-[node name="grav" type="Label" parent="ui/topright" unique_id=1779576093]
-offset_left = -512.0
-offset_top = 80.0
-offset_right = -136.0
-offset_bottom = 106.0
-text = "gravity: 1g"
-horizontal_alignment = 2
 
 [node name="rateslider" type="HSlider" parent="ui/topright" unique_id=2005686890]
 offset_left = -224.0
@@ -583,6 +582,63 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 32.0
 text = "Reset Conditions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="touchevent" type="Label" parent="ui/topright" unique_id=1893750734]
+offset_left = -246.0
+offset_top = 170.0
+offset_right = -8.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 8
+text = "cam pos: "
+horizontal_alignment = 2
+
+[node name="zoom" type="Label" parent="ui/topright" unique_id=1360178743]
+offset_left = -246.0
+offset_top = 182.0
+offset_right = -8.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 8
+text = "zoom: "
+horizontal_alignment = 2
+
+[node name="rate" type="Label" parent="ui/topright" unique_id=1058331148]
+offset_left = -228.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = 32.0
+text = "time rate: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="temp" type="Label" parent="ui/topright" unique_id=11774986]
+offset_left = -130.0
+offset_top = 32.0
+offset_right = -6.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 8
+text = "temperature: 300K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pres" type="Label" parent="ui/topright" unique_id=978493096]
+offset_left = -130.0
+offset_top = 58.0
+offset_right = -6.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 8
+text = "pressure: 1 atm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="grav" type="Label" parent="ui/topright" unique_id=1779576093]
+offset_left = -112.0
+offset_top = 86.0
+offset_right = -18.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 8
+text = "gravity: 1g"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1238,7 +1294,7 @@ offset_left = -152.0
 offset_right = 56.0
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 16
-text = "Weak nuclear force"
+text = "Weak Nuclear Force"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -1257,7 +1313,7 @@ offset_left = -110.66669
 offset_right = 5.333313
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 16
-text = "Endable world"
+text = "Endable World"
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -1313,7 +1369,7 @@ layout_mode = 0
 offset_left = -128.0
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 16
-text = "Catto rotation"
+text = "Catto Rotation"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
@@ -1330,7 +1386,7 @@ texture_hover = SubResource("GradientTexture2D_8ke6j")
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 32.0
-text = "Back to game"
+text = "Back to Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1354,6 +1410,24 @@ vertical_alignment = 1
 texture_filter = 2
 position = Vector2(-288, 160)
 
+[node name="reset_button" type="TextureButton" parent="ui/botleft" unique_id=1346864321]
+offset_left = 88.0
+offset_top = -40.0
+offset_right = 120.0
+offset_bottom = -8.0
+texture_normal = ExtResource("32_knf1o")
+texture_pressed = ExtResource("33_ybjw0")
+texture_hover = ExtResource("33_ybjw0")
+
+[node name="pause" type="TextureButton" parent="ui/botleft" unique_id=1384682796]
+offset_left = 48.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = -8.0
+texture_normal = ExtResource("34_2158e")
+texture_pressed = ExtResource("35_arbcm")
+texture_hover = ExtResource("35_arbcm")
+
 [node name="quit" type="TextureButton" parent="ui/botleft" unique_id=283084619]
 offset_left = 8.0
 offset_top = -40.0
@@ -1363,6 +1437,26 @@ texture_normal = ExtResource("32")
 texture_pressed = ExtResource("33")
 texture_hover = ExtResource("33")
 
+[node name="reset_hint" type="Label" parent="ui/botleft" unique_id=898006437]
+visible = false
+texture_filter = 2
+offset_left = 8.0
+offset_top = -56.0
+offset_right = 86.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 12
+text = "Reset Scene"
+
+[node name="pause_hint" type="Label" parent="ui/botleft" unique_id=81158321]
+visible = false
+texture_filter = 2
+offset_left = 9.0
+offset_top = -56.0
+offset_right = 90.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 12
+text = "Show Settings"
+
 [node name="quit_hint" type="Label" parent="ui/botleft" unique_id=1096727863]
 visible = false
 texture_filter = 2
@@ -1371,7 +1465,7 @@ offset_top = -56.0
 offset_right = 86.0
 offset_bottom = -33.0
 theme_override_font_sizes/font_size = 12
-text = "Quit to menu"
+text = "Quit to Menu"
 
 [node name="botright" type="Node2D" parent="ui" unique_id=2041413289]
 texture_filter = 2
@@ -1411,8 +1505,12 @@ texture_hover = ExtResource("35")
 [connection signal="mouse_entered" from="ui/topleft/clone" to="." method="_on_button_hover"]
 [connection signal="mouse_exited" from="ui/topleft/clone" to="." method="_on_button_unhover"]
 [connection signal="pressed" from="ui/topleft/clone" to="." method="_on_clone_pressed"]
-[connection signal="mouse_entered" from="ui/topleft/blackhole" to="." method="_on_blackhole_mouse_entered"]
+[connection signal="mouse_entered" from="ui/topleft/elementpicker" to="." method="_on_button_hover"]
+[connection signal="mouse_entered" from="ui/topleft/elementpicker" to="." method="_on_elementpicker_mouse_entered"]
+[connection signal="mouse_exited" from="ui/topleft/elementpicker" to="." method="_on_button_unhover"]
+[connection signal="pressed" from="ui/topleft/elementpicker" to="." method="_on_elementpicker_pressed"]
 [connection signal="mouse_entered" from="ui/topleft/blackhole" to="." method="_on_button_hover"]
+[connection signal="mouse_entered" from="ui/topleft/blackhole" to="." method="_on_blackhole_mouse_entered"]
 [connection signal="mouse_exited" from="ui/topleft/blackhole" to="." method="_on_button_unhover"]
 [connection signal="pressed" from="ui/topleft/blackhole" to="." method="_on_blackhole_pressed"]
 [connection signal="value_changed" from="ui/topright/rateslider" to="." method="_on_rateslider_value_changed"]
@@ -1436,6 +1534,12 @@ texture_hover = ExtResource("35")
 [connection signal="toggled" from="ui/pause/rotat" to="." method="_on_rotat_toggled"]
 [connection signal="pressed" from="ui/pause/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ui/pause/settings_reset" to="." method="_on_settings_reset_pressed"]
+[connection signal="mouse_entered" from="ui/botleft/reset_button" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="mouse_exited" from="ui/botleft/reset_button" to="." method="_on_reset_button_mouse_exited"]
+[connection signal="pressed" from="ui/botleft/reset_button" to="." method="_on_reset_button_pressed"]
+[connection signal="mouse_entered" from="ui/botleft/pause" to="." method="_on_pause_mouse_entered"]
+[connection signal="mouse_exited" from="ui/botleft/pause" to="." method="_on_pause_mouse_exited"]
+[connection signal="pressed" from="ui/botleft/pause" to="." method="_on_pause_pressed"]
 [connection signal="mouse_entered" from="ui/botleft/quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="ui/botleft/quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="ui/botleft/quit" to="." method="_on_quit_pressed"]

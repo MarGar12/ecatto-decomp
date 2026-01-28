@@ -3,7 +3,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	[$a,$b,$c,$d,$e,$f].pick_random().play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

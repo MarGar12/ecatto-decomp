@@ -78,8 +78,10 @@ func _physics_process(delta):
 	#dragging the catto
 	if glob.selected == self and Input.is_action_pressed("lmb"):
 		dragged = true
+		glob.dragging = true
 	if Input.is_action_just_released("lmb"):
 		dragged = false
+		glob.dragging = false
 	
 	if dragged == true and Input.is_action_pressed("lmb"):
 		velocity = (get_global_mouse_position() - position) * 5

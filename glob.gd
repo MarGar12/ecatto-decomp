@@ -9,6 +9,8 @@ var t_power = 0.0
 var pressure = 1.0
 var air_density = 1.3
 var gravity = 9.81
+# var isMobile = (OS.get_model_name() != "GenericDevice") or OS.has_feature("web_android") or OS.has_feature("web_ios")
+var dragging = false
 
 var spawning = null
 var inv_open = false

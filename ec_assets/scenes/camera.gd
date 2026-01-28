@@ -5,10 +5,45 @@ var spawn_sel = 0
 var presets = ["None","Standard","The Moon","Deep Space","Sun Core"]
 var preset = 1
 
+var touches = {} # : {int: Vec2}
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and (Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb")):
+	if event is InputEventMouseMotion and (Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb") or (Input.is_action_pressed("lmb") and not glob.dragging and not glob.tool)):
 		position.x -= event.relative.x/zoom.x
 		position.y -= event.relative.y/zoom.x
+		
+func _input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			touches[event.index] = event.position
+			if not touches.is_empty():
+				glob.dragging = false
+				for catto in get_tree().current_scene.find_child("cattos").get_children():
+					catto.dragged = false
+					if catto.find_child("model"):
+						catto.find_child("model").find_child("anim").play("idle")
+		else:
+			touches.erase(event.index)
+	if (event is InputEventScreenTouch and glob.dragging == 0 and glob.inv_open == 0 and glob.pause == 0):
+		if touches.size() > 1:
+			var mean = Vector2.ZERO
+			for p in touches.values():
+				mean += p
+			mean /= touches.size()
+			
+			var tdist = 0.0
+			for p in touches.values():
+				tdist += (mean - p).length()
+			var newtdist = 0.0
+			for i in touches.keys():
+				if i == event.index:
+					newtdist += (mean - event.position).length()
+				else: newtdist += (mean - touches[i]).length()
+			zoom *= newtdist / tdist
+			if zoom.x < 0.1: zoom = 0.1 * Vector2.ONE
+			if zoom.x > 10: zoom = 10 * Vector2.ONE
+		
+		position -= event.relative / zoom.x / touches.size()
+	if event is InputEventScreenDrag: touches[event.index] = event.position
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,7 +76,10 @@ func _process(delta):
 	$ui.scale = Vector2.ONE/zoom*2
 	$ui/topleft.position = -get_window().size/4.0
 	$ui/topright.position.x = get_window().size.x/4.0
-	$ui/topright.position.y = -get_window().size.y/4.0
+	if get_window().size.x <= 1100 && glob.hudscaling == false :
+		$ui/topright.position.y = -get_window().size.y/5.0
+	else:
+		$ui/topright.position.y = -get_window().size.y/4.0
 	$ui/botleft.position.x = -get_window().size.x/4.0
 	$ui/botleft.position.y = get_window().size.y/4.0
 	$ui/botright.position = get_window().size/4.0
@@ -69,6 +107,11 @@ func _process(delta):
 		$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
 	$ui/topright/pres.text = "air pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
+	
+	$ui/topright/touchevent.text = str(position)
+	$ui/topright/zoom.text = str(zoom)
+	$ui/topleft/cattocount.text = str(glob.cattos)
+	$ui/topleft/particlecount.text = str(glob.particles)
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed
@@ -115,7 +158,7 @@ func _process(delta):
 	$ui/pause/sfx_volume/label.text = "Sound volume: " + str(glob.sfx_volume * 100).pad_decimals(0)
 	$ui/pause/t_speed/label.text = "Temperature slider speed: " + str(glob.t_speed)
 	if glob.fusion_threshold < 3: $ui/pause/fus_thres/label.text = "Fusion threshold: " + str(glob.fusion_threshold)
-	else: $ui/pause/fus_thres/label.text = "No fusion"
+	else: $ui/pause/fus_thres/label.text = "No Fusion"
 	
 	$ui/pause/end_world.visible = glob.earth_exploded
 
@@ -154,19 +197,39 @@ func _on_nucleus_toggled(button_pressed):
 	glob.spawn_nucleus = button_pressed
 
 func _on_hammer_pressed():
-	glob.tool = 1
+	if glob.tool == 1: glob.tool = 0
+	else: glob.tool = 1
 func _on_tweezers_pressed():
-	glob.tool = 2
+	if glob.tool == 2: glob.tool = 0
+	else: glob.tool = 2
 func _on_emagnet_pressed():
-	glob.tool = 3
+	if glob.tool == 3: glob.tool = 0
+	else: glob.tool = 3
 func _on_flashlight_pressed():
-	glob.tool = 4
+	if glob.tool == 4: glob.tool = 0
+	else: glob.tool = 4
 func _on_weakray_pressed():
-	glob.tool = 5
+	if glob.tool == 5: glob.tool = 0
+	else: glob.tool = 5
 func _on_clone_pressed():
-	glob.tool = 6
+	if glob.tool == 6: glob.tool = 0
+	else: glob.tool = 6
 func _on_blackhole_pressed():
-	glob.tool = 7
+	if glob.tool == 7: glob.tool = 0
+	else: glob.tool = 7
+func _on_elementpicker_pressed():
+	glob.inv_open = true
+func _on_pause_pressed(): # pause button
+	glob.pause = !glob.pause
+	get_tree().paused = glob.pause
+func _on_reset_button_pressed(): # reset button
+	get_tree().reload_current_scene()
+	preset = 1
+	glob.t_power = 0
+	glob.pressure = 1
+	glob.gravity = 9.81
+	$ui/topright/presslider.value = glob.pressure
+	$ui/topright/gravslider.value = glob.gravity/9.81
 
 func _on_anim_animation_finished(_anim_name):
 	$tool/anim.play("idle")
@@ -220,19 +283,21 @@ func _on_button_unhover():
 	$ui/topleft/tooldesc.hide()
 
 func _on_hammer_mouse_entered():
-	$ui/topleft/tooldesc.text = "FISSION HAMMER\nSplits an element's mass in half."
+	$ui/topleft/tooldesc.text = "Fission Hammer\nSplits an element's mass in half."
 func _on_tweezers_mouse_entered():
-	$ui/topleft/tooldesc.text = "TWEEZERS\nRemoves one neutron."
+	$ui/topleft/tooldesc.text = "Tweezers\nRemoves one neutron."
 func _on_emagnet_mouse_entered():
-	$ui/topleft/tooldesc.text = "ELECTROMAGNET\nRemoves one electron."
+	$ui/topleft/tooldesc.text = "Electromagnet\nRemoves one electron."
 func _on_flashlight_mouse_entered():
-	$ui/topleft/tooldesc.text = "LIGHTBULB\nCreates photons."
+	$ui/topleft/tooldesc.text = "Light Bulb\nCreates photons."
 func _on_weakray_mouse_entered():
-	$ui/topleft/tooldesc.text = "WEAK RAY\nVastly accelerates nuclear decay."
+	$ui/topleft/tooldesc.text = "Weak Ray\nVastly accelerates nuclear decay."
 func _on_clone_mouse_entered():
-	$ui/topleft/tooldesc.text = "MATTER DUPLICATOR\nViolates the law of conservation of mass."
+	$ui/topleft/tooldesc.text = "Matter Duplicator\nViolates the law of conservation of mass."
 func _on_blackhole_mouse_entered():
-	$ui/topleft/tooldesc.text = "BLACK HOLE\nDestroys matter."
+	$ui/topleft/tooldesc.text = "Black Hole\nDestroys matter."
+func _on_elementpicker_mouse_entered():
+	$ui/topleft/tooldesc.text = "Purriodic Table\nSpawn element cattos!"
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://ec_assets/scenes/menu.tscn")
@@ -241,6 +306,14 @@ func _on_quit_mouse_entered():
 	$ui/botleft/quit_hint.show()
 func _on_quit_mouse_exited():
 	$ui/botleft/quit_hint.hide()
+func _on_pause_mouse_entered():
+	$ui/botleft/pause_hint.show()
+func _on_pause_mouse_exited():
+	$ui/botleft/pause_hint.hide()
+func _on_reset_button_mouse_entered():
+	$ui/botleft/reset_hint.show()
+func _on_reset_button_mouse_exited():
+	$ui/botleft/reset_hint.hide()
 
 func _on_back_pressed():
 	get_tree().paused = false

@@ -122,8 +122,12 @@ func _process(delta):
 			v.y *= -1
 	
 	#dragging the particle
-	if glob.selected == self and Input.is_action_pressed("lmb"): dragged = true
-	if Input.is_action_just_released("lmb"): dragged = false
+	if glob.selected == self and Input.is_action_pressed("lmb"):
+		dragged = true
+		glob.dragging = true
+	if Input.is_action_just_released("lmb"):
+		dragged = false
+		glob.dragging = false
 	if dragged == true: v = (get_global_mouse_position() - position)*10 / glob.rate
 	if v.length() < 50 and group == "boson":
 		v.x = randf_range(-300,300)

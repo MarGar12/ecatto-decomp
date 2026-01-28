@@ -66,3 +66,4 @@ func spawn_catto(p,n,e):
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton: glob.inv_open = false
+	glob.dragging = true

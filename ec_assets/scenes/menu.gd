@@ -50,6 +50,7 @@ func _process(delta):
 	$cattos3/lu/clock/text.text = Time.get_time_string_from_system()
 	$cattos3/lu/clock/text.visible_characters = 5
 	
+	
 	if $iris.visible == true:
 		$iris.scale /= 1+delta*10
 		$music.volume_db -= delta*20

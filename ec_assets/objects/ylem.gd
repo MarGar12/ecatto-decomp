@@ -6,8 +6,12 @@ func _physics_process(delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"): queue_free()
 	
-	if $info.visible == true and Input.is_action_pressed("lmb"): dragged = true
-	if Input.is_action_just_released("lmb"): dragged = false
+	if $info.visible == true and Input.is_action_pressed("lmb"): 
+		dragged = true
+		glob.dragging = true
+	if Input.is_action_just_released("lmb"):
+		dragged = false
+		glob.dragging = false
 	if dragged == true: velocity = (get_global_mouse_position() - position)*10
 
 	move_and_slide()

@@ -2496,10 +2496,10 @@ autowrap_mode = 2
 
 [node name="play" type="Button" parent="main" unique_id=2121722272]
 texture_filter = 2
-offset_left = -64.0
-offset_top = 40.0
-offset_right = 64.0
-offset_bottom = 88.0
+offset_left = -65.0
+offset_top = 26.0
+offset_right = 63.0
+offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2509,10 +2509,10 @@ flat = true
 
 [node name="about" type="Button" parent="main" unique_id=1308190376]
 texture_filter = 2
-offset_left = -64.0
-offset_top = 88.0
-offset_right = 64.0
-offset_bottom = 136.0
+offset_left = -65.0
+offset_top = 74.0
+offset_right = 63.0
+offset_bottom = 122.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2522,10 +2522,10 @@ flat = true
 
 [node name="decompcredits" type="Button" parent="main" unique_id=882773724]
 texture_filter = 2
-offset_left = -111.0
-offset_top = 134.0
-offset_right = 113.0
-offset_bottom = 182.0
+offset_left = -112.0
+offset_top = 120.0
+offset_right = 112.0
+offset_bottom = 168.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2535,10 +2535,10 @@ flat = true
 
 [node name="credits" type="Button" parent="main" unique_id=1844929267]
 texture_filter = 2
-offset_left = -67.0
-offset_top = 177.0
-offset_right = 69.0
-offset_bottom = 225.0
+offset_left = -68.0
+offset_top = 163.0
+offset_right = 68.0
+offset_bottom = 211.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2548,10 +2548,10 @@ flat = true
 
 [node name="quit" type="Button" parent="main" unique_id=2021964447]
 texture_filter = 2
-offset_left = -64.0
-offset_top = 221.0
-offset_right = 64.0
-offset_bottom = 269.0
+offset_left = -65.0
+offset_top = 207.0
+offset_right = 63.0
+offset_bottom = 255.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
 theme_override_fonts/font = ExtResource("32")
@@ -2574,6 +2574,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="happyholidays" type="Sprite2D" parent="main" unique_id=121086354]
+visible = false
 texture_filter = 2
 position = Vector2(576, 320)
 texture = ExtResource("33")
@@ -2708,6 +2709,7 @@ autoplay = &"bob"
 speed_scale = 0.7
 
 [node name="snow" type="CPUParticles2D" parent="." unique_id=1871340321]
+visible = false
 texture_filter = 2
 position = Vector2(0, -344)
 amount = 200
@@ -2763,8 +2765,8 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]

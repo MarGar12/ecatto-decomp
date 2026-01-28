@@ -97,7 +97,7 @@ func _ready():
 
 func _process(delta):
 	#delete when resetting
-	if Input.is_action_just_pressed("R"): 
+	if Input.is_action_just_pressed("R"):
 		queue_free()
 	
 	$info/electrons.text = str(electrons) + "e"
@@ -346,9 +346,11 @@ func _physics_process(delta):
 	#dragging the catto
 	if glob.selected == self and Input.is_action_pressed("lmb"):
 		dragged = true
+		glob.dragging = true
 		$model/anim.play("grabbed")
 	if Input.is_action_just_released("lmb"):
 		dragged = false
+		glob.dragging = false
 		$model/anim.play("idle")
 	
 	if dragged == true and Input.is_action_pressed("lmb"):
