@@ -29,6 +29,10 @@ config/icon="res://ec_assets/textures/ui/ecgame_icon.png"
 
 glob="*res://glob.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mod_tool/plugin.cfg")
+
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false

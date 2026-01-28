@@ -11,7 +11,7 @@ var air_density = 1.3
 var gravity = 9.81
 # var isMobile = (OS.get_model_name() != "GenericDevice") or OS.has_feature("web_android") or OS.has_feature("web_ios")
 var dragging = false
-var lcdrag = false
+var lcdrag = true
 
 var spawning = null
 var inv_open = false
