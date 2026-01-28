@@ -111,7 +111,7 @@ func _process(delta):
 	
 	#lag prevention
 	if protons < 0 or delta > 0.5:
-		print("deleted " + $info/name.text)
+		print("  " + $info/name.text)
 		glob.cattos -= 1
 		queue_free()
 	$gas.visible = delta < 0.1 and electrons > 0
