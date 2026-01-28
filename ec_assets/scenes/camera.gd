@@ -83,7 +83,7 @@ func _process(delta):
 	$ui/botleft.position.y = get_window().size.y/4.0
 	$ui/botright.position = get_window().size/4.0
 	# Change camera scale based on window size -- from ec+
-	var smult = min(get_window().size.x / 1152.0, get_window().size.y / 648.0)
+	var smult = min(get_window().size.x / 950.0, get_window().size.y / 648.0)
 	$ui/pause.scale = Vector2.ONE * smult / 1.5
 	if glob.hudscaling == true:
 		$ui/topleft.scale = Vector2.ONE * smult
