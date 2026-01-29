@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#debug stuff
-	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS) [" + str(Engine.get_frames_drawn()).pad_decimals(0) + "]"
+	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"
 	
 	$hint.visible = glob.tutorial
 	$air.self_modulate.a = glob.pressure/5.0

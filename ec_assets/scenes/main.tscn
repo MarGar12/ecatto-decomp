@@ -41,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://b35ovjebecx10" path="res://ec_assets/music/BigBang.mp3" id="37_x1wsj"]
 [ext_resource type="AudioStream" uid="uid://dvg04athofoa6" path="res://ec_assets/music/Blippy Trance.mp3" id="38_cql6i"]
 [ext_resource type="AudioStream" uid="uid://bjcxc5gq38oos" path="res://ec_assets/music/Deliberate Thought.mp3" id="39_kxnor"]
+[ext_resource type="AudioStream" uid="uid://by5t6ikhmk7fc" path="res://ec_assets/music/FreshlyAcquainted.ogg" id="41_cql6i"]
 
 [sub_resource type="Gradient" id="Gradient_6bmi1"]
 offsets = PackedFloat32Array(0)
@@ -701,6 +702,10 @@ script = ExtResource("31")
 stream = ExtResource("39_kxnor")
 script = ExtResource("31")
 
+[node name="j" type="AudioStreamPlayer" parent="music" unique_id=378565178]
+stream = ExtResource("41_cql6i")
+script = ExtResource("31")
+
 [node name="rumble" type="AudioStreamPlayer" parent="." unique_id=1901329290]
 stream = ExtResource("37")
 volume_db = -5.0
@@ -717,3 +722,4 @@ pitch_scale = 0.3
 [connection signal="finished" from="music/g" to="music" method="_on_track_finished"]
 [connection signal="finished" from="music/h" to="music" method="_on_track_finished"]
 [connection signal="finished" from="music/i" to="music" method="_on_track_finished"]
+[connection signal="finished" from="music/j" to="music" method="_on_track_finished"]
