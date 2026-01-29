@@ -5,11 +5,60 @@ var bigbang = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	preload("res://ec_assets/objects/element_catto.tscn")
+	preload("res://ec_assets/scenes/main.tscn")
 	
 	glob.pause = false
 	glob.cattos = 0
 	glob.particles = 0
 	get_window().title = "Element Cattos Decomp"
+	
+	#flying kitty stuff
+	# var sector = Vector2.ZERO
+	# var proc = FastNoiseLite.new()
+	# var color = Vector2.ZERO
+	for c in range(25):
+		var cloud = $bg/earth_fk/cloud_front/cloud1.duplicate()
+		cloud.visible = true
+		cloud.position.x = randf_range(-15000,15000)
+		cloud.position.y = randf_range(-400,0)
+		cloud.scale *= randf_range(1,2)
+		cloud.flip_h = [true,false].pick_random()
+		$bg/earth_fk/cloud_front.add_child(cloud)
+		var cloud4 = $bg/earth_fk/cloud_front4/cloud1.duplicate()
+		cloud4.visible = true
+		cloud4.position.x = randf_range(-15000,15000)
+		cloud4.position.y = randf_range(-400,0)
+		cloud4.scale *= randf_range(1,2)
+		cloud4.flip_h = [true,false].pick_random()
+		$bg/earth_fk/cloud_front4.add_child(cloud4)
+		var cloud3 = $bg/earth_fk/cloud_front3/cloud1.duplicate()
+		cloud3.visible = true
+		cloud3.position.x = randf_range(-15000,15000)
+		cloud3.position.y = randf_range(-600,-200)
+		cloud3.scale *= randf_range(0,1.5)
+		cloud3.flip_h = [true,false].pick_random()
+		$bg/earth_fk/cloud_front3.add_child(cloud3)
+	for c in range(38):
+		var cloud = $bg/earth_fk/cloud_front2/cloud1.duplicate()
+		cloud.visible = true
+		cloud.position.x = randf_range(-30000,30000)
+		cloud.position.y = randf_range(-600,-400)
+		cloud.scale *= randf_range(0,1)
+		cloud.flip_h = [true,false].pick_random()
+		$bg/earth_fk/cloud_front2.add_child(cloud)
+	for c in range(30):
+		var mountain = $bg/earth_fk/mountains/mount.duplicate()
+		mountain.visible = true
+		mountain.position.x = randf_range(-10500,15000)
+		mountain.scale *= randf_range(0.5,1.5)
+		mountain.flip_h = [true,false].pick_random()
+		$bg/earth_fk/mountains.add_child(mountain)
+		var mountain2 = $bg/earth_fk/mountains2/mount.duplicate()
+		mountain2.visible = true
+		mountain2.position.x = randf_range(-10500,10500)
+		mountain2.scale *= randf_range(0.5,1.5)
+		mountain2.flip_h = [true,false].pick_random()
+		$bg/earth_fk/mountains2.add_child(mountain2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,7 +109,22 @@ func _process(delta):
 	$bg/sun/space.position = $camera.position
 	$bg/sun/plasma.position = $camera.position/1.5
 	$bg/sun/sun.position = $camera.position/1.5
-
+	
+	$"bg/earth_fk/cloud_front2/.".position = $camera.position/1.01
+	$"bg/earth_fk/cloud_front3/.".position = $camera.position/1.05
+	$"bg/earth_fk/cloud_front/.".position = $camera.position/1.09
+	$"bg/earth_fk/cloud_front4/.".position = $camera.position/1.2
+	
+	$bg/earth_fk/ground3/grass_far.position = $camera.position*0.8+Vector2(0,250)
+	$bg/earth_fk/ground3/grass_far2.position = $camera.position*0.9+Vector2(0,200)
+	$bg/earth_fk/ground3/grass_bg.position.x = $camera.position.x/2.0
+	$"bg/earth_fk/mountains/.".position.x = $camera.position.x/1.01
+	$"bg/earth_fk/mountains/.".position.y = ($camera.position.y+72)/1.01
+	$"bg/earth_fk/mountains2/.".position.x = $camera.position.x/1.04
+	$"bg/earth_fk/mountains2/.".position.y = ($camera.position.y+72)/1.04
+	$bg/earth_fk/sky.position.x = $camera.position.x/1.001
+	$bg/earth_fk/sky.position.y = ($camera.position.y-1000)/1.01
+	
 func spawn(obj,x,y):
 	var scene = load("res://ec_assets/objects/"+obj+".tscn")
 	var instance = scene.instantiate()

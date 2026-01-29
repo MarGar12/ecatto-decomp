@@ -10,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://n04s8a81j0tc" path="res://ec_assets/textures/effects/star0.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://b45q3m32gfsaq" path="res://ec_assets/textures/backgrounds/metalwall.png" id="10"]
+[ext_resource type="Gradient" uid="uid://dsngr2qkprenu" path="res://ec_assets/scenes/ca.tres" id="10_klq3v"]
+[ext_resource type="Texture2D" uid="uid://cuki786q8hhnq" path="res://ec_assets/textures/backgrounds/cloud.png" id="10_kxnor"]
 [ext_resource type="Texture2D" uid="uid://cmbnwp1uw18e8" path="res://ec_assets/xmas_art/1ketheboss_merryxmas.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://emmnxd8gh0b4" path="res://ec_assets/textures/backgrounds/grass.png" id="11_k25mk"]
 [ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="12"]
+[ext_resource type="Texture2D" uid="uid://cnd1otk3qovhr" path="res://ec_assets/textures/backgrounds/everest.png" id="12_ctupa"]
 [ext_resource type="Texture2D" uid="uid://cthi4ajr2ytjp" path="res://ec_assets/xmas_art/ckb_nak.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://bpikp6oexcaax" path="res://ec_assets/xmas_art/inky_primexmas.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://b35ka8rlk7vc0" path="res://ec_assets/xmas_art/beehive3465_happyholidays.jpg" id="15"]
@@ -117,6 +121,9 @@ metadata/_snap_enabled = true
 [sub_resource type="Gradient" id="Gradient_fv4en"]
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ctupa"]
+gradient = ExtResource("10_klq3v")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_32sdk"]
 noise_type = 0
@@ -316,6 +323,129 @@ angle_max = 720.0
 scale_amount_curve = SubResource("Curve_oxbkn")
 color = Color(0.25098, 0.501961, 1, 1)
 color_ramp = SubResource("Gradient_fv4en")
+
+[node name="earth_fk" type="Node2D" parent="bg" unique_id=860448242]
+texture_filter = 1
+
+[node name="sky" type="Sprite2D" parent="bg/earth_fk" unique_id=176631056]
+z_index = -5
+texture_filter = 4
+texture_repeat = 2
+position = Vector2(-901.00006, -961)
+rotation = 1.5707964
+scale = Vector2(150, 150)
+texture = SubResource("GradientTexture2D_ctupa")
+offset = Vector2(0, -6)
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 20000)
+
+[node name="cloud_front2" type="Node2D" parent="bg/earth_fk" unique_id=19863559]
+
+[node name="cloud1" type="Sprite2D" parent="bg/earth_fk/cloud_front2" unique_id=1237245467]
+visible = false
+modulate = Color(0.7529412, 0.8745098, 1, 1)
+position = Vector2(0, -123)
+texture = ExtResource("10_kxnor")
+
+[node name="mountains" type="Node2D" parent="bg/earth_fk" unique_id=1291683239]
+
+[node name="mount" type="Sprite2D" parent="bg/earth_fk/mountains" unique_id=1436110205]
+visible = false
+modulate = Color(0.7529412, 0.8745098, 1, 1)
+position = Vector2(0, -72)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ctupa")
+
+[node name="mountains2" type="Node2D" parent="bg/earth_fk" unique_id=1456428634]
+
+[node name="mount" type="Sprite2D" parent="bg/earth_fk/mountains2" unique_id=1234307916]
+visible = false
+modulate = Color(0.7529412, 0.8745098, 1, 1)
+position = Vector2(0, -72)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ctupa")
+
+[node name="cloud_front3" type="Node2D" parent="bg/earth_fk" unique_id=887766511]
+
+[node name="cloud1" type="Sprite2D" parent="bg/earth_fk/cloud_front3" unique_id=954234661]
+visible = false
+modulate = Color(0.7529412, 0.8745098, 1, 1)
+position = Vector2(0, -123)
+texture = ExtResource("10_kxnor")
+
+[node name="cloud_front" type="Node2D" parent="bg/earth_fk" unique_id=116252450]
+
+[node name="cloud1" type="Sprite2D" parent="bg/earth_fk/cloud_front" unique_id=872672995]
+visible = false
+modulate = Color(0.7529412, 0.8745098, 1, 1)
+position = Vector2(0, -123)
+texture = ExtResource("10_kxnor")
+
+[node name="cloud_front4" type="Node2D" parent="bg/earth_fk" unique_id=52204441]
+
+[node name="cloud1" type="Sprite2D" parent="bg/earth_fk/cloud_front4" unique_id=241427984]
+visible = false
+modulate = Color(0.7529412, 0.8745098, 1, 1)
+position = Vector2(0, -123)
+texture = ExtResource("10_kxnor")
+
+[node name="bushes" type="Node2D" parent="bg/earth_fk" unique_id=1088486008]
+
+[node name="Sprite2D" type="Sprite2D" parent="bg/earth_fk/bushes" unique_id=232691223]
+
+[node name="ground3" type="Node2D" parent="bg/earth_fk" unique_id=1837644488]
+
+[node name="grass_far2" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=1785705999]
+self_modulate = Color(0, 1, 1, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 176)
+texture = ExtResource("11_k25mk")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 280)
+
+[node name="grass_far" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=1010201932]
+self_modulate = Color(0.7529412, 1, 1, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("11_k25mk")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 280)
+
+[node name="grass_bg" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=584834635]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 204)
+scale = Vector2(2, 2)
+texture = ExtResource("11_k25mk")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 280)
+
+[node name="grass_fg" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=508198133]
+top_level = true
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 229)
+scale = Vector2(2, 2)
+texture = ExtResource("11_k25mk")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 280)
+
+[node name="dark" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=1529404411]
+top_level = true
+texture_filter = 4
+position = Vector2(-3.2186508e-06, 20.000061)
+scale = Vector2(75, 136.99998)
+texture = SubResource("GradientTexture2D_sclsh")
+offset = Vector2(0, 2.5)
+
+[node name="black2" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=690316864]
+position = Vector2(0, 677)
+scale = Vector2(3000, 3000)
+texture = SubResource("GradientTexture2D_w6njf")
+offset = Vector2(0, 32)
 
 [node name="air" type="Sprite2D" parent="." unique_id=469472985]
 modulate = Color(0.501961, 0.752941, 1, 0.12549)
