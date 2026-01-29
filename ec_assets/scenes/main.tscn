@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://pa6fxy1jae2l" path="res://ec_assets/xmas_art/triton_berkelium.png" id="24"]
 [ext_resource type="Texture2D" uid="uid://0tj1kkdmht1a" path="res://ec_assets/xmas_art/audiovox_oganessontennessine.jpg" id="25"]
 [ext_resource type="Texture2D" uid="uid://dmmieth003ji0" path="res://ec_assets/textures/ui/tutorial_catto.png" id="26"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="26_cql6i"]
 [ext_resource type="Texture2D" uid="uid://dw0uj0y4flamx" path="res://ec_assets/textures/ui/tutorial_table.png" id="27"]
 [ext_resource type="PackedScene" uid="uid://cc5lnxjqdlpj" path="res://ec_assets/scenes/camera.tscn" id="28"]
 [ext_resource type="Script" uid="uid://bbf0pu4c023l1" path="res://ec_assets/scenes/music.gd" id="29"]
@@ -40,7 +41,6 @@
 [ext_resource type="AudioStream" uid="uid://b35ovjebecx10" path="res://ec_assets/music/BigBang.mp3" id="37_x1wsj"]
 [ext_resource type="AudioStream" uid="uid://dvg04athofoa6" path="res://ec_assets/music/Blippy Trance.mp3" id="38_cql6i"]
 [ext_resource type="AudioStream" uid="uid://bjcxc5gq38oos" path="res://ec_assets/music/Deliberate Thought.mp3" id="39_kxnor"]
-[ext_resource type="AudioStream" uid="uid://drgerkrv2r7d3" path="res://ec_assets/music/Wallpaper.mp3" id="40_k25mk"]
 
 [sub_resource type="Gradient" id="Gradient_6bmi1"]
 offsets = PackedFloat32Array(0)
@@ -374,6 +374,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1250, 512)
 
 [node name="xmas_art" type="Node2D" parent="walls/opaque" unique_id=283494091]
+visible = false
 scale = Vector2(0.25, 0.25)
 
 [node name="1" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1205613243]
@@ -594,12 +595,15 @@ text = "Audiovox Vod10PS2"
 horizontal_alignment = 2
 
 [node name="xmasart" type="Button" parent="walls/opaque" unique_id=1748714895]
+texture_filter = 1
 offset_left = -96.0
 offset_top = 154.0
 offset_right = 24.0
 offset_bottom = 185.0
 scale = Vector2(0.4, 0.4)
-text = "Christmas Art: on"
+theme_override_fonts/font = ExtResource("26_cql6i")
+theme_override_font_sizes/font_size = 16
+text = "Christmas Art: off"
 
 [node name="Sprite" type="Sprite2D" parent="walls" unique_id=584762892]
 modulate = Color(1, 1, 1, 0.12549)
@@ -610,34 +614,36 @@ scale = Vector2(8, 8)
 texture = SubResource("GradientTexture2D_mgsi3")
 
 [node name="hint" type="Node2D" parent="." unique_id=410334788]
-texture_filter = 2
+texture_filter = 1
 position = Vector2(0, -128)
 
 [node name="Label" type="Label" parent="hint" unique_id=1089568818]
-offset_left = -280.0
+offset_left = -336.0
 offset_top = -142.0
-offset_right = 279.0
+offset_right = 338.0
 offset_bottom = 114.0
-theme_override_fonts/font = ExtResource("12")
-text = "Middle/Right mouse button or touch outside a catto to drag the camera
-Scroll or pinch screen to zoom
-Space or press the purr table button to open/close the periodic table
-Esc or press the pause button to open/close settings
-R to reset Catto and Particle count"
+theme_override_fonts/font = ExtResource("26_cql6i")
+text = "Middle/right mouse button to drag screen
+Scroll to zoom
+Space to open/close the periodic table
+Esc to open/close settings
+R to clear and reset Catto and Particle count"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ok" type="Button" parent="hint" unique_id=53055744]
+texture_filter = 1
 offset_left = -64.0
 offset_top = 64.0
 offset_right = 64.0
 offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("26_cql6i")
 text = "OK"
 
 [node name="catto" type="Sprite2D" parent="hint" unique_id=1631607234]
 self_modulate = Color(1, 1, 1, 0.501961)
 material = ExtResource("2")
-position = Vector2(-383, 33)
+position = Vector2(-323, 33)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("26")
 
@@ -649,7 +655,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27")
 
 [node name="camera" parent="." unique_id=1422070259 instance=ExtResource("28")]
-position = Vector2(0, -128)
+position = Vector2(0, -218)
+zoom = Vector2(1, 1)
 
 [node name="music" type="Node" parent="." unique_id=1380693314]
 process_mode = 3
@@ -694,11 +701,6 @@ script = ExtResource("31")
 stream = ExtResource("39_kxnor")
 script = ExtResource("31")
 
-[node name="j" type="AudioStreamPlayer" parent="music" unique_id=500501658]
-stream = ExtResource("40_k25mk")
-volume_db = -5.0
-script = ExtResource("31")
-
 [node name="rumble" type="AudioStreamPlayer" parent="." unique_id=1901329290]
 stream = ExtResource("37")
 volume_db = -5.0
@@ -715,4 +717,3 @@ pitch_scale = 0.3
 [connection signal="finished" from="music/g" to="music" method="_on_track_finished"]
 [connection signal="finished" from="music/h" to="music" method="_on_track_finished"]
 [connection signal="finished" from="music/i" to="music" method="_on_track_finished"]
-[connection signal="finished" from="music/j" to="music" method="_on_track_finished"]

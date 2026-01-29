@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="4"]
 [ext_resource type="SpriteFrames" uid="uid://bit7ybgb1ps46" path="res://ec_assets/textures/element_eyes.tres" id="5"]
 [ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="6"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="6_0vfqc"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="7"]
 [ext_resource type="AudioStream" uid="uid://cgibu6a6fvlih" path="res://ec_assets/sounds/cartoonsplort.mp3" id="8"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="9"]
@@ -122,6 +123,8 @@ debug_color = Color(1, 1, 1, 0)
 
 [node name="info" type="Node2D" parent="." unique_id=895070433]
 visible = false
+texture_filter = 1
+position = Vector2(0, -2)
 
 [node name="bg" type="Sprite2D" parent="info" unique_id=169439895]
 texture_filter = 2
@@ -136,6 +139,7 @@ offset_top = -80.0
 offset_right = 192.0
 offset_bottom = 16.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_0vfqc")
 theme_override_font_sizes/font_size = 32
 text = "Quark-Gluon Plasma"
 horizontal_alignment = 1
@@ -148,6 +152,7 @@ offset_left = -64.0
 offset_top = -48.0
 offset_right = 192.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("6_0vfqc")
 theme_override_font_sizes/font_size = 16
 text = "exotic matter"
 horizontal_alignment = 1
@@ -180,6 +185,7 @@ shape = SubResource("CircleShape2D_kkxkn")
 
 [node name="desc" type="Label" parent="." unique_id=847903330]
 process_mode = 3
+texture_filter = 1
 offset_left = -24.0
 offset_top = -16.0
 offset_right = 24.0
@@ -192,6 +198,8 @@ electromagnetic radiation.
 High-energy experiments in particle accelerators such as the Large Hadron Collider
 often briefly create this exotic substance in the process of smashing protons together."
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("6_0vfqc")
+theme_override_font_sizes/font_size = 16
 script = ExtResource("9")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

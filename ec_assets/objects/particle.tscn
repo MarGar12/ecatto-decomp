@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="7"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="7_u17vy"]
 
 [sub_resource type="Gradient" id="Gradient_xvqea"]
 offsets = PackedFloat32Array(0, 0.716049, 1)
@@ -136,7 +137,6 @@ pitch_scale = 0.5
 script = ExtResource("6")
 
 [node name="info" type="Node2D" parent="." unique_id=81519031]
-visible = false
 
 [node name="bg" type="Sprite2D" parent="info" unique_id=1788369144]
 texture_filter = 2
@@ -145,23 +145,25 @@ scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_bsan3")
 
 [node name="name" type="Label" parent="info" unique_id=200820693]
-texture_filter = 2
+texture_filter = 1
 offset_left = -64.0
 offset_top = -48.0
 offset_right = 192.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("7_u17vy")
 theme_override_font_sizes/font_size = 32
 text = "up quark"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="type" type="Label" parent="info" unique_id=729095588]
-texture_filter = 2
+texture_filter = 1
 offset_left = -64.0
 offset_top = -40.0
 offset_right = 192.0
 offset_bottom = 8.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("7_u17vy")
 theme_override_font_sizes/font_size = 16
 text = "fermion +"
 horizontal_alignment = 1

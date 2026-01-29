@@ -32,7 +32,8 @@
 [ext_resource type="Script" uid="uid://cs3tvre87m8d7" path="res://ec_assets/scenes/inventory.gd" id="28"]
 [ext_resource type="Texture2D" uid="uid://sgjm3hkfarr1" path="res://ec_assets/textures/ui/inventory_table.png" id="29"]
 [ext_resource type="PackedScene" uid="uid://ycmppe36no44" path="res://ec_assets/scenes/inventory_item.tscn" id="30"]
-[ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="31"]
+[ext_resource type="FontFile" uid="uid://ck0m755r43bki" path="res://ec_assets/fonts/catarchean.ttf" id="30_618eh"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="31_aenir"]
 [ext_resource type="Texture2D" uid="uid://c0htsm0kwp16b" path="res://ec_assets/textures/ui/button_quit1.png" id="32"]
 [ext_resource type="Texture2D" uid="uid://coxkkmvate66l" path="res://ec_assets/textures/ui/button_reset1.png" id="32_knf1o"]
 [ext_resource type="Texture2D" uid="uid://mmjoxs6e55y1" path="res://ec_assets/textures/ui/button_quit2.png" id="33"]
@@ -40,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://bqm0ak32mqpfx" path="res://ec_assets/textures/ui/button_help1.png" id="34"]
 [ext_resource type="Texture2D" uid="uid://ds12cmak0gfw2" path="res://ec_assets/textures/ui/button_setting1.png" id="34_2158e"]
 [ext_resource type="Texture2D" uid="uid://bagn32hjk26y2" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
+[ext_resource type="FontFile" uid="uid://bf71h1bifsf" path="res://ec_assets/fonts/PIXEAB__.TTF" id="35_618eh"]
 [ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
 
 [sub_resource type="Curve" id="Curve_cgg83"]
@@ -277,6 +279,7 @@ fill_from = Vector2(1, 1)
 [node name="camera" type="Camera2D" unique_id=1926335180]
 process_mode = 3
 process_priority = -1
+texture_filter = 1
 zoom = Vector2(2, 2)
 script = ExtResource("1")
 
@@ -368,13 +371,16 @@ max_distance = 5000.0
 
 [node name="hint" type="Label" parent="tool" unique_id=1620204898]
 modulate = Color(1, 1, 1, 0.501961)
-texture_filter = 2
+texture_filter = 1
 offset_left = -211.0
 offset_top = 65.0
 offset_right = 211.0
 offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 8
 text = "Right click or press the same button to disable the tool"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="blackhole" type="Node2D" parent="tool" unique_id=1488270971]
 visible = false
@@ -402,10 +408,10 @@ shape = SubResource("CircleShape2D_sdojg")
 
 [node name="ui" type="Node2D" parent="." unique_id=1728935260]
 z_index = 5
+texture_filter = 1
 
 [node name="topleft" type="Node2D" parent="ui" unique_id=1650471494]
 z_index = 10
-texture_filter = 2
 position = Vector2(-288, -160)
 
 [node name="hammer" type="TextureButton" parent="ui/topleft" unique_id=1281677667]
@@ -416,6 +422,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("15")
 texture_pressed = ExtResource("16")
 texture_hover = ExtResource("16")
+metadata/_edit_use_anchors_ = true
 
 [node name="tweezers" type="TextureButton" parent="ui/topleft" unique_id=4551397]
 offset_left = 48.0
@@ -425,6 +432,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("17")
 texture_pressed = ExtResource("18")
 texture_hover = ExtResource("18")
+metadata/_edit_use_anchors_ = true
 
 [node name="emagnet" type="TextureButton" parent="ui/topleft" unique_id=2054073613]
 offset_left = 88.0
@@ -434,6 +442,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("19")
 texture_pressed = ExtResource("20")
 texture_hover = ExtResource("20")
+metadata/_edit_use_anchors_ = true
 
 [node name="flashlight" type="TextureButton" parent="ui/topleft" unique_id=743086481]
 offset_left = 128.0
@@ -443,6 +452,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("21")
 texture_pressed = ExtResource("22")
 texture_hover = ExtResource("22")
+metadata/_edit_use_anchors_ = true
 
 [node name="weakray" type="TextureButton" parent="ui/topleft" unique_id=1313888022]
 offset_left = 168.0
@@ -452,6 +462,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("23")
 texture_pressed = ExtResource("24")
 texture_hover = ExtResource("24")
+metadata/_edit_use_anchors_ = true
 
 [node name="clone" type="TextureButton" parent="ui/topleft" unique_id=1346864536]
 offset_left = 208.0
@@ -461,6 +472,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("25")
 texture_pressed = ExtResource("26")
 texture_hover = ExtResource("26")
+metadata/_edit_use_anchors_ = true
 
 [node name="elementpicker" type="TextureButton" parent="ui/topleft" unique_id=221781030]
 offset_left = 287.0
@@ -470,6 +482,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("27_xysan")
 texture_pressed = ExtResource("27_ybjw0")
 texture_hover = ExtResource("27_ybjw0")
+metadata/_edit_use_anchors_ = true
 
 [node name="blackhole" type="TextureButton" parent="ui/topleft" unique_id=64926509]
 offset_left = 248.0
@@ -479,22 +492,28 @@ offset_bottom = 40.0
 texture_normal = ExtResource("14")
 texture_pressed = ExtResource("27")
 texture_hover = ExtResource("27")
+metadata/_edit_use_anchors_ = true
 
 [node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
 offset_left = 291.0
-offset_top = 27.0
+offset_top = 30.0
 offset_right = 317.0
-offset_bottom = 39.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 8
 text = "0"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="cattocount" type="Label" parent="ui/topleft" unique_id=1288670338]
-offset_left = 291.0
-offset_top = 8.0
-offset_right = 316.0
-offset_bottom = 21.0
+offset_left = 290.0
+offset_top = 9.0
+offset_right = 315.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 8
 text = "0"
+metadata/_edit_use_anchors_ = true
 
 [node name="tooldesc" type="Label" parent="ui/topleft" unique_id=2015836275]
 visible = false
@@ -502,7 +521,8 @@ offset_left = 8.0
 offset_top = 48.0
 offset_right = 288.0
 offset_bottom = 160.0
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 8
 text = "FISSION HAMMER
 Splits an element's mass in half."
 autowrap_mode = 2
@@ -514,6 +534,7 @@ position = Vector2(288, -160)
 scale = Vector2(0.5, 0.5)
 
 [node name="rateslider" type="HSlider" parent="ui/topright" unique_id=2005686890]
+texture_filter = 1
 offset_left = -224.0
 offset_top = 8.0
 offset_right = -8.0
@@ -522,6 +543,7 @@ min_value = -10.0
 max_value = 0.0
 
 [node name="tempslider" type="HSlider" parent="ui/topright" unique_id=1280203014]
+texture_filter = 1
 offset_left = -128.0
 offset_top = 32.0
 offset_right = -8.0
@@ -530,6 +552,7 @@ min_value = -10.0
 max_value = 10.0
 
 [node name="presslider" type="HSlider" parent="ui/topright" unique_id=1071056577]
+texture_filter = 1
 offset_left = -128.0
 offset_top = 56.0
 offset_right = -8.0
@@ -537,8 +560,10 @@ offset_bottom = 80.0
 max_value = 5.0
 step = 0.05
 value = 1.0
+metadata/_edit_use_anchors_ = true
 
 [node name="gravslider" type="HSlider" parent="ui/topright" unique_id=1682718706]
+texture_filter = 1
 offset_left = -128.0
 offset_top = 80.0
 offset_right = -8.0
@@ -546,13 +571,17 @@ offset_bottom = 104.0
 max_value = 5.0
 step = 0.01
 value = 1.0
+metadata/_edit_use_anchors_ = true
 
 [node name="preset" type="OptionButton" parent="ui/topright" unique_id=1443029033]
+texture_filter = 1
 offset_left = -128.0
 offset_top = 144.0
 offset_right = 32.0
 offset_bottom = 176.0
 scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 16
 alignment = 1
 selected = 1
 item_count = 5
@@ -567,8 +596,10 @@ popup/item_3/text = "Deep Space"
 popup/item_3/id = 3
 popup/item_4/text = "Sun Core"
 popup/item_4/id = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="reset" type="TextureButton" parent="ui/topright" unique_id=1476896210]
+texture_filter = 1
 offset_left = -128.0
 offset_top = 112.0
 offset_right = 32.0
@@ -578,77 +609,67 @@ texture_normal = SubResource("GradientTexture2D_hpdug")
 texture_hover = SubResource("GradientTexture2D_8ke6j")
 
 [node name="text" type="Label" parent="ui/topright/reset" unique_id=637511438]
-layout_mode = 0
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.020831943
+anchor_right = 0.0125
+anchor_bottom = 0.020831943
 offset_right = 160.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 16
 text = "Reset Conditions"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="touchevent" type="Label" parent="ui/topright" unique_id=1893750734]
-offset_left = -246.0
-offset_top = 172.0
-offset_right = -8.0
-offset_bottom = 186.0
-theme_override_font_sizes/font_size = 8
-text = "cam pos: "
-horizontal_alignment = 2
-
-[node name="zoom" type="Label" parent="ui/topright" unique_id=1360178743]
-offset_left = -246.0
-offset_top = 184.0
-offset_right = -8.0
-offset_bottom = 196.0
-theme_override_font_sizes/font_size = 8
-text = "zoom: "
-horizontal_alignment = 2
-
-[node name="fps" type="Label" parent="ui/topright" unique_id=66698587]
-offset_left = -246.0
-offset_top = 196.0
-offset_right = -8.0
-offset_bottom = 208.0
-theme_override_font_sizes/font_size = 8
-text = "fps: "
-horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="rate" type="Label" parent="ui/topright" unique_id=1058331148]
-offset_left = -228.0
-offset_top = 6.0
-offset_right = -4.0
-offset_bottom = 32.0
+texture_filter = 1
+offset_left = -226.0
+offset_top = 28.0
+offset_right = -8.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 8
 text = "time rate: 1"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="temp" type="Label" parent="ui/topright" unique_id=11774986]
-offset_left = -130.0
-offset_top = 32.0
-offset_right = -6.0
-offset_bottom = 56.0
+texture_filter = 1
+offset_left = -224.0
+offset_top = 52.0
+offset_right = -8.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
 text = "temperature: 300K"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="pres" type="Label" parent="ui/topright" unique_id=978493096]
-offset_left = -130.0
-offset_top = 58.0
-offset_right = -6.0
-offset_bottom = 78.0
+texture_filter = 1
+offset_left = -132.0
+offset_top = 74.0
+offset_right = -8.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
 text = "pressure: 1 atm"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="grav" type="Label" parent="ui/topright" unique_id=1779576093]
-offset_left = -112.0
-offset_top = 86.0
-offset_right = -18.0
-offset_bottom = 99.0
+texture_filter = 1
+offset_left = -128.0
+offset_top = 98.0
+offset_right = -8.0
+offset_bottom = 111.0
+theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
 text = "gravity: 1g"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="center" type="Node2D" parent="ui" unique_id=442191851]
@@ -656,11 +677,12 @@ z_index = 10
 
 [node name="inventory" type="Node2D" parent="ui/center" unique_id=545235895]
 visible = false
-texture_filter = 2
+texture_filter = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("28")
 
 [node name="bg" type="Sprite2D" parent="ui/center/inventory" unique_id=2034578487]
+texture_filter = 2
 position = Vector2(0, 8)
 texture = ExtResource("29")
 
@@ -1037,13 +1059,14 @@ position = Vector2(366, 135)
 position = Vector2(415, 135)
 
 [node name="hint" type="Label" parent="ui/center/inventory" unique_id=703734208]
-offset_left = -288.0
-offset_top = -192.0
-offset_right = 45.0
-offset_bottom = -144.0
+offset_left = -322.0
+offset_top = -188.0
+offset_right = 143.0
+offset_bottom = -140.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Click & drag to spawn"
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 22
+text = "Click or Press and drag a catto"
 
 [node name="nucleus" type="CheckButton" parent="ui/center/inventory" unique_id=1392764134]
 offset_left = -288.0
@@ -1056,15 +1079,15 @@ tooltip_text = "Toggles whether or not your catto will spawn as a nucleus (no el
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 48.0
-offset_top = -16.0
+offset_top = -18.0
 offset_right = 160.0
-offset_bottom = 48.0
-theme_override_font_sizes/font_size = 20
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 16
 text = "nucleus"
 vertical_alignment = 1
 
 [node name="desc" type="Node2D" parent="ui/center/inventory" unique_id=1763563516]
-visible = false
 z_index = 1
 
 [node name="bg" type="Sprite2D" parent="ui/center/inventory/desc" unique_id=116703224]
@@ -1077,18 +1100,18 @@ offset_left = -448.0
 offset_top = 176.0
 offset_right = 448.0
 offset_bottom = 218.0
-theme_override_fonts/font = ExtResource("31")
+theme_override_fonts/font = ExtResource("35_618eh")
 theme_override_font_sizes/font_size = 32
 text = "Hydrogen"
 horizontal_alignment = 1
 
 [node name="text" type="Label" parent="ui/center/inventory/desc" unique_id=132680005]
 offset_left = -448.0
-offset_top = 224.0
+offset_top = 230.0
 offset_right = 448.0
-offset_bottom = 266.0
-theme_override_fonts/font = ExtResource("31")
-theme_override_font_sizes/font_size = 20
+offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 16
 text = "Mother of all elements. Readily bonds with many others, but tends to leave the party when a metal comes in. Usually peaceful, but has an explosive side."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -1103,8 +1126,11 @@ texture_hover = SubResource("GradientTexture2D_8ke6j")
 
 [node name="text" type="Label" parent="ui/center/inventory/back" unique_id=1739751732]
 layout_mode = 0
-offset_right = 160.0
+offset_left = 2.0
+offset_right = 162.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 16
 text = "Back to game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1113,33 +1139,35 @@ vertical_alignment = 1
 process_mode = 3
 visible = false
 z_index = 20
-texture_filter = 2
+texture_filter = 1
 scale = Vector2(0.75, 0.75)
 
 [node name="bg" type="Sprite2D" parent="ui/pause" unique_id=433558461]
 modulate = Color(1, 1, 1, 0.87451)
+texture_filter = 4
 scale = Vector2(50, 50)
 texture = SubResource("GradientTexture2D_r7ohn")
 
 [node name="Label" type="Label" parent="ui/pause" unique_id=1965337358]
 modulate = Color(0, 0, 0, 0.752941)
 offset_left = -192.0
-offset_top = -181.333
+offset_top = -182.66629
 offset_right = 192.0
-offset_bottom = -117.333
-theme_override_fonts/font = ExtResource("31")
-theme_override_font_sizes/font_size = 48
+offset_bottom = -116.66629
+theme_override_fonts/font = ExtResource("35_618eh")
+theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="hint" type="Label" parent="ui/pause" unique_id=187224201]
 modulate = Color(0, 0, 0, 0.752941)
-offset_left = -192.0
-offset_top = -139.0
-offset_right = 192.0
-offset_bottom = -86.0
-theme_override_font_sizes/font_size = 14
+offset_left = -211.99994
+offset_top = -127.000015
+offset_right = 213.3334
+offset_bottom = -96.000015
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 16
 text = "Hover over a button or slider for more info"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1159,6 +1187,7 @@ layout_mode = 0
 offset_left = -88.0
 offset_right = 40.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Explosions"
 vertical_alignment = 1
@@ -1177,6 +1206,7 @@ layout_mode = 0
 offset_left = -112.0
 offset_right = 16.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Opaque Walls"
 vertical_alignment = 1
@@ -1195,6 +1225,7 @@ layout_mode = 0
 offset_left = -117.333374
 offset_right = 10.666626
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Left Click Drag"
 vertical_alignment = 1
@@ -1216,6 +1247,7 @@ offset_left = -248.0
 offset_top = -8.0
 offset_right = -40.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Music volume"
 vertical_alignment = 1
@@ -1237,6 +1269,7 @@ offset_left = -248.0
 offset_top = -8.0
 offset_right = -40.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Sound effects volume"
 vertical_alignment = 1
@@ -1260,6 +1293,7 @@ offset_left = -248.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Temperature slider speed: 1"
 vertical_alignment = 1
@@ -1282,6 +1316,7 @@ offset_left = -248.0
 offset_top = -8.0
 offset_right = -40.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Fusion threshold: 1"
 vertical_alignment = 1
@@ -1301,6 +1336,7 @@ layout_mode = 0
 offset_left = -152.0
 offset_right = 56.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "\"Poofing\" gases"
 vertical_alignment = 1
@@ -1320,6 +1356,7 @@ layout_mode = 0
 offset_left = -152.0
 offset_right = 56.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Weak Nuclear Force"
 vertical_alignment = 1
@@ -1339,6 +1376,7 @@ layout_mode = 0
 offset_left = -110.66669
 offset_right = 5.333313
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Endable World"
 vertical_alignment = 1
@@ -1358,6 +1396,7 @@ layout_mode = 0
 offset_left = -153.33334
 offset_right = -37.333344
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Scale Hud"
 vertical_alignment = 1
@@ -1376,6 +1415,7 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -128.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Catto AI"
 horizontal_alignment = 2
@@ -1395,6 +1435,7 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -128.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 16
 text = "Catto Rotation"
 horizontal_alignment = 2
@@ -1413,6 +1454,7 @@ texture_hover = SubResource("GradientTexture2D_8ke6j")
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 text = "Back to Game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1429,12 +1471,13 @@ texture_hover = SubResource("GradientTexture2D_8ke6j")
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
 text = "Reset all"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="botleft" type="Node2D" parent="ui" unique_id=1517131483]
-texture_filter = 2
+texture_filter = 1
 position = Vector2(-288, 160)
 
 [node name="reset_button" type="TextureButton" parent="ui/botleft" unique_id=1346864321]
@@ -1445,6 +1488,7 @@ offset_bottom = -8.0
 texture_normal = ExtResource("32_knf1o")
 texture_pressed = ExtResource("33_ybjw0")
 texture_hover = ExtResource("33_ybjw0")
+metadata/_edit_use_anchors_ = true
 
 [node name="pause" type="TextureButton" parent="ui/botleft" unique_id=1384682796]
 offset_left = 48.0
@@ -1454,6 +1498,7 @@ offset_bottom = -8.0
 texture_normal = ExtResource("34_2158e")
 texture_pressed = ExtResource("35_arbcm")
 texture_hover = ExtResource("35_arbcm")
+metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="TextureButton" parent="ui/botleft" unique_id=283084619]
 offset_left = 8.0
@@ -1463,39 +1508,43 @@ offset_bottom = -8.0
 texture_normal = ExtResource("32")
 texture_pressed = ExtResource("33")
 texture_hover = ExtResource("33")
+metadata/_edit_use_anchors_ = true
 
 [node name="reset_hint" type="Label" parent="ui/botleft" unique_id=898006437]
 visible = false
-texture_filter = 2
+texture_filter = 1
 offset_left = 8.0
 offset_top = -56.0
 offset_right = 86.0
 offset_bottom = -33.0
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 8
 text = "Reset Scene"
 
 [node name="pause_hint" type="Label" parent="ui/botleft" unique_id=81158321]
 visible = false
-texture_filter = 2
+texture_filter = 1
 offset_left = 9.0
 offset_top = -56.0
 offset_right = 90.0
 offset_bottom = -33.0
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 8
 text = "Show Settings"
 
 [node name="quit_hint" type="Label" parent="ui/botleft" unique_id=1096727863]
 visible = false
-texture_filter = 2
+texture_filter = 1
 offset_left = 8.0
 offset_top = -56.0
 offset_right = 86.0
 offset_bottom = -33.0
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("31_aenir")
+theme_override_font_sizes/font_size = 8
 text = "Quit to Menu"
 
 [node name="botright" type="Node2D" parent="ui" unique_id=2041413289]
-texture_filter = 2
+texture_filter = 1
 position = Vector2(288, 160)
 
 [node name="help" type="TextureButton" parent="ui/botright" unique_id=1657672646]
@@ -1506,6 +1555,59 @@ offset_bottom = -8.0
 texture_normal = ExtResource("34")
 texture_pressed = ExtResource("35")
 texture_hover = ExtResource("35")
+metadata/_edit_use_anchors_ = true
+
+[node name="touchevent" type="Label" parent="ui/botright" unique_id=1893750734]
+texture_filter = 1
+offset_left = -279.0
+offset_top = -25.0
+offset_right = -41.0
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.039215688)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "cam pos: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="zoom" type="Label" parent="ui/botright" unique_id=1360178743]
+texture_filter = 1
+offset_left = -279.0
+offset_top = -17.0
+offset_right = -41.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.039215688)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "zoom: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="fps" type="Label" parent="ui/botright" unique_id=66698587]
+texture_filter = 1
+offset_left = -279.0
+offset_top = -41.0
+offset_right = -41.0
+offset_bottom = -25.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.039215688)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "fps: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="frame" type="Label" parent="ui/botright" unique_id=618097718]
+texture_filter = 1
+offset_left = -279.0
+offset_top = -33.0
+offset_right = -41.0
+offset_bottom = -17.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.039215688)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "frame:"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="animation_finished" from="tool/anim" to="." method="_on_anim_animation_finished"]
 [connection signal="mouse_entered" from="ui/topleft/hammer" to="." method="_on_hammer_mouse_entered"]

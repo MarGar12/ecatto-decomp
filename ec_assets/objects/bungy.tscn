@@ -130,6 +130,7 @@
 [ext_resource type="Texture2D" uid="uid://4lhk6iha2xhv" path="res://ec_assets/textures/cattos/bungy/bungy-c14.png" id="128"]
 [ext_resource type="Texture2D" uid="uid://dr36xocdkmdfr" path="res://ec_assets/textures/cattos/other/purrcent-pupil.png" id="129"]
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="130"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="130_ndm8s"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="131"]
 [ext_resource type="AudioStream" uid="uid://bkpolr0wbq53y" path="res://ec_assets/sounds/jump.mp3" id="132"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="133"]
@@ -917,41 +918,49 @@ scale = Vector2(1.2, 1.2)
 texture = SubResource("GradientTexture2D_jurf8")
 
 [node name="name" type="Label" parent="info" unique_id=1233147721]
+texture_filter = 1
 offset_left = -128.0
-offset_top = -96.0
+offset_top = -92.0
 offset_right = 384.0
-offset_bottom = -48.0
+offset_bottom = -44.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("130_ndm8s")
 theme_override_font_sizes/font_size = 24
 text = "Bungy"
 horizontal_alignment = 1
 
 [node name="type" type="Label" parent="info" unique_id=245069254]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -80.0
+offset_top = -74.0
 offset_right = 120.0
-offset_bottom = -32.0
+offset_bottom = -26.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("130_ndm8s")
+theme_override_font_sizes/font_size = 8
 text = "bugin (solid)"
 horizontal_alignment = 1
 
 [node name="density" type="Label" parent="info" unique_id=232308848]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -72.0
+offset_top = -66.0
 offset_right = 120.0
-offset_bottom = -24.0
+offset_bottom = -18.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("130_ndm8s")
+theme_override_font_sizes/font_size = 8
 text = "density: hes sily"
 horizontal_alignment = 1
 
 [node name="symbol" type="Label" parent="info" unique_id=1318898516]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -152.0
+offset_top = -148.0
 offset_right = 120.0
-offset_bottom = -8.0
+offset_bottom = -4.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("130_ndm8s")
 theme_override_font_sizes/font_size = 64
 text = "Bu"
 horizontal_alignment = 1

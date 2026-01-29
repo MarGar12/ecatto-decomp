@@ -105,7 +105,7 @@ func _process(delta):
 	if glob.particles <= -1:
 		glob.particles = 0
 	
-	$info/electrons.text = str(electrons) + "e"
+	$info/electrons.text = str(int(electrons)) + "e"
 	$info/type.text = group + " (" + state + ")"
 	$info/density.text = "density: " + str(snapped(density,0.01)) + " kg/m^3"
 	
@@ -190,7 +190,8 @@ func _physics_process(delta):
 		if glob.pressure == 0: boiltemp = melttemp
 		else: boiltemp = bt[protons]
 	else:
-		density = 1000.0*mass/(protons*2) / pow(glob.temperature/293.15,0.1)
+		@warning_ignore("integer_division")
+		density = 1000*mass/(protons*2) / pow(glob.temperature/293.15,0.1)
 		melttemp = 1500
 		boiltemp = 3000
 	
@@ -261,7 +262,7 @@ func _physics_process(delta):
 	elif protons in range(37,55): max_electrons = 54
 	elif protons in range(55,87): max_electrons = 86
 	elif protons in range(87,119): max_electrons = 118
-	else: max_electrons = 140 + (32*floor((protons-140.0)/32)) + 32
+	else: max_electrons = 140 + (32*floor((protons-140)/32)) + 32
 	if electrons > max_electrons:
 		electrons -= 1
 		emit("electron")
@@ -302,7 +303,7 @@ func _physics_process(delta):
 		elif dragged == true: $model/face/facetext.text = "HAI :3"
 		elif velocity.y < 0: $model/face/facetext.text = "HUP!"
 		elif nearby == null:
-			if looktimer > 2: $model/face/facetext.text = str(floor(glob.temperature-273.15)) + "°C"
+			if looktimer > 2: $model/face/facetext.text = str(int(glob.temperature)) + "°C"
 			else: $model/face/facetext.text = "ZÜGE"
 	
 	#info
@@ -1019,8 +1020,8 @@ func update():
 		else:
 			$info/name.text = "Mu-" + result
 			$info/symbol.text = "μ" + sym
-	$info/num.text = str(protons)
-	$info/mass.text = str(mass)
+	$info/num.text = str(int(protons))
+	$info/mass.text = str(int(mass))
 	if protons == 0 and neutrons == 0 and electrons == 0 and antimuons == 1: $info/name.text = "Antimuon"
 	if protons == 1 and neutrons == 0 and electrons == 0: $info/name.text = "Proton"
 	if protons == 2 and neutrons == 2 and electrons == 0: $info/name.text = "Alpha particle"
@@ -1361,7 +1362,8 @@ func update():
 	
 	#spacetime rifts around insanely heavy guys
 	$rift.emitting = protons > 120
-	$rift.modulate.a = (protons-120)/1000.0
+	@warning_ignore("integer_division")
+	$rift.modulate.a = (protons-120)/1000
 	
 	#update designer credits
 	if [protons,mass] in [[1,4],[1,6],[1,7]]: credit = "CiaaiK"
@@ -1462,7 +1464,8 @@ func decay_into(mode,explode):
 		emit("positron")
 		emit("neutrino")
 	if mode == 4:
-		spawn_catto(protons-protons/2.0,neutrons-neutrons/2.0,electrons-electrons/2.0,0)
+		@warning_ignore("integer_division")
+		spawn_catto(protons-protons/2,neutrons-neutrons/2,electrons-electrons/2,0)
 		protons /= 2
 		neutrons /= 2
 		electrons /= 2

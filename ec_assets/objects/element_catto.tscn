@@ -185,6 +185,7 @@
 [ext_resource type="Texture2D" uid="uid://b0yr4qsx7odb7" path="res://ec_assets/textures/cattos/elements/isotopes/mo95-hair.png" id="183"]
 [ext_resource type="Texture2D" uid="uid://c8sx267d38auf" path="res://ec_assets/textures/cattos/elements/isotopes/mo100-hair.png" id="184"]
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="185"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="185_2i7d5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="186"]
 [ext_resource type="AudioStream" uid="uid://bn62jh7uyajvo" path="res://ec_assets/sounds/metal_solid_impact_soft3.wav" id="187"]
 [ext_resource type="AudioStream" uid="uid://c0osvdf5eipag" path="res://ec_assets/sounds/metal_solid_impact_hard1.wav" id="188"]
@@ -1928,84 +1929,103 @@ scale = Vector2(1.2, 1.2)
 texture = SubResource("GradientTexture2D_xv0rh")
 
 [node name="name" type="Label" parent="info" unique_id=1659512975]
+texture_filter = 1
 offset_left = -320.0
-offset_top = -96.0
+offset_top = -92.0
 offset_right = 960.0
-offset_bottom = -48.0
+offset_bottom = -44.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("185_2i7d5")
 theme_override_font_sizes/font_size = 24
 text = "Boinkium"
 horizontal_alignment = 1
 
 [node name="type" type="Label" parent="info" unique_id=887167468]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -82.0
+offset_top = -76.0
 offset_right = 120.0
-offset_bottom = -34.0
+offset_bottom = -28.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("185_2i7d5")
+theme_override_font_sizes/font_size = 8
 text = "nonmetal"
 horizontal_alignment = 1
 
 [node name="density" type="Label" parent="info" unique_id=415602345]
+texture_filter = 1
 offset_left = -64.0
-offset_top = -74.0
+offset_top = -69.0
 offset_right = 192.0
-offset_bottom = -26.0
+offset_bottom = -21.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("185_2i7d5")
+theme_override_font_sizes/font_size = 8
 text = "density: doopid <3"
 horizontal_alignment = 1
 
 [node name="symbol" type="Label" parent="info" unique_id=1547375141]
+texture_filter = 1
 offset_left = -320.0
-offset_top = -152.0
+offset_top = -148.0
 offset_right = 960.0
-offset_bottom = -8.0
+offset_bottom = -4.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("185_2i7d5")
 theme_override_font_sizes/font_size = 64
 text = "Bo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="num" type="Label" parent="info" unique_id=317619252]
+texture_filter = 1
 offset_left = -40.0
 offset_top = -112.0
 offset_right = 120.0
 offset_bottom = -64.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.4627451, 1, 1)
+theme_override_fonts/font = ExtResource("185_2i7d5")
+theme_override_font_sizes/font_size = 16
 text = "X"
 vertical_alignment = 1
 
 [node name="mass" type="Label" parent="info" unique_id=12393707]
+texture_filter = 1
 offset_left = -40.0
 offset_top = -144.0
 offset_right = 120.0
 offset_bottom = -96.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 18
+theme_override_fonts/font = ExtResource("185_2i7d5")
+theme_override_font_sizes/font_size = 16
 text = "X"
 vertical_alignment = 1
 
 [node name="electrons" type="Label" parent="info" unique_id=1544875943]
+texture_filter = 1
 offset_left = -40.0
 offset_top = -144.0
 offset_right = 120.0
 offset_bottom = -96.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.98039216, 1, 0, 1)
+theme_override_fonts/font = ExtResource("185_2i7d5")
+theme_override_font_sizes/font_size = 16
 text = "1e"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="halflife" type="Label" parent="info" unique_id=768747577]
+texture_filter = 1
 offset_left = -128.0
-offset_top = -152.0
+offset_top = -155.0
 offset_right = 384.0
-offset_bottom = -104.0
+offset_bottom = -107.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.69803923, 1, 1, 1)
+theme_override_fonts/font = ExtResource("185_2i7d5")
+theme_override_font_sizes/font_size = 16
 text = "stable"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2071,7 +2091,7 @@ script = ExtResource("186")
 
 [node name="geiger" type="AudioStreamPlayer2D" parent="." unique_id=1967377537]
 stream = ExtResource("192")
-pitch_scale = 1.5
+pitch_scale = 1.74
 max_distance = 1000.0
 attenuation = 2.0
 script = ExtResource("186")

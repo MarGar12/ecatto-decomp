@@ -83,11 +83,11 @@ func _process(delta):
 	$ui/botleft.position.y = get_window().size.y/4.0
 	$ui/botright.position = get_window().size/4.0
 	# Change camera scale based on window size -- from ec+
-	var smult = min(get_window().size.x / 950.0, get_window().size.y / 648.0)
+	var smult = min(get_window().size.x / 1100.0, get_window().size.y / 648.0)
 	$ui/pause.scale = Vector2.ONE * smult / 1.5
 	if glob.hudscaling == true:
 		$ui/topleft.scale = Vector2.ONE * smult
-		$ui/topright.scale = Vector2.ONE * smult / 1.5
+		$ui/topright.scale = Vector2.ONE * smult
 		$ui/center.scale = Vector2.ONE * smult
 		$ui/botleft.scale = Vector2.ONE * smult
 		$ui/botright.scale = Vector2.ONE * smult
@@ -107,11 +107,12 @@ func _process(delta):
 	$ui/topright/pres.text = "air pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
 	
-	$ui/topright/touchevent.text = str(position)
-	$ui/topright/zoom.text = str(zoom)
+	$ui/botright/touchevent.text = str(position)
+	$ui/botright/zoom.text = str(zoom)
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
-	$ui/topright/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + "fps"
+	$ui/botright/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0)
+	$ui/botright/frame.text = str(Engine.get_frames_drawn()).pad_decimals(0)
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed

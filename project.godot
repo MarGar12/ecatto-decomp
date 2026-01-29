@@ -15,15 +15,16 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Element Cattos Decomp"
-config/description="Welcome to the Cattopia National Laboratory's Big Box Of Catto Research™, where you can play around with all sorts of elements in the form of little creatures known as Element Cattos and see how they interact in different conditions and environments. This fun and informative* exhibit is sure to provide hours* of fun for curious schoolchildren and adult nerds alike!* "
-config/version="1"
+config/description="Monatomic kitty sandbox!"
+config/version="1.1"
 run/main_scene="res://ec_assets/scenes/menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 boot_splash/image="res://ec_assets/textures/ui/bootsplash.png"
-config/icon="res://ec_assets/textures/ui/ecgame_icon.png"
+config/icon="uid://cav7q3mcutdia"
+config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp.ico"
 
 [autoload]
 
@@ -35,11 +36,12 @@ project/assembly_name="Element Cattos Decomp"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/mod_tool/plugin.cfg")
+enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/mod_tool/plugin.cfg")
 
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false
+theme/default_font_antialiasing=0
 
 [input]
 
@@ -113,6 +115,7 @@ space={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true

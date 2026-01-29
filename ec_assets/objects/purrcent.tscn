@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dr36xocdkmdfr" path="res://ec_assets/textures/cattos/other/purrcent-pupil.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://c53fxmpk3kk1d" path="res://ec_assets/textures/cattos/other/purrcent-spacesuit.png" id="7"]
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="8"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="8_dw14n"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="9"]
 [ext_resource type="AudioStream" uid="uid://bkpolr0wbq53y" path="res://ec_assets/sounds/jump.mp3" id="10"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="11"]
@@ -592,41 +593,49 @@ scale = Vector2(1.2, 1.2)
 texture = SubResource("GradientTexture2D_jurf8")
 
 [node name="name" type="Label" parent="info" unique_id=2095617064]
+texture_filter = 1
 offset_left = -128.0
-offset_top = -96.0
+offset_top = -93.0
 offset_right = 384.0
-offset_bottom = -48.0
+offset_bottom = -45.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("8_dw14n")
 theme_override_font_sizes/font_size = 24
 text = "Purrcent"
 horizontal_alignment = 1
 
 [node name="type" type="Label" parent="info" unique_id=1434843352]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -80.0
+offset_top = -75.0
 offset_right = 120.0
-offset_bottom = -32.0
+offset_bottom = -27.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("8_dw14n")
+theme_override_font_sizes/font_size = 8
 text = "cat (solid)"
 horizontal_alignment = 1
 
 [node name="density" type="Label" parent="info" unique_id=1621011156]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -72.0
+offset_top = -67.0
 offset_right = 120.0
-offset_bottom = -24.0
+offset_bottom = -19.0
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("8_dw14n")
+theme_override_font_sizes/font_size = 8
 text = "density: hes stupid"
 horizontal_alignment = 1
 
 [node name="symbol" type="Label" parent="info" unique_id=1673453832]
+texture_filter = 1
 offset_left = -40.0
-offset_top = -152.0
+offset_top = -149.0
 offset_right = 120.0
-offset_bottom = -8.0
+offset_bottom = -5.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("8_dw14n")
 theme_override_font_sizes/font_size = 64
 text = ":3"
 horizontal_alignment = 1

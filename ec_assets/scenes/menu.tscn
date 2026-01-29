@@ -31,8 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://cdouulrh4ssf6" path="res://ec_assets/textures/cattos/elements/solid/calcium-fangs.png" id="29"]
 [ext_resource type="Texture2D" uid="uid://bhxukmt5oxqsq" path="res://ec_assets/textures/cattos/eye_titanium.png" id="30"]
 [ext_resource type="Texture2D" uid="uid://71fewxrrly7a" path="res://ec_assets/textures/ui/ec_logo.png" id="31"]
-[ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="32"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="32_1v85t"]
 [ext_resource type="Texture2D" uid="uid://dkr4beyexy6qs" path="res://ec_assets/textures/ui/happyholidays.png" id="33"]
+[ext_resource type="FontFile" uid="uid://ck0m755r43bki" path="res://ec_assets/fonts/catarchean.ttf" id="33_6xj2l"]
 [ext_resource type="AudioStream" uid="uid://tkdjdepy2xty" path="res://ec_assets/music/ElementcattosMenu.ogg" id="34"]
 [ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="35"]
 [ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="36"]
@@ -186,6 +187,7 @@ offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="menu" type="Node2D" unique_id=1543624144]
+texture_filter = 1
 script = ExtResource("1")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1264489329]
@@ -2474,98 +2476,99 @@ texture = ExtResource("16")
 texture_filter = 2
 
 [node name="logo" type="Sprite2D" parent="main" unique_id=1244204900]
-texture_filter = 2
+texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("31")
 
 [node name="version" type="Label" parent="main/logo" unique_id=1283657918]
 self_modulate = Color(1, 1, 1, 0.501961)
-offset_left = -293.33334
-offset_top = -37.333332
-offset_right = 154.66666
-offset_bottom = 58.666668
+texture_filter = 1
+offset_left = -276.66656
+offset_top = -39.99998
+offset_right = 171.33344
+offset_bottom = 56.00002
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("32_1v85t")
+theme_override_font_sizes/font_size = 8
 text = "Alpha 0.13
-Decomp 1"
+Decomp 1.1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="play" type="Button" parent="main" unique_id=2121722272]
-texture_filter = 2
-offset_left = -65.0
-offset_top = 25.0
-offset_right = 63.0
-offset_bottom = 73.0
+texture_filter = 1
+offset_left = -64.0
+offset_top = 40.0
+offset_right = 64.0
+offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "Play"
 flat = true
 
 [node name="about" type="Button" parent="main" unique_id=1308190376]
-texture_filter = 2
-offset_left = -65.0
-offset_top = 73.0
-offset_right = 63.0
-offset_bottom = 121.0
+texture_filter = 1
+offset_left = -128.0
+offset_top = 88.0
+offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "About"
 flat = true
 
 [node name="decompcredits" type="Button" parent="main" unique_id=882773724]
-texture_filter = 2
-offset_left = -112.0
-offset_top = 119.0
-offset_right = 112.0
-offset_bottom = 167.0
+texture_filter = 1
+offset_left = -25.0
+offset_top = 88.0
+offset_right = 134.0
+offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_colors/font_hover_color = Color(0, 0.6725274, 0.4879107, 1)
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
-text = "About Decomp"
+text = "Decomp"
 flat = true
 
 [node name="credits" type="Button" parent="main" unique_id=1844929267]
-texture_filter = 2
-offset_left = -68.0
-offset_top = 162.0
-offset_right = 68.0
-offset_bottom = 210.0
+texture_filter = 1
+offset_left = -64.0
+offset_top = 136.0
+offset_right = 63.0
+offset_bottom = 184.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "Credits"
 flat = true
 
 [node name="quit" type="Button" parent="main" unique_id=2021964447]
-texture_filter = 2
-offset_left = -65.0
-offset_top = 206.0
-offset_right = 63.0
-offset_bottom = 254.0
+texture_filter = 1
+offset_left = -64.0
+offset_top = 184.0
+offset_right = 64.0
+offset_bottom = 232.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 flat = true
 
 [node name="fact" type="Label" parent="main" unique_id=1583476259]
+texture_filter = 1
 offset_left = -224.0
-offset_top = -256.0
+offset_top = -265.0
 offset_right = 224.0
-offset_bottom = -160.0
+offset_bottom = -169.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 16
 text = "Fact of the day:
 The most common form of hydrogen is protium, an atom with one proton, one electron and no neutrons."
@@ -2585,13 +2588,14 @@ visible = false
 texture_filter = 2
 
 [node name="text" type="Label" parent="about" unique_id=2142435675]
+texture_filter = 1
 offset_left = -304.0
 offset_top = -328.0
 offset_right = 304.0
 offset_bottom = 328.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("32_1v85t")
+theme_override_font_sizes/font_size = 16
 text = "This is a sandbox where you can play around
 with kitties based on the chemical elements. Each catto's personality and appearance is based on the properties, applications, or sometimes just the namesake, of their respective element.
 
@@ -2605,14 +2609,14 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="back" type="Button" parent="about" unique_id=1807191699]
-texture_filter = 2
+texture_filter = 1
 offset_left = -64.0
-offset_top = -288.0
+offset_top = 176.0
 offset_right = 64.0
-offset_bottom = -224.0
+offset_bottom = 240.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
@@ -2622,13 +2626,14 @@ visible = false
 texture_filter = 2
 
 [node name="text" type="Label" parent="credits" unique_id=327720537]
+texture_filter = 1
 offset_left = -288.0
 offset_top = -328.0
 offset_right = 288.0
 offset_bottom = 328.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("32_1v85t")
+theme_override_font_sizes/font_size = 16
 text = "Music - Oberorka, Kevin MacLeod
 
 Programming - Oberorka
@@ -2643,14 +2648,14 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="back" type="Button" parent="credits" unique_id=899434541]
-texture_filter = 2
+texture_filter = 1
 offset_left = -64.0
-offset_top = -288.0
+offset_top = 176.0
 offset_right = 64.0
-offset_bottom = -224.0
+offset_bottom = 240.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
@@ -2660,13 +2665,14 @@ visible = false
 texture_filter = 2
 
 [node name="text" type="Label" parent="decompcredits" unique_id=1627116789]
+texture_filter = 1
 offset_left = -288.0
 offset_top = -328.0
 offset_right = 288.0
 offset_bottom = 328.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("32_1v85t")
+theme_override_font_sizes/font_size = 16
 text = "This decomp mod is made by Mups!
 
 Aimed towards adding cross platform support, along with some little modifications I think :P
@@ -2678,14 +2684,14 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="back" type="Button" parent="decompcredits" unique_id=70607431]
-texture_filter = 2
+texture_filter = 1
 offset_left = -64.0
-offset_top = -288.0
+offset_top = 176.0
 offset_right = 64.0
-offset_bottom = -224.0
+offset_bottom = 240.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("32")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
@@ -2756,11 +2762,11 @@ scale = Vector2(2000, 2000)
 texture = ExtResource("37")
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
-[connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
+[connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
-[connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="main/about" to="." method="_button_press"]
+[connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
@@ -2768,14 +2774,14 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
-[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
+[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
-[connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="about/back" to="." method="_button_press"]
+[connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="credits/back" to="." method="_button_press"]
+[connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]

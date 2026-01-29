@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="3"]
 [ext_resource type="SpriteFrames" uid="uid://bit7ybgb1ps46" path="res://ec_assets/textures/element_eyes.tres" id="4"]
 [ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="5"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="5_ja753"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="7"]
 
@@ -89,7 +90,6 @@ shape = SubResource("RectangleShape2D_30pp0")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="info" type="Node2D" parent="." unique_id=389589756]
-visible = false
 
 [node name="bg" type="Sprite2D" parent="info" unique_id=1717636278]
 texture_filter = 2
@@ -104,6 +104,7 @@ offset_top = -80.0
 offset_right = 192.0
 offset_bottom = 16.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_ja753")
 theme_override_font_sizes/font_size = 32
 text = "Ylem"
 horizontal_alignment = 1
@@ -116,6 +117,7 @@ offset_left = -64.0
 offset_top = -48.0
 offset_right = 192.0
 scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_ja753")
 theme_override_font_sizes/font_size = 16
 text = "exotic matter"
 horizontal_alignment = 1
@@ -144,6 +146,7 @@ that existed in the first moments after the beginning of the Universe.
 A teaspoon of ylem would contain more mass than a galaxy.
 Modern science struggles to describe matter of such insane density."
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("5_ja753")
 script = ExtResource("7")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
