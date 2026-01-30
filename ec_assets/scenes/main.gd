@@ -27,7 +27,7 @@ func _ready():
 		var cloud4 = $bg/earth_fk/cloud_front4/cloud1.duplicate()
 		cloud4.visible = true
 		cloud4.position.x = randf_range(-15000,15000)
-		cloud4.position.y = randf_range(-400,0)
+		cloud4.position.y = randf_range(-800,-200)
 		cloud4.scale *= randf_range(1,2)
 		cloud4.flip_h = [true,false].pick_random()
 		$bg/earth_fk/cloud_front4.add_child(cloud4)
@@ -110,6 +110,7 @@ func _process(delta):
 	$bg/sun/plasma.position = $camera.position/1.5
 	$bg/sun/sun.position = $camera.position/1.5
 	
+	$bg/earth_fk.visible = $camera.preset == 1
 	$"bg/earth_fk/cloud_front2/.".position = $camera.position/1.01
 	$"bg/earth_fk/cloud_front3/.".position = $camera.position/1.05
 	$"bg/earth_fk/cloud_front/.".position = $camera.position/1.09
@@ -118,12 +119,16 @@ func _process(delta):
 	$bg/earth_fk/ground3/grass_far.position = $camera.position*0.8+Vector2(0,250)
 	$bg/earth_fk/ground3/grass_far2.position = $camera.position*0.9+Vector2(0,200)
 	$bg/earth_fk/ground3/grass_bg.position.x = $camera.position.x/2.0
+	#$bg/earth_fk/ground3/grass_far.scale = $camera.zoom * 1.01
+	#$bg/earth_fk/ground3/grass_far2.scale = $camera.zoom * 1.01
 	$"bg/earth_fk/mountains/.".position.x = $camera.position.x/1.01
 	$"bg/earth_fk/mountains/.".position.y = ($camera.position.y+72)/1.01
 	$"bg/earth_fk/mountains2/.".position.x = $camera.position.x/1.04
 	$"bg/earth_fk/mountains2/.".position.y = ($camera.position.y+72)/1.04
 	$bg/earth_fk/sky.position.x = $camera.position.x/1.001
 	$bg/earth_fk/sky.position.y = ($camera.position.y-1000)/1.01
+	$bg/earth_fk/stars2.position.x = $camera.position.x/1.001
+	$bg/earth_fk/stars2.position.y = ($camera.position.y/1.001)-5000
 	
 func spawn(obj,x,y):
 	var scene = load("res://ec_assets/objects/"+obj+".tscn")

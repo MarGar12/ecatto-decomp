@@ -327,6 +327,22 @@ color_ramp = SubResource("Gradient_fv4en")
 [node name="earth_fk" type="Node2D" parent="bg" unique_id=860448242]
 texture_filter = 1
 
+[node name="stars2" type="CPUParticles2D" parent="bg/earth_fk" unique_id=35507001]
+material = ExtResource("2")
+position = Vector2(0, -128)
+scale = Vector2(30, 30)
+amount = 2000
+texture = SubResource("GradientTexture2D_egruk")
+lifetime = 5.0
+preprocess = 10.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 100)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_2eqy1")
+
 [node name="sky" type="Sprite2D" parent="bg/earth_fk" unique_id=176631056]
 z_index = -5
 texture_filter = 4
@@ -338,6 +354,21 @@ texture = SubResource("GradientTexture2D_ctupa")
 offset = Vector2(0, -6)
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 20000)
+
+[node name="black3" type="Sprite2D" parent="bg/earth_fk/sky" unique_id=657230658]
+position = Vector2(-292.68002, -5.9999876)
+rotation = -1.5707964
+scale = Vector2(20, 4.0799985)
+texture = SubResource("GradientTexture2D_w6njf")
+offset = Vector2(0, 32)
+
+[node name="black4" type="Sprite2D" parent="bg/earth_fk/sky" unique_id=1163597909]
+show_behind_parent = true
+position = Vector2(31.979998, -6.0000014)
+rotation = -1.5707964
+scale = Vector2(20, 4.0799985)
+texture = SubResource("GradientTexture2D_w6njf")
+offset = Vector2(0, 32)
 
 [node name="cloud_front2" type="Node2D" parent="bg/earth_fk" unique_id=19863559]
 
@@ -435,7 +466,7 @@ region_rect = Rect2(0, 0, 20000, 280)
 
 [node name="dark" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=1529404411]
 top_level = true
-texture_filter = 4
+texture_filter = 2
 position = Vector2(-3.2186508e-06, 20.000061)
 scale = Vector2(75, 136.99998)
 texture = SubResource("GradientTexture2D_sclsh")
