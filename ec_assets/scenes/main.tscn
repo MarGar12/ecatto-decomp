@@ -539,8 +539,9 @@ texture_filter = 2
 material = ExtResource("2")
 position = Vector2(0, -1024)
 rotation = 3.14159
-scale = Vector2(8, 8)
+scale = Vector2(128, 128)
 texture = SubResource("NoiseTexture2D_non60")
+region_rect = Rect2(0, 0, 625, 300)
 
 [node name="heat" type="AnimationPlayer" parent="air" unique_id=1468900670]
 callback_mode_process = 2

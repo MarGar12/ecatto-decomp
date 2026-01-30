@@ -32,7 +32,7 @@ func _ready():
 		$earth.show()
 		$particles.hide()
 	
-	$main/fact.text = "Fact of the day:\n" + facts.pick_random()
+	$main/fact.text = "Random Science Fact:\n" + facts.pick_random()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
