@@ -5,7 +5,6 @@ var bigbang = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	preload("res://ec_assets/objects/element_catto.tscn")
-	preload("res://ec_assets/scenes/main.tscn")
 	
 	glob.pause = false
 	glob.cattos = 0
