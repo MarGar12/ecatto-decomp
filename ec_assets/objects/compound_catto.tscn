@@ -2,46 +2,46 @@
 
 [ext_resource type="Script" uid="uid://16dfimf6e45b" path="res://ec_assets/objects/compound_catto.gd" id="1"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
-[ext_resource type="Texture2D" uid="uid://dyft08a1xb1qy" path="res://ec_assets/textures/cattos/elements/solid/cadmium-tail.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://bxkxktap360s5" path="res://ec_assets/textures/cattos/elements/solid/berkelium-tail.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://r61yjc4vp48x" path="res://ec_assets/textures/cattos/elements/solid/nobelium-tail.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://dqa22yremddlc" path="res://ec_assets/textures/cattos/elements/isotopes/ca47-tail.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://cp5wifi6wrqxc" path="res://ec_assets/textures/cattos/elements/isotopes/ir192-tail.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://dl8ihoik3sv2o" path="res://ec_assets/textures/cattos/compounds/acids/water.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dj2h24e5b0vyi" path="res://ec_assets/textures/cattos/elements/solid/cadmium-tail.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ccg0c6ojq4iql" path="res://ec_assets/textures/cattos/elements/solid/berkelium-tail.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bqiwe0isscclm" path="res://ec_assets/textures/cattos/elements/solid/nobelium-tail.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dkaejo4q4a7pl" path="res://ec_assets/textures/cattos/elements/isotopes/ca47-tail.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://2ikj2ckug0yw" path="res://ec_assets/textures/cattos/elements/isotopes/ir192-tail.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bydrxwlhq77ea" path="res://ec_assets/textures/cattos/compounds/acids/water.png" id="8"]
 [ext_resource type="SpriteFrames" uid="uid://cyqo6svgeycui" path="res://ec_assets/textures/element_spots.tres" id="9"]
 [ext_resource type="SpriteFrames" uid="uid://bit7ybgb1ps46" path="res://ec_assets/textures/element_eyes.tres" id="10"]
-[ext_resource type="Texture2D" uid="uid://cia4mumdwj2u8" path="res://ec_assets/textures/cattos/pupil_manganese.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://1aq08ujma2km" path="res://ec_assets/textures/cattos/pupil_astatine.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://bcg6lxuhpjep" path="res://ec_assets/textures/cattos/pupil_mendelevium1.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://cl4ldyuequ15v" path="res://ec_assets/textures/cattos/pupil_mendelevium2.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://c8atof3clpa6e" path="res://ec_assets/textures/cattos/eye_mu.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://brbag0g63nkw5" path="res://ec_assets/textures/cattos/mouth_smile0inv.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://drg0k03ruovi0" path="res://ec_assets/textures/cattos/mouth_neutral0inv.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://d1l34455sdf0f" path="res://ec_assets/textures/cattos/mouth_frown0inv.png" id="18"]
-[ext_resource type="Texture2D" uid="uid://b40e28bx8e7lw" path="res://ec_assets/textures/cattos/fangs0.png" id="19"]
-[ext_resource type="Texture2D" uid="uid://df12h5sl04hvt" path="res://ec_assets/textures/cattos/glasses_he.png" id="20"]
-[ext_resource type="Texture2D" uid="uid://7sxpnlg1qr2o" path="res://ec_assets/textures/cattos/glasses_si.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://b3r2uqq70fm2l" path="res://ec_assets/textures/cattos/glasses_eu.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://b8yvev66ha5h6" path="res://ec_assets/textures/cattos/glasses_tm.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://hgi8ndd72ca" path="res://ec_assets/textures/cattos/glasses_lu.png" id="24"]
-[ext_resource type="Texture2D" uid="uid://c3dfumx3txtux" path="res://ec_assets/textures/cattos/glasses_md.png" id="25"]
-[ext_resource type="Texture2D" uid="uid://dkv0wg5rif5hb" path="res://ec_assets/textures/cattos/glasses_lr.png" id="26"]
-[ext_resource type="Texture2D" uid="uid://oejggbd3bk1i" path="res://ec_assets/textures/cattos/glasses_fl.png" id="27"]
-[ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="28"]
-[ext_resource type="Texture2D" uid="uid://b2edna0a07oh3" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="29"]
-[ext_resource type="Texture2D" uid="uid://cgj37e2bm8tf4" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="30"]
-[ext_resource type="Texture2D" uid="uid://b3iasyl286dhu" path="res://ec_assets/textures/cattos/elements/isotopes/mo92-hair.png" id="31"]
-[ext_resource type="Texture2D" uid="uid://b0yr4qsx7odb7" path="res://ec_assets/textures/cattos/elements/isotopes/mo95-hair.png" id="32"]
-[ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="33"]
+[ext_resource type="Texture2D" uid="uid://cqw4ijbxnl3d3" path="res://ec_assets/textures/cattos/pupil_manganese.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://d1d61so23dk3y" path="res://ec_assets/textures/cattos/pupil_astatine.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dn11uef8d2488" path="res://ec_assets/textures/cattos/pupil_mendelevium1.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://b0sc4ayol2u0m" path="res://ec_assets/textures/cattos/pupil_mendelevium2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://de745xbk2qcym" path="res://ec_assets/textures/cattos/eye_mu.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bvpja5w4e3eae" path="res://ec_assets/textures/cattos/mouth_smile0inv.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cb73okowrfd8f" path="res://ec_assets/textures/cattos/mouth_neutral0inv.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://ctnnd18v0cnv7" path="res://ec_assets/textures/cattos/mouth_frown0inv.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://brtfdgb4qxcj5" path="res://ec_assets/textures/cattos/fangs0.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://ipom6fhu8gqx" path="res://ec_assets/textures/cattos/glasses_he.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://kf8em22sev1b" path="res://ec_assets/textures/cattos/glasses_si.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://60k8b0al8hjq" path="res://ec_assets/textures/cattos/glasses_eu.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://dfdbe6xahpy6o" path="res://ec_assets/textures/cattos/glasses_tm.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://dnqfs6evk7070" path="res://ec_assets/textures/cattos/glasses_lu.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://7m72bdwstrb0" path="res://ec_assets/textures/cattos/glasses_md.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://dmgevptatu2op" path="res://ec_assets/textures/cattos/glasses_lr.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bv7ayye66lk7b" path="res://ec_assets/textures/cattos/glasses_fl.png" id="27"]
+[ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="28"]
+[ext_resource type="Texture2D" uid="uid://cpigbtv6c808s" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cdfewah5l2ulk" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cyqinfl484fcw" path="res://ec_assets/textures/cattos/elements/isotopes/mo92-hair.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bf0td8iauhahq" path="res://ec_assets/textures/cattos/elements/isotopes/mo95-hair.png" id="32"]
+[ext_resource type="AudioStream" uid="uid://dwbkoed4ah4r4" path="res://ec_assets/sounds/drywall_footstep1.wav" id="33"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="34"]
-[ext_resource type="AudioStream" uid="uid://bn62jh7uyajvo" path="res://ec_assets/sounds/metal_solid_impact_soft3.wav" id="35"]
-[ext_resource type="AudioStream" uid="uid://c0osvdf5eipag" path="res://ec_assets/sounds/metal_solid_impact_hard1.wav" id="36"]
-[ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="37"]
-[ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="38"]
-[ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="39"]
-[ext_resource type="AudioStream" uid="uid://k26pg2olhd84" path="res://ec_assets/sounds/geiger3.wav" id="40"]
-[ext_resource type="AudioStream" uid="uid://0x47lc2jnom3" path="res://ec_assets/sounds/MAUW.wav" id="41"]
-[ext_resource type="AudioStream" uid="uid://doc2enuwr15co" path="res://ec_assets/sounds/explode3.wav" id="42"]
+[ext_resource type="AudioStream" uid="uid://coumowubm20xx" path="res://ec_assets/sounds/metal_solid_impact_soft3.wav" id="35"]
+[ext_resource type="AudioStream" uid="uid://dbgs1ve1uarph" path="res://ec_assets/sounds/metal_solid_impact_hard1.wav" id="36"]
+[ext_resource type="AudioStream" uid="uid://l424fvimyg5w" path="res://ec_assets/sounds/splash_metal.wav" id="37"]
+[ext_resource type="AudioStream" uid="uid://dc6np3cf1y1ck" path="res://ec_assets/sounds/poof.mp3" id="38"]
+[ext_resource type="AudioStream" uid="uid://c7ljcms0yqwon" path="res://ec_assets/sounds/placeparticle.mp3" id="39"]
+[ext_resource type="AudioStream" uid="uid://cpymd0gwyq71s" path="res://ec_assets/sounds/geiger3.wav" id="40"]
+[ext_resource type="AudioStream" uid="uid://bybx1t8n4wvv5" path="res://ec_assets/sounds/MAUW.wav" id="41"]
+[ext_resource type="AudioStream" uid="uid://d0qhxq66lc4au" path="res://ec_assets/sounds/explode3.wav" id="42"]
 
 [sub_resource type="Gradient" id="Gradient_vjl6n"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -378,6 +378,86 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_rhuro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tail:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("effects/rg_nucleus:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_efqmx"]
+resource_name = "grabbed"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tail:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.74533, -2.26893]
+}
+
+[sub_resource type="Animation" id="Animation_iafc3"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tail:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0174533]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("effects/rg_nucleus:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.19, 0.19), Vector2(0.2, 0.2), Vector2(0.19, 0.19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj5qn"]
+_data = {
+&"RESET": SubResource("Animation_rhuro"),
+&"grabbed": SubResource("Animation_efqmx"),
+&"idle": SubResource("Animation_iafc3")
+}
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ywayt"]
 animations = [{
 "frames": [{
@@ -636,6 +716,17 @@ vertical_alignment = 1
 clip_text = true
 uppercase = true
 
+[node name="anim" type="AnimationPlayer" parent="model" unique_id=1634290102]
+root_node = NodePath("../fire")
+libraries/ = SubResource("AnimationLibrary_nj5qn")
+autoplay = &"idle"
+playback_default_blend_time = 0.25
+
+[node name="anim" type="AnimationPlayer" parent="model/anim" unique_id=1236269896]
+libraries/ = SubResource("AnimationLibrary_nj5qn")
+autoplay = &"idle"
+playback_default_blend_time = 0.25
+
 [node name="fire" type="CPUParticles2D" parent="model" unique_id=1183810138]
 modulate = Color(1, 1, 1, 0.25098)
 texture_filter = 2
@@ -821,10 +912,15 @@ texture = SubResource("GradientTexture2D_1n242")
 shape = SubResource("CircleShape2D_xjfhd")
 debug_color = Color(1, 1, 0, 0)
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=19]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=19]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered" flags=19]
-[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered" flags=19]
-[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited" flags=19]
-[connection signal="body_entered" from="range" to="." method="_on_range_body_entered" flags=19]
-[connection signal="body_exited" from="range" to="." method="_on_range_body_exited" flags=19]
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1219280617]
+libraries/ = SubResource("AnimationLibrary_nj5qn")
+autoplay = &"idle"
+playback_default_blend_time = 0.25
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
