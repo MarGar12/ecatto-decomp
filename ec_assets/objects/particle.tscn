@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://umielc80xen8"]
+
+[ext_resource type="Script" uid="uid://uajlqrlfvvff" path="res://ec_assets/objects/particle.gd" id="1"]
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://bo1ur2nha7amq" path="res://ec_assets/textures/particles/fermions.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="5"]
+[ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
+[ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="7"]
+[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="7_u17vy"]
+
+[sub_resource type="Gradient" id="Gradient_xvqea"]
+offsets = PackedFloat32Array(0, 0.716049, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c7pi6"]
+gradient = SubResource("Gradient_xvqea")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_cass4"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_y0w0t"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_kl5r7"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u5t5n"]
+gradient = SubResource("Gradient_kl5r7")
+width = 15
+height = 15
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_sgexd"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qgsdt"]
+gradient = SubResource("Gradient_sgexd")
+width = 50
+height = 50
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2c5uh"]
+
+[sub_resource type="Gradient" id="Gradient_bu4uf"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bsan3"]
+gradient = SubResource("Gradient_bu4uf")
+width = 50
+height = 25
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="particle" type="Area2D" unique_id=394507441]
+script = ExtResource("1")
+
+[node name="boson" type="CPUParticles2D" parent="." unique_id=1529485597]
+visible = false
+texture_filter = 2
+material = ExtResource("2")
+scale = Vector2(2, 2)
+amount = 4
+texture = SubResource("GradientTexture2D_c7pi6")
+local_coords = true
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_cass4")
+color_ramp = SubResource("Gradient_y0w0t")
+
+[node name="eye1" type="Sprite2D" parent="boson" unique_id=2137280950]
+texture_filter = 1
+position = Vector2(-6, 0)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_u5t5n")
+
+[node name="eye2" type="Sprite2D" parent="boson" unique_id=980560561]
+texture_filter = 1
+position = Vector2(6, 0)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_u5t5n")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=972695125]
+visible = false
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("3")
+hframes = 3
+vframes = 2
+
+[node name="glow" type="Sprite2D" parent="sprite" unique_id=440695448]
+show_behind_parent = true
+texture_filter = 2
+material = ExtResource("2")
+texture = SubResource("GradientTexture2D_qgsdt")
+
+[node name="neutron" type="Sprite2D" parent="." unique_id=593717940]
+visible = false
+texture = ExtResource("4")
+
+[node name="glow" type="Sprite2D" parent="neutron" unique_id=924922822]
+modulate = Color(0.501961, 0.752941, 1, 0.501961)
+show_behind_parent = true
+texture_filter = 2
+material = ExtResource("2")
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_qgsdt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2000054784]
+visible = false
+shape = SubResource("CircleShape2D_2c5uh")
+
+[node name="spawnsnd" type="AudioStreamPlayer2D" parent="." unique_id=229840644]
+stream = ExtResource("5")
+volume_db = 5.0
+pitch_scale = 2.0
+autoplay = true
+script = ExtResource("6")
+
+[node name="annihilate" type="AudioStreamPlayer2D" parent="." unique_id=1028383771]
+stream = ExtResource("5")
+volume_db = 5.0
+pitch_scale = 0.5
+script = ExtResource("6")
+
+[node name="info" type="Node2D" parent="." unique_id=81519031]
+
+[node name="bg" type="Sprite2D" parent="info" unique_id=1788369144]
+texture_filter = 2
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_bsan3")
+
+[node name="name" type="Label" parent="info" unique_id=200820693]
+texture_filter = 1
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 192.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("7_u17vy")
+theme_override_font_sizes/font_size = 32
+text = "up quark"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="type" type="Label" parent="info" unique_id=729095588]
+texture_filter = 1
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 192.0
+offset_bottom = 8.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("7_u17vy")
+theme_override_font_sizes/font_size = 16
+text = "fermion +"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="desc" type="Label" parent="." unique_id=1750954223]
+process_mode = 3
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+mouse_filter = 1
+autowrap_mode = 3
+script = ExtResource("7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

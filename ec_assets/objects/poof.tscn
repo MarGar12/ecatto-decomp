@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgqeen65ny0u1"]
+
+[ext_resource type="Script" path="res://ec_assets/objects/poof.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="2"]
+[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="3"]
+
+[sub_resource type="Gradient" id="Gradient_i464g"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsanu"]
+gradient = SubResource("Gradient_i464g")
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_t582m"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="poof" type="CPUParticles2D"]
+texture_filter = 2
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+texture = SubResource("GradientTexture2D_tsanu")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+angle_max = 720.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_t582m")
+script = ExtResource("1")
+
+[node name="poof" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2")
+pitch_scale = 1.5
+script = ExtResource("3")
