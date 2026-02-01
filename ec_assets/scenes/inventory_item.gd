@@ -42,20 +42,20 @@ func _on_mouse_exited():
 func spawn_object(obj):
 	var scene = load("res://ec_assets/objects/"+obj+".tscn")
 	var instance = scene.instantiate()
-	instance.global_position = get_global_mouse_position()
+	instance.global_position = $"../../../../spawning".global_position
 	get_tree().current_scene.add_child(instance)
 
 func spawn_particle(type):
 	var scene = load("res://ec_assets/objects/particle.tscn")
 	var instance = scene.instantiate()
-	instance.global_position = get_global_mouse_position()
+	instance.global_position = $"../../../../spawning".global_position
 	instance.type = type
 	get_tree().current_scene.add_child(instance)
 
 func spawn_catto(p,n,e):
 	var scene = load("res://ec_assets/objects/element_catto.tscn")
 	var instance = scene.instantiate()
-	instance.global_position = get_global_mouse_position()
+	instance.global_position = $"../../../../spawning".global_position
 	instance.protons = p
 	instance.neutrons = n
 	instance.electrons = e

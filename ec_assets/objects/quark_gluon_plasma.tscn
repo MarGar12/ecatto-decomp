@@ -172,6 +172,7 @@ autoplay = true
 script = ExtResource("7")
 
 [node name="flash" type="Sprite2D" parent="." unique_id=1212075158]
+visible = false
 modulate = Color(1, 1, 1, 0)
 texture_filter = 2
 material = ExtResource("2")
