@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://7sxpnlg1qr2o" path="res://ec_assets/textures/cattos/glasses_si.png" id="28"]
 [ext_resource type="Texture2D" uid="uid://cdouulrh4ssf6" path="res://ec_assets/textures/cattos/elements/solid/calcium-fangs.png" id="29"]
 [ext_resource type="Texture2D" uid="uid://bhxukmt5oxqsq" path="res://ec_assets/textures/cattos/eye_titanium.png" id="30"]
-[ext_resource type="Texture2D" uid="uid://71fewxrrly7a" path="res://ec_assets/textures/ui/ec_logo.png" id="31"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="32_1v85t"]
 [ext_resource type="Texture2D" uid="uid://dkr4beyexy6qs" path="res://ec_assets/textures/ui/happyholidays.png" id="33"]
 [ext_resource type="FontFile" uid="uid://ck0m755r43bki" path="res://ec_assets/fonts/catarchean.ttf" id="33_6xj2l"]
@@ -47,6 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="35"]
 [ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="36"]
 [ext_resource type="Texture2D" uid="uid://c24blrjfxmn11" path="res://ec_assets/textures/ui/iris.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://d3xxi4mpk5ynu" path="res://ec_assets/textures/ui/ec_logo_decomp.png" id="40_xwdnf"]
 
 [sub_resource type="Gradient" id="Gradient_s7vfl"]
 offsets = PackedFloat32Array(0)
@@ -2937,7 +2937,7 @@ texture_filter = 2
 texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("31")
+texture = ExtResource("40_xwdnf")
 
 [node name="version" type="Label" parent="main/logo" unique_id=1283657918]
 self_modulate = Color(1, 1, 1, 0.501961)
@@ -3223,23 +3223,23 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
-[connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
-[connection signal="pressed" from="about/back" to="." method="_button_press"]
 [connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="about/back" to="." method="_button_press"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
