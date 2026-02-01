@@ -580,6 +580,7 @@ rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
 
 [node name="opaque" type="Sprite2D" parent="walls" unique_id=470372138]
+visible = false
 self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
 z_index = -10
 texture_filter = 2

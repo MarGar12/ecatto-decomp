@@ -51,6 +51,9 @@ func _ready():
 	$ui/topright/presslider.value = glob.pressure
 	$ui/topright/gravslider.value = glob.gravity/9.81
 	sync_settings()
+	# transparent test
+	#get_tree().get_root().set_transparent_background(true)
+	#DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true, 0)
 
 func sync_settings():
 	$ui/pause/explosions.button_pressed = glob.explosions
@@ -97,7 +100,7 @@ func _process(delta):
 	$ui/topright/temp.text = "T=" + str(snapped(glob.temperature,0.01)) + "°K (" + str(snapped(glob.temperature-273.15,0.01)) + "°C)"
 	#else:
 	#	$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
-	$ui/topright/pres.text = "Air pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
+	$ui/topright/pres.text = "Air Pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "Gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
 	
 	$ui/botright/touchevent.text = str(position)

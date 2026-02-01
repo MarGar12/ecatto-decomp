@@ -116,8 +116,8 @@ func _ready():
 		var cloud = $earth_fk/cloud_back/cloud1.duplicate()
 		cloud.visible = true
 		cloud.position.x = randf_range(-30000,30000)
-		cloud.position.y = randf_range(-500,-200)
-		cloud.scale *= randf_range(0,1)
+		cloud.position.y = randf_range(-150,-50)
+		cloud.scale *= randf_range(0.1,1)
 		cloud.flip_h = [true,false].pick_random()
 		$earth_fk/cloud_back.add_child(cloud)
 	for c in range(15): # mountain dupesw

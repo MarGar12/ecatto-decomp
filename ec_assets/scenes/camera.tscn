@@ -420,10 +420,10 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("15")
 texture_pressed = ExtResource("16")
 texture_hover = ExtResource("16")
-metadata/_edit_use_anchors_ = true
 
 [node name="tweezers" type="TextureButton" parent="ui/topleft" unique_id=4551397]
 layout_mode = 0
@@ -431,10 +431,10 @@ offset_left = 48.0
 offset_top = 8.0
 offset_right = 80.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17")
 texture_pressed = ExtResource("18")
 texture_hover = ExtResource("18")
-metadata/_edit_use_anchors_ = true
 
 [node name="emagnet" type="TextureButton" parent="ui/topleft" unique_id=2054073613]
 layout_mode = 0
@@ -442,10 +442,10 @@ offset_left = 88.0
 offset_top = 8.0
 offset_right = 120.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("19")
 texture_pressed = ExtResource("20")
 texture_hover = ExtResource("20")
-metadata/_edit_use_anchors_ = true
 
 [node name="flashlight" type="TextureButton" parent="ui/topleft" unique_id=743086481]
 layout_mode = 0
@@ -453,10 +453,10 @@ offset_left = 128.0
 offset_top = 8.0
 offset_right = 160.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("21")
 texture_pressed = ExtResource("22")
 texture_hover = ExtResource("22")
-metadata/_edit_use_anchors_ = true
 
 [node name="weakray" type="TextureButton" parent="ui/topleft" unique_id=1313888022]
 layout_mode = 0
@@ -464,10 +464,10 @@ offset_left = 168.0
 offset_top = 8.0
 offset_right = 200.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("23")
 texture_pressed = ExtResource("24")
 texture_hover = ExtResource("24")
-metadata/_edit_use_anchors_ = true
 
 [node name="clone" type="TextureButton" parent="ui/topleft" unique_id=1346864536]
 layout_mode = 0
@@ -475,10 +475,10 @@ offset_left = 208.0
 offset_top = 8.0
 offset_right = 240.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("25")
 texture_pressed = ExtResource("26")
 texture_hover = ExtResource("26")
-metadata/_edit_use_anchors_ = true
 
 [node name="elementpicker" type="TextureButton" parent="ui/topleft" unique_id=221781030]
 layout_mode = 0
@@ -486,10 +486,10 @@ offset_left = 287.0
 offset_top = 8.0
 offset_right = 319.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("27_xysan")
 texture_pressed = ExtResource("27_ybjw0")
 texture_hover = ExtResource("27_ybjw0")
-metadata/_edit_use_anchors_ = true
 
 [node name="blackhole" type="TextureButton" parent="ui/topleft" unique_id=64926509]
 layout_mode = 0
@@ -497,10 +497,10 @@ offset_left = 248.0
 offset_top = 8.0
 offset_right = 280.0
 offset_bottom = 40.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14")
 texture_pressed = ExtResource("27")
 texture_hover = ExtResource("27")
-metadata/_edit_use_anchors_ = true
 
 [node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
 layout_mode = 0
@@ -512,7 +512,6 @@ theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 8
 text = "0"
 horizontal_alignment = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="cattocount" type="Label" parent="ui/topleft" unique_id=1288670338]
 layout_mode = 0
@@ -523,7 +522,6 @@ offset_bottom = 22.0
 theme_override_fonts/font = ExtResource("30_618eh")
 theme_override_font_sizes/font_size = 8
 text = "0"
-metadata/_edit_use_anchors_ = true
 
 [node name="tooldesc" type="Label" parent="ui/topleft" unique_id=2015836275]
 visible = false
@@ -578,7 +576,6 @@ offset_bottom = 80.0
 max_value = 5.0
 step = 0.05
 value = 1.0
-metadata/_edit_use_anchors_ = true
 
 [node name="gravslider" type="HSlider" parent="ui/topright" unique_id=1682718706]
 texture_filter = 1
@@ -590,7 +587,6 @@ offset_bottom = 104.0
 max_value = 5.0
 step = 0.01
 value = 1.0
-metadata/_edit_use_anchors_ = true
 
 [node name="preset" type="OptionButton" parent="ui/topright" unique_id=1443029033]
 texture_filter = 1
@@ -616,7 +612,6 @@ popup/item_3/text = "Deep Space"
 popup/item_3/id = 3
 popup/item_4/text = "Sun Core"
 popup/item_4/id = 4
-metadata/_edit_use_anchors_ = true
 
 [node name="reset" type="TextureButton" parent="ui/topright" unique_id=1476896210]
 texture_filter = 1
@@ -643,7 +638,6 @@ theme_override_font_sizes/font_size = 16
 text = "Reset Conditions"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="rate" type="Label" parent="ui/topright" unique_id=1058331148]
 texture_filter = 1

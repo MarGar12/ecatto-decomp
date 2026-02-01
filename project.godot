@@ -16,13 +16,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Element Cattos Decomp"
 config/description="Monatomic kitty sandbox!"
-config/version="1.2"
+config/version="1.3"
 run/main_scene="res://ec_assets/scenes/menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
-boot_splash/image="res://ec_assets/textures/ui/bootsplash.png"
+boot_splash/image="uid://r7or7cvkukek"
 config/icon="uid://cav7q3mcutdia"
 config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp.ico"
 
@@ -30,13 +30,17 @@ config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp
 
 glob="*res://glob.gd"
 
+[display]
+
+window/per_pixel_transparency/allowed=true
+
 [dotnet]
 
 project/assembly_name="Element Cattos Decomp"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/mod_tool/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
