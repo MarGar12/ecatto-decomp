@@ -72,7 +72,6 @@ func _physics_process(delta):
 	#info
 	$info.visible = $model/select.visible
 	$info.rotation = -rotation
-	
 	#gravity
 	if !is_on_floor(): velocity.y += glob.gravity*100 * delta
 	if density < 1.3 and state == "gas": velocity.y -= (glob.air_density/density)*glob.pressure*glob.gravity*100 * delta
@@ -96,18 +95,18 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	#dragging the catto
-	if $model/select.visible == true and Input.is_action_pressed("lmb"):
+	if $model/select.visible and Input.is_action_pressed("lmb"):
 		dragged = true
 		glob.dragging = true
-		#$model/anim.play("grabbed")
+		$model/anim.play("grabbed")
 	if Input.is_action_just_released("lmb"):
 		dragged = false
 		glob.dragging = false
-		#$model/anim.play("idle")
+		$model/anim.play("idle")
 	
 	if dragged == true and Input.is_action_pressed("lmb"):
 		velocity = (get_global_mouse_position() - position) * 5
-	
+		
 	var speed = clamp(sqrt(glob.temperature/293.15),0,5)
 	
 	#looking around
@@ -219,6 +218,7 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	$model/select.hide()
 
+
 func flash():
 	$flash.modulate.a = 1
 	$spawn.play()
@@ -250,9 +250,14 @@ func _on_area_entered(_area):
 	pass # Replace with function body.
 
 func _on_body_entered(body):
+	glob.selected == self
 	if body != null:
 		if body is element_catto:
 			if group == "base/acid" and body.group == "alkali metal": body.destroy("explosion")
 
 func _on_body_exited(_body):
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
