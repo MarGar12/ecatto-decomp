@@ -34,7 +34,7 @@ func _physics_process(delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"): queue_free()
 	
-	if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
+	#if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
 	
 	#gravity
 	if not is_on_floor():

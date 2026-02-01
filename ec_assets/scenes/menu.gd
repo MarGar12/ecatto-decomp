@@ -26,13 +26,113 @@ var facts = [ # Formatting yay :3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var bob2 = randi_range(0,2)
-	if bob2 == 0: $anim.play("bob2")
+	var white = Color(1.0, 1.0, 1.0, 1.0)
+	var black = Color(0,0,0,1)
+	var bob = randi_range(0,1)
+	var bob2 = randi_range(1,3)
+	if bob == 1:
+		$anim.play("bob2")
 	if bob2 == 1:
-		$earth.show()
+		$main/logo/version.set("theme_override_colors/font_color", white)
+		$main/play.set("theme_override_colors/font_color", white)
+		$main/about.set("theme_override_colors/font_color", white)
+		$main/decompcredits.set("theme_override_colors/font_color", white)
+		$main/credits.set("theme_override_colors/font_color", white)
+		$main/quit.set("theme_override_colors/font_color", white)
+		$main/fact.set("theme_override_colors/font_color", white)
+		$about/text.set("theme_override_colors/font_color", white)
+		$credits/text.set("theme_override_colors/font_color", white)
+		$decompcredits/text.set("theme_override_colors/font_color", white)
+		$about/back.set("theme_override_colors/font_color", white)
+		$credits/back.set("theme_override_colors/font_color", white)
+		$decompcredits/back.set("theme_override_colors/font_color", white)
+		$earth_fk.hide()
+		$space.hide()
+		$moon.show()
+		$particles.hide()
+	if bob2 == 2:
+		$main/logo/version.set("theme_override_colors/font_color", black)
+		$main/play.set("theme_override_colors/font_color", black)
+		$main/about.set("theme_override_colors/font_color", black)
+		$main/decompcredits.set("theme_override_colors/font_color", black)
+		$main/credits.set("theme_override_colors/font_color", black)
+		$main/quit.set("theme_override_colors/font_color", black)
+		$main/fact.set("theme_override_colors/font_color", black)
+		$about/text.set("theme_override_colors/font_color", black)
+		$credits/text.set("theme_override_colors/font_color", black)
+		$decompcredits/text.set("theme_override_colors/font_color", black)
+		$about/back.set("theme_override_colors/font_color", black)
+		$credits/back.set("theme_override_colors/font_color", black)
+		$decompcredits/back.set("theme_override_colors/font_color", black)
+		$earth_fk.show()
+		$moon.hide()
+		$space.hide()
+		$particles.show()
+	if bob2 == 3:
+		$main/logo/version.set("theme_override_colors/font_color", white)
+		$main/play.set("theme_override_colors/font_color", white)
+		$main/about.set("theme_override_colors/font_color", white)
+		$main/decompcredits.set("theme_override_colors/font_color", white)
+		$main/credits.set("theme_override_colors/font_color", white)
+		$main/quit.set("theme_override_colors/font_color", white)
+		$main/fact.set("theme_override_colors/font_color", white)
+		$about/text.set("theme_override_colors/font_color", white)
+		$credits/text.set("theme_override_colors/font_color", white)
+		$decompcredits/text.set("theme_override_colors/font_color", white)
+		$about/back.set("theme_override_colors/font_color", white)
+		$credits/back.set("theme_override_colors/font_color", white)
+		$decompcredits/back.set("theme_override_colors/font_color", white)
+		$earth_fk.hide()
+		$moon.hide()
+		$space.show()
 		$particles.hide()
 	
 	$main/fact.text = "Random Science Fact:\n" + facts.pick_random()
+	
+	# BG :3
+	for c in range(25):
+		var cloud = $earth_fk/ground3/cloud_front1/cloud1.duplicate() # dupe the frontest cloud
+		cloud.visible = true
+		cloud.position.x = randf_range(-15000,15000)
+		cloud.position.y = randf_range(-300,-100)
+		cloud.scale *= randf_range(1,2)
+		cloud.flip_h = [true,false].pick_random()
+		$earth_fk/ground3/cloud_front1.add_child(cloud)
+		var cloud2 = $earth_fk/ground3/cloud_front2/cloud1.duplicate() # dupe back front cloud
+		cloud2.visible = true
+		cloud2.position.x = randf_range(-15000,15000)
+		cloud2.position.y = randf_range(-300,-100)
+		cloud2.scale *= randf_range(1,2)
+		cloud2.flip_h = [true,false].pick_random()
+		$earth_fk/ground3/cloud_front2.add_child(cloud2)
+		var cloud3 = $earth_fk/ground3/cloud_front3/cloud1.duplicate() # dupe most back front cloud
+		cloud3.visible = true
+		cloud3.position.x = randf_range(-15000,15000)
+		cloud3.position.y = randf_range(-400,-200)
+		cloud3.scale *= randf_range(0,1.5)
+		cloud3.flip_h = [true,false].pick_random()
+		$earth_fk/ground3/cloud_front3.add_child(cloud3)
+	for c in range(38): # dupe back clouds
+		var cloud = $earth_fk/cloud_back/cloud1.duplicate()
+		cloud.visible = true
+		cloud.position.x = randf_range(-30000,30000)
+		cloud.position.y = randf_range(-150,-50)
+		cloud.scale *= randf_range(0.1,1)
+		cloud.flip_h = [true,false].pick_random()
+		$earth_fk/cloud_back.add_child(cloud)
+	for c in range(15): # mountain dupesw
+		var mountain = $earth_fk/mountains/mount.duplicate() # back mountains
+		mountain.visible = true
+		mountain.position.x = randf_range(-10500,15000)
+		mountain.scale *= randf_range(0.5,1.5)
+		mountain.flip_h = [true,false].pick_random()
+		$earth_fk/mountains.add_child(mountain)
+		var mountain2 = $earth_fk/mountains2/mount.duplicate() # front mountains
+		mountain2.visible = true
+		mountain2.position.x = randf_range(-10500,10500)
+		mountain2.scale *= randf_range(0.5,1.5)
+		mountain2.flip_h = [true,false].pick_random()
+		$earth_fk/mountains2.add_child(mountain2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

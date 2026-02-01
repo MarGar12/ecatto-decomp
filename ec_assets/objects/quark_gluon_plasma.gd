@@ -11,7 +11,7 @@ func _physics_process(delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"): queue_free()
 	
-	if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
+	#if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
 	
 	velocity.x = randf_range(-10,10) * glob.t_power
 	velocity.y = randf_range(-10,10) * glob.t_power

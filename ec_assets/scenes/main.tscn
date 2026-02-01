@@ -873,7 +873,6 @@ texture = ExtResource("27")
 
 [node name="camera" parent="." unique_id=1422070259 instance=ExtResource("28")]
 position = Vector2(0, -218)
-zoom = Vector2(1, 1)
 
 [node name="music" type="Node" parent="." unique_id=1380693314]
 process_mode = 3

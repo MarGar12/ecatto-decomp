@@ -3,7 +3,7 @@ extends Camera2D
 var spawn_sel = 0
 
 var presets = ["None","Standard","The Moon","Deep Space","Sun Core"]
-var preset = 1
+var preset = 0
 
 var touches = {} # : {int: Vec2}
 func _unhandled_input(event):
@@ -51,6 +51,9 @@ func _ready():
 	$ui/topright/presslider.value = glob.pressure
 	$ui/topright/gravslider.value = glob.gravity/9.81
 	sync_settings()
+	# transparent test
+	#get_tree().get_root().set_transparent_background(true)
+	#DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true, 0)
 
 func sync_settings():
 	$ui/pause/explosions.button_pressed = glob.explosions
@@ -72,40 +75,33 @@ func _process(delta):
 	if Input.is_action_just_pressed("wheelup") and zoom.x < 10: zoom *= 1.1
 	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1: zoom /= 1.1
 	
-	$ui.scale = Vector2.ONE/zoom*2
-	$ui/topleft.position = -get_window().size/4.0
-	$ui/topright.position.x = get_window().size.x/4.0
 	if get_window().size.x <= 1100 && glob.hudscaling == false :
-		$ui/topright.position.y = -get_window().size.y/5.0
+		$ui/topright.position.y = 64
 	else:
-		$ui/topright.position.y = -get_window().size.y/4.0
-	$ui/botleft.position.x = -get_window().size.x/4.0
-	$ui/botleft.position.y = get_window().size.y/4.0
-	$ui/botright.position = get_window().size/4.0
+		$ui/topright.position.y = 0
 	# Change camera scale based on window size -- from ec+
 	var smult = min(get_window().size.x / 1100.0, get_window().size.y / 648.0)
-	$ui/pause.scale = Vector2.ONE * smult / 1.5
+	$ui/pause.scale = (Vector2.ONE*2) * smult / 1.5
 	if glob.hudscaling == true:
-		$ui/topleft.scale = Vector2.ONE * smult
-		$ui/topright.scale = Vector2.ONE * smult
-		$ui/center.scale = Vector2.ONE * smult
-		$ui/botleft.scale = Vector2.ONE * smult
-		$ui/botright.scale = Vector2.ONE * smult
+		$ui/topleft.scale = (Vector2.ONE*2) * smult
+		$ui/topright.scale = (Vector2.ONE*2) * smult
+		$ui/center.scale = (Vector2.ONE*2) * smult
+		$ui/botleft.scale = (Vector2.ONE*2) * smult
+		$ui/botright.scale = (Vector2.ONE*2) * smult
 	else:
-		$ui/topleft.scale = Vector2.ONE
-		$ui/topright.scale = Vector2.ONE 
-		$ui/center.scale = Vector2.ONE
-		$ui/botleft.scale = Vector2.ONE
-		$ui/botright.scale = Vector2.ONE
+		$ui/topleft.scale = (Vector2.ONE*2)
+		$ui/topright.scale = (Vector2.ONE*2)
+		$ui/center.scale = (Vector2.ONE*2)
+		$ui/botleft.scale = (Vector2.ONE*2)
+		$ui/botright.scale = (Vector2.ONE*2)
 	
-	if glob.rate >= 0.001: $ui/topright/rate.text = "time rate: " + str(glob.rate)
-	else: $ui/topright/rate.text = "time rate: 1e" + str($ui/topright/rateslider.value)
-	if glob.temperature < 100000:
-		$ui/topright/temp.text = "T=" + str(snapped(glob.temperature,0.01)) + "K (" + str(snapped(glob.temperature-273.15,0.01)) + "°C)"
-	else:
-		$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
-	$ui/topright/pres.text = "air pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
-	$ui/topright/grav.text = "gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
+	$ui/topright/rate.text = "Time Rate: " + str(glob.rate)
+	#if glob.temperature < 100000:
+	$ui/topright/temp.text = "T=" + str(snapped(glob.temperature,0.01)) + "°K (" + str(snapped(glob.temperature-273.15,0.01)) + "°C)"
+	#else:
+	#	$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
+	$ui/topright/pres.text = "Air Pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
+	$ui/topright/grav.text = "Gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
 	
 	$ui/botright/touchevent.text = str(position)
 	$ui/botright/zoom.text = str(zoom)
@@ -238,22 +234,28 @@ func _on_anim_animation_finished(_anim_name):
 
 func _on_preset_item_selected(index):
 	preset = index
+	if preset == 0:
+		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,1)
 	if preset == 1:
 		glob.t_power = 0
 		glob.pressure = 1
 		glob.gravity = 9.81
+		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
 	if preset == 2:
 		glob.t_power = 0
 		glob.pressure = 0
 		glob.gravity = 1.62
+		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
 	if preset == 3:
 		glob.t_power = -2.03
 		glob.pressure = 0
 		glob.gravity = 0
+		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
 	if preset == 4:
 		glob.t_power = 5
 		glob.pressure = 5
 		glob.gravity = 0
+		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
 	
 	$ui/topright/presslider.value = glob.pressure
 	$ui/topright/gravslider.value = glob.gravity/9.81
