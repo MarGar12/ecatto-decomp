@@ -196,7 +196,6 @@ z_index = -20
 texture_filter = 2
 
 [node name="moon" type="Node2D" parent="bg" unique_id=784298813]
-visible = false
 
 [node name="space" type="Parallax2D" parent="bg/moon" unique_id=252903266]
 scroll_scale = Vector2(0.001, 0.001)

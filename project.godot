@@ -30,10 +30,6 @@ config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp
 
 glob="*res://glob.gd"
 
-[display]
-
-window/per_pixel_transparency/allowed=true
-
 [dotnet]
 
 project/assembly_name="Element Cattos Decomp"
