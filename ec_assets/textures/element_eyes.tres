@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=92 format=3 uid="uid://bit7ybgb1ps46"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bit7ybgb1ps46"]
 
 [ext_resource type="Texture2D" uid="uid://bl8oqg4upuk3c" path="res://ec_assets/textures/cattos/eye_normal.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://dnx05a512dlwx" path="res://ec_assets/textures/cattos/eye_closed-inv.png" id="2"]
@@ -90,7 +90,18 @@
 [ext_resource type="Texture2D" uid="uid://dhlqqkb4aitp3" path="res://ec_assets/textures/cattos/eye_au199.png" id="88"]
 [ext_resource type="Texture2D" uid="uid://cgjorh4m8a3ya" path="res://ec_assets/textures/cattos/eye_tl201.png" id="89"]
 [ext_resource type="Texture2D" uid="uid://ckqsui6klfhum" path="res://ec_assets/textures/cattos/eye_shut.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://byo58pki0uliy" path="res://ec_assets/textures/cattos/eye_ca48.png" id="90_plnca"]
 [ext_resource type="Texture2D" uid="uid://dbvkvfqneyqv5" path="res://ec_assets/textures/cattos/eye_shut-inv.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://grj88nlfuwoo" path="res://ec_assets/textures/cattos/eye_ca52.png" id="91_8kfhh"]
+[ext_resource type="Texture2D" uid="uid://cxdhxwrxork1m" path="res://ec_assets/textures/cattos/eye_cm248.png" id="92_g4sy4"]
+[ext_resource type="Texture2D" uid="uid://dgnqcbdenq5i2" path="res://ec_assets/textures/cattos/eye_es251.png" id="93_jork1"]
+[ext_resource type="Texture2D" uid="uid://bajanlmrohk4m" path="res://ec_assets/textures/cattos/eye_ts295.png" id="94_lg2sp"]
+[ext_resource type="Texture2D" uid="uid://cegtcloepl43r" path="res://ec_assets/textures/cattos/eye_xe135.png" id="95_s4bg5"]
+[ext_resource type="Texture2D" uid="uid://qvj1mclpy7yy" path="res://ec_assets/textures/cattos/eye_y90.png" id="96_o4fkl"]
+[ext_resource type="Texture2D" uid="uid://bebu0bjm8brf3" path="res://ec_assets/textures/cattos/elements/isotopes/cn277-earth.png" id="97_8kfhh"]
+[ext_resource type="Texture2D" uid="uid://kbp0lvgqclvq" path="res://ec_assets/textures/cattos/eye_cm242.png" id="98_g4sy4"]
+[ext_resource type="Texture2D" uid="uid://scqrkwetnemj" path="res://ec_assets/textures/cattos/eye_nd163.png" id="99_jork1"]
+[ext_resource type="Texture2D" uid="uid://b4khorjiuw7j4" path="res://ec_assets/textures/cattos/eye_fr212.png" id="100_lg2sp"]
 
 [resource]
 animations = [{
@@ -380,6 +391,39 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_plnca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_8kfhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_g4sy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_jork1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_lg2sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_s4bg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_o4fkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_8kfhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_g4sy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_jork1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_lg2sp")
 }],
 "loop": true,
 "name": &"isotopes",
