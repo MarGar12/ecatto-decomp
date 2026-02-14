@@ -72,8 +72,8 @@ func sync_settings():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("wheelup") and zoom.x < 10: zoom *= 1.1
-	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1: zoom /= 1.1
+	if Input.is_action_just_pressed("wheelup") and zoom.x < 10 and !glob.pause: zoom *= 1.1
+	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1 and !glob.pause: zoom /= 1.1
 	
 	if get_window().size.x <= 1010 && glob.hudscaling == false :
 		$ui/topright.position.y = 64
