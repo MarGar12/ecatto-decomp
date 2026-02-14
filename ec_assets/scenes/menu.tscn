@@ -3137,8 +3137,8 @@ grow_vertical = 2
 focus_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/selection_color = Color(0.1, 0.1, 1, 0.8)
-theme_override_fonts/normal_font = ExtResource("48_u6mje")
-theme_override_font_sizes/normal_font_size = 42
+theme_override_fonts/normal_font = ExtResource("33_6xj2l")
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "This is a sandbox where you can play around with kitties based on the chemical elements. Each catto's personality and appearance is based on the properties, applications, or sometimes just the namesake, of their respective element.
 
@@ -3160,7 +3160,7 @@ offset_top = 20.0
 offset_right = 153.0
 offset_bottom = 84.0
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_fonts/font = ExtResource("33_6xj2l")
 theme_override_font_sizes/font_size = 42
 text = "< Back"
 flat = true
@@ -3272,8 +3272,8 @@ theme_override_font_sizes/font_size = 21
 text = "fps: "
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
-[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
 [connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
@@ -3281,8 +3281,8 @@ text = "fps: "
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
