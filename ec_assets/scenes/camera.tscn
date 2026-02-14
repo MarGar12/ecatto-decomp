@@ -759,6 +759,7 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 
 [node name="inventory" type="Node2D" parent="ui/center" unique_id=1219933114]
+visible = false
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("28")
@@ -1231,8 +1232,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 14.0
-offset_right = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -1537,7 +1536,8 @@ offset_left = 136.0
 offset_top = 80.0
 offset_right = 180.0
 offset_bottom = 112.0
-tooltip_text = "Toggles whether or not the cattos will automatically rotate."
+tooltip_text = "Toggles whether or not the cattos will automatically rotate.
+If toggled off, Q will rotate left and E will rotate right"
 button_pressed = true
 
 [node name="label" type="Label" parent="ui/pause/rotat" unique_id=508680388]
@@ -1552,11 +1552,29 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="mainmenu" type="TextureButton" parent="ui/pause" unique_id=729394118]
+layout_mode = 0
+offset_left = -244.0
+offset_top = 144.0
+offset_right = -84.0
+offset_bottom = 176.0
+texture_normal = SubResource("GradientTexture2D_hpdug")
+texture_hover = SubResource("GradientTexture2D_8ke6j")
+
+[node name="text" type="Label" parent="ui/pause/mainmenu" unique_id=1806206514]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
+text = "Quit to Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="back" type="TextureButton" parent="ui/pause" unique_id=139005982]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 85.0
 offset_top = 144.0
-offset_right = 176.0
+offset_right = 245.0
 offset_bottom = 176.0
 texture_normal = SubResource("GradientTexture2D_hpdug")
 texture_hover = SubResource("GradientTexture2D_8ke6j")
@@ -1572,9 +1590,9 @@ vertical_alignment = 1
 
 [node name="settings_reset" type="TextureButton" parent="ui/pause" unique_id=1176591033]
 layout_mode = 0
-offset_left = -176.0
+offset_left = -80.5
 offset_top = 144.0
-offset_right = -16.0
+offset_right = 79.5
 offset_bottom = 176.0
 texture_normal = SubResource("GradientTexture2D_hpdug")
 texture_hover = SubResource("GradientTexture2D_8ke6j")
@@ -1584,7 +1602,7 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("30_618eh")
-text = "Reset all"
+text = "Reset all options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1599,27 +1617,26 @@ scale = Vector2(2, 2)
 
 [node name="reset_button" type="TextureButton" parent="ui/botleft" unique_id=1346864321]
 layout_mode = 0
-offset_left = 88.0
-offset_top = -40.0
-offset_right = 120.0
-offset_bottom = -8.0
-texture_normal = ExtResource("32_knf1o")
-texture_pressed = ExtResource("33_ybjw0")
-texture_hover = ExtResource("33_ybjw0")
-metadata/_edit_use_anchors_ = true
-
-[node name="pause" type="TextureButton" parent="ui/botleft" unique_id=1384682796]
-layout_mode = 0
 offset_left = 48.0
 offset_top = -40.0
 offset_right = 80.0
 offset_bottom = -8.0
+texture_normal = ExtResource("32_knf1o")
+texture_pressed = ExtResource("33_ybjw0")
+texture_hover = ExtResource("33_ybjw0")
+
+[node name="pause" type="TextureButton" parent="ui/botleft" unique_id=1384682796]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -8.0
 texture_normal = ExtResource("34_2158e")
 texture_pressed = ExtResource("35_arbcm")
 texture_hover = ExtResource("35_arbcm")
-metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="TextureButton" parent="ui/botleft" unique_id=283084619]
+visible = false
 layout_mode = 0
 offset_left = 8.0
 offset_top = -40.0
@@ -1652,7 +1669,7 @@ offset_right = 90.0
 offset_bottom = -33.0
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
-text = "Show Settings"
+text = "Pause Game"
 
 [node name="quit_hint" type="Label" parent="ui/botleft" unique_id=1096727863]
 visible = false
@@ -1776,6 +1793,7 @@ text = "fps: "
 [connection signal="toggled" from="ui/pause/hud_scale" to="." method="_on_hud_scale_toggled"]
 [connection signal="toggled" from="ui/pause/catto_ai" to="." method="_on_catto_ai_toggled"]
 [connection signal="toggled" from="ui/pause/rotat" to="." method="_on_rotat_toggled"]
+[connection signal="pressed" from="ui/pause/mainmenu" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ui/pause/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ui/pause/settings_reset" to="." method="_on_settings_reset_pressed"]
 [connection signal="mouse_entered" from="ui/botleft/reset_button" to="." method="_on_reset_button_mouse_entered"]

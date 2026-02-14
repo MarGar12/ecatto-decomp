@@ -7,7 +7,7 @@ var preset = 0
 
 var touches = {} # : {int: Vec2}
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and (Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb") or (Input.is_action_pressed("lmb") and not glob.dragging and not glob.tool and glob.lcdrag == true )):
+	if event is InputEventMouseMotion and (((Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb")) and !glob.pause) or (Input.is_action_pressed("lmb") and !glob.dragging and !glob.tool and glob.lcdrag == true and !glob.pause)):
 		position.x -= event.relative.x/zoom.x
 		position.y -= event.relative.y/zoom.x
 		
@@ -116,9 +116,9 @@ func _process(delta):
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed
 	glob.temperature = 293.15*pow(10,glob.t_power)
 	
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("space") and !glob.pause:
 		glob.inv_open = !glob.inv_open
-	$ui/center/inventory.visible = glob.inv_open
+	$ui/center/inventory.visible = glob.inv_open and !glob.pause
 	
 	if Input.is_action_just_pressed("R"):
 		glob.cattos = 0
@@ -308,6 +308,9 @@ func _on_elementpicker_mouse_entered():
 	$ui/topleft/tooldesc.text = "Purriodic Table\nSpawn element cattos!"
 
 func _on_quit_pressed():
+	get_tree().paused = false
+	glob.pause = false
+	glob.inv_open = false
 	get_tree().change_scene_to_file("res://ec_assets/scenes/menu.tscn")
 
 func _on_quit_mouse_entered():
