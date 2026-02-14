@@ -42,10 +42,10 @@ func _ready():
 		$main/fact.set("theme_override_colors/font_color", white)
 		$about/text.set("theme_override_colors/font_color", white)
 		$credits/text.set("theme_override_colors/font_color", white)
-		$decompcredits/text.set("theme_override_colors/font_color", white)
+		#$decompcredits/text.set("theme_override_colors/default_color", white)
 		$about/back.set("theme_override_colors/font_color", white)
 		$credits/back.set("theme_override_colors/font_color", white)
-		$decompcredits/back.set("theme_override_colors/font_color", white)
+		#$decompcredits/back.set("theme_override_colors/font_color", white)
 		$earth_fk.hide()
 		$space.hide()
 		$moon.show()
@@ -60,10 +60,10 @@ func _ready():
 		$main/fact.set("theme_override_colors/font_color", black)
 		$about/text.set("theme_override_colors/font_color", black)
 		$credits/text.set("theme_override_colors/font_color", black)
-		$decompcredits/text.set("theme_override_colors/font_color", black)
+		#$decompcredits/text.set("theme_override_colors/default_color", black)
 		$about/back.set("theme_override_colors/font_color", black)
 		$credits/back.set("theme_override_colors/font_color", black)
-		$decompcredits/back.set("theme_override_colors/font_color", black)
+		#$decompcredits/back.set("theme_override_colors/font_color", black)
 		$earth_fk.show()
 		$moon.hide()
 		$space.hide()
@@ -78,10 +78,10 @@ func _ready():
 		$main/fact.set("theme_override_colors/font_color", white)
 		$about/text.set("theme_override_colors/font_color", white)
 		$credits/text.set("theme_override_colors/font_color", white)
-		$decompcredits/text.set("theme_override_colors/font_color", white)
+		#$decompcredits/text.set("theme_override_colors/default_color", white)
 		$about/back.set("theme_override_colors/font_color", white)
 		$credits/back.set("theme_override_colors/font_color", white)
-		$decompcredits/back.set("theme_override_colors/font_color", white)
+		#$decompcredits/back.set("theme_override_colors/font_color", white)
 		$earth_fk.hide()
 		$moon.hide()
 		$space.show()
@@ -151,13 +151,14 @@ func _process(delta):
 	$cattos3/lu/clock/text.visible_characters = 5
 	
 	
-	if $iris.visible == true:
-		$iris.scale /= 1+delta*10
+	if $version/iris.visible == true:
+		$version/iris.scale /= 1+delta*10
 		$music.volume_db -= delta*20
-	if $iris.scale.x < 0.02: get_tree().change_scene_to_file("res://ec_assets/scenes/loading.tscn")
+	if $version/iris.scale.x < 0.02: get_tree().change_scene_to_file("res://ec_assets/scenes/loading.tscn")
+	$debug/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n"
 
 func _on_play_pressed():
-	$iris.show()
+	$version/iris.show()
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -184,3 +185,7 @@ func _on_credits_pressed():
 func _on_decompcredits_pressed():
 	$main.hide()
 	$decompcredits.show()
+
+
+func _on_text_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(str(meta))

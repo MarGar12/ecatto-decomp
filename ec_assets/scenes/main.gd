@@ -98,6 +98,7 @@ func _process(delta):
 	$bg/sun.visible = $camera.preset == 4
 	
 	
+	
 func spawn(obj,x,y):
 	var scene = load("res://ec_assets/objects/"+obj+".tscn")
 	var instance = scene.instantiate()

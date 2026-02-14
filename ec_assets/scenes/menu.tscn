@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="36"]
 [ext_resource type="Texture2D" uid="uid://c24blrjfxmn11" path="res://ec_assets/textures/ui/iris.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://d3xxi4mpk5ynu" path="res://ec_assets/textures/ui/ec_logo_decomp.png" id="40_xwdnf"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="48_u6mje"]
 
 [sub_resource type="Gradient" id="Gradient_s7vfl"]
 offsets = PackedFloat32Array(0)
@@ -684,7 +685,6 @@ color = Color(1, 1, 1, 0.25098)
 color_initial_ramp = SubResource("Gradient_2rn4b")
 
 [node name="cattos4" type="Node2D" parent="." unique_id=1492601966]
-position = Vector2(0, -32)
 scale = Vector2(2.35, 2.35)
 
 [node name="hf" type="AnimatedSprite2D" parent="cattos4" unique_id=621720338]
@@ -1276,7 +1276,7 @@ position = Vector2(0, -363)
 texture = ExtResource("16")
 
 [node name="cattos3" type="Node2D" parent="." unique_id=721901779]
-position = Vector2(0, -32)
+position = Vector2(0, -1.9073486e-06)
 scale = Vector2(1.75, 1.75)
 
 [node name="cd" type="AnimatedSprite2D" parent="cattos3" unique_id=334499045]
@@ -1844,7 +1844,7 @@ position = Vector2(0, -363)
 texture = ExtResource("7")
 
 [node name="cattos2" type="Node2D" parent="." unique_id=1500702555]
-position = Vector2(0, -32)
+position = Vector2(0, -1.9073486e-06)
 scale = Vector2(1.32, 1.32)
 
 [node name="cr" type="AnimatedSprite2D" parent="cattos2" unique_id=1659905406]
@@ -2418,7 +2418,6 @@ position = Vector2(0, -363)
 texture = ExtResource("7")
 
 [node name="cattos1" type="Node2D" parent="." unique_id=1895272942]
-position = Vector2(0, -32)
 
 [node name="mu" type="AnimatedSprite2D" parent="cattos1" unique_id=938995804]
 sprite_frames = ExtResource("5")
@@ -2931,6 +2930,7 @@ texture = ExtResource("16")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=106557183]
 
 [node name="main" type="Node2D" parent="." unique_id=785193525]
+visible = false
 texture_filter = 2
 
 [node name="logo" type="Sprite2D" parent="main" unique_id=1244204900]
@@ -2940,6 +2940,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("40_xwdnf")
 
 [node name="version" type="Label" parent="main/logo" unique_id=1283657918]
+visible = false
 self_modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 offset_left = -276.66656
@@ -3048,9 +3049,9 @@ texture_filter = 2
 [node name="text" type="Label" parent="about" unique_id=2142435675]
 texture_filter = 1
 offset_left = -304.0
-offset_top = -328.0
+offset_top = -351.0
 offset_right = 304.0
-offset_bottom = 328.0
+offset_bottom = 305.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("32_1v85t")
 theme_override_font_sizes/font_size = 16
@@ -3118,41 +3119,60 @@ theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
 
-[node name="decompcredits" type="Node2D" parent="." unique_id=238870511]
-visible = false
-texture_filter = 2
+[node name="decompcredits" type="CanvasLayer" parent="." unique_id=1813541368]
 
-[node name="text" type="Label" parent="decompcredits" unique_id=1627116789]
+[node name="text" type="RichTextLabel" parent="decompcredits" unique_id=476544576]
 texture_filter = 1
-offset_left = -288.0
-offset_top = -328.0
-offset_right = 288.0
-offset_bottom = 328.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32_1v85t")
-theme_override_font_sizes/font_size = 16
-text = "This decomp mod is made by Mups!
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.5
+offset_top = -317.0
+offset_right = 420.5
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+theme_override_fonts/normal_font = ExtResource("48_u6mje")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "This is a sandbox where you can play around with kitties based on the chemical elements. Each catto's personality and appearance is based on the properties, applications, or sometimes just the namesake, of their respective element.
 
-Aimed towards adding cross platform support, along with some little modifications I think :P
+The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
+
+This project was made by Lily P. Irie and mod by Mups, made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos {height: 1}]https://tumblr.com/elementcattos[/url][/wave][/rainbow]
 
 Find the source code here:
-https://git.gay/mupsie/ecatto-decomp.git"
+[rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://git.gay/mupsie/ecatto-decomp.git]https://git.gay/mupsie/ecatto-decomp.git[/url][/wave][/rainbow]"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+meta_underlined = false
+selection_enabled = true
 
 [node name="back" type="Button" parent="decompcredits" unique_id=70607431]
 texture_filter = 1
-offset_left = -64.0
-offset_top = 176.0
-offset_right = 64.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 153.0
+offset_bottom = 84.0
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "[Back]"
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "< Back"
 flat = true
+
+[node name="LinkButton" type="LinkButton" parent="decompcredits" unique_id=142104823]
+visible = false
+offset_left = 532.0
+offset_top = 415.0
+offset_right = 819.0
+offset_bottom = 437.0
+text = "ttt"
+uri = "https://tumblr.com/elementcattos"
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1127277210]
 stream = ExtResource("34")
@@ -3191,33 +3211,65 @@ tangential_accel_max = 1.0
 scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_c88ps")
 
-[node name="iris" type="Node2D" parent="." unique_id=1908573596]
+[node name="version" type="CanvasLayer" parent="." unique_id=1701963459]
+
+[node name="version" type="Label" parent="version" unique_id=1097176348]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -48.0
+offset_right = 55.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7919991, 0.79199916, 0.7919991, 0.6431373)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 21
+text = "a0.13
+v1.4"
+vertical_alignment = 2
+
+[node name="iris" type="Node2D" parent="version" unique_id=1908573596]
 visible = false
 texture_filter = 1
+position = Vector2(512, 384)
 scale = Vector2(500, 500)
 
-[node name="sprite" type="Sprite2D" parent="iris" unique_id=512726066]
+[node name="sprite" type="Sprite2D" parent="version/iris" unique_id=512726066]
 texture = ExtResource("37")
 
-[node name="sprite2" type="Sprite2D" parent="iris" unique_id=882356286]
+[node name="sprite2" type="Sprite2D" parent="version/iris" unique_id=882356286]
 scale = Vector2(5, 5)
 texture = ExtResource("37")
 
-[node name="sprite3" type="Sprite2D" parent="iris" unique_id=307123471]
+[node name="sprite3" type="Sprite2D" parent="version/iris" unique_id=307123471]
 scale = Vector2(25, 25)
 texture = ExtResource("37")
 
-[node name="sprite4" type="Sprite2D" parent="iris" unique_id=287453542]
+[node name="sprite4" type="Sprite2D" parent="version/iris" unique_id=287453542]
 scale = Vector2(125, 125)
 texture = ExtResource("37")
 
-[node name="sprite5" type="Sprite2D" parent="iris" unique_id=1241509836]
+[node name="sprite5" type="Sprite2D" parent="version/iris" unique_id=1241509836]
 scale = Vector2(500, 500)
 texture = ExtResource("37")
 
-[node name="sprite6" type="Sprite2D" parent="iris" unique_id=1683025293]
+[node name="sprite6" type="Sprite2D" parent="version/iris" unique_id=1683025293]
 scale = Vector2(2000, 2000)
 texture = ExtResource("37")
+
+[node name="debug" type="CanvasLayer" parent="." unique_id=1551445769]
+
+[node name="fps" type="Label" parent="debug" unique_id=1534193210]
+z_index = 4
+texture_filter = 1
+offset_top = -5.0
+offset_right = 238.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 21
+text = "fps: "
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
@@ -3240,6 +3292,7 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="meta_clicked" from="decompcredits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]

@@ -191,11 +191,9 @@ offset_left = -24.0
 offset_top = -16.0
 offset_right = 24.0
 offset_bottom = 16.0
-tooltip_text = "Quark-gluon plasma is a hot, dense soup of subatomic particles
-such as the quarks and gluons that give the substance its name.
+tooltip_text = "Quark-gluon plasma is a hot, dense soup of subatomic particles such as the quarks and gluons that give the substance its name.
 This type of matter is thought to have existed in the early moments of the Big Bang.
-QGP is full of violently interacting particles and emits a vast amount of
-electromagnetic radiation.
+QGP is full of violently interacting particles and emits a vast amount of electromagnetic radiation.
 High-energy experiments in particle accelerators such as the Large Hadron Collider
 often briefly create this exotic substance in the process of smashing protons together."
 mouse_filter = 1

@@ -94,6 +94,9 @@ func _ready():
 	if protons < 119 and player_spawned == true: neutrons = main_isotopes[protons]-protons
 	if protons == 0: antimuons = 1
 	flash()
+	#$HTTPRequest.request("https://wttr.in/Darmstadt?format=%t") to implement Darmstadtiums temp
+
+
 
 func _process(delta):
 	#if glob.cattos <= -1:
@@ -152,9 +155,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("R"):
 		queue_free()
 
-#func _physics_process(delta):
-#	if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
-	
 	#funny astatine thing
 	if protons == 85 and glob.camera.zoom.x < 4.0 and Time.get_time_dict_from_system().hour < 6:
 		if abs(global_position.x-glob.camera.global_position.x) > get_window().size.x/glob.camera.zoom.x:
@@ -324,7 +324,7 @@ func _process(delta):
 		elif dragged == true: $model/face/facetext.text = "HAI :3"
 		elif velocity.y < 0: $model/face/facetext.text = "HUP!"
 		elif nearby == null:
-			if looktimer > 2: $model/face/facetext.text = str(int(glob.temperature)) + "°C"
+			if looktimer > 2: $model/face/facetext.text = str(snapped(glob.temperature-273.15,0.01)) + "°C"
 			else: $model/face/facetext.text = "ZÜGE"
 	
 	#info
@@ -688,8 +688,10 @@ func flash():
 		calculate_mass()
 		calculate_stability()
 		update()
-	#$flash.modulate.a = 1
+	$flash.modulate.a = 1
 	$spawn.play()
+	var tween: Tween = create_tween()
+	tween.tween_property($flash, "modulate", Color(1,1,1,0), 0.25)
 
 func destroy(eff):
 	glob.cattos -= 1
@@ -1833,7 +1835,7 @@ func emit(prt):
 	if instance.type == "neutron": decay = INF
 	instance.emit = 0.25
 	add_sibling(instance)
-	#$flash.modulate.a = 0.5
+	$flash.modulate.a = 0.5
 
 func spawn_catto(p,n,e,mu):
 	var scene = load("res://ec_assets/objects/element_catto.tscn")
@@ -1955,7 +1957,7 @@ func _on_area_entered(area):
 					if abs(area.position.x-position.x) < 16: area.v.y *= -1
 					else: area.v.x *= -1
 					$sparkle.play()
-					#$flash.modulate.a = 1
+					$flash.modulate.a = 1
 				else:
 					glob.particles -= 1
 					area.queue_free()

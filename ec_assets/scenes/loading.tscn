@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d026v1t3uxjk3" path="res://ec_assets/scenes/loading_atom_orbital.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://do8lftr6wqfx6" path="res://ec_assets/textures/particles/tinyball.png" id="5"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="6_4wibi"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="7_u0eh2"]
 
 [sub_resource type="Gradient" id="Gradient_8pq4q"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -98,3 +99,16 @@ text = "Loading
 0%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="debug" type="CanvasLayer" parent="." unique_id=1030128063]
+
+[node name="fps" type="Label" parent="debug" unique_id=1330998564]
+z_index = 4
+texture_filter = 1
+offset_top = -5.0
+offset_right = 238.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("7_u0eh2")
+theme_override_font_sizes/font_size = 21
+text = "fps: "

@@ -1688,7 +1688,9 @@ texture_normal = ExtResource("34")
 texture_pressed = ExtResource("35")
 texture_hover = ExtResource("35")
 
-[node name="camerapos" type="Label" parent="ui" unique_id=66698587]
+[node name="debug" type="CanvasLayer" parent="." unique_id=129148543]
+
+[node name="camerapos" type="Label" parent="debug" unique_id=66698587]
 z_index = 4
 texture_filter = 1
 anchors_preset = 7
@@ -1709,7 +1711,7 @@ text = "pos"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="fps" type="Label" parent="ui" unique_id=1562873625]
+[node name="fps" type="Label" parent="debug" unique_id=1562873625]
 z_index = 4
 texture_filter = 1
 offset_top = -5.0

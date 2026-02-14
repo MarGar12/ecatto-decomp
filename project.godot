@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Element Cattos Decomp"
 config/description="Monatomic kitty sandbox!"
-config/version="1.3"
+config/version="1.4"
 run/main_scene="res://ec_assets/scenes/menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 0)
@@ -38,6 +38,11 @@ window/size/viewport_height=768
 [dotnet]
 
 project/assembly_name="Element Cattos Decomp"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [editor_plugins]
 

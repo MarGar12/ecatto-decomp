@@ -108,8 +108,8 @@ func _process(delta):
 	#$ui/topleft/zoom.text = str(zoom)
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
-	$ui/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n" + str(touches.size()) + "\n"
-	$ui/camerapos.text = str(position) + " " + str(zoom)
+	$debug/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n" + str(touches.size()) + "\n"
+	$debug/camerapos.text = str(position) + " " + str(zoom)
 	#$ui/topleft/frame.text = str(Engine.get_frames_drawn()).pad_decimals(0)
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
@@ -160,6 +160,7 @@ func _process(delta):
 	else: $ui/pause/fus_thres/label.text = "No Fusion"
 	
 	$ui/pause/end_world.visible = glob.earth_exploded
+	
 
 func _on_rateslider_value_changed(value):
 	glob.rate = pow(10,value)
