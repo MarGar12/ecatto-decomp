@@ -453,6 +453,11 @@ func _process(delta):
 		$model/face/eye2.offset.y = -18
 		$model/face/mouth.offset.y = -14
 		#$model/face/mouth.offset.x = -1
+	elif protons == 56 and mass == 154 and electrons != 0:
+		$model/face/eye1.offset.y = -16
+		$model/face/eye2.offset.y = -16
+		$model/face/mouth.offset.y = -12
+		#$model/face/mouth.offset.x = -1
 	else:
 		$model/face/eye1.offset.y = 0
 		$model/face/eye2.offset.y = 0
@@ -1478,6 +1483,7 @@ func update():
 			$model/hair.visible = 1
 			$model/hair.play("isotopes")
 			$model/hair.frame = 6
+			credit = "Oxygendox"
 		elif [protons,mass] == [76,194]:
 			$model/body.frame = 74
 			$model/hair.visible = 1
@@ -1699,22 +1705,57 @@ func update():
 	@warning_ignore("integer_division")
 	$rift.modulate.a = (protons-120)/1000
 	
-	#update designer credits
-	if [protons,mass] in [[1,4],[1,6],[1,7]]: credit = "CiaaiK"
-	elif [protons,mass] in [[1,5],[7,13],[8,15],[13,26]]: credit = "gammaray-burst"
+	# Designer credits --- isotopes
+	if [protons,mass] in [[1,4],[1,6],[1,7]]:
+		credit = "CiaaiK"
+	elif [protons,mass] in [[1,5],[3,6],[7,13],[8,15],[13,26]]:
+		credit = "gammaray-burst"
+	elif [protons,mass] in [20,47]:
+		credit = "starri-cosmikat"
+	elif [protons,mass] in [[20,48],[60,163],[87,212],[95,243]]:
+		credit = "theticktock_ticky"
+	elif [protons,mass] in [[20,52],[36,81],[39,90],[53,135],[54,135],[54,136],[54,140],[55,137],[76,185],[81,201],[90,230],[92,236],[117,295]]:
+		credit = "Inky"
+	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[76,186],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199],[96,242],[99,251]]:
+		credit = "SciphonPylon"
+	elif [protons,mass] in [[26,54],[26,58],[26,59]]:
+		credit = "thatmarkerdude"
+	elif [protons,mass] in [[26,57],[81,201],[81,203],[76,190]]:
+		credit = "ir1sh"
+	elif [protons,mass] in [37,87]:
+		credit = "T.S.Smith"
+	elif [protons,mass] in [49,114]:
+		credit = "ingrid-pulchrea"
+	elif [protons,mass] in [56,138]:
+		credit = "Nostuyx"
+	elif [protons,mass] in [[60,144],[60,146],[60,148],[60,150],[118,298],[118,299]]:
+		credit = "Mr.Media2K"
+	elif [protons,mass] in [[76,188],[118,300]]:
+		credit = "Senchium"
+	elif [protons,mass] in [[76,187],[76,184]]:
+		credit = "Oxygendox"
+	elif [protons,mass] in [76,189]:
+		credit = "bhapydageek"
+	elif [protons,mass] in [[76,188],[76,194]]:
+		credit = "Amy Isolea"
+	elif [protons,mass] in [85,210]:
+		credit = "Shard"
+	elif [protons,mass] in [[87,221],[112,277],[112,285]]:
+		credit = "twitcheeer"
+	elif [protons,mass] in [95,228]:
+		credit = "The__Professional"
+	elif [protons,mass] in [96,248]:
+		credit = "alvy-ingenerum, haniszar36"
+	# Designer credits --- main
 	elif protons == 18: credit = "Oberorka & baltdev"
-	elif [protons,mass] == [20,47]: credit = "starri-cosmikat"
 	elif protons in [21,27]: credit = "mobropro"
-	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199]] or protons in [110]: credit = "SciphonPylon"
 	elif protons == 24: credit = "Oberorka, carrera075 & sonnettheseacoat"
 	elif protons == 25: credit = "anonymous"
-	elif [protons,mass] in [[26,54],[26,58],[26,59]]: credit = "thatmarkerdude"
-	elif [protons,mass] in [[26,57],[81,201],[81,203]]: credit = "ir1sh"
 	elif protons == 32: credit = "radonine"
 	elif protons in [34,91,100]: credit = "sonnettheseacoat"
 	elif protons == 38: credit = "baltdev"
 	elif protons == 39: credit = "Oberorka & abugidaithink"
-	elif protons in [40,48,59,69,96,102,103] or [protons,mass] in [85,210]: credit = "Shard"
+	elif protons in [40,48,59,69,96,102,103]: credit = "Shard"
 	elif protons == 42: credit = "ir1sh, SciphonPylon & Oberorka"
 	elif protons == 45: credit = "Oberorka & SED4906"
 	elif protons == 46: credit = "chessbird"
@@ -1740,6 +1781,7 @@ func update():
 	elif protons == 107: credit = "hyperoperationfractallisation & Oberorka"
 	elif protons == 108: credit = "Lotus, cosmosnaught & Oberorka"
 	elif protons == 109: credit = "Shard, voodoo-economics, haniszar36 & ir1sh"
+	elif protons == 110: credit = "SciphonPylon"
 	elif protons == 114: credit = "starri-cosmikat & SciphonPylon"
 	elif protons == 115: credit = "The Wizard Slime, schoolshootingbyclover & Jupiter Stupider"
 	elif protons == 116: credit = "SciphonPylon, breadcharger61 & Oberorka"

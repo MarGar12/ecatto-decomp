@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://n04s8a81j0tc" path="res://ec_assets/textures/effects/star0.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://pslna8m5a3uh" path="res://ec_assets/sounds/ding.wav" id="5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="7_7xw5u"]
 
 [sub_resource type="Gradient" id="Gradient_32lgr"]
 offsets = PackedFloat32Array(0)
@@ -104,5 +105,19 @@ script = ExtResource("6")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=777030532]
 libraries/ = SubResource("AnimationLibrary_rey4v")
 autoplay = &"ding"
+
+[node name="debug" type="CanvasLayer" parent="." unique_id=1574915520]
+
+[node name="fps" type="Label" parent="debug" unique_id=827014332]
+z_index = 4
+texture_filter = 1
+offset_left = 24.0
+offset_top = -5.0
+offset_right = 262.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("7_7xw5u")
+theme_override_font_sizes/font_size = 21
+text = "fps: "
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

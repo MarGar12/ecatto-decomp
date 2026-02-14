@@ -219,7 +219,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/path = NodePath("logo:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -231,7 +231,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("main/logo:position")
+tracks/1/path = NodePath("logo:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -247,7 +247,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/path = NodePath("logo:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -263,7 +263,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/path = NodePath("logo:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -275,7 +275,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("main/logo:position")
+tracks/1/path = NodePath("logo:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -374,7 +374,7 @@ visible = false
 position = Vector2(0, 248)
 
 [node name="space" type="Parallax2D" parent="moon" unique_id=205309423]
-scroll_scale = Vector2(0.001, 0.001)
+scroll_scale = Vector2(-0.001, 0.001)
 
 [node name="space" type="Sprite2D" parent="moon/space" unique_id=34372137]
 scale = Vector2(1000, 1000)
@@ -397,7 +397,7 @@ scale_amount_max = 0.2
 color_ramp = SubResource("Gradient_li7cv")
 
 [node name="earth" type="Parallax2D" parent="moon" unique_id=1209130999]
-scroll_scale = Vector2(0.01, 0.01)
+scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(500, 250)
 repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-1, 0)
@@ -2929,17 +2929,13 @@ texture = ExtResource("16")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=106557183]
 
-[node name="main" type="Node2D" parent="." unique_id=785193525]
-visible = false
-texture_filter = 2
-
-[node name="logo" type="Sprite2D" parent="main" unique_id=1244204900]
+[node name="logo" type="Sprite2D" parent="." unique_id=1244204900]
 texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("40_xwdnf")
 
-[node name="version" type="Label" parent="main/logo" unique_id=1283657918]
+[node name="version" type="Label" parent="logo" unique_id=1283657918]
 visible = false
 self_modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
@@ -2956,24 +2952,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="main" type="CanvasLayer" parent="." unique_id=1994917301]
+
 [node name="play" type="Button" parent="main" unique_id=2121722272]
 texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 40.0
+offset_top = 41.0
 offset_right = 64.0
-offset_bottom = 88.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
 text = "Play"
 flat = true
 
 [node name="about" type="Button" parent="main" unique_id=1308190376]
+visible = false
 texture_filter = 1
-offset_left = -128.0
-offset_top = 88.0
-offset_bottom = 136.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
 theme_override_fonts/font = ExtResource("33_6xj2l")
@@ -2983,57 +2998,85 @@ flat = true
 
 [node name="decompcredits" type="Button" parent="main" unique_id=882773724]
 texture_filter = 1
-offset_left = -25.0
-offset_top = 88.0
-offset_right = 134.0
-offset_bottom = 136.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = 96.0
+offset_right = 79.5
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.6725274, 0.4879107, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "Decomp"
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "About"
 flat = true
 
 [node name="credits" type="Button" parent="main" unique_id=1844929267]
 texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 136.0
-offset_right = 63.0
-offset_bottom = 184.0
+offset_top = 151.0
+offset_right = 64.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
 text = "Credits"
 flat = true
 
 [node name="quit" type="Button" parent="main" unique_id=2021964447]
 texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 184.0
+offset_top = 206.0
 offset_right = 64.0
-offset_bottom = 232.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
 text = "Quit"
 flat = true
 
-[node name="fact" type="Label" parent="main" unique_id=1583476259]
+[node name="fact" type="RichTextLabel" parent="main" unique_id=1439186521]
 texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 offset_left = -224.0
-offset_top = -265.0
+offset_top = 27.0
 offset_right = 224.0
-offset_bottom = -169.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 16
+offset_bottom = 221.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("48_u6mje")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
 text = "Fact of the day:
 The most common form of hydrogen is protium, an atom with one proton, one electron and no neutrons."
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="happyholidays" type="Sprite2D" parent="main" unique_id=121086354]
 visible = false
@@ -3080,11 +3123,11 @@ theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
 
-[node name="credits" type="Node2D" parent="." unique_id=2090914016]
+[node name="credit" type="Node2D" parent="." unique_id=2090914016]
 visible = false
 texture_filter = 2
 
-[node name="text" type="Label" parent="credits" unique_id=327720537]
+[node name="text" type="Label" parent="credit" unique_id=327720537]
 texture_filter = 1
 offset_left = -288.0
 offset_top = -328.0
@@ -3106,7 +3149,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="back" type="Button" parent="credits" unique_id=899434541]
+[node name="back" type="Button" parent="credit" unique_id=899434541]
 texture_filter = 1
 offset_left = -64.0
 offset_top = 176.0
@@ -3119,7 +3162,67 @@ theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
 
+[node name="credits" type="CanvasLayer" parent="." unique_id=642598301]
+visible = false
+
+[node name="text" type="RichTextLabel" parent="credits" unique_id=1045177171]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.5
+offset_top = -317.0
+offset_right = 420.5
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+theme_override_fonts/normal_font = ExtResource("33_6xj2l")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[color=green]Music[/color]
+Oberorka, Kevin MacLeod
+
+[color=cyan]Programming[/color]
+Oberorka, Mups, Unexian
+
+[color=Orange]Spritework[/color]
+Oberorka, SciphonPylon, Velcrow101, Mobropro, CiaaiK, Shard, ir1sh, truserwav, wk, nostuyx, Inky, Senchium, twitcheer, bhapydageek, theticktock_ticky
+
+[color=yellow]The author(s) of each catto's design is/are credited when you hover over them[/color]"
+horizontal_alignment = 1
+vertical_alignment = 1
+meta_underlined = false
+selection_enabled = true
+
+[node name="back" type="Button" parent="credits" unique_id=7324477]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 153.0
+offset_bottom = 84.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "< Back"
+flat = true
+
+[node name="LinkButton" type="LinkButton" parent="credits" unique_id=1846826352]
+visible = false
+offset_left = 532.0
+offset_top = 415.0
+offset_right = 819.0
+offset_bottom = 437.0
+text = "ttt"
+uri = "https://tumblr.com/elementcattos"
+
 [node name="decompcredits" type="CanvasLayer" parent="." unique_id=1813541368]
+visible = false
 
 [node name="text" type="RichTextLabel" parent="decompcredits" unique_id=476544576]
 texture_filter = 1
@@ -3144,7 +3247,7 @@ text = "This is a sandbox where you can play around with kitties based on the ch
 
 The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
 
-This project was made by Lily P. Irie and mod by Mups, made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos {height: 1}]https://tumblr.com/elementcattos[/url][/wave][/rainbow]
+This project was made by [color=Turquoise]Lily P. Irie[/color] and mod by [color=fuchsia]Mups[/color], made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at   [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos]https://tumblr.com/elementcattos[/url][/wave][/rainbow]
 
 Find the source code here:
 [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://git.gay/mupsie/ecatto-decomp.git]https://git.gay/mupsie/ecatto-decomp.git[/url][/wave][/rainbow]"
@@ -3159,8 +3262,9 @@ offset_left = 25.0
 offset_top = 20.0
 offset_right = 153.0
 offset_bottom = 84.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "< Back"
 flat = true
@@ -3263,8 +3367,9 @@ texture = ExtResource("37")
 [node name="fps" type="Label" parent="debug" unique_id=1534193210]
 z_index = 4
 texture_filter = 1
+offset_left = 24.0
 offset_top = -5.0
-offset_right = 238.0
+offset_right = 262.0
 offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
 theme_override_fonts/font = ExtResource("48_u6mje")
@@ -3275,8 +3380,8 @@ text = "fps: "
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
-[connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
@@ -3284,15 +3389,19 @@ text = "fps: "
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
-[connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
-[connection signal="pressed" from="about/back" to="." method="_button_press"]
 [connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="about/back" to="." method="_button_press"]
+[connection signal="mouse_entered" from="credit/back" to="." method="_button_hover"]
+[connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="credit/back" to="." method="_button_press"]
+[connection signal="meta_clicked" from="credits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="meta_clicked" from="decompcredits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]

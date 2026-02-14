@@ -99,13 +99,28 @@ text = "Loading
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="mouseload" type="Control" parent="." unique_id=346704768]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1999.8756
+offset_top = 1600.3849
+offset_right = 3141.0962
+offset_bottom = 2082.3872
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-3.5057962, -6.639821)
+mouse_default_cursor_shape = 4
+
 [node name="debug" type="CanvasLayer" parent="." unique_id=1030128063]
 
 [node name="fps" type="Label" parent="debug" unique_id=1330998564]
 z_index = 4
 texture_filter = 1
+offset_left = 24.0
 offset_top = -5.0
-offset_right = 238.0
+offset_right = 262.0
 offset_bottom = 22.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
 theme_override_fonts/font = ExtResource("7_u0eh2")

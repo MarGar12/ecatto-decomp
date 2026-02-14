@@ -33,7 +33,7 @@ func _ready():
 	if bob == 1:
 		$anim.play("bob2")
 	if bob2 == 1:
-		$main/logo/version.set("theme_override_colors/font_color", white)
+		#$main/logo/version.set("theme_override_colors/font_color", white)
 		$main/play.set("theme_override_colors/font_color", white)
 		$main/about.set("theme_override_colors/font_color", white)
 		$main/decompcredits.set("theme_override_colors/font_color", white)
@@ -51,7 +51,7 @@ func _ready():
 		$moon.show()
 		$particles.hide()
 	if bob2 == 2:
-		$main/logo/version.set("theme_override_colors/font_color", black)
+		#$main/fact/logo/version.set("theme_override_colors/font_color", black)
 		$main/play.set("theme_override_colors/font_color", black)
 		$main/about.set("theme_override_colors/font_color", black)
 		$main/decompcredits.set("theme_override_colors/font_color", black)
@@ -69,7 +69,7 @@ func _ready():
 		$space.hide()
 		$particles.show()
 	if bob2 == 3:
-		$main/logo/version.set("theme_override_colors/font_color", white)
+		#$main/logo/version.set("theme_override_colors/font_color", white)
 		$main/play.set("theme_override_colors/font_color", white)
 		$main/about.set("theme_override_colors/font_color", white)
 		$main/decompcredits.set("theme_override_colors/font_color", white)
@@ -87,7 +87,7 @@ func _ready():
 		$space.show()
 		$particles.hide()
 	
-	$main/fact.text = "Random Science Fact:\n" + facts.pick_random()
+	$main/fact.text = "[wave amp=25.0 freq=1.0 connected=1][color=yellow]Random Science Fact:\n" + facts.pick_random()
 	
 	# BG :3
 	for c in range(25):
@@ -140,7 +140,6 @@ func _process(delta):
 	
 	$snow.position.y = -get_window().size.y*0.5/scale.y
 	$snow.scale.x = get_window().size.x/1000.0
-	$main/happyholidays.position = get_window().size*0.5/scale.x
 	
 	$earth.rotate(delta*0.05)
 	$cattos1.rotate(-delta*0.2)
@@ -166,12 +165,14 @@ func _on_quit_pressed():
 func _on_about_pressed():
 	$main.hide()
 	$about.show()
+	$logo.hide()
 
 func _on_back_pressed():
 	$about.hide()
 	$credits.hide()
 	$decompcredits.hide()
 	$main.show()
+	$logo.show()
 
 func _button_hover():
 	$hover.play()
@@ -181,9 +182,11 @@ func _button_press():
 func _on_credits_pressed():
 	$main.hide()
 	$credits.show()
+	$logo.hide()
 
 func _on_decompcredits_pressed():
 	$main.hide()
+	$logo.hide()
 	$decompcredits.show()
 
 
