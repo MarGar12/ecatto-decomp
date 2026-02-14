@@ -17,7 +17,7 @@ func _input(event):
 			touches[event.index] = event.position
 			if not touches.is_empty():
 				glob.dragging = false
-				for catto in get_tree().current_scene.find_child("cattos").get_children():
+				for catto in get_tree().current_scene.find_child("catto").get_children():
 					catto.dragged = false
 					if catto.find_child("model"):
 						catto.find_child("model").find_child("anim").play("idle")
@@ -75,12 +75,12 @@ func _process(delta):
 	if Input.is_action_just_pressed("wheelup") and zoom.x < 10: zoom *= 1.1
 	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1: zoom /= 1.1
 	
-	if get_window().size.x <= 1100 && glob.hudscaling == false :
+	if get_window().size.x <= 1010 && glob.hudscaling == false :
 		$ui/topright.position.y = 64
 	else:
 		$ui/topright.position.y = 0
 	# Change camera scale based on window size -- from ec+
-	var smult = min(get_window().size.x / 1100.0, get_window().size.y / 648.0)
+	var smult = min(get_window().size.x / 1024.0, get_window().size.y / 768.0)
 	$ui/pause.scale = (Vector2.ONE*2) * smult / 1.5
 	if glob.hudscaling == true:
 		$ui/topleft.scale = (Vector2.ONE*2) * smult
@@ -103,12 +103,14 @@ func _process(delta):
 	$ui/topright/pres.text = "Air Pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "Gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
 	
-	$ui/botright/touchevent.text = str(position)
-	$ui/botright/zoom.text = str(zoom)
+	#$ui/topleft/camerapos.text = str(position)
+	#$ui/topleft/touchevent.text = str(touches)
+	#$ui/topleft/zoom.text = str(zoom)
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
-	$ui/botright/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0)
-	$ui/botright/frame.text = str(Engine.get_frames_drawn()).pad_decimals(0)
+	$ui/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n" + str(touches.size()) + "\n"
+	$ui/camerapos.text = str(position) + " " + str(zoom)
+	#$ui/topleft/frame.text = str(Engine.get_frames_drawn()).pad_decimals(0)
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed
@@ -128,6 +130,7 @@ func _process(delta):
 	$ui/topleft.visible = !glob.inv_open and !glob.pause
 	$ui/topright.visible = !glob.inv_open and !glob.pause
 	$ui/botleft.visible = !glob.inv_open and !glob.pause
+	$ui/botright.visible = !glob.inv_open and !glob.pause
 	
 	$tool.global_position = get_global_mouse_position()
 	$tool.visible = glob.tool != 0

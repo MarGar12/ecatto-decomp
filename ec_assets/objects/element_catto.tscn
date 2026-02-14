@@ -159,6 +159,7 @@
 [ext_resource type="Texture2D" uid="uid://bycrpf2bejr4f" path="res://ec_assets/textures/particles/nucleus_rg.png" id="151"]
 [ext_resource type="Texture2D" uid="uid://crvm5rw7rmd5" path="res://ec_assets/textures/cattos/elements/isotopes/nd163-tail.png" id="151_iocna"]
 [ext_resource type="Texture2D" uid="uid://b0ajl2ns6bvsd" path="res://ec_assets/textures/particles/nucleus_au.png" id="152"]
+[ext_resource type="Texture2D" uid="uid://d3yej80fsrpxp" path="res://ec_assets/textures/cattos/elements/isotopes/ne22-tail.png" id="152_7rv7g"]
 [ext_resource type="Texture2D" uid="uid://dh3hywjvns7oj" path="res://ec_assets/textures/items/cn_earth.png" id="153"]
 [ext_resource type="SpriteFrames" uid="uid://cyqo6svgeycui" path="res://ec_assets/textures/element_spots.tres" id="154"]
 [ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="155"]
@@ -204,6 +205,7 @@
 [ext_resource type="AudioStream" uid="uid://b3k5j6cg8sura" path="res://ec_assets/sounds/metal_solid_impact_hard4.wav" id="189_67n54"]
 [ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="190"]
 [ext_resource type="AudioStream" uid="uid://bodxp43ucgkmo" path="res://ec_assets/sounds/metal_solid_impact_hard5.wav" id="190_2i7d5"]
+[ext_resource type="Texture2D" uid="uid://ch0e2m8p2o3rm" path="res://ec_assets/textures/cattos/elements/isotopes/es251-glasses.png" id="190_kjeq3"]
 [ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="191"]
 [ext_resource type="AudioStream" uid="uid://b6rvw3g4iro4q" path="res://ec_assets/sounds/metal_solid_impact_soft1.wav" id="191_eofrb"]
 [ext_resource type="AudioStream" uid="uid://k26pg2olhd84" path="res://ec_assets/sounds/geiger3.wav" id="192"]
@@ -211,6 +213,16 @@
 [ext_resource type="AudioStream" uid="uid://0x47lc2jnom3" path="res://ec_assets/sounds/MAUW.wav" id="193"]
 [ext_resource type="AudioStream" uid="uid://dv1o11u6h0anu" path="res://ec_assets/sounds/anime_spark_thing.wav" id="194"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="195"]
+[ext_resource type="Texture2D" uid="uid://djx7x5jgc385d" path="res://ec_assets/textures/cattos/elements/isotopes/ts295-hair.png" id="196_tgcry"]
+[ext_resource type="Texture2D" uid="uid://bkyfr34kp4nm2" path="res://ec_assets/textures/cattos/elements/isotopes/os185-hair.png" id="198_oow6s"]
+[ext_resource type="Texture2D" uid="uid://c0bkob86c7l24" path="res://ec_assets/textures/cattos/elements/isotopes/os194-hair.png" id="200_ok4eu"]
+[ext_resource type="Texture2D" uid="uid://dbqrf5i0hyjts" path="res://ec_assets/textures/cattos/elements/isotopes/os190-hair.png" id="201_vknxo"]
+[ext_resource type="Texture2D" uid="uid://brse67jw6ylte" path="res://ec_assets/textures/cattos/elements/isotopes/os189-hair.png" id="202_jloec"]
+[ext_resource type="Texture2D" uid="uid://be8ojm1ign7v1" path="res://ec_assets/textures/cattos/elements/isotopes/os188-hair.png" id="203_i24qu"]
+[ext_resource type="Texture2D" uid="uid://bf1vsqpdxkeko" path="res://ec_assets/textures/cattos/elements/isotopes/os187-hair.png" id="204_h40v8"]
+[ext_resource type="Texture2D" uid="uid://c8ju3rpxvko5j" path="res://ec_assets/textures/cattos/elements/isotopes/os186-hair.png" id="205_vkvpp"]
+[ext_resource type="Texture2D" uid="uid://vk2wgl7pcnhe" path="res://ec_assets/textures/cattos/elements/isotopes/os184-hair.png" id="206_jv4g6"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="208_ok4eu"]
 
 [sub_resource type="Gradient" id="Gradient_wu5qn"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -755,6 +767,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("151_iocna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_7rv7g")
 }],
 "loop": true,
 "name": &"isotopes",
@@ -1152,6 +1167,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("178")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_kjeq3")
 }],
 "loop": true,
 "name": &"default",
@@ -1287,6 +1305,33 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("184")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_tgcry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_oow6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_ok4eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_vknxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_jloec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_i24qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_h40v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_vkvpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_jv4g6")
 }],
 "loop": true,
 "name": &"isotopes",
@@ -1471,6 +1516,7 @@ flip_h = true
 visible = false
 position = Vector2(0, -10)
 sprite_frames = ExtResource("7")
+animation = &"isotopes"
 speed_scale = 0.0
 flip_h = true
 
@@ -1573,6 +1619,7 @@ texture = SubResource("GradientTexture2D_0hom1")
 position = Vector2(0, 64)
 sprite_frames = SubResource("SpriteFrames_bhg3s")
 animation = &"isotopes"
+frame = 8
 speed_scale = 0.0
 offset = Vector2(-32, -32)
 
@@ -1722,7 +1769,7 @@ position = Vector2(0, 24)
 visible = false
 position = Vector2(0, -4)
 sprite_frames = ExtResource("154")
-frame = 11
+animation = &"isotopes"
 speed_scale = 0.0
 
 [node name="dy_dosi" type="Label" parent="model/face/spot" unique_id=895158340]
@@ -1801,7 +1848,7 @@ flip_h = true
 visible = false
 position = Vector2(0, -16)
 sprite_frames = ExtResource("7")
-animation = &"shut"
+animation = &"isotopes"
 speed_scale = 0.0
 flip_h = true
 
@@ -1810,7 +1857,6 @@ visible = false
 position = Vector2(0, -2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("7")
-animation = &"isotopes"
 speed_scale = 0.0
 flip_h = true
 
@@ -1827,7 +1873,6 @@ position = Vector2(14, 0)
 sprite_frames = SubResource("SpriteFrames_rs16y")
 
 [node name="pupil3" type="AnimatedSprite2D" parent="model/face/pupils" unique_id=129269533]
-visible = false
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_rs16y")
 
@@ -1850,6 +1895,7 @@ texture = ExtResource("173_tpqhr")
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 12)
 sprite_frames = SubResource("SpriteFrames_lioc7")
+animation = &"neon"
 speed_scale = 0.0
 
 [node name="fangs" type="Sprite2D" parent="model/face/mouth" unique_id=472363195]
@@ -2021,8 +2067,8 @@ offset_top = -148.0
 offset_right = 960.0
 offset_bottom = -4.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("185_2i7d5")
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("208_ok4eu")
+theme_override_font_sizes/font_size = 63
 text = "Bo"
 horizontal_alignment = 1
 vertical_alignment = 1

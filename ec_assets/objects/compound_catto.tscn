@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="33"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="33_cse2p"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="34"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="34_1yth0"]
 [ext_resource type="AudioStream" uid="uid://bn62jh7uyajvo" path="res://ec_assets/sounds/metal_solid_impact_soft3.wav" id="35"]
 [ext_resource type="AudioStream" uid="uid://c0osvdf5eipag" path="res://ec_assets/sounds/metal_solid_impact_hard1.wav" id="36"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="37"]
@@ -826,13 +827,13 @@ horizontal_alignment = 1
 
 [node name="formula" type="Label" parent="info" unique_id=21751869]
 texture_filter = 1
-offset_left = -318.0
-offset_top = -145.0
-offset_right = 962.0
-offset_bottom = -1.0
+offset_left = -319.0
+offset_top = -148.0
+offset_right = 961.0
+offset_bottom = -4.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("33_cse2p")
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("34_1yth0")
+theme_override_font_sizes/font_size = 63
 text = "H₂O"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -845,7 +846,7 @@ offset_right = 120.0
 offset_bottom = -96.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("33_cse2p")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
 text = "18"
 vertical_alignment = 1
 

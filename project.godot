@@ -30,6 +30,11 @@ config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp
 
 glob="*res://glob.gd"
 
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
+
 [dotnet]
 
 project/assembly_name="Element Cattos Decomp"

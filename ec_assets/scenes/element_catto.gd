@@ -105,6 +105,8 @@ func _process(delta):
 	$info/type.text = group + " (" + state + ")"
 	$info/density.text = "density: " + str(snapped(density,0.01)) + " kg/m^3"
 	
+	$info/halflife.visible = glob.weakforce
+	
 	#lag prevention
 	#if protons < 0 or delta > 0.5:
 	#	print("  " + $info/name.text)
@@ -265,14 +267,23 @@ func _process(delta):
 		$radiation.modulate.a = clamp(10.0/sqrt(halflife),0,10)
 	
 	#electron capacity
-	if protons in range(0,3): max_electrons = 2
-	elif protons in range(3,11): max_electrons = 10
-	elif protons in range(11,19): max_electrons = 18
-	elif protons in range(19,37): max_electrons = 36
-	elif protons in range(37,55): max_electrons = 54
-	elif protons in range(55,87): max_electrons = 86
-	elif protons in range(87,119): max_electrons = 118
-	else: max_electrons = 140 + (32*floor((protons-140)/32)) + 32
+	if protons in range(0,3): 
+		max_electrons = 2
+	elif protons in range(3,11): 
+		max_electrons = 10
+	elif protons in range(11,19): 
+		max_electrons = 18
+	elif protons in range(19,37): 
+		max_electrons = 36
+	elif protons in range(37,55): 
+		max_electrons = 54
+	elif protons in range(55,87): 
+		max_electrons = 86
+	elif protons in range(87,119): 
+		max_electrons = 118
+	else: 
+		@warning_ignore("integer_division")
+		max_electrons = 140 + (32*floor((protons-140)/32)) + 32
 	if electrons > max_electrons:
 		electrons -= 1
 		emit("electron")
@@ -455,6 +466,7 @@ func _process(delta):
 	if $model/face/eye1.animation in ["happy","shut"]:
 		$model/face/eye2.animation = $model/face/eye1.animation
 		if protons in [6,34,35,63,64,75,85,86,97,109,111,118]: $model/face/eye1.frame = 1
+		elif protons == 117 and mass == 292: $model/face/eye1.frame = 1
 		else: $model/face/eye1.frame = 0
 		if protons == 63: $model/face/eye1.modulate = Color8(255,0,0)
 		elif protons == 64: $model/face/eye1.modulate = Color8(128,128,128)
@@ -842,11 +854,12 @@ func generate_features():
 		if protons == 97: $model/tail.frame = 6
 		if protons == 98: $model/tail.frame = 7
 		if protons == 102: $model/tail.frame = 8
-	elif [protons,mass] in [[1,4],[1,5],[13,26],[20,47],[60,163],[76,189],[76,190],[77,192]]:
+	elif [protons,mass] in [[1,4],[1,5],[10,22],[13,26],[20,47],[60,163],[76,189],[76,190],[77,192]]:
 		$model/tail.visible = true
 		$model/tail.play("isotopes")
 		if mass == 4: $model/tail.frame = 0
 		if mass == 5: $model/tail.frame = 1
+		if mass == 22: $model/tail.frame = 8
 		if mass == 26: $model/tail.frame = 2
 		if mass == 47: $model/tail.frame = 3
 		if mass == 163: $model/tail.frame = 7
@@ -1026,11 +1039,18 @@ func update():
 	generate_features()
 	
 	#collision
-	if protons == 2: $col_body.position.y = 1
-	elif protons == 42: $col_body.position.y = 6
-	elif protons == 55: $col_body.position.y = 31
-	elif protons == 120: $col_body.position.y = 12
-	else: $col_body.position.y = 4
+	if protons == 2: 
+		$col_body.position.y = 1
+	elif protons == 42: 
+		$col_body.position.y = 6
+	elif protons == 55: 
+		$col_body.position.y = 31
+	#elif protons == 87 and mass == 212:
+	#	$col_body.position.y = 29 
+	elif protons == 120: 
+		$col_body.position.y = 12
+	else: 
+		$col_body.position.y = 4
 	
 	#info
 	if protons <= 118 and protons >= 0: 
@@ -1107,6 +1127,15 @@ func update():
 			$model/face/eye3.play("isotopes")
 			eye1 = 2
 			eye2 = 2
+		elif [protons,mass] == [3,3]:
+			$model/body.frame = 103
+			$model/face/eye4.visible = true
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/eye4.play("isotopes")
+			eye1 = 49
+			eye2 = 49
+			$model/face/eye4.frame = 48
 		elif [protons,mass] == [3,6]:
 			$model/body.frame = 61
 		elif [protons,mass] == [6,14]:
@@ -1129,6 +1158,18 @@ func update():
 		elif [protons,mass] == [8,15]:
 			halflife = 122.3
 			$model/body.frame = 11
+		elif [protons,mass] == [8,23]:
+			$model/body.frame = 93
+		elif [protons,mass] == [10,22]:
+			$model/body.frame = 88
+			$model/face/mouth/fangs.visible = true
+			$model/face/mouth.play("default")
+			$model/face/mouth.frame = 1
+			$model/face/eye1.play("default")
+			$model/face/eye2.play("default")
+			eye1 = 0
+			eye2 = 0
+			$model/face/mouth.self_modulate = Color(0.0, 0.0, 0.0, 1.0)
 		elif [protons,mass] == [13,26]:
 			halflife = 86400*365.25*717000
 			$model/body.frame = 12
@@ -1212,6 +1253,13 @@ func update():
 			$model/face/spot.modulate = Color8(255,220,150)
 			eye1 = 11
 			eye2 = 11
+		elif [protons,mass] == [27,56]:
+			$model/body.frame = 92
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/spot.visible = false
+			eye1 = 11
+			eye2 = 11
 		elif [protons,mass] == [33,71]:
 			halflife = 3600*65.3
 			$model/body.frame = 23
@@ -1254,6 +1302,12 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 17
 			eye2 = 17
+		elif [protons,mass] == [36,81]:
+			$model/body.frame = 102
+		elif [protons,mass] == [37,87]:
+			$model/body.frame = 101
+			$model/face/eye2.play("isotopes")
+			eye2 = 47
 		elif [protons,mass] == [38,90]:
 			halflife = 86400*365.25*28.91
 			$model/body.frame = 29
@@ -1310,8 +1364,12 @@ func update():
 			$model/body.frame = 60
 		elif [protons,mass] == [52,128]:
 			halflife = 86400*365.25*2.25*pow(10,24)
-			$model/body.play("default")
-			$model/body.frame = 52
+			$model/body.frame = 95
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			eye1 = 44
+			eye2 = 44
 		elif [protons,mass] == [53,135]:
 			$model/body.frame = 59
 		elif [protons,mass] == [54,133]:
@@ -1328,14 +1386,39 @@ func update():
 			$model/face/eye1.play("isotopes")
 			$model/face/eye2.play("isotopes")
 			$model/face/spot.visible = false
+			$model/face/mouth.frame = 0
 			eye1 = 35
 			eye2 = 35
 		elif [protons,mass] == [54,136]:
 			$model/body.frame = 79
 			$model/face/spot.visible = false
+		elif [protons,mass] == [54,140]:
+			$model/body.frame = 98
+			$model/face/spot.visible = false
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 45
+			eye2 = 45
 		elif [protons,mass] == [55,137]:
 			$model/body.frame = 57
 			$nucleus/body.frame = 121
+			$nucleus/face/eye1.frame = 36
+			$nucleus/face/eye1.play("isotopes")
+			$nucleus/face/eye2.visible = false
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.visible = false
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			spot = 4
+			eye1 = 36
+		elif [protons,mass] == [56,154]:
+			$model/body.frame = 97
+			$model/face/spot.visible = false
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 50
+			eye2 = 51
+			$model/face/mouth.self_modulate = Color("ff5500ff")
 		elif [protons,mass] == [59,142]:
 			halflife = 3600*19.12
 			$model/body.frame = 38
@@ -1356,37 +1439,63 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 39
 			eye2 = 39
+		elif [protons,mass] == [64,160]:
+			$model/body.frame = 96
 		elif [protons,mass] == [76,184]:
 			$model/body.frame = 67
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 11
 		elif [protons,mass] == [76,185]:
 			$model/body.frame = 68
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 4
 		elif [protons,mass] == [76,186]:
 			$model/body.frame = 69
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 10
 		elif [protons,mass] == [76,187]:
 			$model/body.frame = 70
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 9
 		elif [protons,mass] == [76,188]:
 			$model/body.frame = 71
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 8
 		elif [protons,mass] == [76,189]:
 			$model/body.frame = 72
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 7
 		elif [protons,mass] == [76,190]:
 			$model/body.frame = 73
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 6
 		elif [protons,mass] == [76,194]:
 			$model/body.frame = 74
-			$model/hair.visible = 0
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 5
 		elif [protons,mass] == [77,192]:
 			halflife = 86400*73.827
 			$model/body.frame = 40
+			$model/face/eye4.play("default")
 			$model/face/eye4.frame = 58
+			$model/face/eye3.visible = true
+			$model/face/spot.visible = false
+			
 		elif [protons,mass] == [78,190]:
 			halflife = 86400*365.25*4.83*pow(10,11)
 			$model/body.frame = 41
+		elif [protons,mass] == [79,194]:
+			$model/body.frame = 94
+			$model/face/eye1.play("isotopes")
+			eye1 = 43
 		elif [protons,mass] == [79,195]:
 			halflife = 86400*186.01
 			$model/body.frame = 42
@@ -1436,6 +1545,9 @@ func update():
 			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 			eye1 = 0
 			eye2 = 40
+		elif [protons,mass] == [87,221]:
+			$model/body.frame = 90
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 		elif [protons,mass] == [88,223]:
 			halflife = 86400*11.4352
 			$model/body.frame = 49
@@ -1445,6 +1557,8 @@ func update():
 		elif [protons,mass] == [90,230]:
 			$model/body.frame = 75
 			$nucleus/body.frame = 122
+			$model/face/eye2.visible = false
+			$nucleus/face/eye2.visible = false
 		elif [protons,mass] == [90,234]:
 			$model/body.frame = 76
 		elif [protons,mass] == [91,230]:
@@ -1453,8 +1567,24 @@ func update():
 		elif [protons,mass] == [91,233]:
 			halflife = 86400*26.975
 			$model/body.frame = 51
+		elif [protons,mass] == [92,236]:
+			$model/body.frame = 100
+			$model/face/eye2.visible = false
+		elif [protons,mass] == [94,243]:
+			$model/body.frame = 89
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 42
+			eye2 = 42
 		elif [protons,mass] == [95,228]:
 			$model/body.frame = 86
+		elif [protons,mass] == [95,243]:
+			$model/body.frame = 99
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 46
+			eye2 = 46
+			$model/face/mouth.self_modulate = Color("002147ff")
 		elif [protons,mass] == [96,242]:
 			$model/body.frame = 54
 			$model/face/eye1.play("isotopes")
@@ -1471,6 +1601,10 @@ func update():
 			$model/body.frame = 58
 			$model/face/eye1.play("isotopes")
 			$model/face/eye2.play("isotopes")
+			$model/face/glasses.visible = true
+			$model/face/eye1.visible = false
+			$model/face/eye2.visible = false
+			glasses = 8
 			eye1 = 33
 			eye2 = 33
 		elif [protons,mass] == [112,277]:
@@ -1480,11 +1614,32 @@ func update():
 			eye1 = 37
 		elif [protons,mass] == [112,288]:
 			$model/body.frame = 85
+		elif [protons,mass] == [117,292]:
+			$model/body.frame = 87
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			$model/face/eye1.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			$model/face/eye2.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			spot = 5
+		elif [protons,mass] == [117,293]:
+			$model/body.frame = 91
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			spot = 6
 		elif [protons,mass] == [117,295]:
 			$model/body.frame = 77
 			$nucleus/body.frame = 123
 			$model/face/eye1.play("isotopes")
 			$model/face/eye2.play("isotopes")
+			$model/hair.visible = true
+			$model/hair.play("isotopes")
+			$model/hair.frame = 3
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			spot = 3
 			eye1 = 34
 			eye2 = 34
 		elif [protons,mass] == [118,297]:
@@ -1510,6 +1665,8 @@ func update():
 	elif halflife > 86400*365.25: $geiger.base_vol = -10
 	elif halflife > 86400: $geiger.base_vol = -5
 	else: $geiger.base_vol = 0
+	
+	
 	
 	#eyes & spots again
 	if protons in [6,25,35,85,86,97,118,119]: 

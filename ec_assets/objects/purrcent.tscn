@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b6064ysyqitfu" path="res://ec_assets/sounds/drywall_footstep1.wav" id="8"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="8_dw14n"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="9"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="9_ckvio"]
 [ext_resource type="AudioStream" uid="uid://bkpolr0wbq53y" path="res://ec_assets/sounds/jump.mp3" id="10"]
 [ext_resource type="AudioStream" uid="uid://tlwphgqla5eb" path="res://ec_assets/sounds/splash_metal.wav" id="11"]
 [ext_resource type="AudioStream" uid="uid://bjyitvhmts3gm" path="res://ec_assets/sounds/poof.mp3" id="12"]
@@ -635,8 +636,8 @@ offset_top = -149.0
 offset_right = 120.0
 offset_bottom = -5.0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("8_dw14n")
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("9_ckvio")
+theme_override_font_sizes/font_size = 63
 text = ":3"
 horizontal_alignment = 1
 vertical_alignment = 1
