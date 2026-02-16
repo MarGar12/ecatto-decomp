@@ -154,7 +154,6 @@ func _process(delta):
 		$version/iris.scale /= 1+delta*10
 		$music.volume_db -= delta*20
 	if $version/iris.scale.x < 0.02: get_tree().change_scene_to_file("res://ec_assets/scenes/loading.tscn")
-	$debug/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n"
 
 func _on_play_pressed():
 	$version/iris.show()

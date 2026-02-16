@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bcs4bvx7fi2hm"]
 
 [ext_resource type="Script" uid="uid://djnj7xx0gmrff" path="res://addons/copper_dc/scripts/debug_console.gd" id="1_fs6bc"]
+[ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="2_ogojk"]
 
 [node name="Debug Console" type="CanvasLayer" unique_id=61188242]
 process_mode = 3
@@ -63,6 +64,7 @@ size_flags_horizontal = 3
 
 [node name="Log Content" type="RichTextLabel" parent="ConsolePanel/BoxContainer/BoxContainer/Log Panel/MarginContainer/Log/MarginContainer" unique_id=406170698]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ogojk")
 bbcode_enabled = true
 fit_content = true
 scroll_following = true
@@ -80,6 +82,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
 bbcode_enabled = true
 fit_content = true
 scroll_following = true
@@ -109,6 +113,7 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ConsolePanel/BoxContainer/Command Hints Panel/MarginContainer/Command Hints" unique_id=617506584]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ogojk")
 bbcode_enabled = true
 fit_content = true
 scroll_following = true
@@ -125,6 +130,7 @@ theme_override_constants/margin_bottom = 2
 [node name="Command Field" type="LineEdit" parent="ConsolePanel/BoxContainer/MarginContainer" unique_id=648795984]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 21
 placeholder_text = "Enter command here..."
 context_menu_enabled = false
 
@@ -135,6 +141,7 @@ offset_top = 8.0
 offset_right = 163.0
 offset_bottom = 101.0
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 
 [node name="Mini Log" type="ScrollContainer" parent="." unique_id=1373620711]
 unique_name_in_owner = true
@@ -161,6 +168,7 @@ theme_override_constants/margin_right = 20
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_ogojk")
 bbcode_enabled = true
 fit_content = true
 scroll_active = false

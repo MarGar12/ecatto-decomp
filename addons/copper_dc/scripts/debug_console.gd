@@ -52,6 +52,8 @@ func _ready():
 	add_monitor("static_memory_max", "Static Memory Max", false)
 	add_monitor("objects", "Objects", false)
 	add_monitor("nodes", "Nodes", false)
+	add_monitor("camera", "Camera Position", false)
+	add_monitor("zoom", "Camera Zoom", false)
 	
 	# Register built-in commands
 	await get_tree().create_timer(0.05).timeout

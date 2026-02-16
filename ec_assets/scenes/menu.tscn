@@ -3620,26 +3620,12 @@ texture = ExtResource("37")
 scale = Vector2(2000, 2000)
 texture = ExtResource("37")
 
-[node name="debug" type="CanvasLayer" parent="." unique_id=1551445769]
-
-[node name="fps" type="Label" parent="debug" unique_id=1534193210]
-z_index = 4
-texture_filter = 1
-offset_left = 24.0
-offset_top = -5.0
-offset_right = 262.0
-offset_bottom = 22.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
-theme_override_fonts/font = ExtResource("48_u6mje")
-theme_override_font_sizes/font_size = 21
-text = "fps: "
-
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
-[connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="main/about" to="." method="_button_press"]
+[connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
@@ -3647,19 +3633,19 @@ text = "fps: "
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
-[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
+[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
-[connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="about/back" to="." method="_button_press"]
+[connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
 [connection signal="mouse_entered" from="credit/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="credit/back" to="." method="_button_press"]
+[connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
 [connection signal="meta_clicked" from="credits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="credits/back" to="." method="_button_press"]
+[connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
 [connection signal="meta_clicked" from="decompcredits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]

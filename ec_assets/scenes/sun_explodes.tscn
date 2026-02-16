@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://b2l31ex487oxl" path="res://ec_assets/sounds/nova.mp3" id="5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
 [ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="7"]
-[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="8_ixdw6"]
 
 [sub_resource type="Gradient" id="Gradient_32lgr"]
 offsets = PackedFloat32Array(0)
@@ -334,19 +333,5 @@ texture = SubResource("GradientTexture2D_lvtmg")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=393194795]
 libraries/ = SubResource("AnimationLibrary_xi6xi")
 autoplay = &"blam"
-
-[node name="debug" type="CanvasLayer" parent="." unique_id=1697803902]
-
-[node name="fps" type="Label" parent="debug" unique_id=390201084]
-z_index = 4
-texture_filter = 1
-offset_left = 24.0
-offset_top = -5.0
-offset_right = 262.0
-offset_bottom = 22.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
-theme_override_fonts/font = ExtResource("8_ixdw6")
-theme_override_font_sizes/font_size = 21
-text = "fps: "
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

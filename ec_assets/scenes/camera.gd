@@ -102,15 +102,9 @@ func _process(delta):
 	#	$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
 	$ui/topright/pres.text = "Air Pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "Gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
-	
-	#$ui/topleft/camerapos.text = str(position)
-	#$ui/topleft/touchevent.text = str(touches)
-	#$ui/topleft/zoom.text = str(zoom)
+
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
-	$debug/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n" + str(touches.size()) + "\n"
-	$debug/camerapos.text = str(position) + " " + str(zoom)
-	#$ui/topleft/frame.text = str(Engine.get_frames_drawn()).pad_decimals(0)
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed
@@ -160,6 +154,11 @@ func _process(delta):
 	else: $ui/pause/fus_thres/label.text = "No Fusion"
 	
 	$ui/pause/end_world.visible = glob.earth_exploded
+	if debug_console.stats.visible:
+		if DebugConsole.is_monitor_visible("camera"):
+			DebugConsole.update_monitor("camera", position)
+		if DebugConsole.is_monitor_visible("zoom"):
+			DebugConsole.update_monitor("zoom", zoom)
 	
 
 func _on_rateslider_value_changed(value):

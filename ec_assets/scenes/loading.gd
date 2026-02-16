@@ -20,4 +20,3 @@ func _process(delta):
 		ResourceLoader.load_threaded_request("res://ec_assets/scenes/earth_explodes.tscn")
 	if ResourceLoader.load_threaded_get_status("res://ec_assets/scenes/earth_explodes.tscn") == ResourceLoader.THREAD_LOAD_LOADED:
 		get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get("res://ec_assets/scenes/main.tscn"))
-	$debug/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS\n"
