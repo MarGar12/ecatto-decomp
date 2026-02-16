@@ -33,7 +33,7 @@ func _ready():
 	if bob == 1:
 		$anim.play("bob2")
 	if bob2 == 1:
-		$main/logo/version.set("theme_override_colors/font_color", white)
+		#$main/logo/version.set("theme_override_colors/font_color", white)
 		$main/play.set("theme_override_colors/font_color", white)
 		$main/about.set("theme_override_colors/font_color", white)
 		$main/decompcredits.set("theme_override_colors/font_color", white)
@@ -41,8 +41,8 @@ func _ready():
 		$main/quit.set("theme_override_colors/font_color", white)
 		$main/fact.set("theme_override_colors/font_color", white)
 		$about/text.set("theme_override_colors/font_color", white)
-		$credits/text.set("theme_override_colors/font_color", white)
-		$decompcredits/text.set("theme_override_colors/font_color", white)
+		$credits/text.set("theme_override_colors/default_color", white)
+		$decompcredits/text.set("theme_override_colors/default_color", white)
 		$about/back.set("theme_override_colors/font_color", white)
 		$credits/back.set("theme_override_colors/font_color", white)
 		$decompcredits/back.set("theme_override_colors/font_color", white)
@@ -51,7 +51,7 @@ func _ready():
 		$moon.show()
 		$particles.hide()
 	if bob2 == 2:
-		$main/logo/version.set("theme_override_colors/font_color", black)
+		#$main/fact/logo/version.set("theme_override_colors/font_color", black)
 		$main/play.set("theme_override_colors/font_color", black)
 		$main/about.set("theme_override_colors/font_color", black)
 		$main/decompcredits.set("theme_override_colors/font_color", black)
@@ -59,8 +59,8 @@ func _ready():
 		$main/quit.set("theme_override_colors/font_color", black)
 		$main/fact.set("theme_override_colors/font_color", black)
 		$about/text.set("theme_override_colors/font_color", black)
-		$credits/text.set("theme_override_colors/font_color", black)
-		$decompcredits/text.set("theme_override_colors/font_color", black)
+		$credits/text.set("theme_override_colors/default_color", black)
+		$decompcredits/text.set("theme_override_colors/default_color", black)
 		$about/back.set("theme_override_colors/font_color", black)
 		$credits/back.set("theme_override_colors/font_color", black)
 		$decompcredits/back.set("theme_override_colors/font_color", black)
@@ -69,7 +69,7 @@ func _ready():
 		$space.hide()
 		$particles.show()
 	if bob2 == 3:
-		$main/logo/version.set("theme_override_colors/font_color", white)
+		#$main/logo/version.set("theme_override_colors/font_color", white)
 		$main/play.set("theme_override_colors/font_color", white)
 		$main/about.set("theme_override_colors/font_color", white)
 		$main/decompcredits.set("theme_override_colors/font_color", white)
@@ -77,8 +77,8 @@ func _ready():
 		$main/quit.set("theme_override_colors/font_color", white)
 		$main/fact.set("theme_override_colors/font_color", white)
 		$about/text.set("theme_override_colors/font_color", white)
-		$credits/text.set("theme_override_colors/font_color", white)
-		$decompcredits/text.set("theme_override_colors/font_color", white)
+		$credits/text.set("theme_override_colors/default_color", white)
+		$decompcredits/text.set("theme_override_colors/default_color", white)
 		$about/back.set("theme_override_colors/font_color", white)
 		$credits/back.set("theme_override_colors/font_color", white)
 		$decompcredits/back.set("theme_override_colors/font_color", white)
@@ -87,7 +87,7 @@ func _ready():
 		$space.show()
 		$particles.hide()
 	
-	$main/fact.text = "Random Science Fact:\n" + facts.pick_random()
+	$main/fact.text = "[wave amp=25.0 freq=1.0 connected=1][color=yellow]Random Science Fact:\n" + facts.pick_random()
 	
 	# BG :3
 	for c in range(25):
@@ -140,7 +140,6 @@ func _process(delta):
 	
 	$snow.position.y = -get_window().size.y*0.5/scale.y
 	$snow.scale.x = get_window().size.x/1000.0
-	$main/happyholidays.position = get_window().size*0.5/scale.x
 	
 	$earth.rotate(delta*0.05)
 	$cattos1.rotate(-delta*0.2)
@@ -151,13 +150,13 @@ func _process(delta):
 	$cattos3/lu/clock/text.visible_characters = 5
 	
 	
-	if $iris.visible == true:
-		$iris.scale /= 1+delta*10
+	if $version/iris.visible == true:
+		$version/iris.scale /= 1+delta*10
 		$music.volume_db -= delta*20
-	if $iris.scale.x < 0.02: get_tree().change_scene_to_file("res://ec_assets/scenes/loading.tscn")
+	if $version/iris.scale.x < 0.02: get_tree().change_scene_to_file("res://ec_assets/scenes/loading.tscn")
 
 func _on_play_pressed():
-	$iris.show()
+	$version/iris.show()
 
 func _on_quit_pressed():
 	get_tree().quit()
@@ -165,12 +164,14 @@ func _on_quit_pressed():
 func _on_about_pressed():
 	$main.hide()
 	$about.show()
+	$logo.hide()
 
 func _on_back_pressed():
 	$about.hide()
 	$credits.hide()
 	$decompcredits.hide()
 	$main.show()
+	$logo.show()
 
 func _button_hover():
 	$hover.play()
@@ -180,7 +181,13 @@ func _button_press():
 func _on_credits_pressed():
 	$main.hide()
 	$credits.show()
+	$logo.hide()
 
 func _on_decompcredits_pressed():
 	$main.hide()
+	$logo.hide()
 	$decompcredits.show()
+
+
+func _on_text_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(str(meta))

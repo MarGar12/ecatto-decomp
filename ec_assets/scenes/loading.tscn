@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://uw800pg7ys7f" path="res://ec_assets/textures/particles/orbital.png" id="3"]
 [ext_resource type="Script" uid="uid://d026v1t3uxjk3" path="res://ec_assets/scenes/loading_atom_orbital.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://do8lftr6wqfx6" path="res://ec_assets/textures/particles/tinyball.png" id="5"]
-[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="6_4wibi"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="7_u0eh2"]
 
 [sub_resource type="Gradient" id="Gradient_8pq4q"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -92,9 +92,23 @@ offset_left = -512.0
 offset_top = -128.0
 offset_right = 512.0
 offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("6_4wibi")
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("7_u0eh2")
+theme_override_font_sizes/font_size = 63
 text = "Loading
 0%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="mouseload" type="Control" parent="." unique_id=346704768]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1999.8756
+offset_top = 1600.3849
+offset_right = 3141.0962
+offset_bottom = 2082.3872
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-3.5057962, -6.639821)
+mouse_default_cursor_shape = 4

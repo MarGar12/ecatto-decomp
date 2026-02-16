@@ -1,52 +1,53 @@
 [gd_scene format=3 uid="uid://dmjepmgjhtmnx"]
 
 [ext_resource type="Script" uid="uid://c4xra4qchsdn8" path="res://ec_assets/scenes/menu.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dedp3r7j0t56" path="res://ec_assets/textures/items/earth2.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://djbirnbrmlsxp" path="res://ec_assets/textures/backgrounds/catseye-neb.png" id="2_u6mje"]
+[ext_resource type="Texture2D" uid="uid://d2hpxx50pjljv" path="res://ec_assets/textures/items/earth2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bt3cv6nsjgyv6" path="res://ec_assets/textures/backgrounds/catseye-neb.png" id="2_u6mje"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
 [ext_resource type="Gradient" uid="uid://dsngr2qkprenu" path="res://ec_assets/scenes/ca.tres" id="3_0jrmv"]
-[ext_resource type="Texture2D" uid="uid://qyujbrnsysob" path="res://ec_assets/textures/cattos/elements/ions/ion-h.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://eg27p4cfqvia" path="res://ec_assets/textures/cattos/elements/ions/ion-h.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://cuki786q8hhnq" path="res://ec_assets/textures/backgrounds/cloud.png" id="4_41qcy"]
-[ext_resource type="Texture2D" uid="uid://bkn866pvw8jsb" path="res://ec_assets/textures/backgrounds/catseye-wave.png" id="4_tjthn"]
-[ext_resource type="Texture2D" uid="uid://bcaehmiuduggr" path="res://ec_assets/textures/backgrounds/moon_terrain.png" id="4_wwiqm"]
+[ext_resource type="Texture2D" uid="uid://dvqhiogsgnrvu" path="res://ec_assets/textures/backgrounds/catseye-wave.png" id="4_tjthn"]
+[ext_resource type="Texture2D" uid="uid://d02cq0myp1k3f" path="res://ec_assets/textures/backgrounds/moon_terrain.png" id="4_wwiqm"]
 [ext_resource type="SpriteFrames" uid="uid://csub24rrsmjk5" path="res://ec_assets/textures/element_bodies.tres" id="5"]
-[ext_resource type="Texture2D" uid="uid://vrllpt3m13aj" path="res://ec_assets/textures/effects/star0.png" id="5_e4r45"]
+[ext_resource type="Texture2D" uid="uid://n04s8a81j0tc" path="res://ec_assets/textures/effects/star0.png" id="5_e4r45"]
 [ext_resource type="Texture2D" uid="uid://cnd1otk3qovhr" path="res://ec_assets/textures/backgrounds/everest.png" id="5_wwiqm"]
-[ext_resource type="Texture2D" uid="uid://cl21h1njsxm02" path="res://ec_assets/textures/backgrounds/moon_ground.png" id="5_y3fqb"]
-[ext_resource type="Texture2D" uid="uid://cqw4ijbxnl3d3" path="res://ec_assets/textures/cattos/pupil_manganese.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bqwcebnbjx7hd" path="res://ec_assets/textures/backgrounds/moon_ground.png" id="5_y3fqb"]
+[ext_resource type="Texture2D" uid="uid://cia4mumdwj2u8" path="res://ec_assets/textures/cattos/pupil_manganese.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://emmnxd8gh0b4" path="res://ec_assets/textures/backgrounds/grass.png" id="6_y3fqb"]
-[ext_resource type="Texture2D" uid="uid://bvpja5w4e3eae" path="res://ec_assets/textures/cattos/mouth_smile0inv.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://b7r6mp5diiv14" path="res://ec_assets/textures/cattos/eye_tantalum2.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://drw24bslpbugx" path="res://ec_assets/textures/cattos/pupil_meitnerium.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://dsmesxpabxbuc" path="res://ec_assets/textures/cattos/elements/solid/rhenium-windshield.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://cpigbtv6c808s" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://cdfewah5l2ulk" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://3m76t0v5jbml" path="res://ec_assets/textures/cattos/eye_closed-inv.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://cd20341s8y1by" path="res://ec_assets/textures/cattos/eye_radon.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://bsil7ueitcli0" path="res://ec_assets/textures/cattos/mouth_frown0.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://b7c4buuvv16hl" path="res://ec_assets/textures/cattos/mouth_smile0.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://bvnay8pxu3sbw" path="res://ec_assets/textures/cattos/eye_closed.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://bq06gp7vt4p7q" path="res://ec_assets/textures/cattos/eye_praseodymium.png" id="18"]
-[ext_resource type="Texture2D" uid="uid://d1b6m56hk2054" path="res://ec_assets/textures/cattos/mouth_smile0europium.png" id="19"]
-[ext_resource type="Texture2D" uid="uid://d1vorarbrbvb7" path="res://ec_assets/textures/cattos/eye_terbium.png" id="20"]
-[ext_resource type="Texture2D" uid="uid://beamx2sicksn" path="res://ec_assets/textures/cattos/eye_holmium.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://cgt3rkltkyahb" path="res://ec_assets/textures/cattos/eye_erbium.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://dfdbe6xahpy6o" path="res://ec_assets/textures/cattos/glasses_tm.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://dnqfs6evk7070" path="res://ec_assets/textures/cattos/glasses_lu.png" id="24"]
-[ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="25"]
-[ext_resource type="Texture2D" uid="uid://datjnv8c5vpb3" path="res://ec_assets/textures/cattos/eye_strontium.png" id="26"]
-[ext_resource type="Texture2D" uid="uid://ipom6fhu8gqx" path="res://ec_assets/textures/cattos/glasses_he.png" id="27"]
-[ext_resource type="Texture2D" uid="uid://kf8em22sev1b" path="res://ec_assets/textures/cattos/glasses_si.png" id="28"]
-[ext_resource type="Texture2D" uid="uid://chh7hkeejn37j" path="res://ec_assets/textures/cattos/elements/solid/calcium-fangs.png" id="29"]
-[ext_resource type="Texture2D" uid="uid://cqw8sm0h38ynp" path="res://ec_assets/textures/cattos/eye_titanium.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://brbag0g63nkw5" path="res://ec_assets/textures/cattos/mouth_smile0inv.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b4774dqcyfejn" path="res://ec_assets/textures/cattos/eye_tantalum2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bsqhe7jp0ghoi" path="res://ec_assets/textures/cattos/pupil_meitnerium.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dwbsfj002575h" path="res://ec_assets/textures/cattos/elements/solid/rhenium-windshield.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://b2edna0a07oh3" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cgj37e2bm8tf4" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dnx05a512dlwx" path="res://ec_assets/textures/cattos/eye_closed-inv.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://xeebghlja6p6" path="res://ec_assets/textures/cattos/eye_radon.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://ts85eyd3ia6e" path="res://ec_assets/textures/cattos/mouth_frown0.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bq88psidpbm64" path="res://ec_assets/textures/cattos/mouth_smile0.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://wcgou5q1lbui" path="res://ec_assets/textures/cattos/eye_closed.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bbmk8s8t35tor" path="res://ec_assets/textures/cattos/eye_praseodymium.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://crs28up73giep" path="res://ec_assets/textures/cattos/mouth_smile0europium.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://ctac4e6yancb" path="res://ec_assets/textures/cattos/eye_terbium.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bd6eo41q2avy7" path="res://ec_assets/textures/cattos/eye_holmium.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://dlxv1f8wv8elo" path="res://ec_assets/textures/cattos/eye_erbium.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://b8yvev66ha5h6" path="res://ec_assets/textures/cattos/glasses_tm.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://hgi8ndd72ca" path="res://ec_assets/textures/cattos/glasses_lu.png" id="24"]
+[ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="25"]
+[ext_resource type="Texture2D" uid="uid://cmlwem4qyirlx" path="res://ec_assets/textures/cattos/eye_strontium.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://df12h5sl04hvt" path="res://ec_assets/textures/cattos/glasses_he.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://7sxpnlg1qr2o" path="res://ec_assets/textures/cattos/glasses_si.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cdouulrh4ssf6" path="res://ec_assets/textures/cattos/elements/solid/calcium-fangs.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://bhxukmt5oxqsq" path="res://ec_assets/textures/cattos/eye_titanium.png" id="30"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="32_1v85t"]
-[ext_resource type="Texture2D" uid="uid://x330rdigaeid" path="res://ec_assets/textures/ui/happyholidays.png" id="33"]
-[ext_resource type="FontFile" uid="uid://brdellfwi1f81" path="res://ec_assets/fonts/catarchean.ttf" id="33_6xj2l"]
-[ext_resource type="AudioStream" uid="uid://dd5c467nxmy5e" path="res://ec_assets/music/ElementcattosMenu.ogg" id="34"]
-[ext_resource type="AudioStream" uid="uid://c7ljcms0yqwon" path="res://ec_assets/sounds/placeparticle.mp3" id="35"]
-[ext_resource type="AudioStream" uid="uid://br6jdtf30ogv2" path="res://ec_assets/sounds/atom.mp3" id="36"]
-[ext_resource type="Texture2D" uid="uid://cm5mktdycjakp" path="res://ec_assets/textures/ui/iris.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://dkr4beyexy6qs" path="res://ec_assets/textures/ui/happyholidays.png" id="33"]
+[ext_resource type="FontFile" uid="uid://ck0m755r43bki" path="res://ec_assets/fonts/catarchean.ttf" id="33_6xj2l"]
+[ext_resource type="AudioStream" uid="uid://tkdjdepy2xty" path="res://ec_assets/music/ElementcattosMenu.ogg" id="34"]
+[ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="35"]
+[ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="36"]
+[ext_resource type="Texture2D" uid="uid://c24blrjfxmn11" path="res://ec_assets/textures/ui/iris.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://d3xxi4mpk5ynu" path="res://ec_assets/textures/ui/ec_logo_decomp.png" id="40_xwdnf"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="48_u6mje"]
 
 [sub_resource type="Gradient" id="Gradient_s7vfl"]
 offsets = PackedFloat32Array(0)
@@ -218,7 +219,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/path = NodePath("logo:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -230,7 +231,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("main/logo:position")
+tracks/1/path = NodePath("logo:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -246,7 +247,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/path = NodePath("logo:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -262,7 +263,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("main/logo:rotation")
+tracks/0/path = NodePath("logo:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -274,7 +275,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("main/logo:position")
+tracks/1/path = NodePath("logo:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -373,7 +374,7 @@ visible = false
 position = Vector2(0, 248)
 
 [node name="space" type="Parallax2D" parent="moon" unique_id=205309423]
-scroll_scale = Vector2(0.001, 0.001)
+scroll_scale = Vector2(-0.001, 0.001)
 
 [node name="space" type="Sprite2D" parent="moon/space" unique_id=34372137]
 scale = Vector2(1000, 1000)
@@ -396,7 +397,7 @@ scale_amount_max = 0.2
 color_ramp = SubResource("Gradient_li7cv")
 
 [node name="earth" type="Parallax2D" parent="moon" unique_id=1209130999]
-scroll_scale = Vector2(0.01, 0.01)
+scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(500, 250)
 repeat_size = Vector2(4000, 0)
 autoscroll = Vector2(-1, 0)
@@ -684,7 +685,6 @@ color = Color(1, 1, 1, 0.25098)
 color_initial_ramp = SubResource("Gradient_2rn4b")
 
 [node name="cattos4" type="Node2D" parent="." unique_id=1492601966]
-position = Vector2(0, -32)
 scale = Vector2(2.35, 2.35)
 
 [node name="hf" type="AnimatedSprite2D" parent="cattos4" unique_id=621720338]
@@ -1276,7 +1276,7 @@ position = Vector2(0, -363)
 texture = ExtResource("16")
 
 [node name="cattos3" type="Node2D" parent="." unique_id=721901779]
-position = Vector2(0, -32)
+position = Vector2(0, -1.9073486e-06)
 scale = Vector2(1.75, 1.75)
 
 [node name="cd" type="AnimatedSprite2D" parent="cattos3" unique_id=334499045]
@@ -1844,7 +1844,7 @@ position = Vector2(0, -363)
 texture = ExtResource("7")
 
 [node name="cattos2" type="Node2D" parent="." unique_id=1500702555]
-position = Vector2(0, -32)
+position = Vector2(0, -1.9073486e-06)
 scale = Vector2(1.32, 1.32)
 
 [node name="cr" type="AnimatedSprite2D" parent="cattos2" unique_id=1659905406]
@@ -2418,7 +2418,6 @@ position = Vector2(0, -363)
 texture = ExtResource("7")
 
 [node name="cattos1" type="Node2D" parent="." unique_id=1895272942]
-position = Vector2(0, -32)
 
 [node name="mu" type="AnimatedSprite2D" parent="cattos1" unique_id=938995804]
 sprite_frames = ExtResource("5")
@@ -2930,16 +2929,14 @@ texture = ExtResource("16")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=106557183]
 
-[node name="main" type="Node2D" parent="." unique_id=785193525]
-texture_filter = 2
-
-[node name="logo" type="Sprite2D" parent="main" unique_id=1244204900]
+[node name="logo" type="Sprite2D" parent="." unique_id=1244204900]
 texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("40_xwdnf")
 
-[node name="version" type="Label" parent="main/logo" unique_id=1283657918]
+[node name="version" type="Label" parent="logo" unique_id=1283657918]
+visible = false
 self_modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
 offset_left = -276.66656
@@ -2950,29 +2947,48 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("32_1v85t")
 theme_override_font_sizes/font_size = 8
 text = "Alpha 0.13
-Decomp 1.3"
+Decomp 1.4"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="main" type="CanvasLayer" parent="." unique_id=1994917301]
+
 [node name="play" type="Button" parent="main" unique_id=2121722272]
 texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 40.0
+offset_top = 41.0
 offset_right = 64.0
-offset_bottom = 88.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
 text = "Play"
 flat = true
 
 [node name="about" type="Button" parent="main" unique_id=1308190376]
+visible = false
 texture_filter = 1
-offset_left = -128.0
-offset_top = 88.0
-offset_bottom = 136.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
 theme_override_fonts/font = ExtResource("33_6xj2l")
@@ -2982,57 +2998,85 @@ flat = true
 
 [node name="decompcredits" type="Button" parent="main" unique_id=882773724]
 texture_filter = 1
-offset_left = -25.0
-offset_top = 88.0
-offset_right = 134.0
-offset_bottom = 136.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = 96.0
+offset_right = 79.5
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.6725274, 0.4879107, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "Decomp"
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "About"
 flat = true
 
 [node name="credits" type="Button" parent="main" unique_id=1844929267]
 texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 136.0
-offset_right = 63.0
-offset_bottom = 184.0
+offset_top = 151.0
+offset_right = 64.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
 text = "Credits"
 flat = true
 
 [node name="quit" type="Button" parent="main" unique_id=2021964447]
 texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 184.0
+offset_top = 206.0
 offset_right = 64.0
-offset_bottom = 232.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
 text = "Quit"
 flat = true
 
-[node name="fact" type="Label" parent="main" unique_id=1583476259]
+[node name="fact" type="RichTextLabel" parent="main" unique_id=1439186521]
 texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 offset_left = -224.0
-offset_top = -265.0
+offset_top = 27.0
 offset_right = 224.0
-offset_bottom = -169.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 16
+offset_bottom = 221.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("48_u6mje")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
 text = "Fact of the day:
 The most common form of hydrogen is protium, an atom with one proton, one electron and no neutrons."
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="happyholidays" type="Sprite2D" parent="main" unique_id=121086354]
 visible = false
@@ -3048,9 +3092,9 @@ texture_filter = 2
 [node name="text" type="Label" parent="about" unique_id=2142435675]
 texture_filter = 1
 offset_left = -304.0
-offset_top = -328.0
+offset_top = -351.0
 offset_right = 304.0
-offset_bottom = 328.0
+offset_bottom = 305.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("32_1v85t")
 theme_override_font_sizes/font_size = 16
@@ -3079,11 +3123,11 @@ theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
 
-[node name="credits" type="Node2D" parent="." unique_id=2090914016]
+[node name="credit" type="Node2D" parent="." unique_id=2090914016]
 visible = false
 texture_filter = 2
 
-[node name="text" type="Label" parent="credits" unique_id=327720537]
+[node name="text" type="Label" parent="credit" unique_id=327720537]
 texture_filter = 1
 offset_left = -288.0
 offset_top = -328.0
@@ -3105,7 +3149,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="back" type="Button" parent="credits" unique_id=899434541]
+[node name="back" type="Button" parent="credit" unique_id=899434541]
 texture_filter = 1
 offset_left = -64.0
 offset_top = 176.0
@@ -3118,41 +3162,379 @@ theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
 
-[node name="decompcredits" type="Node2D" parent="." unique_id=238870511]
+[node name="credits" type="CanvasLayer" parent="." unique_id=642598301]
 visible = false
-texture_filter = 2
 
-[node name="text" type="Label" parent="decompcredits" unique_id=1627116789]
+[node name="text" type="RichTextLabel" parent="credits" unique_id=1045177171]
 texture_filter = 1
-offset_left = -288.0
-offset_top = -328.0
-offset_right = 288.0
-offset_bottom = 328.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32_1v85t")
-theme_override_font_sizes/font_size = 16
-text = "This decomp mod is made by Mups!
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.5
+offset_top = -317.0
+offset_right = 420.5
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+theme_override_fonts/normal_font = ExtResource("33_6xj2l")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[color=green]Music[/color]
+Oberorka, Kevin MacLeod
 
-Aimed towards adding cross platform support, along with some little modifications I think :P
+[color=cyan]Programming[/color]
+Oberorka, Mups, Unexian
 
-Find the source code here:
-https://git.gay/mupsie/ecatto-decomp.git"
+[color=Orange]Spritework[/color]
+Oberorka, SciphonPylon, Velcrow101, Mobropro, CiaaiK, Shard, ir1sh, truserwav, wk, nostuyx, Inky, Senchium, twitcheer, bhapydageek, theticktock_ticky
+
+[color=yellow]The author(s) of each catto's design is/are credited when you hover over them[/color]
+
+
+
+
+Scroll down to view the README text file from the base game
+-----------------------README.txt-----------------------
+
+Catto design credits
+
+H-4, H-6, H-7 - CiaaiK
+H-5 - gammaray-burst
+N-13 - gammaray-burst
+O-15 - gammaray-burst
+Al-26 - gammaray-burst
+Argon - Oberorka, baltdev
+Ca-47 - starri-cosmikat
+Scandium - mobropro
+Ti-44 - SciphonPylon
+Chromium - Oberorka, carrera075, sonnettheseacoat
+Manganese - anonymous Tumblr user
+Fe-54, Fe-58, Fe-59 - thatmarkerdude
+Fe-57 - ir1sh
+Fe-60 - SciphonPylon
+Cobalt - mobropro
+Co-60 - SciphonPylon
+Germanium - radonine
+As-71, As-72, As-73, As-74, As-76, As-77 - SciphonPylon
+Selenium - sonnettheseacoat
+Strontium, Sr-90 - baltdev
+Yttrium - Oberorka, abugidaithink
+Zirconium - Shard
+Molybdenum - ir1sh, SciphonPylon, Oberorka
+Mo-92, Mo-93, Mo-94, Mo-95, Mo-96, Mo-97, Mo-99, Mo-100 - SciphonPylon
+Rhodium - Oberorka, SED4906
+Palladium - chessbird
+Cadmium - Shard
+Antimony - sylsoddsandends
+Xenon - Oberorka, SciphonPylon
+Lanthanum - clover-the-servine, SciphonPylon, Oberorka
+Praseodymium, Pr-142, Pr-143 - Shard
+Promethium - nonbinarymissingno, wk
+Europium - ir1sh, Velcrow101, SciphonPylon, Oberorka
+Dysprosium - clover-the-servine, SciphonPylon, Oberorka
+Holmium - leaf404
+Thulium - Shard
+Hafnium - Shard, ir1sh
+Tantalum - derpy-jacob-903
+Osmium - lotus-pkmn
+Ir-192 - SciphonPylon
+Pt-190 - SciphonPylon
+Au-195, Au-196, Au-198, Au-199 - SciphonPylon
+Thallium - Velcrow101, chessbird, Oberorka
+Tl-201, Tl-203 - ir1sh
+Bismuth - Oberorka, jojostardustcrusaders
+Astatine - Oberorka, Shard
+At-210 - Shard
+Radon - Oberorka, SciphonPylon
+Francium - Oberorka, voodoo-economics
+Actinium - clover-the-servine, ir1sh
+Protactinium, Pa-230, Pa-233 - sonnettheseacoat
+Plutonium - Oberorka, SciphonPylon
+Curium - Shard
+Californium - whail, ir1sh, thatmarkerdude, autism-detector, haniszar36, lythic-felinementals
+Fermium - sonnettheseacoat
+Mendelevium - 03113
+Nobelium - Shard
+Lawrencium - Shard
+Rutherfordium - Shard, vitasnova, Oberorka
+Dubnium - Cheez, ir1sh
+Seaborgium - cosmosnaught
+Bohrium - hyperoperationfractallisation, Oberorka
+Hassium - lotus-pkmn, cosmosnaught, Oberorka
+Meitnerium - Shard, voodoo-economics, haniszar36, ir1sh
+Darmstadtium - SciphonPylon
+Flerovium - starri-cosmikat, SciphonPylon
+Moscovium - The Wizard Slime, schoolshootingbyclover, Jupiter Stupider
+Livermorium - SciphonPylon, breadcharger61, Oberorka
+Oganesson - bigpinkanimal, Oberorka
+All others - Oberorka
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Full spritework credits
+
+Some sprites were modified for the game by Oberorka. This list puts them under their original authors.
+
+SCIPHONPYLON:
+Arsenic
+Iron
+Tin
+Scandium
+Xenon
+Cobalt
+Copper
+Radon
+Gold
+Molybdenum (base, non-tank)
+Technetium
+Indium
+Zinc
+Antimony
+Rhenium
+Iridium
+Osmium
+Yttrium
+Lead
+Tungsten
+Tantalum
+Hafnium
+Zirconium
+Rutherfordium
+Platinum
+Niobium
+Bungy
+Platinum-190
+Xenon-133
+Radon-203
+Titanium-44
+Iridium-192
+Arsenic
+Arsenic-71
+Arsenic-72
+Arsenic-73
+Arsenic-74
+Arsenic-76
+Arsenic-77
+Cobalt-60
+Helium-3
+Strontium-90
+Potassium-40
+Calcium-47
+Iron-55
+Flerovium
+Berkelium
+Bismuth
+Einsteinium
+Americium
+Thorium
+Ytterbium
+Thulium
+Terbium
+Erbium
+Holmium
+Samarium
+Promethium (no symbol on cloth)
+Oganesson
+Tennessine
+Livermorium
+Nobelium
+Fermium
+Moscovium
+Molybdenum-99
+Molybdenum-100
+Iron-60
+
+CIAAIK:
+Muonium
+Boron
+Carbon
+Nitrogen
+Oxygen
+Fluorine
+Neon
+Sodium
+Magnesium
+Aluminium
+Silicon
+Phosphorus
+Sulfur
+Chlorine
+Argon
+Calcium
+Titanium
+Rubidium
+Strontium
+Caesium
+Barium
+Francium
+Radium (green variant)
+Ununennium
+Gallium
+Germanium
+Selenium
+Krypton
+Iodine
+Deuterium
+Tritium
+Hydrogen-4
+Hydrogen-6
+Hydrogen-7
+Helium-2
+Seaborgium
+Bohrium
+Hassium
+Roentgenium
+Darmstadtium
+Copernicium
+Bromine
+
+VELCROW101:
+Thallium (base)
+Lutetium
+Ruthenium
+Palladium
+Rhodium
+Tellurium
+Gadolinium
+
+MOBROPRO:
+Polonium
+
+IR1SH:
+Meitnerium
+Dubnium
+Californium
+Molybdenum (tank)
+
+SHARD:
+Praseodymium-142
+Praseodymium-143
+
+TRUSERWAV:
+Neodymium
+Uranium
+
+WK:
+Promethium (symbol on cloth)
+
+OBERORKA:
+all others
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Isotopes with unique sprites (aside from the \"main\" isotopes)
+
+Al-26
+As-71 through As-77
+At-210
+Au-195, Au-196, Au-198, Au-199
+C-14
+Ca-47
+Co-60
+Fe-54 through Fe-60
+H-2 through H-7
+He-2, He-3
+Ir-192
+K-40
+Mo-92 through Mo-96, Mo-99, Mo-100
+N-13
+O-15
+Pa-230, Pa-233
+Pr-142, Pr-143
+Pt-190
+Ra-223
+Sr-90
+Ti-44
+Tl-201, Tl-203
+Xe-133"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+meta_underlined = false
+selection_enabled = true
+
+[node name="back" type="Button" parent="credits" unique_id=7324477]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 153.0
+offset_bottom = 84.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "< Back"
+flat = true
+
+[node name="LinkButton" type="LinkButton" parent="credits" unique_id=1846826352]
+visible = false
+offset_left = 532.0
+offset_top = 415.0
+offset_right = 819.0
+offset_bottom = 437.0
+text = "ttt"
+uri = "https://tumblr.com/elementcattos"
+
+[node name="decompcredits" type="CanvasLayer" parent="." unique_id=1813541368]
+visible = false
+
+[node name="text" type="RichTextLabel" parent="decompcredits" unique_id=476544576]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.5
+offset_top = -317.0
+offset_right = 420.5
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+theme_override_fonts/normal_font = ExtResource("33_6xj2l")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "This is a sandbox where you can play around with kitties based on the chemical elements. Each catto's personality and appearance is based on the properties, applications, or sometimes just the namesake, of their respective element.
+
+The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
+
+This project was made by [color=Turquoise]Lily P. Irie[/color] and mod by [color=fuchsia]Mups[/color], made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at   [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos]https://tumblr.com/elementcattos[/url][/wave][/rainbow]
+
+Find the source code here:
+[rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://git.gay/mupsie/ecatto-decomp.git]https://git.gay/mupsie/ecatto-decomp.git[/url][/wave][/rainbow]"
+horizontal_alignment = 1
+vertical_alignment = 1
+meta_underlined = false
+selection_enabled = true
 
 [node name="back" type="Button" parent="decompcredits" unique_id=70607431]
 texture_filter = 1
-offset_left = -64.0
-offset_top = 176.0
-offset_right = 64.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 153.0
+offset_bottom = 84.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "[Back]"
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "< Back"
 flat = true
+
+[node name="LinkButton" type="LinkButton" parent="decompcredits" unique_id=142104823]
+visible = false
+offset_left = 532.0
+offset_top = 415.0
+offset_right = 819.0
+offset_bottom = 437.0
+text = "ttt"
+uri = "https://tumblr.com/elementcattos"
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1127277210]
 stream = ExtResource("34")
@@ -3191,37 +3573,56 @@ tangential_accel_max = 1.0
 scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_c88ps")
 
-[node name="iris" type="Node2D" parent="." unique_id=1908573596]
+[node name="version" type="CanvasLayer" parent="." unique_id=1701963459]
+
+[node name="version" type="Label" parent="version" unique_id=1097176348]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -48.0
+offset_right = 55.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7919991, 0.79199916, 0.7919991, 0.6431373)
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 21
+text = "a0.13
+v1.4"
+vertical_alignment = 2
+
+[node name="iris" type="Node2D" parent="version" unique_id=1908573596]
 visible = false
 texture_filter = 1
+position = Vector2(512, 384)
 scale = Vector2(500, 500)
 
-[node name="sprite" type="Sprite2D" parent="iris" unique_id=512726066]
+[node name="sprite" type="Sprite2D" parent="version/iris" unique_id=512726066]
 texture = ExtResource("37")
 
-[node name="sprite2" type="Sprite2D" parent="iris" unique_id=882356286]
+[node name="sprite2" type="Sprite2D" parent="version/iris" unique_id=882356286]
 scale = Vector2(5, 5)
 texture = ExtResource("37")
 
-[node name="sprite3" type="Sprite2D" parent="iris" unique_id=307123471]
+[node name="sprite3" type="Sprite2D" parent="version/iris" unique_id=307123471]
 scale = Vector2(25, 25)
 texture = ExtResource("37")
 
-[node name="sprite4" type="Sprite2D" parent="iris" unique_id=287453542]
+[node name="sprite4" type="Sprite2D" parent="version/iris" unique_id=287453542]
 scale = Vector2(125, 125)
 texture = ExtResource("37")
 
-[node name="sprite5" type="Sprite2D" parent="iris" unique_id=1241509836]
+[node name="sprite5" type="Sprite2D" parent="version/iris" unique_id=1241509836]
 scale = Vector2(500, 500)
 texture = ExtResource("37")
 
-[node name="sprite6" type="Sprite2D" parent="iris" unique_id=1683025293]
+[node name="sprite6" type="Sprite2D" parent="version/iris" unique_id=1683025293]
 scale = Vector2(2000, 2000)
 texture = ExtResource("37")
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
-[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
 [connection signal="pressed" from="main/about" to="." method="_button_press"]
 [connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
@@ -3229,17 +3630,22 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
 [connection signal="pressed" from="about/back" to="." method="_button_press"]
 [connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="credit/back" to="." method="_button_hover"]
+[connection signal="pressed" from="credit/back" to="." method="_button_press"]
+[connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
+[connection signal="meta_clicked" from="credits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="meta_clicked" from="decompcredits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]

@@ -7,7 +7,7 @@ var preset = 0
 
 var touches = {} # : {int: Vec2}
 func _unhandled_input(event):
-	if event is InputEventMouseMotion and (Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb") or (Input.is_action_pressed("lmb") and not glob.dragging and not glob.tool and glob.lcdrag == true )):
+	if event is InputEventMouseMotion and (((Input.is_action_pressed("mmb") or Input.is_action_pressed("rmb")) and !glob.pause) or (Input.is_action_pressed("lmb") and !glob.dragging and !glob.tool and glob.lcdrag == true and !glob.pause)):
 		position.x -= event.relative.x/zoom.x
 		position.y -= event.relative.y/zoom.x
 		
@@ -17,7 +17,7 @@ func _input(event):
 			touches[event.index] = event.position
 			if not touches.is_empty():
 				glob.dragging = false
-				for catto in get_tree().current_scene.find_child("cattos").get_children():
+				for catto in get_tree().current_scene.find_child("catto").get_children():
 					catto.dragged = false
 					if catto.find_child("model"):
 						catto.find_child("model").find_child("anim").play("idle")
@@ -72,15 +72,15 @@ func sync_settings():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("wheelup") and zoom.x < 10: zoom *= 1.1
-	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1: zoom /= 1.1
+	if Input.is_action_just_pressed("wheelup") and zoom.x < 10 and !glob.pause: zoom *= 1.1
+	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1 and !glob.pause: zoom /= 1.1
 	
-	if get_window().size.x <= 1100 && glob.hudscaling == false :
+	if get_window().size.x <= 1010 && glob.hudscaling == false :
 		$ui/topright.position.y = 64
 	else:
 		$ui/topright.position.y = 0
 	# Change camera scale based on window size -- from ec+
-	var smult = min(get_window().size.x / 1100.0, get_window().size.y / 648.0)
+	var smult = min(get_window().size.x / 1024.0, get_window().size.y / 768.0)
 	$ui/pause.scale = (Vector2.ONE*2) * smult / 1.5
 	if glob.hudscaling == true:
 		$ui/topleft.scale = (Vector2.ONE*2) * smult
@@ -102,21 +102,17 @@ func _process(delta):
 	#	$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
 	$ui/topright/pres.text = "Air Pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "Gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
-	
-	$ui/botright/touchevent.text = str(position)
-	$ui/botright/zoom.text = str(zoom)
+
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
-	$ui/botright/fps.text = str(Engine.get_frames_per_second()).pad_decimals(0)
-	$ui/botright/frame.text = str(Engine.get_frames_drawn()).pad_decimals(0)
 	
 	if not Input.is_action_pressed("lmb"): $ui/topright/tempslider.value = 0
 	glob.t_power += $ui/topright/tempslider.value * delta / 200.0 * glob.t_speed
 	glob.temperature = 293.15*pow(10,glob.t_power)
 	
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("space") and !glob.pause:
 		glob.inv_open = !glob.inv_open
-	$ui/center/inventory.visible = glob.inv_open
+	$ui/center/inventory.visible = glob.inv_open and !glob.pause
 	
 	if Input.is_action_just_pressed("R"):
 		glob.cattos = 0
@@ -128,6 +124,7 @@ func _process(delta):
 	$ui/topleft.visible = !glob.inv_open and !glob.pause
 	$ui/topright.visible = !glob.inv_open and !glob.pause
 	$ui/botleft.visible = !glob.inv_open and !glob.pause
+	$ui/botright.visible = !glob.inv_open and !glob.pause
 	
 	$tool.global_position = get_global_mouse_position()
 	$tool.visible = glob.tool != 0
@@ -157,6 +154,12 @@ func _process(delta):
 	else: $ui/pause/fus_thres/label.text = "No Fusion"
 	
 	$ui/pause/end_world.visible = glob.earth_exploded
+	if debug_console.stats.visible:
+		if DebugConsole.is_monitor_visible("camera"):
+			DebugConsole.update_monitor("camera", position)
+		if DebugConsole.is_monitor_visible("zoom"):
+			DebugConsole.update_monitor("zoom", zoom)
+	
 
 func _on_rateslider_value_changed(value):
 	glob.rate = pow(10,value)
@@ -215,6 +218,9 @@ func _on_clone_pressed():
 func _on_blackhole_pressed():
 	if glob.tool == 7: glob.tool = 0
 	else: glob.tool = 7
+func _on_pet_pressed():
+	if glob.tool == 8: glob.tool = 0
+	else: glob.tool = 8
 func _on_elementpicker_pressed():
 	glob.inv_open = true
 func _on_pause_pressed(): # pause button
@@ -302,8 +308,13 @@ func _on_blackhole_mouse_entered():
 	$ui/topleft/tooldesc.text = "Black Hole\nDestroys matter."
 func _on_elementpicker_mouse_entered():
 	$ui/topleft/tooldesc.text = "Purriodic Table\nSpawn element cattos!"
+func _on_pet_mouse_entered():
+	$ui/topleft/tooldesc.text = "Pet Cattos\nPet pet pet..."
 
 func _on_quit_pressed():
+	get_tree().paused = false
+	glob.pause = false
+	glob.inv_open = false
 	get_tree().change_scene_to_file("res://ec_assets/scenes/menu.tscn")
 
 func _on_quit_mouse_entered():

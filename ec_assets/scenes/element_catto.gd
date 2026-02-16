@@ -87,6 +87,7 @@ var rad_level = 0.1
 var date = [Time.get_datetime_dict_from_system().month,Time.get_datetime_dict_from_system().day]
 
 var proc = FastNoiseLite.new() #for procedural synthetic elements later down the line
+var petted = 0
 
 func _ready():
 	glob.cattos += 1
@@ -94,6 +95,9 @@ func _ready():
 	if protons < 119 and player_spawned == true: neutrons = main_isotopes[protons]-protons
 	if protons == 0: antimuons = 1
 	flash()
+	#$HTTPRequest.request("https://wttr.in/Darmstadt?format=%t") to implement Darmstadtiums temp
+
+
 
 func _process(delta):
 	#if glob.cattos <= -1:
@@ -104,6 +108,8 @@ func _process(delta):
 	$info/electrons.text = str(int(electrons)) + "e"
 	$info/type.text = group + " (" + state + ")"
 	$info/density.text = "density: " + str(snapped(density,0.01)) + " kg/m^3"
+	
+	$info/halflife.visible = glob.weakforce
 	
 	#lag prevention
 	#if protons < 0 or delta > 0.5:
@@ -128,9 +134,20 @@ func _process(delta):
 	$model/effects/au_electrons.visible = [protons,mass] == [79,199]
 	$model/effects/au_nucleus.visible = [protons,mass] == [79,199]
 	$model/effects/au_nucleus.scale = $model/effects/rg_nucleus.scale
-	$model/effects/cn_earth.visible = protons == 112
-	if protons == 112: $model/effects/orbit.scale.y = 0.25
-	else: $model/effects/orbit.scale.y = 1
+	if protons == 112 and mass == 277:
+		$model/effects/cn_earth.visible = 0
+		$model/effects/orbit.modulate = Color(0.0, 0.0, 0.0, 1.0)
+	elif protons == 112 and mass == 288:
+		$model/effects/cn_earth.visible = 0
+		$model/effects/orbit.visible = 0
+	else:
+		$model/effects/cn_earth.visible = protons == 112
+		$model/effects/orbit.modulate = Color(0.5, 0.5, 0.5, 1.0)
+	
+	if protons == 112: 
+		$model/effects/orbit.scale.y = 0.25
+	else:
+		$model/effects/orbit.scale.y = 1
 	if decay != INF:
 		$model/effects/cn_earth.position.x = -sin(decay*2)*32
 		$model/effects/cn_earth.position.y = 8 + cos(decay*2)*8
@@ -139,9 +156,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("R"):
 		queue_free()
 
-#func _physics_process(delta):
-#	if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
-	
 	#funny astatine thing
 	if protons == 85 and glob.camera.zoom.x < 4.0 and Time.get_time_dict_from_system().hour < 6:
 		if abs(global_position.x-glob.camera.global_position.x) > get_window().size.x/glob.camera.zoom.x:
@@ -155,7 +169,7 @@ func _process(delta):
 		$radiation.modulate = $transgrad.texture.get_image().get_pixel(1,abs(sin($transgrad.rotation))*110.0)
 	
 	#out of bounds
-	if abs(position.x) > 2500: position.x = 2500*sign(position.x)
+	#if abs(position.x) > 2500: position.x = 2500*sign(position.x)
 	if position.y < -2048: position.y = -2048
 	
 	#states of matter
@@ -254,14 +268,23 @@ func _process(delta):
 		$radiation.modulate.a = clamp(10.0/sqrt(halflife),0,10)
 	
 	#electron capacity
-	if protons in range(0,3): max_electrons = 2
-	elif protons in range(3,11): max_electrons = 10
-	elif protons in range(11,19): max_electrons = 18
-	elif protons in range(19,37): max_electrons = 36
-	elif protons in range(37,55): max_electrons = 54
-	elif protons in range(55,87): max_electrons = 86
-	elif protons in range(87,119): max_electrons = 118
-	else: max_electrons = 140 + (32*floor((protons-140)/32)) + 32
+	if protons in range(0,3): 
+		max_electrons = 2
+	elif protons in range(3,11): 
+		max_electrons = 10
+	elif protons in range(11,19): 
+		max_electrons = 18
+	elif protons in range(19,37): 
+		max_electrons = 36
+	elif protons in range(37,55): 
+		max_electrons = 54
+	elif protons in range(55,87): 
+		max_electrons = 86
+	elif protons in range(87,119): 
+		max_electrons = 118
+	else: 
+		@warning_ignore("integer_division")
+		max_electrons = 140 + (32*floor((protons-140)/32)) + 32
 	if electrons > max_electrons:
 		electrons -= 1
 		emit("electron")
@@ -277,6 +300,10 @@ func _process(delta):
 	elif protons in [44,54,76,94,108]: valence = 8
 	elif protons == 77: valence = 9
 	else: valence = 0
+	
+	# fire color
+	#if protons == 17:
+		#$model/fir
 	
 	#becoming quark-gluon plasma
 	if glob.t_power > 5:
@@ -302,7 +329,7 @@ func _process(delta):
 		elif dragged == true: $model/face/facetext.text = "HAI :3"
 		elif velocity.y < 0: $model/face/facetext.text = "HUP!"
 		elif nearby == null:
-			if looktimer > 2: $model/face/facetext.text = str(int(glob.temperature)) + "°C"
+			if looktimer > 2: $model/face/facetext.text = str(snapped(glob.temperature-273.15,0.01)) + "°C"
 			else: $model/face/facetext.text = "ZÜGE"
 	
 	#info
@@ -350,7 +377,10 @@ func _process(delta):
 	
 	#dragging the catto
 	if glob.selected == self and Input.is_action_pressed("lmb"):
-		dragged = true
+		if glob.tool == 8:
+			dragged = false
+		else:
+			dragged = true
 		glob.dragging = true
 		$model/anim.play("grabbed")
 	if Input.is_action_just_released("lmb"):
@@ -365,10 +395,10 @@ func _process(delta):
 	
 	#looking around
 	if knocked_out <= 0:
-		if group == "noble gas" or protons == 22: 
+		if group == "noble gas" or protons == 22 or $model/face/eye1.animation == "shut" or $model/face/eye1.animation == "happy": 
 			$model/face/anim.play("RESET")
 		else:
-			$model/face/anim.play("blink")
+				$model/face/anim.play("blink")
 		looktimer -= delta * speed
 		if interest == null and disinterest == null:
 			if looktimer <= 0:
@@ -425,7 +455,22 @@ func _process(delta):
 			elif protons == 73: eye2 = 29
 			elif protons == 107: eye2 = 52
 			else: eye2 = 0
-		elif !([protons,mass] in [[22,44],[26,57]]): eye2 = eye1
+		elif !([protons,mass] in [[22,44],[26,57],[87,212]]): eye2 = eye1
+	if protons == 87 and mass == 212 and electrons != 0:
+		$model/face/eye1.offset.y = -18
+		$model/face/eye2.offset.y = -18
+		$model/face/mouth.offset.y = -14
+		#$model/face/mouth.offset.x = -1
+	elif protons == 56 and mass == 154 and electrons != 0:
+		$model/face/eye1.offset.y = -16
+		$model/face/eye2.offset.y = -16
+		$model/face/mouth.offset.y = -12
+		#$model/face/mouth.offset.x = -1
+	else:
+		$model/face/eye1.offset.y = 0
+		$model/face/eye2.offset.y = 0
+		$model/face/mouth.offset.y = 0
+		#$model/face/mouth.offset.x = 0
 	if !protons in [3,8,33,101]:
 		$nucleus/face/eye1.frame = eye1
 		$nucleus/face/eye2.frame = eye2
@@ -434,6 +479,7 @@ func _process(delta):
 	if $model/face/eye1.animation in ["happy","shut"]:
 		$model/face/eye2.animation = $model/face/eye1.animation
 		if protons in [6,34,35,63,64,75,85,86,97,109,111,118]: $model/face/eye1.frame = 1
+		elif protons == 117 and mass == 292: $model/face/eye1.frame = 1
 		else: $model/face/eye1.frame = 0
 		if protons == 63: $model/face/eye1.modulate = Color8(255,0,0)
 		elif protons == 64: $model/face/eye1.modulate = Color8(128,128,128)
@@ -456,6 +502,7 @@ func _process(delta):
 		elif [protons,mass] in [[33,72],[42,95]]: mouth = 1
 		elif protons in [3,33,55,87,96,102,106] or [protons,mass] == [79,195]: mouth = 2
 		elif protons == 42 and mass != 92: mouth = 2
+		elif protons == 60 and mass == 163: mouth = 2
 		elif [protons,mass] != [6,14]: mouth = 0
 	elif interest != null: mouth = 0
 	elif disinterest != null: mouth = 2
@@ -465,6 +512,8 @@ func _process(delta):
 	$model/face/mouth/fangs.visible = (group == "halogen" or protons == 117) and $model/face/mouth.frame == 0
 	$model/body/ca_fangs.visible = protons == 20
 	if [protons,mass] == [20,47]: $model/body/ca_fangs.frame = 1
+	elif [protons,mass] == [20,48]: $model/body/ca_fangs.frame = 2
+	elif [protons,mass] == [20,52]: $model/body/ca_fangs.frame = 3
 	else: $model/body/ca_fangs.frame = 0
 	$model/body/ca_fangs.position.x = $model/face.position.x*0.7
 	
@@ -586,7 +635,15 @@ func _process(delta):
 	if protons != 58 and $model/ce_flame.emitting == true: $model/ce_flame.emitting = false
 	if protons != 63 and $model/face/glasses.position.y != 0: $model/face/glasses.position.y = 0
 	if protons != 66 and $model/tail/dy_laser.visible == true: $model/tail/dy_laser.hide()
-	if protons != 88 and $model/ra_glow.visible == true: $model/ra_glow.hide()
+	if protons != 88 and mass == 223 and $model/ra223_glow.visible == true: 
+		$model/ra223_glow.hide()
+		$model/ra_glow.hide()
+	if protons != 88 and $model/ra_glow.visible == true:
+		$model/ra_glow.hide()
+		$model/ra223_glow.hide()
+	if protons == 88 and mass != 223 and $model/ra223_glow.visible == true:
+				$model/ra_glow.show()
+				$model/ra223_glow.hide()
 	if protons != 102 and $model/tail/no_fuse.emitting == true: $model/tail/no_fuse.emitting = false
 	
 	#dysprosium's dosimeter
@@ -630,6 +687,34 @@ func _process(delta):
 			$radiation.modulate.a = 1
 			$geiger.base_vol = 0
 			$geiger.pitch_scale = 2
+		if glob.tool == 8:
+			if (get_global_mouse_position() - position).length() < 64:
+				petted = true
+				if group == "alkali metal":
+					if protons != 87:
+						$hiss.play()
+					else:
+						$purr.play()
+					if group != "noble gas":
+						$model/face/eye1.play("happy")
+					if mouth != 0:
+						mouth = 0
+					else:
+						if protons not in [2, 10]:
+							print("ah")
+							mouth = 0
+				elif protons in [33]:
+					$hiss.play()
+					$model/face/eye1.play("shut")
+				else:
+					$purr.play()
+					if group != "noble gas":
+						$model/face/eye1.play("happy")
+						if mouth != 0:
+							mouth = 0
+						elif protons not in [2, 10]:
+							print("ah")
+							mouth = 0
 	if glob.tool == 7 and Input.is_action_pressed("lmb"):
 		velocity += (get_global_mouse_position()-position).normalized()/(get_global_mouse_position()-position).length()*delta*100000
 		if (get_global_mouse_position()-position).length() < 64: destroy("poof")
@@ -644,8 +729,10 @@ func flash():
 		calculate_mass()
 		calculate_stability()
 		update()
-	#$flash.modulate.a = 1
+	$flash.modulate.a = 1
 	$spawn.play()
+	var tween: Tween = create_tween()
+	tween.tween_property($flash, "modulate", Color(1,1,1,0), 0.25)
 
 func destroy(eff):
 	glob.cattos -= 1
@@ -765,7 +852,10 @@ func generate_features():
 	
 	#spots
 	if protons in [14,17,22,23,26,27,29,30,42,47,54,66,70,75,78,81,88,94,113]: 
-		$model/face/spot.visible = $model/ra_glow.visible == false
+		if $model/ra_glow.visible == false and $model/ra223_glow.visible == false:
+			$model/face/spot.visible = 1
+		else:
+			$model/face/spot.visible = 0
 		if protons == 14: spot = 0
 		if protons == 17: spot = 1
 		if protons == 22: spot = 2
@@ -787,7 +877,12 @@ func generate_features():
 		if protons == 113: spot = 18
 		if protons == 117: spot = 19
 	else: $model/face/spot.visible = false
-	$model/face/es_snout.visible = protons == 99
+	if mass == 251:
+		$model/face/es251_snout.visible = protons == 99
+		$model/face/es_snout.visible = 0
+	else:
+		$model/face/es251_snout.visible = 0
+		$model/face/es_snout.visible = protons == 99
 	
 	#tails
 	if protons in [45,47,48,57,63,66,97,98,102]:
@@ -802,13 +897,17 @@ func generate_features():
 		if protons == 97: $model/tail.frame = 6
 		if protons == 98: $model/tail.frame = 7
 		if protons == 102: $model/tail.frame = 8
-	elif [protons,mass] in [[1,4],[1,5],[13,26],[20,47],[77,192]]:
+	elif [protons,mass] in [[1,4],[1,5],[10,22],[13,26],[20,47],[60,163],[76,189],[76,190],[77,192]]:
 		$model/tail.visible = true
 		$model/tail.play("isotopes")
 		if mass == 4: $model/tail.frame = 0
 		if mass == 5: $model/tail.frame = 1
+		if mass == 22: $model/tail.frame = 8
 		if mass == 26: $model/tail.frame = 2
 		if mass == 47: $model/tail.frame = 3
+		if mass == 163: $model/tail.frame = 7
+		if mass == 189: $model/tail.frame = 5
+		if mass == 190: $model/tail.frame = 6
 		if mass == 192: $model/tail.frame = 4
 	else:
 		$model/tail.visible = false
@@ -983,11 +1082,18 @@ func update():
 	generate_features()
 	
 	#collision
-	if protons == 2: $col_body.position.y = 1
-	elif protons == 42: $col_body.position.y = 6
-	elif protons == 55: $col_body.position.y = 31
-	elif protons == 120: $col_body.position.y = 12
-	else: $col_body.position.y = 4
+	if protons == 2: 
+		$col_body.position.y = 1
+	elif protons == 42: 
+		$col_body.position.y = 6
+	elif protons == 55: 
+		$col_body.position.y = 31
+	#elif protons == 87 and mass == 212:
+	#	$col_body.position.y = 29 
+	elif protons == 120: 
+		$col_body.position.y = 12
+	else: 
+		$col_body.position.y = 4
 	
 	#info
 	if protons <= 118 and protons >= 0: 
@@ -1064,6 +1170,17 @@ func update():
 			$model/face/eye3.play("isotopes")
 			eye1 = 2
 			eye2 = 2
+		elif [protons,mass] == [3,3]:
+			$model/body.frame = 103
+			$model/face/eye4.visible = true
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/eye4.play("isotopes")
+			eye1 = 49
+			eye2 = 49
+			$model/face/eye4.frame = 48
+		elif [protons,mass] == [3,6]:
+			$model/body.frame = 61
 		elif [protons,mass] == [6,14]:
 			halflife = 86400*365.25*5700
 			if antimuons == 0: $info/name.text = "Radiocarbon"
@@ -1084,6 +1201,18 @@ func update():
 		elif [protons,mass] == [8,15]:
 			halflife = 122.3
 			$model/body.frame = 11
+		elif [protons,mass] == [8,23]:
+			$model/body.frame = 93
+		elif [protons,mass] == [10,22]:
+			$model/body.frame = 88
+			$model/face/mouth/fangs.visible = true
+			$model/face/mouth.play("default")
+			$model/face/mouth.frame = 1
+			$model/face/eye1.play("default")
+			$model/face/eye2.play("default")
+			eye1 = 0
+			eye2 = 0
+			$model/face/mouth.self_modulate = Color(0.0, 0.0, 0.0, 1.0)
 		elif [protons,mass] == [13,26]:
 			halflife = 86400*365.25*717000
 			$model/body.frame = 12
@@ -1105,6 +1234,20 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 5
 			eye2 = 5
+		elif [protons,mass] == [20,48]:
+			halflife = 86400*4.536
+			$model/body.frame = 52
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 30
+			eye2 = 30
+		elif [protons,mass] == [20,52]:
+			halflife = 86400*4.536
+			$model/body.frame = 53
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 31
+			eye2 = 31
 		elif [protons,mass] == [22,44]:
 			halflife = 86400*365.25*59.1
 			$model/body.frame = 15
@@ -1153,6 +1296,13 @@ func update():
 			$model/face/spot.modulate = Color8(255,220,150)
 			eye1 = 11
 			eye2 = 11
+		elif [protons,mass] == [27,56]:
+			$model/body.frame = 92
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/spot.visible = false
+			eye1 = 11
+			eye2 = 11
 		elif [protons,mass] == [33,71]:
 			halflife = 3600*65.3
 			$model/body.frame = 23
@@ -1195,11 +1345,23 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 17
 			eye2 = 17
+		elif [protons,mass] == [36,81]:
+			$model/body.frame = 102
+		elif [protons,mass] == [37,87]:
+			$model/body.frame = 101
+			$model/face/eye2.play("isotopes")
+			eye2 = 47
 		elif [protons,mass] == [38,90]:
 			halflife = 86400*365.25*28.91
 			$model/body.frame = 29
 			$model/face/eye1.play("default")
 			$model/face/eye2.play("isotopes")
+		elif [protons,mass] == [39,90]:
+			$model/body.frame = 80
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 36
+			eye2 = 36
 		elif [protons,mass] == [42,92]:
 			$model/body.frame = 30
 			$model/hair.play("isotopes")
@@ -1241,10 +1403,18 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 23
 			eye2 = 23
+		elif [protons,mass] == [49,114]:
+			$model/body.frame = 60
 		elif [protons,mass] == [52,128]:
 			halflife = 86400*365.25*2.25*pow(10,24)
-			$model/body.play("default")
-			$model/body.frame = 52
+			$model/body.frame = 95
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			eye1 = 44
+			eye2 = 44
+		elif [protons,mass] == [53,135]:
+			$model/body.frame = 59
 		elif [protons,mass] == [54,133]:
 			halflife = 86400*5.2474
 			$model/body.frame = 37
@@ -1253,19 +1423,123 @@ func update():
 			$model/face/spot.visible = false
 			eye1 = 24
 			eye2 = 24
+		elif [protons,mass] == [54,135]:
+			$model/body.frame = 78
+			$nucleus/body.frame = 124
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/spot.visible = false
+			$model/face/mouth.frame = 0
+			eye1 = 35
+			eye2 = 35
+		elif [protons,mass] == [54,136]:
+			$model/body.frame = 79
+			$model/face/spot.visible = false
+		elif [protons,mass] == [54,140]:
+			$model/body.frame = 98
+			$model/face/spot.visible = false
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 45
+			eye2 = 45
+		elif [protons,mass] == [55,137]:
+			$model/body.frame = 57
+			$nucleus/body.frame = 121
+			$nucleus/face/eye1.frame = 36
+			$nucleus/face/eye1.play("isotopes")
+			$nucleus/face/eye2.visible = false
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.visible = false
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			spot = 4
+			eye1 = 36
+		elif [protons,mass] == [56,154]:
+			$model/body.frame = 97
+			$model/face/spot.visible = false
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 50
+			eye2 = 51
+			$model/face/mouth.self_modulate = Color("ff5500ff")
 		elif [protons,mass] == [59,142]:
 			halflife = 3600*19.12
 			$model/body.frame = 38
 		elif [protons,mass] == [59,143]:
 			halflife = 86400*13.57
 			$model/body.frame = 39
+		elif [protons,mass] == [60,144]:
+			$model/body.frame = 62
+		elif [protons,mass] == [60,146]:
+			$model/body.frame = 63
+		elif [protons,mass] == [60,148]:
+			$model/body.frame = 64
+		elif [protons,mass] == [60,150]:
+			$model/body.frame = 65
+		elif [protons,mass] == [60,163]:
+			$model/body.frame = 81
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 39
+			eye2 = 39
+		elif [protons,mass] == [64,160]:
+			$model/body.frame = 96
+		elif [protons,mass] == [76,184]:
+			$model/body.frame = 67
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 11
+		elif [protons,mass] == [76,185]:
+			$model/body.frame = 68
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 4
+		elif [protons,mass] == [76,186]:
+			$model/body.frame = 69
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 10
+		elif [protons,mass] == [76,187]:
+			$model/body.frame = 70
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 9
+		elif [protons,mass] == [76,188]:
+			$model/body.frame = 71
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 8
+		elif [protons,mass] == [76,189]:
+			$model/body.frame = 72
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 7
+		elif [protons,mass] == [76,190]:
+			$model/body.frame = 73
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 6
+			credit = "Oxygendox"
+		elif [protons,mass] == [76,194]:
+			$model/body.frame = 74
+			$model/hair.visible = 1
+			$model/hair.play("isotopes")
+			$model/hair.frame = 5
 		elif [protons,mass] == [77,192]:
 			halflife = 86400*73.827
 			$model/body.frame = 40
+			$model/face/eye4.play("default")
 			$model/face/eye4.frame = 58
+			$model/face/eye3.visible = true
+			$model/face/spot.visible = false
+			
 		elif [protons,mass] == [78,190]:
 			halflife = 86400*365.25*4.83*pow(10,11)
 			$model/body.frame = 41
+		elif [protons,mass] == [79,194]:
+			$model/body.frame = 94
+			$model/face/eye1.play("isotopes")
+			eye1 = 43
 		elif [protons,mass] == [79,195]:
 			halflife = 86400*186.01
 			$model/body.frame = 42
@@ -1308,15 +1582,116 @@ func update():
 		elif [protons,mass] == [85,210]:
 			halflife = 3600*8.1
 			$model/body.frame = 48
+		elif [protons,mass] == [87,212]:
+			$model/body.frame = 82
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			eye1 = 0
+			eye2 = 40
+		elif [protons,mass] == [87,221]:
+			$model/body.frame = 90
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 		elif [protons,mass] == [88,223]:
 			halflife = 86400*11.4352
 			$model/body.frame = 49
+			if $model/ra_glow.visible == true:
+				$model/ra_glow.hide()
+				$model/ra223_glow.show()
+		elif [protons,mass] == [90,230]:
+			$model/body.frame = 75
+			$nucleus/body.frame = 122
+			$model/face/eye2.visible = false
+			$nucleus/face/eye2.visible = false
+		elif [protons,mass] == [90,234]:
+			$model/body.frame = 76
 		elif [protons,mass] == [91,230]:
 			halflife = 86400*17.4
 			$model/body.frame = 50
 		elif [protons,mass] == [91,233]:
 			halflife = 86400*26.975
 			$model/body.frame = 51
+		elif [protons,mass] == [92,236]:
+			$model/body.frame = 100
+			$model/face/eye2.visible = false
+		elif [protons,mass] == [94,243]:
+			$model/body.frame = 89
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 42
+			eye2 = 42
+		elif [protons,mass] == [95,228]:
+			$model/body.frame = 86
+		elif [protons,mass] == [95,243]:
+			$model/body.frame = 99
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 46
+			eye2 = 46
+			$model/face/mouth.self_modulate = Color("002147ff")
+		elif [protons,mass] == [96,242]:
+			$model/body.frame = 54
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 38
+			eye2 = 38
+		elif [protons,mass] == [96,248]:
+			$model/body.frame = 55
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			eye1 = 32
+			eye2 = 32
+		elif [protons,mass] == [99,251]:
+			$model/body.frame = 58
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/glasses.visible = true
+			$model/face/eye1.visible = false
+			$model/face/eye2.visible = false
+			glasses = 8
+			eye1 = 33
+			eye2 = 33
+		elif [protons,mass] == [112,277]:
+			$model/body.frame = 56
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.visible = false
+			eye1 = 37
+		elif [protons,mass] == [112,288]:
+			$model/body.frame = 85
+		elif [protons,mass] == [117,292]:
+			$model/body.frame = 87
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			$model/face/mouth.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			$model/face/eye1.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			$model/face/eye2.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			spot = 5
+		elif [protons,mass] == [117,293]:
+			$model/body.frame = 91
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			spot = 6
+		elif [protons,mass] == [117,295]:
+			$model/body.frame = 77
+			$nucleus/body.frame = 123
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/hair.visible = true
+			$model/hair.play("isotopes")
+			$model/hair.frame = 3
+			$model/face/spot.play("isotopes")
+			$model/face/spot.visible = true
+			spot = 3
+			eye1 = 34
+			eye2 = 34
+		elif [protons,mass] == [118,297]:
+			$model/body.frame = 83
+		elif [protons,mass] == [118,298]:
+			$model/body.frame = 84
+		elif [protons,mass] == [118,300]:
+			$model/body.frame = 66
 		else: 
 			if nuclidemap_value == 1: halflife = INF
 			else: halflife = 0.001 + (nuclidemap_value*20)**10
@@ -1334,6 +1709,8 @@ func update():
 	elif halflife > 86400*365.25: $geiger.base_vol = -10
 	elif halflife > 86400: $geiger.base_vol = -5
 	else: $geiger.base_vol = 0
+	
+	
 	
 	#eyes & spots again
 	if protons in [6,25,35,85,86,97,118,119]: 
@@ -1364,22 +1741,59 @@ func update():
 	@warning_ignore("integer_division")
 	$rift.modulate.a = (protons-120)/1000
 	
-	#update designer credits
-	if [protons,mass] in [[1,4],[1,6],[1,7]]: credit = "CiaaiK"
-	elif [protons,mass] in [[1,5],[7,13],[8,15],[13,26]]: credit = "gammaray-burst"
+	# Designer credits --- isotopes
+	if [protons,mass] in [[1,4],[1,6],[1,7]]:
+		credit = "CiaaiK"
+	elif [protons,mass] in [[1,5],[3,6],[7,13],[8,15],[13,26]]:
+		credit = "gammaray-burst"
+	elif [protons,mass] in [20,47]:
+		credit = "starri-cosmikat"
+	elif [protons,mass] in [[20,48],[60,163],[87,212],[95,243]]:
+		credit = "theticktock_ticky"
+	elif [protons,mass] in [[20,52],[36,81],[39,90],[53,135],[54,135],[54,136],[54,140],[55,137],[76,185],[81,201],[90,230],[92,236],[96,242],[117,295]]:
+		credit = "Inky"
+	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[76,186],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199],[99,251]]:
+		credit = "SciphonPylon"
+	elif [protons,mass] in [[26,54],[26,58],[26,59]]:
+		credit = "thatmarkerdude"
+	elif [protons,mass] in [[26,57],[81,201],[81,203],[76,190]]:
+		credit = "ir1sh"
+	elif [protons,mass] in [37,87]:
+		credit = "T.S.Smith"
+	elif [protons,mass] in [49,114]:
+		credit = "ingrid-pulchrea"
+	elif [protons,mass] in [56,138]:
+		credit = "Nostuyx"
+	elif [protons,mass] in [[60,144],[60,146],[60,148],[60,150],[118,298],[118,299]]:
+		credit = "Mr.Media2K"
+	elif [protons,mass] in [[76,188],[118,300]]:
+		credit = "Senchium"
+	elif [protons,mass] in [[76,187],[76,184]]:
+		credit = "Oxygendox"
+	elif [protons,mass] in [76,189]:
+		credit = "bhapydageek"
+	elif [protons,mass] in [[76,188],[76,194]]:
+		credit = "Amy Isolea"
+	elif [protons,mass] in [85,210]:
+		credit = "Shard"
+	elif [protons,mass] in [[87,221],[112,277],[112,285]]:
+		credit = "twitcheeer"
+	elif [protons,mass] in [95,228]:
+		credit = "The__Professional"
+	elif [protons,mass] in [96,248]:
+		credit = "alvy-ingenerum, haniszar36"
+	elif [protons,mass] in [117,292]:
+		credit = "Ruins"
+	# Designer credits --- main
 	elif protons == 18: credit = "Oberorka & baltdev"
-	elif [protons,mass] == [20,47]: credit = "starri-cosmikat"
 	elif protons in [21,27]: credit = "mobropro"
-	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199]] or protons in [110]: credit = "SciphonPylon"
 	elif protons == 24: credit = "Oberorka, carrera075 & sonnettheseacoat"
 	elif protons == 25: credit = "anonymous"
-	elif [protons,mass] in [[26,54],[26,58],[26,59]]: credit = "thatmarkerdude"
-	elif [protons,mass] in [[26,57],[81,201],[81,203]]: credit = "ir1sh"
 	elif protons == 32: credit = "radonine"
 	elif protons in [34,91,100]: credit = "sonnettheseacoat"
 	elif protons == 38: credit = "baltdev"
 	elif protons == 39: credit = "Oberorka & abugidaithink"
-	elif protons in [40,48,59,69,96,102,103] or [protons,mass] in [85,210]: credit = "Shard"
+	elif protons in [40,48,59,69,96,102,103]: credit = "Shard"
 	elif protons == 42: credit = "ir1sh, SciphonPylon & Oberorka"
 	elif protons == 45: credit = "Oberorka & SED4906"
 	elif protons == 46: credit = "chessbird"
@@ -1405,6 +1819,7 @@ func update():
 	elif protons == 107: credit = "hyperoperationfractallisation & Oberorka"
 	elif protons == 108: credit = "Lotus, cosmosnaught & Oberorka"
 	elif protons == 109: credit = "Shard, voodoo-economics, haniszar36 & ir1sh"
+	elif protons == 110: credit = "SciphonPylon"
 	elif protons == 114: credit = "starri-cosmikat & SciphonPylon"
 	elif protons == 115: credit = "The Wizard Slime, schoolshootingbyclover & Jupiter Stupider"
 	elif protons == 116: credit = "SciphonPylon, breadcharger61 & Oberorka"
@@ -1500,7 +1915,7 @@ func emit(prt):
 	if instance.type == "neutron": decay = INF
 	instance.emit = 0.25
 	add_sibling(instance)
-	#$flash.modulate.a = 0.5
+	$flash.modulate.a = 0.5
 
 func spawn_catto(p,n,e,mu):
 	var scene = load("res://ec_assets/objects/element_catto.tscn")
@@ -1609,7 +2024,12 @@ func _on_area_entered(area):
 					$model/face/glasses.position.y = 0
 					eu_glassesdown = true
 				if protons == 66: $model/tail/dy_laser.show()
-				if protons == 88: $model/ra_glow.show()
+				if protons == 88 and mass == 223:
+					$model/ra223_glow.show()
+					$model/ra_glow.hide()
+				elif protons == 88:
+					$model/ra_glow.show()
+					$model/ra223_glow.hide()
 				if protons == 102: $model/tail/no_fuse.emitting = true
 				
 				#if one of the shiny fellas, reflect photons; otherwise absorb them
@@ -1617,7 +2037,7 @@ func _on_area_entered(area):
 					if abs(area.position.x-position.x) < 16: area.v.y *= -1
 					else: area.v.x *= -1
 					$sparkle.play()
-					#$flash.modulate.a = 1
+					$flash.modulate.a = 1
 				else:
 					glob.particles -= 1
 					area.queue_free()

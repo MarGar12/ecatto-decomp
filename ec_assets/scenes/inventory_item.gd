@@ -23,6 +23,7 @@ func _process(_delta):
 		elif item == "electron": spawn_particle("electron")
 		elif item == "purrcent": spawn_object("purrcent")
 		elif item == "bungy": spawn_object("bungy")
+		elif item == "compound_catto": spawn_object("compound_catto")
 		elif glob.spawn_nucleus == true: spawn_catto(get_index()-6,get_index()-6,0)
 		else: spawn_catto(get_index()-6,get_index()-6,get_index()-6)
 		glob.spawning = null

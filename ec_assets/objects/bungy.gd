@@ -34,8 +34,6 @@ func _physics_process(delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"): queue_free()
 	
-	#if $flash.modulate.a > 0: $flash.modulate.a -= delta*4
-	
 	#gravity
 	if not is_on_floor():
 		velocity.y += glob.gravity*100 * delta * glob.rate
@@ -182,6 +180,8 @@ func _on_mouse_exited():
 func flash():
 	$flash.modulate.a = 1
 	$spawn.play()
+	var tween: Tween = create_tween()
+	tween.tween_property($flash, "modulate", Color(1,1,1,0), 0.25)
 
 func destroy(eff):
 	var scene = load("res://ec_assets/objects/"+eff+".tscn")

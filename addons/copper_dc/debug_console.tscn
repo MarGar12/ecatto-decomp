@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://bcs4bvx7fi2hm"]
+
+[ext_resource type="Script" uid="uid://djnj7xx0gmrff" path="res://addons/copper_dc/scripts/debug_console.gd" id="1_fs6bc"]
+[ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="2_ogojk"]
+
+[node name="Debug Console" type="CanvasLayer" unique_id=61188242]
+process_mode = 3
+layer = 100
+script = ExtResource("1_fs6bc")
+
+[node name="ConsolePanel" type="Panel" parent="." unique_id=1554340776]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.498039)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="BoxContainer" type="VBoxContainer" parent="ConsolePanel" unique_id=1701549864]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="HBoxContainer" parent="ConsolePanel/BoxContainer" unique_id=1634403731]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="ConsolePanel/BoxContainer/BoxContainer" unique_id=2073613779]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Log Panel" type="Panel" parent="ConsolePanel/BoxContainer/BoxContainer" unique_id=1524722145]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsolePanel/BoxContainer/BoxContainer/Log Panel" unique_id=2117993737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Log" type="ScrollContainer" parent="ConsolePanel/BoxContainer/BoxContainer/Log Panel/MarginContainer" unique_id=947180931]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.552941)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsolePanel/BoxContainer/BoxContainer/Log Panel/MarginContainer/Log" unique_id=1106018987]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Log Content" type="RichTextLabel" parent="ConsolePanel/BoxContainer/BoxContainer/Log Panel/MarginContainer/Log/MarginContainer" unique_id=406170698]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ogojk")
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+
+[node name="Command Hint Header" type="Panel" parent="ConsolePanel/BoxContainer" unique_id=997670666]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.835294)
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConsolePanel/BoxContainer/Command Hint Header" unique_id=1765434080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+
+[node name="Command Hints Panel" type="Panel" parent="ConsolePanel/BoxContainer" unique_id=1564383995]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.752941)
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsolePanel/BoxContainer/Command Hints Panel" unique_id=500555690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Command Hints" type="ScrollContainer" parent="ConsolePanel/BoxContainer/Command Hints Panel/MarginContainer" unique_id=1172690090]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConsolePanel/BoxContainer/Command Hints Panel/MarginContainer/Command Hints" unique_id=617506584]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ogojk")
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+meta_underlined = false
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsolePanel/BoxContainer" unique_id=1663453003]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Command Field" type="LineEdit" parent="ConsolePanel/BoxContainer/MarginContainer" unique_id=648795984]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+placeholder_text = "Enter command here..."
+context_menu_enabled = false
+
+[node name="Stats" type="Label" parent="." unique_id=1011011853]
+unique_name_in_owner = true
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 163.0
+offset_bottom = 101.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+
+[node name="Mini Log" type="ScrollContainer" parent="." unique_id=1373620711]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0.552941)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -437.0
+offset_top = 12.0
+offset_bottom = 98.0
+grow_horizontal = 0
+mouse_filter = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Mini Log" unique_id=1568228457]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 20
+
+[node name="Log Content" type="RichTextLabel" parent="Mini Log/MarginContainer" unique_id=1176826198]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_ogojk")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+scroll_following = true
+
+[connection signal="meta_clicked" from="ConsolePanel/BoxContainer/Command Hints Panel/MarginContainer/Command Hints/RichTextLabel" to="." method="_on_command_hints_meta_clicked"]
+[connection signal="text_changed" from="ConsolePanel/BoxContainer/MarginContainer/Command Field" to="." method="_on_command_field_text_changed"]

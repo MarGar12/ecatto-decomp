@@ -36,6 +36,7 @@
 [ext_resource type="Script" uid="uid://bbf0pu4c023l1" path="res://ec_assets/scenes/music.gd" id="29"]
 [ext_resource type="AudioStream" uid="uid://ck0t7g13a34ny" path="res://ec_assets/music/Vibe Ace.mp3" id="30"]
 [ext_resource type="Script" uid="uid://bweu07l2apik0" path="res://ec_assets/scenes/music_track.gd" id="31"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="31_3s43j"]
 [ext_resource type="AudioStream" uid="uid://dh6p2xs3ex0i8" path="res://ec_assets/music/Bathed in the Light.mp3" id="32"]
 [ext_resource type="AudioStream" uid="uid://durqlh2j82dw3" path="res://ec_assets/music/Pamgaea.mp3" id="33"]
 [ext_resource type="AudioStream" uid="uid://puccjqhqogd8" path="res://ec_assets/music/Frozen Star.mp3" id="34"]
@@ -196,6 +197,7 @@ z_index = -20
 texture_filter = 2
 
 [node name="moon" type="Node2D" parent="bg" unique_id=784298813]
+visible = false
 
 [node name="space" type="Parallax2D" parent="bg/moon" unique_id=252903266]
 scroll_scale = Vector2(0.001, 0.001)
@@ -838,7 +840,8 @@ offset_left = -336.0
 offset_top = -142.0
 offset_right = 338.0
 offset_bottom = 114.0
-theme_override_fonts/font = ExtResource("26_cql6i")
+theme_override_fonts/font = ExtResource("31_3s43j")
+theme_override_font_sizes/font_size = 21
 text = "Middle/right mouse button to drag screen
 Scroll to zoom
 Space to open/close the periodic table
@@ -850,16 +853,17 @@ vertical_alignment = 1
 [node name="ok" type="Button" parent="hint" unique_id=53055744]
 texture_filter = 1
 offset_left = -64.0
-offset_top = 64.0
+offset_top = 71.0
 offset_right = 64.0
-offset_bottom = 96.0
-theme_override_fonts/font = ExtResource("26_cql6i")
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("31_3s43j")
+theme_override_font_sizes/font_size = 21
 text = "OK"
 
 [node name="catto" type="Sprite2D" parent="hint" unique_id=1631607234]
 self_modulate = Color(1, 1, 1, 0.501961)
 material = ExtResource("2")
-position = Vector2(-323, 33)
+position = Vector2(-323, 33.3)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("26")
 

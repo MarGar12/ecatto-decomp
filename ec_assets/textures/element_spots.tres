@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://cyqo6svgeycui"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cyqo6svgeycui"]
 
 [ext_resource type="Texture2D" uid="uid://dgsrr5nnbn2pq" path="res://ec_assets/textures/cattos/elements/solid/silicon-spot.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://dvmnk80wchuvh" path="res://ec_assets/textures/cattos/elements/gas/chlorine-spot.png" id="2"]
@@ -23,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://cp4mvrxlv1wov" path="res://ec_assets/textures/cattos/elements/isotopes/fe54-spot.png" id="21"]
 [ext_resource type="Texture2D" uid="uid://bivk7l2vng33t" path="res://ec_assets/textures/cattos/elements/isotopes/fe60-spot.png" id="22"]
 [ext_resource type="Texture2D" uid="uid://d4e2o6x0mnbay" path="res://ec_assets/textures/cattos/elements/isotopes/tl201-spot.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://ddyfg1uvb4l2h" path="res://ec_assets/textures/cattos/elements/isotopes/ts295-spot.png" id="24_ccxee"]
+[ext_resource type="Texture2D" uid="uid://cts386aghlic4" path="res://ec_assets/textures/cattos/elements/isotopes/cs137-spot.png" id="25_6gmf4"]
+[ext_resource type="Texture2D" uid="uid://bvh8fv8hkcrhg" path="res://ec_assets/textures/cattos/elements/isotopes/ts292-spot.png" id="26_a37ri"]
+[ext_resource type="Texture2D" uid="uid://cjgy7rir6c7t2" path="res://ec_assets/textures/cattos/elements/isotopes/ts293-spot.png" id="27_k4vds"]
 
 [resource]
 animations = [{
@@ -100,6 +104,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ccxee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6gmf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_a37ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_k4vds")
 }],
 "loop": true,
 "name": &"isotopes",

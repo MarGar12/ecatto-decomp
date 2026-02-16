@@ -1,3 +1,6 @@
-.godot
+# Godot 4+ specific ignores
+.godot/
+/android/
 *.import
-shit.py
+*.translation
+export_presets.cfg

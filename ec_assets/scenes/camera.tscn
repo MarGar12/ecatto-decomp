@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://bagn32hjk26y2" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
 [ext_resource type="FontFile" uid="uid://bf71h1bifsf" path="res://ec_assets/fonts/PIXEAB__.TTF" id="35_618eh"]
 [ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="44_aenir"]
 
 [sub_resource type="Curve" id="Curve_cgg83"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
@@ -502,6 +503,17 @@ texture_normal = ExtResource("14")
 texture_pressed = ExtResource("27")
 texture_hover = ExtResource("27")
 
+[node name="pet" type="TextureButton" parent="ui/topleft" unique_id=1503875402]
+layout_mode = 0
+offset_left = 7.5
+offset_top = 44.5
+offset_right = 39.5
+offset_bottom = 76.5
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("21")
+texture_pressed = ExtResource("22")
+texture_hover = ExtResource("22")
+
 [node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
 layout_mode = 0
 offset_left = 291.0
@@ -526,15 +538,67 @@ text = "0"
 [node name="tooldesc" type="Label" parent="ui/topleft" unique_id=2015836275]
 visible = false
 layout_mode = 0
-offset_left = 8.0
-offset_top = 48.0
-offset_right = 288.0
-offset_bottom = 160.0
+offset_left = 49.0
+offset_top = 46.0
+offset_right = 329.0
+offset_bottom = 158.0
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
 text = "FISSION HAMMER
 Splits an element's mass in half."
 autowrap_mode = 2
+
+[node name="camerapos" type="Label" parent="ui/topleft" unique_id=1893750734]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.5
+offset_top = 16.5
+offset_right = 238.5
+offset_bottom = 32.5
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "cam pos: "
+
+[node name="touchevent" type="Label" parent="ui/topleft" unique_id=1850189223]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 33.0
+offset_right = 239.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "touches:"
+
+[node name="zoom" type="Label" parent="ui/topleft" unique_id=1360178743]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.5
+offset_top = 24.5
+offset_right = 238.5
+offset_bottom = 40.5
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "zoom: "
+
+[node name="frame" type="Label" parent="ui/topleft" unique_id=618097718]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 0.5
+offset_top = 8.5
+offset_right = 238.5
+offset_bottom = 24.5
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_fonts/font = ExtResource("30_618eh")
+theme_override_font_sizes/font_size = 8
+text = "frame:"
 
 [node name="topright" type="Control" parent="ui" unique_id=1024494621]
 z_index = 10
@@ -549,7 +613,7 @@ scale = Vector2(2, 2)
 [node name="rateslider" type="HSlider" parent="ui/topright" unique_id=2005686890]
 texture_filter = 1
 layout_mode = 0
-offset_left = -224.0
+offset_left = -179.5
 offset_top = 8.0
 offset_right = -8.0
 offset_bottom = 32.0
@@ -699,11 +763,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
 [node name="inventory" type="Node2D" parent="ui/center" unique_id=1219933114]
+visible = false
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("28")
@@ -1085,6 +1152,9 @@ position = Vector2(366, 135)
 [node name="og" parent="ui/center/inventory" unique_id=1632528630 instance=ExtResource("30")]
 position = Vector2(415, 135)
 
+[node name="compound_catto" parent="ui/center/inventory" unique_id=1167835098 instance=ExtResource("30")]
+position = Vector2(-124, -257)
+
 [node name="hint" type="Label" parent="ui/center/inventory" unique_id=703734208]
 offset_left = -322.0
 offset_top = -188.0
@@ -1093,7 +1163,7 @@ offset_bottom = -140.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 22
-text = "Click or Press and drag a catto"
+text = "Click a catto to summon it "
 
 [node name="nucleus" type="CheckButton" parent="ui/center/inventory" unique_id=1392764134]
 offset_left = -288.0
@@ -1124,19 +1194,19 @@ texture = SubResource("GradientTexture2D_4n70a")
 
 [node name="name" type="Label" parent="ui/center/inventory/desc" unique_id=1665516321]
 offset_left = -448.0
-offset_top = 176.0
+offset_top = 169.0
 offset_right = 448.0
-offset_bottom = 218.0
-theme_override_fonts/font = ExtResource("35_618eh")
-theme_override_font_sizes/font_size = 32
+offset_bottom = 223.0
+theme_override_fonts/font = ExtResource("44_aenir")
+theme_override_font_sizes/font_size = 42
 text = "Hydrogen"
 horizontal_alignment = 1
 
 [node name="text" type="Label" parent="ui/center/inventory/desc" unique_id=132680005]
 offset_left = -448.0
-offset_top = 230.0
+offset_top = 236.0
 offset_right = 448.0
-offset_bottom = 277.0
+offset_bottom = 283.0
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 16
 text = "Mother of all elements. Readily bonds with many others, but tends to leave the party when a metal comes in. Usually peaceful, but has an explosive side."
@@ -1158,7 +1228,7 @@ offset_right = 162.0
 offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 16
-text = "Back to game"
+text = "Close Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1212,9 +1282,9 @@ autowrap_mode = 2
 
 [node name="explosions" type="CheckButton" parent="ui/pause" unique_id=1655645485]
 layout_mode = 0
-offset_left = -162.6667
+offset_left = -160.1667
 offset_top = -96.0
-offset_right = -118.6667
+offset_right = -116.1667
 offset_bottom = -64.0
 tooltip_text = "Toggles explosion effects. Helpful if you're photosensitive."
 button_pressed = true
@@ -1233,9 +1303,9 @@ autowrap_mode = 2
 
 [node name="opaquewalls" type="CheckButton" parent="ui/pause" unique_id=1481333470]
 layout_mode = 0
-offset_left = 13.3333435
+offset_left = 15.8333435
 offset_top = -96.0
-offset_right = 57.33335
+offset_right = 59.83335
 offset_bottom = -64.0
 tooltip_text = "Particles like photons will be unable to escape the room."
 
@@ -1253,9 +1323,9 @@ autowrap_mode = 2
 
 [node name="lcdrag" type="CheckButton" parent="ui/pause" unique_id=1931667413]
 layout_mode = 0
-offset_left = 189.33333
+offset_left = 191.83331
 offset_top = -96.0
-offset_right = 233.33333
+offset_right = 235.83331
 offset_bottom = -64.0
 tooltip_text = "Let left click drag the camera."
 
@@ -1477,7 +1547,8 @@ offset_left = 136.0
 offset_top = 80.0
 offset_right = 180.0
 offset_bottom = 112.0
-tooltip_text = "Toggles whether or not the cattos will automatically rotate."
+tooltip_text = "Toggles whether or not the cattos will automatically rotate.
+If toggled off, Q will rotate left and E will rotate right"
 button_pressed = true
 
 [node name="label" type="Label" parent="ui/pause/rotat" unique_id=508680388]
@@ -1492,11 +1563,29 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="mainmenu" type="TextureButton" parent="ui/pause" unique_id=729394118]
+layout_mode = 0
+offset_left = -244.0
+offset_top = 144.0
+offset_right = -84.0
+offset_bottom = 176.0
+texture_normal = SubResource("GradientTexture2D_hpdug")
+texture_hover = SubResource("GradientTexture2D_8ke6j")
+
+[node name="text" type="Label" parent="ui/pause/mainmenu" unique_id=1806206514]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("30_618eh")
+text = "Quit to Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="back" type="TextureButton" parent="ui/pause" unique_id=139005982]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 85.0
 offset_top = 144.0
-offset_right = 176.0
+offset_right = 245.0
 offset_bottom = 176.0
 texture_normal = SubResource("GradientTexture2D_hpdug")
 texture_hover = SubResource("GradientTexture2D_8ke6j")
@@ -1512,9 +1601,9 @@ vertical_alignment = 1
 
 [node name="settings_reset" type="TextureButton" parent="ui/pause" unique_id=1176591033]
 layout_mode = 0
-offset_left = -176.0
+offset_left = -80.5
 offset_top = 144.0
-offset_right = -16.0
+offset_right = 79.5
 offset_bottom = 176.0
 texture_normal = SubResource("GradientTexture2D_hpdug")
 texture_hover = SubResource("GradientTexture2D_8ke6j")
@@ -1524,7 +1613,7 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("30_618eh")
-text = "Reset all"
+text = "Reset all options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1539,27 +1628,26 @@ scale = Vector2(2, 2)
 
 [node name="reset_button" type="TextureButton" parent="ui/botleft" unique_id=1346864321]
 layout_mode = 0
-offset_left = 88.0
-offset_top = -40.0
-offset_right = 120.0
-offset_bottom = -8.0
-texture_normal = ExtResource("32_knf1o")
-texture_pressed = ExtResource("33_ybjw0")
-texture_hover = ExtResource("33_ybjw0")
-metadata/_edit_use_anchors_ = true
-
-[node name="pause" type="TextureButton" parent="ui/botleft" unique_id=1384682796]
-layout_mode = 0
 offset_left = 48.0
 offset_top = -40.0
 offset_right = 80.0
 offset_bottom = -8.0
+texture_normal = ExtResource("32_knf1o")
+texture_pressed = ExtResource("33_ybjw0")
+texture_hover = ExtResource("33_ybjw0")
+
+[node name="pause" type="TextureButton" parent="ui/botleft" unique_id=1384682796]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -8.0
 texture_normal = ExtResource("34_2158e")
 texture_pressed = ExtResource("35_arbcm")
 texture_hover = ExtResource("35_arbcm")
-metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="TextureButton" parent="ui/botleft" unique_id=283084619]
+visible = false
 layout_mode = 0
 offset_left = 8.0
 offset_top = -40.0
@@ -1592,7 +1680,7 @@ offset_right = 90.0
 offset_bottom = -33.0
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
-text = "Show Settings"
+text = "Pause Game"
 
 [node name="quit_hint" type="Label" parent="ui/botleft" unique_id=1096727863]
 visible = false
@@ -1628,58 +1716,6 @@ texture_normal = ExtResource("34")
 texture_pressed = ExtResource("35")
 texture_hover = ExtResource("35")
 
-[node name="touchevent" type="Label" parent="ui/botright" unique_id=1893750734]
-texture_filter = 1
-layout_mode = 0
-offset_left = -279.0
-offset_top = -25.0
-offset_right = -41.0
-offset_bottom = -9.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 8
-text = "cam pos: "
-horizontal_alignment = 2
-
-[node name="zoom" type="Label" parent="ui/botright" unique_id=1360178743]
-texture_filter = 1
-layout_mode = 0
-offset_left = -279.0
-offset_top = -17.0
-offset_right = -41.0
-offset_bottom = -1.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 8
-text = "zoom: "
-horizontal_alignment = 2
-
-[node name="fps" type="Label" parent="ui/botright" unique_id=66698587]
-texture_filter = 1
-layout_mode = 0
-offset_left = -279.0
-offset_top = -41.0
-offset_right = -41.0
-offset_bottom = -25.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 8
-text = "fps: "
-horizontal_alignment = 2
-
-[node name="frame" type="Label" parent="ui/botright" unique_id=618097718]
-texture_filter = 1
-layout_mode = 0
-offset_left = -279.0
-offset_top = -33.0
-offset_right = -41.0
-offset_bottom = -17.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 8
-text = "frame:"
-horizontal_alignment = 2
-
 [connection signal="animation_finished" from="tool/anim" to="." method="_on_anim_animation_finished"]
 [connection signal="mouse_entered" from="ui/topleft/hammer" to="." method="_on_hammer_mouse_entered"]
 [connection signal="mouse_entered" from="ui/topleft/hammer" to="." method="_on_button_hover"]
@@ -1713,6 +1749,10 @@ horizontal_alignment = 2
 [connection signal="mouse_entered" from="ui/topleft/blackhole" to="." method="_on_button_hover"]
 [connection signal="mouse_exited" from="ui/topleft/blackhole" to="." method="_on_button_unhover"]
 [connection signal="pressed" from="ui/topleft/blackhole" to="." method="_on_blackhole_pressed"]
+[connection signal="mouse_entered" from="ui/topleft/pet" to="." method="_on_pet_mouse_entered"]
+[connection signal="mouse_entered" from="ui/topleft/pet" to="." method="_on_button_hover"]
+[connection signal="mouse_exited" from="ui/topleft/pet" to="." method="_on_button_unhover"]
+[connection signal="pressed" from="ui/topleft/pet" to="." method="_on_pet_pressed"]
 [connection signal="value_changed" from="ui/topright/rateslider" to="." method="_on_rateslider_value_changed"]
 [connection signal="value_changed" from="ui/topright/presslider" to="." method="_on_presslider_value_changed"]
 [connection signal="value_changed" from="ui/topright/gravslider" to="." method="_on_gravslider_value_changed"]
@@ -1733,6 +1773,7 @@ horizontal_alignment = 2
 [connection signal="toggled" from="ui/pause/hud_scale" to="." method="_on_hud_scale_toggled"]
 [connection signal="toggled" from="ui/pause/catto_ai" to="." method="_on_catto_ai_toggled"]
 [connection signal="toggled" from="ui/pause/rotat" to="." method="_on_rotat_toggled"]
+[connection signal="pressed" from="ui/pause/mainmenu" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ui/pause/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ui/pause/settings_reset" to="." method="_on_settings_reset_pressed"]
 [connection signal="mouse_entered" from="ui/botleft/reset_button" to="." method="_on_reset_button_mouse_entered"]

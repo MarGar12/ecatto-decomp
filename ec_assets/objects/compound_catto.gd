@@ -250,7 +250,7 @@ func _on_area_entered(_area):
 	pass # Replace with function body.
 
 func _on_body_entered(body):
-	glob.selected == self
+	#glob.selected == self
 	if body != null:
 		if body is element_catto:
 			if group == "base/acid" and body.group == "alkali metal": body.destroy("explosion")
@@ -259,5 +259,5 @@ func _on_body_exited(_body):
 	pass # Replace with function body.
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.
