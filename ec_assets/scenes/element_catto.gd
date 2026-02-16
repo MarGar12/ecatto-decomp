@@ -87,6 +87,7 @@ var rad_level = 0.1
 var date = [Time.get_datetime_dict_from_system().month,Time.get_datetime_dict_from_system().day]
 
 var proc = FastNoiseLite.new() #for procedural synthetic elements later down the line
+var petted = 0
 
 func _ready():
 	glob.cattos += 1
@@ -168,7 +169,7 @@ func _process(delta):
 		$radiation.modulate = $transgrad.texture.get_image().get_pixel(1,abs(sin($transgrad.rotation))*110.0)
 	
 	#out of bounds
-	if abs(position.x) > 2500: position.x = 2500*sign(position.x)
+	#if abs(position.x) > 2500: position.x = 2500*sign(position.x)
 	if position.y < -2048: position.y = -2048
 	
 	#states of matter
@@ -300,6 +301,10 @@ func _process(delta):
 	elif protons == 77: valence = 9
 	else: valence = 0
 	
+	# fire color
+	#if protons == 17:
+		#$model/fir
+	
 	#becoming quark-gluon plasma
 	if glob.t_power > 5:
 		if protons > (9-glob.t_power)**2+1: 
@@ -387,10 +392,10 @@ func _process(delta):
 	
 	#looking around
 	if knocked_out <= 0:
-		if group == "noble gas" or protons == 22: 
+		if group == "noble gas" or protons == 22 or $model/face/eye1.animation == "shut" or $model/face/eye1.animation == "happy": 
 			$model/face/anim.play("RESET")
 		else:
-			$model/face/anim.play("blink")
+				$model/face/anim.play("blink")
 		looktimer -= delta * speed
 		if interest == null and disinterest == null:
 			if looktimer <= 0:
@@ -682,6 +687,34 @@ func _process(delta):
 	if glob.tool == 7 and Input.is_action_pressed("lmb"):
 		velocity += (get_global_mouse_position()-position).normalized()/(get_global_mouse_position()-position).length()*delta*100000
 		if (get_global_mouse_position()-position).length() < 64: destroy("poof")
+	if glob.tool == 8 and Input.is_action_just_pressed("lmb"):
+		if (get_global_mouse_position() - position).length() < 64:
+			petted = true
+			if group == "alkali metal":
+				if protons != 87:
+					$hiss.play()
+				else:
+					$purr.play()
+			if group != "noble gas":
+				$model/face/eye1.play("happy")
+			if mouth != 0:
+				mouth = 0
+			else:
+				if protons not in [2, 10]:
+					print("ah")
+					mouth = 0
+				elif protons in [33]:
+					$hiss.play()
+					$model/face/eye1.play("shut")
+				else:
+					$purr.play()
+			if group != "noble gas":
+				$model/face/eye1.play("happy")
+				if mouth != 0:
+					mouth = 0
+				elif protons not in [2, 10]:
+					print("ah")
+					mouth = 0
 
 func _on_mouse_entered():
 	glob.selected = self
@@ -1714,9 +1747,9 @@ func update():
 		credit = "starri-cosmikat"
 	elif [protons,mass] in [[20,48],[60,163],[87,212],[95,243]]:
 		credit = "theticktock_ticky"
-	elif [protons,mass] in [[20,52],[36,81],[39,90],[53,135],[54,135],[54,136],[54,140],[55,137],[76,185],[81,201],[90,230],[92,236],[117,295]]:
+	elif [protons,mass] in [[20,52],[36,81],[39,90],[53,135],[54,135],[54,136],[54,140],[55,137],[76,185],[81,201],[90,230],[92,236],[96,242],[117,295]]:
 		credit = "Inky"
-	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[76,186],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199],[96,242],[99,251]]:
+	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[76,186],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199],[99,251]]:
 		credit = "SciphonPylon"
 	elif [protons,mass] in [[26,54],[26,58],[26,59]]:
 		credit = "thatmarkerdude"
@@ -1746,6 +1779,8 @@ func update():
 		credit = "The__Professional"
 	elif [protons,mass] in [96,248]:
 		credit = "alvy-ingenerum, haniszar36"
+	elif [protons,mass] in [117,292]:
+		credit = "Ruins"
 	# Designer credits --- main
 	elif protons == 18: credit = "Oberorka & baltdev"
 	elif protons in [21,27]: credit = "mobropro"

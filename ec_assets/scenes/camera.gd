@@ -219,6 +219,9 @@ func _on_clone_pressed():
 func _on_blackhole_pressed():
 	if glob.tool == 7: glob.tool = 0
 	else: glob.tool = 7
+func _on_pet_pressed():
+	if glob.tool == 8: glob.tool = 0
+	else: glob.tool = 8
 func _on_elementpicker_pressed():
 	glob.inv_open = true
 func _on_pause_pressed(): # pause button
@@ -306,6 +309,8 @@ func _on_blackhole_mouse_entered():
 	$ui/topleft/tooldesc.text = "Black Hole\nDestroys matter."
 func _on_elementpicker_mouse_entered():
 	$ui/topleft/tooldesc.text = "Purriodic Table\nSpawn element cattos!"
+func _on_pet_mouse_entered():
+	$ui/topleft/tooldesc.text = "Pet Cattos\nPet pet pet..."
 
 func _on_quit_pressed():
 	get_tree().paused = false

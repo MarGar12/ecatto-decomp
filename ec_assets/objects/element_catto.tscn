@@ -223,6 +223,8 @@
 [ext_resource type="Texture2D" uid="uid://c8ju3rpxvko5j" path="res://ec_assets/textures/cattos/elements/isotopes/os186-hair.png" id="205_vkvpp"]
 [ext_resource type="Texture2D" uid="uid://vk2wgl7pcnhe" path="res://ec_assets/textures/cattos/elements/isotopes/os184-hair.png" id="206_jv4g6"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="208_ok4eu"]
+[ext_resource type="AudioStream" uid="uid://djrqecf5w12ku" path="res://ec_assets/sounds/cat purring.wav" id="222_jloec"]
+[ext_resource type="AudioStream" uid="uid://csg4mwespnwp1" path="res://ec_assets/sounds/hiss.wav" id="223_i24qu"]
 
 [sub_resource type="Gradient" id="Gradient_wu5qn"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -1808,7 +1810,7 @@ texture = ExtResource("156")
 [node name="eye1" type="AnimatedSprite2D" parent="model/face" unique_id=1081601559]
 position = Vector2(-14, -4)
 sprite_frames = ExtResource("7")
-animation = &"isotopes"
+animation = &"shut"
 speed_scale = 0.0
 
 [node name="sonar" type="CPUParticles2D" parent="model/face/eye1" unique_id=848351228]
@@ -1936,18 +1938,19 @@ texture = ExtResource("179")
 modulate = Color(1, 1, 1, 0.25098)
 texture_filter = 2
 material = ExtResource("3")
-position = Vector2(0, 32)
+position = Vector2(0, 54)
 emitting = false
 amount = 100
 texture = SubResource("GradientTexture2D_tq6tf")
-speed_scale = 2.0
-emission_shape = 3
-emission_rect_extents = Vector2(15, 30)
+speed_scale = 0.65
+emission_shape = 1
+emission_sphere_radius = 31.4
 spread = 180.0
 gravity = Vector2(0, -250)
-initial_velocity_max = 10.0
+initial_velocity_max = 100.01
 angle_max = 720.0
-scale_amount_max = 5.0
+scale_amount_min = 0.0
+scale_amount_max = 9.91
 color = Color(1, 0.376471, 0, 1)
 color_ramp = SubResource("Gradient_tl3br")
 
@@ -2198,6 +2201,16 @@ volume_db = 5.0
 attenuation = 2.0
 script = ExtResource("186")
 
+[node name="purr" type="AudioStreamPlayer2D" parent="." unique_id=1543185084]
+stream = ExtResource("222_jloec")
+attenuation = 2.0
+script = ExtResource("186")
+
+[node name="hiss" type="AudioStreamPlayer2D" parent="." unique_id=2091651569]
+stream = ExtResource("223_i24qu")
+attenuation = 2.0
+script = ExtResource("186")
+
 [node name="sparkle" type="AudioStreamPlayer2D" parent="." unique_id=2130213333]
 stream = ExtResource("194")
 volume_db = 5.0
@@ -2243,7 +2256,7 @@ script = ExtResource("195")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered" flags=3]
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
 [connection signal="area_entered" from="range" to="." method="_on_range_body_entered"]
