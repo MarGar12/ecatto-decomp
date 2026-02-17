@@ -688,48 +688,49 @@ func _process(delta):
 			$radiation.modulate.a = 1
 			$geiger.base_vol = 0
 			$geiger.pitch_scale = 2
+		if glob.tool == 8:
+			if (get_global_mouse_position() - position).length() < 128:
+				petted = true
+				if group == "alkali metal":
+					if protons != 87:
+						match protons:
+							3: #lithium
+								eye1 = 11
+								eye2 = 11
+							protons when protons in [11, 19]: #sodium, potassium
+								mouth = 2
+								eye1 = 20
+								eye2 = 20
+							37: # rubidium
+								mouth = 2
+						$hiss.play()
+					else:
+						$purr.play()
+						$model/face/eye1.play("happy")
+						if mouth != 0: mouth = 0
+				elif protons in [33]:
+					$hiss.play()
+					$model/face/eye1.play("shut")
+				else:
+					$purr.play()
+					if group != "noble gas":
+							$model/face/eye1.play("happy")
+							if mouth != 0:
+								mouth = 0
+								
+							match protons:
+								protons when protons in [25,85,101,109,114]:
+									$model/face/pupils.visible = false
+							if $model/face/eye3.visible:
+								$model/face/eye3.play("happy")
+					else:
+						if protons not in [2, 10]:
+							mouth = 0
+				$model/face/mouth.frame = mouth
+		
 	if glob.tool == 7 and Input.is_action_pressed("lmb"):
 		velocity += (get_global_mouse_position()-position).normalized()/(get_global_mouse_position()-position).length()*delta*100000
 		if (get_global_mouse_position()-position).length() < 64: destroy("poof")
-	if glob.tool == 8 and Input.is_action_just_pressed("lmb"):
-		if (get_global_mouse_position() - position).length() < 64:
-			petted = true
-			if group == "alkali metal":
-				if protons != 87:
-					match protons:
-						3: #lithium
-							eye1 = 11
-							eye2 = 11
-						protons when protons in [11, 19]: #sodium, potassium
-							mouth = 2
-							eye1 = 20
-							eye2 = 20
-						37: # rubidium
-							mouth = 2
-					$hiss.play()
-				else:
-					$purr.play()
-					$model/face/eye1.play("happy")
-					if mouth != 0: mouth = 0
-			elif protons in [33]:
-				$hiss.play()
-				$model/face/eye1.play("shut")
-			else:
-				$purr.play()
-				if group != "noble gas":
-						$model/face/eye1.play("happy")
-						if mouth != 0:
-							mouth = 0
-							
-						match protons:
-							protons when protons in [25,85,101,109,114]:
-								$model/face/pupils.visible = false
-						if $model/face/eye3.visible:
-							$model/face/eye3.play("happy")
-				else:
-					if protons not in [2, 10]:
-						mouth = 0
-			$model/face/mouth.frame = mouth
 
 func _on_mouse_entered():
 	glob.selected = self

@@ -538,10 +538,10 @@ text = "0"
 [node name="tooldesc" type="Label" parent="ui/topleft" unique_id=2015836275]
 visible = false
 layout_mode = 0
-offset_left = 49.0
-offset_top = 46.0
-offset_right = 329.0
-offset_bottom = 158.0
+offset_left = 50.5
+offset_top = 49.5
+offset_right = 330.5
+offset_bottom = 161.5
 theme_override_fonts/font = ExtResource("31_aenir")
 theme_override_font_sizes/font_size = 8
 text = "FISSION HAMMER
