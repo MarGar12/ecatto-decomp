@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djnj7xx0gmrff" path="res://addons/copper_dc/scripts/debug_console.gd" id="1_fs6bc"]
 [ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="2_ogojk"]
 
-[node name="Debug Console" type="CanvasLayer" unique_id=61188242]
+[node name="Mini Log" type="CanvasLayer" unique_id=61188242]
 process_mode = 3
 layer = 100
 script = ExtResource("1_fs6bc")

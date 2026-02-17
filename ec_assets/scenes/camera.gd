@@ -56,19 +56,19 @@ func _ready():
 	#DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_TRANSPARENT, true, 0)
 
 func sync_settings():
-	$ui/pause/explosions.button_pressed = glob.explosions
-	$ui/pause/opaquewalls.button_pressed = glob.opaquewalls
-	$ui/pause/mus_volume.value = glob.music_volume
-	$ui/pause/sfx_volume.value = glob.sfx_volume
-	$ui/pause/t_speed.value = glob.t_speed
-	$ui/pause/fus_thres.value = glob.fusion_threshold
-	$ui/pause/gaspoof.button_pressed = glob.poof
-	$ui/pause/weakforce.button_pressed = glob.weakforce
-	$ui/pause/end_world.button_pressed = glob.endable_world
-	$ui/pause/hud_scale.button_pressed = glob.hudscaling
-	$ui/pause/lcdrag.button_pressed = glob.lcdrag
-	$ui/pause/catto_ai.button_pressed = glob.catto_ai
-	$ui/pause/rotat.button_pressed = glob.catto_rotat
+	$ui/pause/tab/Gameplay/explode.button_pressed = glob.explosions
+	$ui/pause/tab/Gameplay/opaque.button_pressed = glob.opaquewalls
+	$ui/pause/tab/Audio/mvol.value = glob.music_volume
+	$ui/pause/tab/Audio/svol.value = glob.sfx_volume
+	$ui/pause/tab/Gameplay/temp.value = glob.t_speed
+	$ui/pause/tab/Gameplay/fusethres.value = glob.fusion_threshold
+	$ui/pause/tab/Gameplay/poof.button_pressed = glob.poof
+	$ui/pause/tab/Gameplay/weak.button_pressed = glob.weakforce
+	$ui/pause/tab/Gameplay/endworld.button_pressed = glob.endable_world
+	$ui/pause/tab/Video/scale.button_pressed = glob.hudscaling
+	$ui/pause/tab/Gameplay/drag.button_pressed = glob.lcdrag
+	$ui/pause/tab/Gameplay/ai.button_pressed = glob.catto_ai
+	$ui/pause/tab/Gameplay/rotate.button_pressed = glob.catto_rotat
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -81,7 +81,7 @@ func _process(delta):
 		$ui/topright.position.y = 0
 	# Change camera scale based on window size -- from ec+
 	var smult = min(get_window().size.x / 1024.0, get_window().size.y / 768.0)
-	$ui/pause.scale = (Vector2.ONE*2) * smult / 1.5
+	$ui/pause.scale = (Vector2.ONE*2) * smult
 	if glob.hudscaling == true:
 		$ui/topleft.scale = (Vector2.ONE*2) * smult
 		$ui/topright.scale = (Vector2.ONE*2) * smult
@@ -145,15 +145,18 @@ func _process(delta):
 	if Input.is_action_just_pressed("esc"): 
 		glob.pause = !glob.pause
 		get_tree().paused = glob.pause
+		glob.save()
 	
 	$ui/pause.visible = glob.pause
-	$ui/pause/mus_volume/label.text = "Music volume: " + str(glob.music_volume * 100).pad_decimals(0)
-	$ui/pause/sfx_volume/label.text = "Sound volume: " + str(glob.sfx_volume * 100).pad_decimals(0)
-	$ui/pause/t_speed/label.text = "Temperature slider speed: " + str(glob.t_speed)
-	if glob.fusion_threshold < 3: $ui/pause/fus_thres/label.text = "Fusion threshold: " + str(glob.fusion_threshold)
-	else: $ui/pause/fus_thres/label.text = "No Fusion"
+	$ui/pause/tab/Audio/mvol/value.text = "Music Volume: " + str(glob.music_volume * 100).pad_decimals(0) + "%"
+	$ui/pause/tab/Audio/svol/value.text = "Sound volume: " + str(glob.sfx_volume * 100).pad_decimals(0) + "%"
+	$ui/pause/tab/Gameplay/temp/value.text = "Temperature Slider Speed: " + str(glob.t_speed)
+	if glob.fusion_threshold < 3:
+		$ui/pause/tab/Gameplay/fusethres/value.text = "Fusion Threshold: " + str(glob.fusion_threshold)
+	else:
+		$ui/pause/tab/Gameplay/fusethres/value.text = "No Fusion"
 	
-	$ui/pause/end_world.visible = glob.earth_exploded
+	$ui/pause/tab/Gameplay/endworld.disabled = !glob.earth_exploded
 	if debug_console.stats.visible:
 		if DebugConsole.is_monitor_visible("camera"):
 			DebugConsole.update_monitor("camera", position)
@@ -315,6 +318,7 @@ func _on_quit_pressed():
 	get_tree().paused = false
 	glob.pause = false
 	glob.inv_open = false
+	glob.save()
 	get_tree().change_scene_to_file("res://ec_assets/scenes/menu.tscn")
 
 func _on_quit_mouse_entered():
@@ -334,6 +338,7 @@ func _on_back_pressed():
 	get_tree().paused = false
 	glob.pause = false
 	glob.inv_open = false
+	glob.save()
 
 func _on_help_pressed():
 	glob.tutorial = true
@@ -341,12 +346,12 @@ func _on_help_pressed():
 func reset_conditions():
 	reset_settings()
 	sync_settings()
-	#preset = 1
-	#glob.t_power = 0
-	#glob.pressure = 1
-	#glob.gravity = 9.81
-	#$ui/topright/presslider.value = glob.pressure
-	#$ui/topright/gravslider.value = glob.gravity/9.81
+	preset = 1
+	glob.t_power = 0
+	glob.pressure = 1
+	glob.gravity = 9.81
+	$ui/topright/presslider.value = glob.pressure
+	$ui/topright/gravslider.value = glob.gravity/9.81
 
 func reset_settings():
 	glob.explosions = true

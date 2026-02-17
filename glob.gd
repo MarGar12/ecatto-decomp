@@ -1,5 +1,9 @@
 extends Node
 
+var config = ConfigFile.new() # Config values
+var path = "user://settings.cfg"
+var err = config.load("user://settings.cfg")
+
 var camera = null
 var selected = null
 
@@ -44,9 +48,57 @@ var earth_exploded = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
+	load_cfg()
+	if err != OK:
+		pass
+	
+		
+func save():
+	config.load(path)
+	config.set_value("Audio", "music_volume", music_volume)
+	config.set_value("Audio", "sfx_volume", sfx_volume)
+	config.set_value("Gameplay", "earth_exploded", earth_exploded)
+	config.set_value("Gameplay", "fusion_threshold", fusion_threshold)
+	config.set_value("Gameplay", "poof", poof)
+	config.set_value("Gameplay", "t_speed", t_speed)
+	config.set_value("Gameplay", "explosions", explosions)
+	config.set_value("Gameplay", "opaquewalls", opaquewalls)
+	config.set_value("Gameplay", "catto_ai", catto_ai)
+	config.set_value("Gameplay", "catto_rotat", catto_rotat)
+	config.set_value("Gameplay", "tutorialpressed", tutorial)
+	config.set_value("Gameplay", "endable_world", endable_world)
+	config.set_value("Gameplay", "weakforce", weakforce)
+	config.set_value("Video", "left_click_drag", lcdrag)
+	config.set_value("Video", "hudscaling", hudscaling)
+	config.save(path)
+	
+func load_cfg():
+	config.load(path)
+	music_volume = config.get_value("Audio", "music_volume", 1.0)
+	sfx_volume = config.get_value("Audio", "sfx_volume", 1.0)
+	earth_exploded = config.get_value("Gameplay", "earth_exploded", false)
+	fusion_threshold = config.get_value("Gameplay", "fusion_threshold", 1.0)
+	poof = config.get_value("Gameplay", "poof", true)
+	t_speed = config.get_value("Gameplay", "t_speed", 1.0)
+	explosions = config.get_value("Gameplay", "explosions", true)
+	opaquewalls = config.get_value("Gameplay", "opaquewalls", false)
+	catto_ai = config.get_value("Gameplay", "catto_ai", true)
+	catto_rotat = config.get_value("Gameplay", "catto_rotat", true)
+	tutorial = config.get_value("Gameplay", "tutorialpressed", true)
+	endable_world = config.get_value("Gameplay", "endable_world", true)
+	weakforce = config.get_value("Gameplay", "weakforce", true)
+	lcdrag = config.get_value("Video", "left_click_drag", false)
+	hudscaling = config.get_value("Video", "hudscaling", true)
+	
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save()
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Fullscreen"):
+		var winmode := DisplayServer.window_get_mode()
+		var is_window: bool = winmode != DisplayServer.WINDOW_MODE_FULLSCREEN
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"

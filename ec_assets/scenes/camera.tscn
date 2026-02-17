@@ -34,15 +34,17 @@
 [ext_resource type="PackedScene" uid="uid://ycmppe36no44" path="res://ec_assets/scenes/inventory_item.tscn" id="30"]
 [ext_resource type="FontFile" uid="uid://ck0m755r43bki" path="res://ec_assets/fonts/catarchean.ttf" id="30_618eh"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="31_aenir"]
+[ext_resource type="Texture2D" uid="uid://jte05mnecg76" path="res://ec_assets/textures/ui/button_pet1.png" id="31_pe5jw"]
 [ext_resource type="Texture2D" uid="uid://c0htsm0kwp16b" path="res://ec_assets/textures/ui/button_quit1.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://nwxi5u6camjm" path="res://ec_assets/textures/ui/button_pet2.png" id="32_enj2x"]
 [ext_resource type="Texture2D" uid="uid://coxkkmvate66l" path="res://ec_assets/textures/ui/button_reset1.png" id="32_knf1o"]
 [ext_resource type="Texture2D" uid="uid://mmjoxs6e55y1" path="res://ec_assets/textures/ui/button_quit2.png" id="33"]
 [ext_resource type="Texture2D" uid="uid://1bi34hdn172g" path="res://ec_assets/textures/ui/button_reset2.png" id="33_ybjw0"]
 [ext_resource type="Texture2D" uid="uid://bqm0ak32mqpfx" path="res://ec_assets/textures/ui/button_help1.png" id="34"]
 [ext_resource type="Texture2D" uid="uid://ds12cmak0gfw2" path="res://ec_assets/textures/ui/button_setting1.png" id="34_2158e"]
 [ext_resource type="Texture2D" uid="uid://bagn32hjk26y2" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
-[ext_resource type="FontFile" uid="uid://bf71h1bifsf" path="res://ec_assets/fonts/PIXEAB__.TTF" id="35_618eh"]
 [ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
+[ext_resource type="FontFile" uid="uid://drhqmclsc5pw8" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="38_pe5jw"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="44_aenir"]
 
 [sub_resource type="Curve" id="Curve_cgg83"]
@@ -237,24 +239,24 @@ metadata/_snap_enabled = true
 [sub_resource type="CircleShape2D" id="CircleShape2D_sdojg"]
 radius = 16.0
 
-[sub_resource type="Gradient" id="Gradient_c1p4g"]
+[sub_resource type="Gradient" id="Gradient_aenir"]
 offsets = PackedFloat32Array(0.9, 1)
 colors = PackedColorArray(0, 0, 0, 0.784314, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hpdug"]
-gradient = SubResource("Gradient_c1p4g")
+gradient = SubResource("Gradient_aenir")
 width = 160
 height = 32
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
-[sub_resource type="Gradient" id="Gradient_lidxi"]
+[sub_resource type="Gradient" id="Gradient_lct61"]
 offsets = PackedFloat32Array(0.9, 1)
 colors = PackedColorArray(0.25098, 0.25098, 0.25098, 0.784314, 0.25098, 0.25098, 0.25098, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8ke6j"]
-gradient = SubResource("Gradient_lidxi")
+gradient = SubResource("Gradient_lct61")
 width = 160
 height = 32
 fill = 2
@@ -271,10 +273,10 @@ width = 950
 height = 160
 fill_to = Vector2(0, 1)
 
-[sub_resource type="Gradient" id="Gradient_r4n5t"]
+[sub_resource type="Gradient" id="Gradient_pe5jw"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r7ohn"]
-gradient = SubResource("Gradient_r4n5t")
+gradient = SubResource("Gradient_pe5jw")
 fill_from = Vector2(1, 1)
 
 [node name="camera" type="Camera2D" unique_id=1926335180]
@@ -510,9 +512,9 @@ offset_top = 44.5
 offset_right = 39.5
 offset_bottom = 76.5
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("21")
-texture_pressed = ExtResource("22")
-texture_hover = ExtResource("22")
+texture_normal = ExtResource("31_pe5jw")
+texture_pressed = ExtResource("32_enj2x")
+texture_hover = ExtResource("32_enj2x")
 
 [node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
 layout_mode = 0
@@ -1234,7 +1236,6 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
-visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1248,10 +1249,241 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 
 [node name="bg" type="Sprite2D" parent="ui/pause" unique_id=433558461]
-modulate = Color(1, 1, 1, 0.87451)
+modulate = Color(1, 1, 1, 0.43137255)
 texture_filter = 4
 scale = Vector2(50, 50)
 texture = SubResource("GradientTexture2D_r7ohn")
+
+[node name="tab" type="TabContainer" parent="ui/pause" unique_id=280048647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.5
+offset_top = -161.5
+offset_right = -8.5
+offset_bottom = -137.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("38_pe5jw")
+theme_override_font_sizes/font_size = 16
+current_tab = 0
+
+[node name="Gameplay" type="TabBar" parent="ui/pause/tab" unique_id=2016678190]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="explode" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=509633782]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles explosion effects. Helpful if you're photosensitive."
+theme_override_colors/font_pressed_color = Color(1, 0.44313726, 0.105882354, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.5372549, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Explosions"
+icon_alignment = 2
+
+[node name="opaque" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=1733207982]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 106.0
+offset_right = 192.0
+offset_bottom = 141.0
+scale = Vector2(2, 2)
+tooltip_text = "Particles like photons will be unable to escape the room."
+theme_override_font_sizes/font_size = 21
+text = "Opaque Walls"
+icon_alignment = 2
+
+[node name="poof" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=705726147]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 162.0
+offset_right = 192.0
+offset_bottom = 197.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles the gaseous cattos turning into a cloud when they are hit hard enough."
+theme_override_font_sizes/font_size = 21
+text = "Poofing Gases"
+icon_alignment = 2
+
+[node name="weak" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=1612130859]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 218.0
+offset_right = 192.0
+offset_bottom = 253.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles radioactive decay."
+theme_override_colors/font_pressed_color = Color(0.19215687, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.49019608, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
+text = "Weak Nuclear
+Force"
+icon_alignment = 2
+
+[node name="ai" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=336786232]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 329.0
+offset_right = 192.0
+offset_bottom = 364.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles the behavior of Cattos. Useful if you want to stack Cattos without them moving."
+theme_override_font_sizes/font_size = 21
+text = "Catto AI"
+icon_alignment = 2
+
+[node name="rotate" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=134355336]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 385.0
+offset_right = 192.0
+offset_bottom = 420.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles whether or not the cattos will automatically rotate.
+If toggled off, Q will rotate left and E will rotate right"
+theme_override_font_sizes/font_size = 21
+text = "Catto Rotation"
+icon_alignment = 2
+
+[node name="endworld" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=276907633]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 329.0
+offset_right = 557.0
+offset_bottom = 364.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles world destruction scenes."
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.08627451, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.8745098, 0, 0, 0.5019608)
+theme_override_font_sizes/font_size = 21
+button_pressed = true
+text = "Endable World"
+icon_alignment = 2
+
+[node name="drag" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=450677087]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 441.0
+offset_right = 192.0
+offset_bottom = 476.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles whether the left mouse button will drag the camera too. Useful for screens which use the left mouse button for touch inputs instead of real touch inputs."
+theme_override_font_sizes/font_size = 21
+text = "Left Click
+Drags Camera"
+icon_alignment = 2
+
+[node name="fusethres" type="HSlider" parent="ui/pause/tab/Gameplay" unique_id=1014667644]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 69.0
+offset_right = 633.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Adjusts how easily the cattos fuse upon contact."
+max_value = 3.0
+step = 0.01
+value = 1.0
+
+[node name="value" type="Label" parent="ui/pause/tab/Gameplay/fusethres" unique_id=1648636653]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 147.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 21
+text = "Fusion Threshold: value"
+
+[node name="temp" type="HSlider" parent="ui/pause/tab/Gameplay" unique_id=931727286]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 181.0
+offset_right = 633.0
+offset_bottom = 197.0
+scale = Vector2(2, 2)
+tooltip_text = "Adjusts how fast you can change the temperature."
+min_value = 0.1
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="value" type="Label" parent="ui/pause/tab/Gameplay/temp" unique_id=1935247087]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 237.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 21
+text = "Temperature Slider Speed: value"
+autowrap_mode = 2
+
+[node name="Video" type="TabBar" parent="ui/pause/tab" unique_id=1029871777]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="scale" type="CheckButton" parent="ui/pause/tab/Video" unique_id=1907008698]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Scales the HUD relative to your resolution."
+theme_override_font_sizes/font_size = 21
+text = "Scale HUD"
+icon_alignment = 2
+
+[node name="Audio" type="TabBar" parent="ui/pause/tab" unique_id=1246514239]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="svol" type="HSlider" parent="ui/pause/tab/Audio" unique_id=1091207519]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 50.0
+offset_right = 280.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Sound Volume"
+max_value = 1.0
+step = 0.01
+
+[node name="value" type="Label" parent="ui/pause/tab/Audio/svol" unique_id=1309087338]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 111.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 21
+text = "Sound Volume:"
+
+[node name="mvol" type="HSlider" parent="ui/pause/tab/Audio" unique_id=378690464]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 50.0
+offset_right = 648.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Music Volume"
+max_value = 1.0
+step = 0.01
+
+[node name="value" type="Label" parent="ui/pause/tab/Audio/mvol" unique_id=39470735]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 107.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 21
+text = "Music Volume:"
 
 [node name="Label" type="Label" parent="ui/pause" unique_id=1965337358]
 modulate = Color(0, 0, 0, 0.752941)
@@ -1260,27 +1492,27 @@ offset_left = -192.0
 offset_top = -182.66629
 offset_right = 192.0
 offset_bottom = -116.66629
-theme_override_fonts/font = ExtResource("35_618eh")
-theme_override_font_sizes/font_size = 32
-text = "Settings"
+theme_override_font_sizes/font_size = 42
+text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="hint" type="Label" parent="ui/pause" unique_id=187224201]
 modulate = Color(0, 0, 0, 0.752941)
 layout_mode = 0
-offset_left = -211.99994
-offset_top = -127.000015
-offset_right = 213.3334
-offset_bottom = -96.000015
-theme_override_fonts/font = ExtResource("31_aenir")
-theme_override_font_sizes/font_size = 16
+offset_left = -148.0
+offset_top = -140.5
+offset_right = 444.0
+offset_bottom = -83.5
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 21
 text = "Hover over a button or slider for more info"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="explosions" type="CheckButton" parent="ui/pause" unique_id=1655645485]
+visible = false
 layout_mode = 0
 offset_left = -160.1667
 offset_top = -96.0
@@ -1302,6 +1534,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="opaquewalls" type="CheckButton" parent="ui/pause" unique_id=1481333470]
+visible = false
 layout_mode = 0
 offset_left = 15.8333435
 offset_top = -96.0
@@ -1322,6 +1555,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="lcdrag" type="CheckButton" parent="ui/pause" unique_id=1931667413]
+visible = false
 layout_mode = 0
 offset_left = 191.83331
 offset_top = -96.0
@@ -1342,6 +1576,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="mus_volume" type="HSlider" parent="ui/pause" unique_id=643292938]
+visible = false
 layout_mode = 0
 offset_left = 48.0
 offset_top = -56.0
@@ -1365,6 +1600,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="sfx_volume" type="HSlider" parent="ui/pause" unique_id=152319889]
+visible = false
 layout_mode = 0
 offset_left = 48.0
 offset_top = -32.0
@@ -1388,6 +1624,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="t_speed" type="HSlider" parent="ui/pause" unique_id=1379561619]
+visible = false
 layout_mode = 0
 offset_left = 48.0
 offset_top = 8.0
@@ -1413,6 +1650,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="fus_thres" type="HSlider" parent="ui/pause" unique_id=1887162250]
+visible = false
 layout_mode = 0
 offset_left = 48.0
 offset_top = 32.0
@@ -1437,6 +1675,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="gaspoof" type="CheckButton" parent="ui/pause" unique_id=561959044]
+visible = false
 layout_mode = 0
 offset_left = -32.0
 offset_top = 56.0
@@ -1458,6 +1697,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="weakforce" type="CheckButton" parent="ui/pause" unique_id=63940214]
+visible = false
 layout_mode = 0
 offset_left = -32.0
 offset_top = 80.0
@@ -1479,6 +1719,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="end_world" type="CheckButton" parent="ui/pause" unique_id=1792553391]
+visible = false
 layout_mode = 0
 offset_left = 135.99997
 offset_top = 104.0
@@ -1500,6 +1741,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="hud_scale" type="CheckButton" parent="ui/pause" unique_id=932473265]
+visible = false
 layout_mode = 0
 offset_left = -32.00003
 offset_top = 104.0
@@ -1521,6 +1763,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="catto_ai" type="CheckButton" parent="ui/pause" unique_id=2122628880]
+visible = false
 layout_mode = 0
 offset_left = 136.0
 offset_top = 56.0
@@ -1542,6 +1785,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="rotat" type="CheckButton" parent="ui/pause" unique_id=1889122789]
+visible = false
 layout_mode = 0
 offset_left = 136.0
 offset_top = 80.0
@@ -1760,6 +2004,19 @@ texture_hover = ExtResource("35")
 [connection signal="pressed" from="ui/topright/reset" to="." method="_on_reset_pressed"]
 [connection signal="toggled" from="ui/center/inventory/nucleus" to="." method="_on_nucleus_toggled"]
 [connection signal="pressed" from="ui/center/inventory/back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/explode" to="." method="_on_explosions_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/opaque" to="." method="_on_opaquewalls_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/poof" to="." method="_on_gaspoof_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/weak" to="." method="_on_weakforce_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/ai" to="." method="_on_catto_ai_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/rotate" to="." method="_on_rotat_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/endworld" to="." method="_on_end_world_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Gameplay/drag" to="." method="_on_lcdrag_toggled"]
+[connection signal="value_changed" from="ui/pause/tab/Gameplay/fusethres" to="." method="_on_fus_thres_value_changed"]
+[connection signal="value_changed" from="ui/pause/tab/Gameplay/temp" to="." method="_on_t_speed_value_changed"]
+[connection signal="toggled" from="ui/pause/tab/Video/scale" to="." method="_on_hud_scale_toggled"]
+[connection signal="value_changed" from="ui/pause/tab/Audio/svol" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="value_changed" from="ui/pause/tab/Audio/mvol" to="." method="_on_mus_volume_value_changed"]
 [connection signal="toggled" from="ui/pause/explosions" to="." method="_on_explosions_toggled"]
 [connection signal="toggled" from="ui/pause/opaquewalls" to="." method="_on_opaquewalls_toggled"]
 [connection signal="toggled" from="ui/pause/lcdrag" to="." method="_on_lcdrag_toggled"]

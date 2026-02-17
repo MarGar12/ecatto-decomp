@@ -6,6 +6,8 @@ var bigbang = 0
 func _ready():
 	preload("res://ec_assets/objects/element_catto.tscn")
 	
+	glob.save()
+	
 	glob.pause = false
 	glob.cattos = 0
 	glob.particles = 0
@@ -62,9 +64,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#debug stuff
-	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"
-	
 	$hint.visible = glob.tutorial
 	$air.self_modulate.a = glob.pressure/5.0
 	$air.texture.noise.offset.z += delta*10

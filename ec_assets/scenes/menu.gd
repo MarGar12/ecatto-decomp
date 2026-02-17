@@ -24,8 +24,13 @@ var facts = [ # Formatting yay :3
 	"Science is awesome!"
 	]
 
+var base_vol = 0
+var volume_db = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	base_vol = volume_db
+	$music.volume_db = base_vol - (1-glob.music_volume)**4 * 80
 	var white = Color(1.0, 1.0, 1.0, 1.0)
 	var black = Color(0,0,0,1)
 	var bob = randi_range(0,1)
@@ -35,17 +40,20 @@ func _ready():
 	if bob2 == 1:
 		#$main/logo/version.set("theme_override_colors/font_color", white)
 		$main/play.set("theme_override_colors/font_color", white)
-		$main/about.set("theme_override_colors/font_color", white)
+		$main/settings.set("theme_override_colors/font_color", white)
+		$settings/about.set("theme_override_colors/font_color", white)
 		$main/decompcredits.set("theme_override_colors/font_color", white)
 		$main/credits.set("theme_override_colors/font_color", white)
 		$main/quit.set("theme_override_colors/font_color", white)
-		$main/fact.set("theme_override_colors/font_color", white)
+		#$main/fact.set("theme_override_colors/font_color", white)
 		$about/text.set("theme_override_colors/font_color", white)
 		$credits/text.set("theme_override_colors/default_color", white)
 		$decompcredits/text.set("theme_override_colors/default_color", white)
 		$about/back.set("theme_override_colors/font_color", white)
 		$credits/back.set("theme_override_colors/font_color", white)
 		$decompcredits/back.set("theme_override_colors/font_color", white)
+		$credits/about.set("theme_override_colors/font_color", white)
+		$decompcredits/about.set("theme_override_colors/font_color", white)
 		$earth_fk.hide()
 		$space.hide()
 		$moon.show()
@@ -53,7 +61,8 @@ func _ready():
 	if bob2 == 2:
 		#$main/fact/logo/version.set("theme_override_colors/font_color", black)
 		$main/play.set("theme_override_colors/font_color", black)
-		$main/about.set("theme_override_colors/font_color", black)
+		$main/settings.set("theme_override_colors/font_color", black)
+		$settings/about.set("theme_override_colors/font_color", black)
 		$main/decompcredits.set("theme_override_colors/font_color", black)
 		$main/credits.set("theme_override_colors/font_color", black)
 		$main/quit.set("theme_override_colors/font_color", black)
@@ -64,6 +73,8 @@ func _ready():
 		$about/back.set("theme_override_colors/font_color", black)
 		$credits/back.set("theme_override_colors/font_color", black)
 		$decompcredits/back.set("theme_override_colors/font_color", black)
+		$credits/about.set("theme_override_colors/font_color", black)
+		$decompcredits/about.set("theme_override_colors/font_color", black)
 		$earth_fk.show()
 		$moon.hide()
 		$space.hide()
@@ -71,7 +82,8 @@ func _ready():
 	if bob2 == 3:
 		#$main/logo/version.set("theme_override_colors/font_color", white)
 		$main/play.set("theme_override_colors/font_color", white)
-		$main/about.set("theme_override_colors/font_color", white)
+		$main/settings.set("theme_override_colors/font_color", white)
+		$settings/about.set("theme_override_colors/font_color", white)
 		$main/decompcredits.set("theme_override_colors/font_color", white)
 		$main/credits.set("theme_override_colors/font_color", white)
 		$main/quit.set("theme_override_colors/font_color", white)
@@ -82,10 +94,14 @@ func _ready():
 		$about/back.set("theme_override_colors/font_color", white)
 		$credits/back.set("theme_override_colors/font_color", white)
 		$decompcredits/back.set("theme_override_colors/font_color", white)
+		$credits/about.set("theme_override_colors/font_color", white)
+		$decompcredits/about.set("theme_override_colors/font_color", white)
 		$earth_fk.hide()
 		$moon.hide()
 		$space.show()
 		$particles.hide()
+		
+	sync_options()
 	
 	$main/fact.text = "[wave amp=25.0 freq=1.0 connected=1][color=yellow]Random Science Fact:\n" + facts.pick_random()
 	
@@ -149,29 +165,50 @@ func _process(delta):
 	$cattos3/lu/clock/text.text = Time.get_time_string_from_system()
 	$cattos3/lu/clock/text.visible_characters = 5
 	
-	
 	if $version/iris.visible == true:
 		$version/iris.scale /= 1+delta*10
 		$music.volume_db -= delta*20
+	else:
+		$music.volume_db = base_vol - (1-glob.music_volume)**4 * 80
+	$hover.volume_db = base_vol - (1-glob.sfx_volume)**4 * 80
+	$click.volume_db = base_vol - (1-glob.sfx_volume)**4 * 80
 	if $version/iris.scale.x < 0.02: get_tree().change_scene_to_file("res://ec_assets/scenes/loading.tscn")
+	
+	# Update Settings Slider Values
+	if glob.fusion_threshold < 3:
+		$settings/tab/Gameplay/fusethres/value.text = "Fusion Threshold: " + str(glob.fusion_threshold)
+	else:
+		$settings/tab/Gameplay/fusethres/value.text = "No Fusion"
+	$settings/tab/Audio/mvol/value.text = "Music Volume: " + str(glob.music_volume * 100).pad_decimals(0) + "%"
+	$settings/tab/Audio/svol/value.text = "Sound Volume: " + str(glob.sfx_volume * 100).pad_decimals(0) + "%"
+	$settings/tab/Gameplay/temp/value.text = "Temperature Slider Speed: " + str(glob.t_speed)
+	$settings/tab/Gameplay/endworld.disabled = !glob.earth_exploded
+	
+	if Input.is_action_just_pressed("esc") and not $main.visible:
+		$click.play()
+		_on_back_pressed()
 
 func _on_play_pressed():
 	$version/iris.show()
 
 func _on_quit_pressed():
+	glob.save()
 	get_tree().quit()
 
-func _on_about_pressed():
+func _on_settings_pressed():
 	$main.hide()
-	$about.show()
-	$logo.hide()
+	$settings.show()
+	sync_options()
+	#$logo.hide()
 
 func _on_back_pressed():
-	$about.hide()
+	$settings.hide()
 	$credits.hide()
 	$decompcredits.hide()
 	$main.show()
 	$logo.show()
+	sync_options()
+	glob.save()
 
 func _button_hover():
 	$hover.play()
@@ -191,3 +228,58 @@ func _on_decompcredits_pressed():
 
 func _on_text_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(str(meta))
+
+#settings
+func _on_explode_toggled(button_pressed):
+	glob.explosions = button_pressed
+
+func _on_opaque_toggled(button_pressed):
+	glob.opaquewalls = button_pressed
+
+func _on_poof_toggled(button_pressed):
+	glob.poof = button_pressed
+
+func _on_weak_toggled(button_pressed):
+	glob.weakforce = button_pressed
+
+func _on_ai_toggled(button_pressed):
+	glob.catto_ai = button_pressed
+
+func _on_rotate_toggled(button_pressed):
+	glob.catto_rotat = button_pressed
+
+func _on_drag_toggled(button_pressed):
+	glob.lcdrag = button_pressed
+
+func _on_endworld_toggled(button_pressed):
+	glob.endable_world = button_pressed
+	
+func _on_fusethres_value_changed(value):
+	glob.fusion_threshold = value
+
+func _on_temp_value_changed(value):
+	glob.t_speed = value
+
+func _on_scale_toggled(button_pressed):
+	glob.hudscaling = button_pressed
+
+func _on_svol_value_changed(value):
+	glob.sfx_volume = value
+
+func _on_mvol_value_changed(value):
+	glob.music_volume = value
+	
+func sync_options():
+	$settings/tab/Gameplay/explode.button_pressed = glob.explosions
+	$settings/tab/Gameplay/opaque.button_pressed = glob.opaquewalls
+	$settings/tab/Gameplay/poof.button_pressed = glob.poof
+	$settings/tab/Gameplay/weak.button_pressed = glob.weakforce
+	$settings/tab/Gameplay/ai.button_pressed =  glob.catto_ai
+	$settings/tab/Gameplay/rotate.button_pressed = glob.catto_rotat
+	$settings/tab/Gameplay/drag.button_pressed = glob.lcdrag
+	$settings/tab/Video/scale.button_pressed = glob.hudscaling
+	$settings/tab/Gameplay/fusethres.value = glob.fusion_threshold
+	$settings/tab/Gameplay/temp.value = glob.t_speed
+	$settings/tab/Audio/svol.value = glob.sfx_volume
+	$settings/tab/Audio/mvol.value = glob.music_volume
+	$settings/tab/Gameplay/endworld.button_pressed = glob.endable_world

@@ -119,6 +119,24 @@ func _process(delta):
 	$gas.visible = delta < 0.1 and electrons > 0
 	$drip.visible = delta < 0.1 and electrons > 0
 	
+	#fire color based on element
+	if protons == 9:
+		$model/fire.color = Color(0.35, 0.41, 0.0, 1.0)
+	elif protons == 17:
+		$model/fire.color = Color(0.198, 0.426, 0.0, 1.0)
+	elif protons == 35:
+		$model/fire.color = Color(1.0, 0.192, 0.0, 1.0)
+	elif protons == 53:
+		$model/fire.color = Color(0.608, 0.102, 0.486, 1.0)
+	elif protons == 85:
+		$model/fire.color = Color(0.361, 0.122, 0.353, 1.0)
+	else:
+		#$model/fire.color = Color(1, 0.37, 0, 1)
+		if protons == 55:
+			$model/fire.color = $model/body.sprite_frames.get_frame_texture("default",protons).get_image().get_pixel(64,110)
+		elif protons >= 0:
+			$model/fire.color = $model/body.sprite_frames.get_frame_texture($model/body.animation,$model/body.frame).get_image().get_pixel(64,84)
+		
 	if glob.cattos > 30 and $model/face/anim.is_playing(): $model/face/anim.stop()
 	elif !$model/face/anim.is_playing(): $model/face/anim.play()
 	
@@ -325,6 +343,8 @@ func _process(delta):
 		$model/face/facetext.modulate = Color8(255,160,0)
 		if knocked_out > 0: $model/face/facetext.text = "!?!?!"
 		elif decay < 1: $model/face/facetext.text = "BYE :3"
+		#elif glob.tool == 8 and Input.is_action_pressed("lmb") and glob.selected == self:
+		#	$model/face/facetext.text = ">   <"
 		elif position.y < -500: $model/face/facetext.text = "AAAAH"
 		elif dragged == true: $model/face/facetext.text = "HAI :3"
 		elif velocity.y < 0: $model/face/facetext.text = "HUP!"
@@ -377,7 +397,7 @@ func _process(delta):
 	
 	#dragging the catto
 	if glob.selected == self and Input.is_action_pressed("lmb"):
-		if glob.tool == 8:
+		if glob.tool == 8: # thanks flamebium <3
 			dragged = false
 		else:
 			dragged = true
@@ -688,9 +708,11 @@ func _process(delta):
 			$radiation.modulate.a = 1
 			$geiger.base_vol = 0
 			$geiger.pitch_scale = 2
-		if glob.tool == 8:
+		if glob.tool == 8: # thanks flamebium <3
 			if (get_global_mouse_position() - position).length() < 128:
 				petted = true
+				if protons == 110:
+					$model/face/facetext.text = "<3"
 				if group == "alkali metal":
 					if protons != 87:
 						match protons:
@@ -711,6 +733,10 @@ func _process(delta):
 				elif protons in [33]:
 					$hiss.play()
 					$model/face/eye1.play("shut")
+				elif protons in [27]:
+					$purr.play()
+					$model/face/eye1.play("shut")
+					if mouth != 1: mouth = 1
 				else:
 					$purr.play()
 					if group != "noble gas":
@@ -2050,7 +2076,7 @@ func _on_area_entered(area):
 					if abs(area.position.x-position.x) < 16: area.v.y *= -1
 					else: area.v.x *= -1
 					$sparkle.play()
-					$flash.modulate.a = 1
+					flash()
 				else:
 					glob.particles -= 1
 					area.queue_free()
@@ -2064,7 +2090,10 @@ func _on_range_body_entered(body):
 			if glob.tool == 6: attractor = body
 			if group != "noble gas" and glob.catto_ai == true:
 				if glob.tool in [1,7] and protons > 1: disinterest = body
+				if glob.tool == 8 and protons in [3,11,19,27,33,37]: disinterest = body
+				if glob.tool == 8 and protons == 27: eye1 = 2
 				if [protons,mass] == [33,75] and glob.tool == 2: disinterest = body
+				if glob.tool == 8 and protons in [60]: interest = body
 		if body is particle and glob.catto_ai == true:
 			if [protons,mass] == [33,75] and body.type == "neutron": disinterest = body
 			if body.type == "electron" and electrons < protons: interest = body

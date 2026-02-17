@@ -2975,27 +2975,6 @@ theme_override_font_sizes/font_size = 42
 text = "Play"
 flat = true
 
-[node name="about" type="Button" parent="main" unique_id=1308190376]
-visible = false
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -24.0
-offset_right = 64.0
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "About"
-flat = true
-
 [node name="decompcredits" type="Button" parent="main" unique_id=882773724]
 texture_filter = 1
 anchors_preset = 8
@@ -3017,6 +2996,25 @@ theme_override_font_sizes/font_size = 42
 text = "About"
 flat = true
 
+[node name="settings" type="Button" parent="main" unique_id=1308190376]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 151.0
+offset_right = 71.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Settings"
+flat = true
+
 [node name="credits" type="Button" parent="main" unique_id=1844929267]
 texture_filter = 1
 anchors_preset = 8
@@ -3025,9 +3023,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 151.0
+offset_top = 206.0
 offset_right = 64.0
-offset_bottom = 213.0
+offset_bottom = 268.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -3046,9 +3044,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = 206.0
+offset_top = 261.0
 offset_right = 64.0
-offset_bottom = 268.0
+offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -3162,8 +3160,292 @@ theme_override_font_sizes/font_size = 32
 text = "[Back]"
 flat = true
 
+[node name="settings" type="CanvasLayer" parent="." unique_id=1518252111]
+visible = false
+
+[node name="tab" type="TabContainer" parent="settings" unique_id=219305690]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 32.0
+offset_right = -50.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("25")
+theme_override_font_sizes/font_size = 16
+current_tab = 0
+
+[node name="Gameplay" type="TabBar" parent="settings/tab" unique_id=1098881048]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="explode" type="CheckButton" parent="settings/tab/Gameplay" unique_id=729151219]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles explosion effects. Helpful if you're photosensitive."
+theme_override_colors/font_pressed_color = Color(1, 0.44313726, 0.105882354, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.5372549, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Explosions"
+icon_alignment = 2
+
+[node name="opaque" type="CheckButton" parent="settings/tab/Gameplay" unique_id=1302543623]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 106.0
+offset_right = 192.0
+offset_bottom = 141.0
+scale = Vector2(2, 2)
+tooltip_text = "Particles like photons will be unable to escape the room."
+theme_override_font_sizes/font_size = 21
+text = "Opaque Walls"
+icon_alignment = 2
+
+[node name="poof" type="CheckButton" parent="settings/tab/Gameplay" unique_id=929576769]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 162.0
+offset_right = 192.0
+offset_bottom = 197.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles the gaseous cattos turning into a cloud when they are hit hard enough."
+theme_override_font_sizes/font_size = 21
+text = "Poofing Gases"
+icon_alignment = 2
+
+[node name="weak" type="CheckButton" parent="settings/tab/Gameplay" unique_id=1266504152]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 218.0
+offset_right = 192.0
+offset_bottom = 253.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles radioactive decay."
+theme_override_colors/font_pressed_color = Color(0.19215687, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.49019608, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
+text = "Weak Nuclear
+Force"
+icon_alignment = 2
+
+[node name="ai" type="CheckButton" parent="settings/tab/Gameplay" unique_id=1809003717]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 329.0
+offset_right = 192.0
+offset_bottom = 364.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles the behavior of Cattos. Useful if you want to stack Cattos without them moving."
+theme_override_font_sizes/font_size = 21
+text = "Catto AI"
+icon_alignment = 2
+
+[node name="rotate" type="CheckButton" parent="settings/tab/Gameplay" unique_id=1973364138]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 385.0
+offset_right = 192.0
+offset_bottom = 420.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles whether or not the cattos will automatically rotate.
+If toggled off, Q will rotate left and E will rotate right"
+theme_override_font_sizes/font_size = 21
+text = "Catto Rotation"
+icon_alignment = 2
+
+[node name="endworld" type="CheckButton" parent="settings/tab/Gameplay" unique_id=626480063]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 329.0
+offset_right = 557.0
+offset_bottom = 364.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles world destruction scenes."
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.08627451, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.8745098, 0, 0, 0.5019608)
+theme_override_font_sizes/font_size = 21
+button_pressed = true
+text = "Endable World"
+icon_alignment = 2
+
+[node name="drag" type="CheckButton" parent="settings/tab/Gameplay" unique_id=1408412953]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 441.0
+offset_right = 192.0
+offset_bottom = 476.0
+scale = Vector2(2, 2)
+tooltip_text = "Toggles whether the left mouse button will drag the camera too. Useful for screens which use the left mouse button for touch inputs instead of real touch inputs."
+theme_override_font_sizes/font_size = 21
+text = "Left Click
+Drags Camera"
+icon_alignment = 2
+
+[node name="fusethres" type="HSlider" parent="settings/tab/Gameplay" unique_id=1962412163]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 69.0
+offset_right = 633.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Adjusts how easily the cattos fuse upon contact."
+max_value = 3.0
+step = 0.01
+value = 1.0
+
+[node name="value" type="Label" parent="settings/tab/Gameplay/fusethres" unique_id=1288510425]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 147.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 21
+text = "Fusion Threshold: value"
+
+[node name="temp" type="HSlider" parent="settings/tab/Gameplay" unique_id=1293659773]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 181.0
+offset_right = 633.0
+offset_bottom = 197.0
+scale = Vector2(2, 2)
+tooltip_text = "Adjusts how fast you can change the temperature."
+min_value = 0.1
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="value" type="Label" parent="settings/tab/Gameplay/temp" unique_id=442089603]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 237.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 21
+text = "Temperature Slider Speed: value"
+autowrap_mode = 2
+
+[node name="Video" type="TabBar" parent="settings/tab" unique_id=1812280098]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="scale" type="CheckButton" parent="settings/tab/Video" unique_id=557734119]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Scales the HUD relative to your resolution."
+theme_override_font_sizes/font_size = 21
+text = "Scale HUD"
+icon_alignment = 2
+
+[node name="Audio" type="TabBar" parent="settings/tab" unique_id=1586280481]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="svol" type="HSlider" parent="settings/tab/Audio" unique_id=1853771445]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 50.0
+offset_right = 280.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Sound Volume"
+max_value = 1.0
+step = 0.01
+
+[node name="value" type="Label" parent="settings/tab/Audio/svol" unique_id=1499133766]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 111.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 21
+text = "Sound Volume:"
+
+[node name="mvol" type="HSlider" parent="settings/tab/Audio" unique_id=256382980]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 50.0
+offset_right = 648.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Music Volume"
+max_value = 1.0
+step = 0.01
+
+[node name="value" type="Label" parent="settings/tab/Audio/mvol" unique_id=1213683038]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 107.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 21
+text = "Music Volume:"
+
+[node name="about" type="Label" parent="settings" unique_id=1117733771]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.5
+offset_top = 32.0
+offset_right = 100.5
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 63
+text = "Settings"
+
+[node name="hint" type="Label" parent="settings" unique_id=878132383]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -139.5
+offset_top = 67.0
+offset_right = 139.5
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Hover on something for more info"
+
+[node name="back" type="Button" parent="settings" unique_id=999510099]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -100.0
+offset_right = 103.0
+offset_bottom = -36.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 42
+text = "<"
+flat = true
+
 [node name="credits" type="CanvasLayer" parent="." unique_id=642598301]
 visible = false
+
+[node name="about" type="Label" parent="credits" unique_id=719330424]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.5
+offset_top = 32.0
+offset_right = 70.5
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 63
+text = "Credits"
 
 [node name="text" type="RichTextLabel" parent="credits" unique_id=1045177171]
 texture_filter = 1
@@ -3173,7 +3455,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -420.5
-offset_top = -317.0
+offset_top = -257.0
 offset_right = 420.5
 offset_bottom = 317.0
 grow_horizontal = 2
@@ -3470,17 +3752,20 @@ theme_override_font_sizes/font_size = 42
 text = "< Back"
 flat = true
 
-[node name="LinkButton" type="LinkButton" parent="credits" unique_id=1846826352]
-visible = false
-offset_left = 532.0
-offset_top = 415.0
-offset_right = 819.0
-offset_bottom = 437.0
-text = "ttt"
-uri = "https://tumblr.com/elementcattos"
-
 [node name="decompcredits" type="CanvasLayer" parent="." unique_id=1813541368]
 visible = false
+
+[node name="about" type="Label" parent="decompcredits" unique_id=199351933]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.5
+offset_top = 32.0
+offset_right = 70.5
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 63
+text = "About"
 
 [node name="text" type="RichTextLabel" parent="decompcredits" unique_id=476544576]
 texture_filter = 1
@@ -3490,9 +3775,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -420.5
-offset_top = -317.0
+offset_top = -301.0
 offset_right = 420.5
-offset_bottom = 317.0
+offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -3591,10 +3876,17 @@ text = "a0.13
 v1.4"
 vertical_alignment = 2
 
-[node name="iris" type="Node2D" parent="version" unique_id=1908573596]
+[node name="iris" type="Control" parent="version" unique_id=81502510]
 visible = false
 texture_filter = 1
-position = Vector2(512, 384)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(500, 500)
 
 [node name="sprite" type="Sprite2D" parent="version/iris" unique_id=512726066]
@@ -3623,12 +3915,12 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
-[connection signal="mouse_entered" from="main/about" to="." method="_button_hover"]
-[connection signal="pressed" from="main/about" to="." method="_button_press"]
-[connection signal="pressed" from="main/about" to="." method="_on_about_pressed"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
+[connection signal="mouse_entered" from="main/settings" to="." method="_button_hover"]
+[connection signal="pressed" from="main/settings" to="." method="_button_press"]
+[connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
@@ -3641,6 +3933,22 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="credit/back" to="." method="_button_hover"]
 [connection signal="pressed" from="credit/back" to="." method="_button_press"]
 [connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="settings/tab/Gameplay/explode" to="." method="_on_explode_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/opaque" to="." method="_on_opaque_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/poof" to="." method="_on_poof_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/weak" to="." method="_on_weak_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/ai" to="." method="_on_ai_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/rotate" to="." method="_on_rotate_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/endworld" to="." method="_on_endworld_toggled"]
+[connection signal="toggled" from="settings/tab/Gameplay/drag" to="." method="_on_drag_toggled"]
+[connection signal="value_changed" from="settings/tab/Gameplay/fusethres" to="." method="_on_fusethres_value_changed"]
+[connection signal="value_changed" from="settings/tab/Gameplay/temp" to="." method="_on_temp_value_changed"]
+[connection signal="toggled" from="settings/tab/Video/scale" to="." method="_on_scale_toggled"]
+[connection signal="value_changed" from="settings/tab/Audio/svol" to="." method="_on_svol_value_changed"]
+[connection signal="value_changed" from="settings/tab/Audio/mvol" to="." method="_on_mvol_value_changed"]
+[connection signal="mouse_entered" from="settings/back" to="." method="_button_hover"]
+[connection signal="pressed" from="settings/back" to="." method="_button_press"]
+[connection signal="pressed" from="settings/back" to="." method="_on_back_pressed"]
 [connection signal="meta_clicked" from="credits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="credits/back" to="." method="_button_press"]
