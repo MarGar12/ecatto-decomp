@@ -31,6 +31,24 @@ func _process(_delta):
 	elif $mu.selected == true:
 		sel_name = "Muonium"
 		sel_desc = "Hydrogen's little sibling. Extremely unstable.\nHalf-life: ~1 microsecond"
+	elif $"up quark".selected == true:
+		sel_name = "Up Quark"
+		sel_desc = "Elementary particles found inside protons and neutrons.\nThese have a positive charge. Due to an effect called color confinement quarks cannot exist on their own for more than a miniscule fraction of a second."
+	elif $"down quark".selected == true:
+		sel_name = "Down Quark"
+		sel_desc = "Elementary particles found inside protons and neutrons. These have a negative charge. Due to an effect called color confinement quarks cannot exist on their own for more than a miniscule fraction of a second."
+	elif $neutrino.selected == true:
+		sel_name = "Neutrino"
+		sel_desc = "Very light leptons with no electric charge. They are usually created together with electrons or positrons in decaying atoms. Due to their extremely low mass, neutrinos almost never interact with other matter and are therefore hard to detect."
+	elif $antineutrino.selected == true:
+		sel_name = "Anti-Neutrino"
+		sel_desc = "The antimatter counterpart to neutrinos. Like neutrinos, they have no charge. If an antineutrino meets a neutrino, they will both become photons."
+	elif $positron.selected == true:
+		sel_name = "Positron"
+		sel_desc = "The antimatter counterpart to electrons. Like all antimatter, they are mostly created by decaying atoms. Free positrons will scatter photons (change their direction). If a positron meets an electron, they will both become photons."
+	elif $compound_catto.selected == true:
+		sel_name = "Oiter"
+		sel_desc = "She solos."
 	elif $h.selected == true:
 		sel_name = "Hydrogen"
 		sel_desc = "Grandmother of all elements. Readily bonds with many others, but tends to leave the party when a metal comes in. Usually peaceful, but has an explosive side."

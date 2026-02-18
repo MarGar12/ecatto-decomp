@@ -50,6 +50,8 @@ var id = randf_range(0,1000)
 
 var pet_thresh = 0
 func _ready():
+	flash()
+	glob.cattos += 1	
 	update()
 
 func _physics_process(delta):
@@ -226,6 +228,8 @@ func _on_mouse_exited():
 func flash():
 	$flash.modulate.a = 1
 	$spawn.play()
+	var tween: Tween = create_tween()
+	tween.tween_property($flash, "modulate", Color(1,1,1,0), 0.25)
 
 func destroy(eff):
 	glob.cattos -= 1

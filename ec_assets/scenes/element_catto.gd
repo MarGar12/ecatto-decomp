@@ -760,7 +760,7 @@ func _process(delta):
 						if mouth != 0:
 							mouth = 0
 						match protons:
-							protons when protons in [25,85,101,109,114]:
+							protons when protons in [25,85,94,101,109,114]:
 								$model/face/pupils.visible = false
 						if $model/face/eye3.visible:
 							$model/face/eye3.play("happy")
@@ -1692,8 +1692,21 @@ func update():
 			$model/body.frame = 89
 			$model/face/eye1.play("isotopes")
 			$model/face/eye2.play("isotopes")
+			$model/face/eye3.play("isotopes")
 			eye1 = 42
 			eye2 = 42
+			pupil1 = 1
+			pupil2 = 1
+			$model/face/eye3.frame = 42
+			$model/face/eye3.offset.y = 6
+			$model/face/eye2.offset.y = 4
+			$model/face/eye3.visible = true
+			$model/face/spot.visible = false
+			$model/face/mouth.visible = false
+			$model/face/pupils.visible = true
+			$model/face/pupils/pupil3.visible = true
+			$model/face/pupils/pupil3.offset.y = 5
+			$model/face/pupils.modulate = Color(1.0, 1.0, 1.0, 0.5)
 		elif [protons,mass] == [95,228]:
 			$model/body.frame = 86
 		elif [protons,mass] == [95,243]:
@@ -1732,6 +1745,14 @@ func update():
 			eye1 = 37
 		elif [protons,mass] == [112,288]:
 			$model/body.frame = 85
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/eye3.play("isotopes")
+			eye1 = 52
+			eye2 = 52
+			$model/face/eye3.frame = 52
+			$model/face/eye3.offset.y = 6
+			$model/face/eye3.visible = true
 		elif [protons,mass] == [117,292]:
 			$model/body.frame = 87
 			$model/face/spot.play("isotopes")
@@ -1850,7 +1871,7 @@ func update():
 		credit = "Amy Isolea"
 	elif [protons,mass] in [85,210]:
 		credit = "Shard"
-	elif [protons,mass] in [[87,221],[112,277],[112,285]]:
+	elif [protons,mass] in [[87,221],[94,243],[112,277],[112,285],[112,288]]:
 		credit = "twitcheeer"
 	elif [protons,mass] in [95,228]:
 		credit = "The__Professional"

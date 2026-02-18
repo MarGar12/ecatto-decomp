@@ -113,6 +113,7 @@
 [ext_resource type="Texture2D" uid="uid://cmdep2oj8ryf3" path="res://ec_assets/textures/cattos/eye_li3.png" id="109_wb5po"]
 [ext_resource type="Texture2D" uid="uid://dmdf3tn34wpqq" path="res://ec_assets/textures/cattos/eye_ba154l.png" id="110_54ich"]
 [ext_resource type="Texture2D" uid="uid://chu5fuepxg4rk" path="res://ec_assets/textures/cattos/eye_ba154r.png" id="111_rjqxf"]
+[ext_resource type="Texture2D" uid="uid://y2gr8wm3356x" path="res://ec_assets/textures/cattos/eye_cn288.png" id="112_eqn0w"]
 
 [resource]
 animations = [{
@@ -468,6 +469,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("111_rjqxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_eqn0w")
 }],
 "loop": true,
 "name": &"isotopes",

@@ -157,11 +157,6 @@ func _process(delta):
 		$ui/pause/tab/Gameplay/fusethres/value.text = "No Fusion"
 	
 	$ui/pause/tab/Gameplay/endworld.disabled = !glob.earth_exploded
-	if debug_console.stats.visible:
-		if DebugConsole.is_monitor_visible("camera"):
-			DebugConsole.update_monitor("camera", position)
-		if DebugConsole.is_monitor_visible("zoom"):
-			DebugConsole.update_monitor("zoom", zoom)
 	
 
 func _on_rateslider_value_changed(value):

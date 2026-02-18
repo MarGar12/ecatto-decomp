@@ -24,12 +24,18 @@ func _process(_delta):
 		elif item == "purrcent": spawn_object("purrcent")
 		elif item == "bungy": spawn_object("bungy")
 		elif item == "compound_catto": spawn_object("compound_catto")
+		elif item == "up quark": spawn_particle("up quark")
+		elif item == "down quark": spawn_particle("down quark")
+		elif item == "neutrino": spawn_particle("neutrino")
+		elif item == "antineutrino": spawn_particle("antineutrino")
+		elif item == "positron": spawn_particle("positron")
 		elif glob.spawn_nucleus == true: spawn_catto(get_index()-6,get_index()-6,0)
 		else: spawn_catto(get_index()-6,get_index()-6,get_index()-6)
 		glob.spawning = null
 	
 	selected = $select.visible
-	if selected == true and get_index()-6 > 36: $"..".descontop = true
+	if selected == true and get_index()-6 > 36 and get_index()-6 < 118: $"..".descontop = true
+	#elif selected == true and get_index()-6 > 118: $"..".descontop = false
 	elif selected == true: $"..".descontop = false
 
 func _on_mouse_entered():

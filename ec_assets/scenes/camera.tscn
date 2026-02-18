@@ -1154,7 +1154,22 @@ position = Vector2(366, 135)
 [node name="og" parent="ui/center/inventory" unique_id=1632528630 instance=ExtResource("30")]
 position = Vector2(415, 135)
 
-[node name="compound_catto" parent="ui/center/inventory" unique_id=1167835098 instance=ExtResource("30")]
+[node name="up quark" parent="ui/center/inventory" unique_id=1167835098 instance=ExtResource("30")]
+position = Vector2(-75, -257)
+
+[node name="down quark" parent="ui/center/inventory" unique_id=209779612 instance=ExtResource("30")]
+position = Vector2(-26, -257)
+
+[node name="neutrino" parent="ui/center/inventory" unique_id=1612270671 instance=ExtResource("30")]
+position = Vector2(23, -257)
+
+[node name="antineutrino" parent="ui/center/inventory" unique_id=1540095406 instance=ExtResource("30")]
+position = Vector2(72, -257)
+
+[node name="positron" parent="ui/center/inventory" unique_id=1637018127 instance=ExtResource("30")]
+position = Vector2(121, -257)
+
+[node name="compound_catto" parent="ui/center/inventory" unique_id=1440266125 instance=ExtResource("30")]
 position = Vector2(-124, -257)
 
 [node name="hint" type="Label" parent="ui/center/inventory" unique_id=703734208]
@@ -1236,6 +1251,7 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
+visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1454,7 +1470,7 @@ offset_top = 50.0
 offset_right = 280.0
 offset_bottom = 85.0
 scale = Vector2(2, 2)
-tooltip_text = "Sound Volume"
+tooltip_text = "Control how loud the in-game sounds are."
 max_value = 1.0
 step = 0.01
 
@@ -1473,7 +1489,7 @@ offset_top = 50.0
 offset_right = 648.0
 offset_bottom = 85.0
 scale = Vector2(2, 2)
-tooltip_text = "Music Volume"
+tooltip_text = "Control how loud the in-game music is."
 max_value = 1.0
 step = 0.01
 
