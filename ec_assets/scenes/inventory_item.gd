@@ -50,14 +50,14 @@ func spawn_object(obj):
 	var scene = load("res://ec_assets/objects/"+obj+".tscn")
 	var instance = scene.instantiate()
 	instance.global_position = $"../../../../spawning".global_position
-	get_tree().current_scene.add_child(instance)
+	get_tree().current_scene.add_child.call_deferred(instance)
 
 func spawn_particle(type):
 	var scene = load("res://ec_assets/objects/particle.tscn")
 	var instance = scene.instantiate()
 	instance.global_position = $"../../../../spawning".global_position
 	instance.type = type
-	get_tree().current_scene.add_child(instance)
+	get_tree().current_scene.add_child.call_deferred(instance)
 
 func spawn_catto(p,n,e):
 	var scene = load("res://ec_assets/objects/element_catto.tscn")
@@ -69,7 +69,7 @@ func spawn_catto(p,n,e):
 	if instance.protons == 0 and glob.spawn_nucleus == false: instance.electrons = 1
 	if instance.protons == 1: instance.neutrons = 0
 	instance.player_spawned = true
-	get_tree().current_scene.add_child(instance)
+	get_tree().current_scene.add_child.call_deferred(instance)
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton: glob.inv_open = false

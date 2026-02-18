@@ -91,14 +91,21 @@ var petted = false
 var pet_thresh:int = 0
 var pet_num:int = 0
 
+
 func _ready():
 	glob.cattos += 1
 	movetimer = randf_range(0,10)
 	if protons < 119 and player_spawned == true: neutrons = main_isotopes[protons]-protons
 	if protons == 0: antimuons = 1
 	flash()
-	#$HTTPRequest.request("https://wttr.in/Darmstadt?format=%t") to implement Darmstadtiums temp
 	
+	if protons == 110:
+		pass
+		#var https:HTTPRequest = HTTPRequest.new()
+		#add_child(https)
+		#https.request("https://wttr.in/Darmstadt?format=%t")
+		#$HTTPRequest.request("https://wttr.in/Darmstadt?format=%t") to implement Darmstadtiums temp
+
 	match protons:
 		3: pet_thresh = 15
 		11, 19: pet_thresh = 2
@@ -107,7 +114,7 @@ func _ready():
 		87: pet_thresh = 5
 		
 
-func _process(delta):
+func _process(delta: float) -> void:
 	#if glob.cattos <= -1:
 	#	glob.cattos = 0
 	#if glob.particles <= -1:
@@ -182,6 +189,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("R"):
 		queue_free()
 
+func _physics_process(delta: float) -> void:
+	#print(delta)
 	#funny astatine thing
 	if protons == 85 and glob.camera.zoom.x < 4.0 and Time.get_time_dict_from_system().hour < 6:
 		if abs(global_position.x-glob.camera.global_position.x) > get_window().size.x/glob.camera.zoom.x:
@@ -815,7 +824,7 @@ func destroy(eff):
 	var instance = scene.instantiate()
 	instance.position = position
 	if instance.name == "poof": instance.color = $gas.color
-	add_sibling(instance)
+	add_sibling.call_deferred(instance)
 	queue_free()
 
 func poof():
@@ -824,7 +833,7 @@ func poof():
 	var instance = scene.instantiate()
 	instance.position = position
 	instance.color = $gas.color
-	add_sibling(instance)
+	add_sibling.call_deferred(instance)
 
 func generate_features():
 	#reset face
