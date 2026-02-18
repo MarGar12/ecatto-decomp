@@ -69,6 +69,7 @@ func sync_settings():
 	$ui/pause/tab/Gameplay/drag.button_pressed = glob.lcdrag
 	$ui/pause/tab/Gameplay/ai.button_pressed = glob.catto_ai
 	$ui/pause/tab/Gameplay/rotate.button_pressed = glob.catto_rotat
+	$ui/pause/tab/Video/hudtrans.value = glob.hudparency
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -94,6 +95,12 @@ func _process(delta):
 		$ui/center.scale = (Vector2.ONE*2)
 		$ui/botleft.scale = (Vector2.ONE*2)
 		$ui/botright.scale = (Vector2.ONE*2)
+		
+	$ui/topleft.modulate = Color(1,1,1,glob.hudparency)
+	$ui/topright.modulate = Color(1,1,1,glob.hudparency)
+	$ui/center.modulate = Color(1,1,1,glob.hudparency)
+	$ui/botleft.modulate = Color(1,1,1,glob.hudparency)
+	$ui/botright.modulate = Color(1,1,1,glob.hudparency)
 	
 	$ui/topright/rate.text = "Time Rate: " + str(glob.rate)
 	#if glob.temperature < 100000:
@@ -155,9 +162,8 @@ func _process(delta):
 		$ui/pause/tab/Gameplay/fusethres/value.text = "Fusion Threshold: " + str(glob.fusion_threshold)
 	else:
 		$ui/pause/tab/Gameplay/fusethres/value.text = "No Fusion"
-	
 	$ui/pause/tab/Gameplay/endworld.disabled = !glob.earth_exploded
-	
+	$ui/pause/tab/Video/hudtrans/value.text = "HUD Transparency: " + str(glob.hudparency * 100).pad_decimals(0) + "%"
 
 func _on_rateslider_value_changed(value):
 	glob.rate = pow(10,value)
@@ -191,6 +197,8 @@ func _on_catto_ai_toggled(button_pressed):
 	glob.catto_ai = button_pressed
 func _on_rotat_toggled(button_pressed):
 	glob.catto_rotat = button_pressed
+func _on_hudtrans_value_changed(value):
+	glob.hudparency = value
 
 func _on_nucleus_toggled(button_pressed):
 	glob.spawn_nucleus = button_pressed

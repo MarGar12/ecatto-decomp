@@ -1251,7 +1251,6 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
-visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1457,6 +1456,25 @@ tooltip_text = "Scales the HUD relative to your resolution."
 theme_override_font_sizes/font_size = 21
 text = "Scale HUD"
 icon_alignment = 2
+
+[node name="hudtrans" type="HSlider" parent="ui/pause/tab/Video" unique_id=1434055153]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 50.0
+offset_right = 645.5
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+tooltip_text = "Change how transparent the UI is."
+max_value = 1.0
+step = 0.01
+
+[node name="value" type="Label" parent="ui/pause/tab/Video/hudtrans" unique_id=535453599]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 111.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 21
+text = "HUD Transparency: "
 
 [node name="Audio" type="TabBar" parent="ui/pause/tab" unique_id=1246514239]
 visible = false
@@ -2031,6 +2049,7 @@ texture_hover = ExtResource("35")
 [connection signal="value_changed" from="ui/pause/tab/Gameplay/fusethres" to="." method="_on_fus_thres_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Gameplay/temp" to="." method="_on_t_speed_value_changed"]
 [connection signal="toggled" from="ui/pause/tab/Video/scale" to="." method="_on_hud_scale_toggled"]
+[connection signal="value_changed" from="ui/pause/tab/Video/hudtrans" to="." method="_on_hudtrans_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Audio/svol" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Audio/mvol" to="." method="_on_mus_volume_value_changed"]
 [connection signal="toggled" from="ui/pause/explosions" to="." method="_on_explosions_toggled"]

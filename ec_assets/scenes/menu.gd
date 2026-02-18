@@ -183,6 +183,7 @@ func _process(delta):
 	$settings/tab/Audio/svol/value.text = "Sound Volume: " + str(glob.sfx_volume * 100).pad_decimals(0) + "%"
 	$settings/tab/Gameplay/temp/value.text = "Temperature Slider Speed: " + str(glob.t_speed)
 	$settings/tab/Gameplay/endworld.disabled = !glob.earth_exploded
+	$settings/tab/Video/hudtrans/value.text = "HUD Transparency: " + str(glob.hudparency * 100).pad_decimals(0) + "%"
 	
 	if Input.is_action_just_pressed("esc") and not $main.visible:
 		$click.play()
@@ -269,6 +270,9 @@ func _on_svol_value_changed(value):
 func _on_mvol_value_changed(value):
 	glob.music_volume = value
 	
+func _on_hudtrans_value_changed(value):
+	glob.hudparency = value
+	
 func sync_options():
 	$settings/tab/Gameplay/explode.button_pressed = glob.explosions
 	$settings/tab/Gameplay/opaque.button_pressed = glob.opaquewalls
@@ -283,3 +287,4 @@ func sync_options():
 	$settings/tab/Audio/svol.value = glob.sfx_volume
 	$settings/tab/Audio/mvol.value = glob.music_volume
 	$settings/tab/Gameplay/endworld.button_pressed = glob.endable_world
+	$settings/tab/Video/hudtrans.value = glob.hudparency

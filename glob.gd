@@ -45,6 +45,8 @@ var helpmode = false
 var tutorial = true
 var earth_exploded = false
 
+var hudparency = 1.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_cfg()
@@ -69,6 +71,7 @@ func save():
 	config.set_value("Gameplay", "weakforce", weakforce)
 	config.set_value("Video", "left_click_drag", lcdrag)
 	config.set_value("Video", "hudscaling", hudscaling)
+	config.set_value("Video", "hud_transparency", hudparency)
 	config.save(path)
 	
 func load_cfg():
@@ -88,6 +91,7 @@ func load_cfg():
 	weakforce = config.get_value("Gameplay", "weakforce", true)
 	lcdrag = config.get_value("Video", "left_click_drag", false)
 	hudscaling = config.get_value("Video", "hudscaling", true)
+	hudparency = config.get_value("Video", "hud_transparency", 1.0)
 	
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -99,5 +103,5 @@ func _input(event: InputEvent) -> void:
 		var is_window: bool = winmode != DisplayServer.WINDOW_MODE_FULLSCREEN
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"
+#func _process(_delta):
+#	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"

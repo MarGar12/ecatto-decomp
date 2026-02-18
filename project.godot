@@ -39,6 +39,11 @@ window/size/viewport_height=768
 
 project/assembly_name="Element Cattos Decomp"
 
+[editor]
+
+movie_writer/movie_file="/home/mups/exports/sm.ogv"
+movie_writer/disable_vsync=true
+
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false

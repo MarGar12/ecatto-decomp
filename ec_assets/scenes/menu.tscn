@@ -3177,10 +3177,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("25")
 theme_override_font_sizes/font_size = 16
-current_tab = 2
+current_tab = 0
 
 [node name="Gameplay" type="TabBar" parent="settings/tab" unique_id=1098881048]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -3350,7 +3349,27 @@ theme_override_font_sizes/font_size = 21
 text = "Scale HUD"
 icon_alignment = 2
 
+[node name="hudtrans" type="HSlider" parent="settings/tab/Video" unique_id=994670765]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 2.0
+offset_right = 645.5
+offset_bottom = 37.0
+scale = Vector2(2, 2)
+tooltip_text = "Change how transparent the UI is."
+max_value = 1.0
+step = 0.01
+
+[node name="value" type="Label" parent="settings/tab/Video/hudtrans" unique_id=1195287816]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 111.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 21
+text = "HUD Transparency: "
+
 [node name="Audio" type="TabBar" parent="settings/tab" unique_id=1586280481]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -3954,6 +3973,7 @@ texture = ExtResource("37")
 [connection signal="value_changed" from="settings/tab/Gameplay/fusethres" to="." method="_on_fusethres_value_changed"]
 [connection signal="value_changed" from="settings/tab/Gameplay/temp" to="." method="_on_temp_value_changed"]
 [connection signal="toggled" from="settings/tab/Video/scale" to="." method="_on_scale_toggled"]
+[connection signal="value_changed" from="settings/tab/Video/hudtrans" to="." method="_on_hudtrans_value_changed"]
 [connection signal="value_changed" from="settings/tab/Audio/svol" to="." method="_on_svol_value_changed"]
 [connection signal="value_changed" from="settings/tab/Audio/mvol" to="." method="_on_mvol_value_changed"]
 [connection signal="mouse_entered" from="settings/back" to="." method="_button_hover"]
