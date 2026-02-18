@@ -507,14 +507,25 @@ texture_hover = ExtResource("27")
 
 [node name="pet" type="TextureButton" parent="ui/topleft" unique_id=1503875402]
 layout_mode = 0
-offset_left = 7.5
-offset_top = 44.5
-offset_right = 39.5
-offset_bottom = 76.5
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 80.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("31_pe5jw")
 texture_pressed = ExtResource("32_enj2x")
 texture_hover = ExtResource("32_enj2x")
+
+[node name="electrontoy" type="TextureButton" parent="ui/topleft" unique_id=1364936248]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 80.0
+offset_bottom = 80.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("21")
+texture_pressed = ExtResource("22")
+texture_hover = ExtResource("22")
 
 [node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
 layout_mode = 0
@@ -2011,8 +2022,8 @@ texture_hover = ExtResource("35")
 [connection signal="mouse_entered" from="ui/topleft/flashlight" to="." method="_on_button_hover"]
 [connection signal="mouse_exited" from="ui/topleft/flashlight" to="." method="_on_button_unhover"]
 [connection signal="pressed" from="ui/topleft/flashlight" to="." method="_on_flashlight_pressed"]
-[connection signal="mouse_entered" from="ui/topleft/weakray" to="." method="_on_button_hover"]
 [connection signal="mouse_entered" from="ui/topleft/weakray" to="." method="_on_weakray_mouse_entered"]
+[connection signal="mouse_entered" from="ui/topleft/weakray" to="." method="_on_button_hover"]
 [connection signal="mouse_exited" from="ui/topleft/weakray" to="." method="_on_button_unhover"]
 [connection signal="pressed" from="ui/topleft/weakray" to="." method="_on_weakray_pressed"]
 [connection signal="mouse_entered" from="ui/topleft/clone" to="." method="_on_clone_mouse_entered"]
@@ -2031,6 +2042,10 @@ texture_hover = ExtResource("35")
 [connection signal="mouse_entered" from="ui/topleft/pet" to="." method="_on_button_hover"]
 [connection signal="mouse_exited" from="ui/topleft/pet" to="." method="_on_button_unhover"]
 [connection signal="pressed" from="ui/topleft/pet" to="." method="_on_pet_pressed"]
+[connection signal="mouse_entered" from="ui/topleft/electrontoy" to="." method="_on_button_hover"]
+[connection signal="mouse_entered" from="ui/topleft/electrontoy" to="." method="_on_electrontoy_mouse_entered"]
+[connection signal="mouse_exited" from="ui/topleft/electrontoy" to="." method="_on_button_unhover"]
+[connection signal="pressed" from="ui/topleft/electrontoy" to="." method="_on_electron_toy_pressed"]
 [connection signal="value_changed" from="ui/topright/rateslider" to="." method="_on_rateslider_value_changed"]
 [connection signal="value_changed" from="ui/topright/presslider" to="." method="_on_presslider_value_changed"]
 [connection signal="value_changed" from="ui/topright/gravslider" to="." method="_on_gravslider_value_changed"]

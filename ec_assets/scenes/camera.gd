@@ -71,10 +71,18 @@ func sync_settings():
 	$ui/pause/tab/Gameplay/rotate.button_pressed = glob.catto_rotat
 	$ui/pause/tab/Video/hudtrans.value = glob.hudparency
 
+func spawn_electron_toy():
+	var electron_toy = load("res://ec_assets/objects/fake_electron_ball.tscn")
+	var toy_instance = electron_toy.instantiate()
+	toy_instance.position = get_global_mouse_position()
+	add_sibling.call_deferred(toy_instance)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("wheelup") and zoom.x < 10 and !glob.pause: zoom *= 1.1
 	if Input.is_action_just_pressed("wheeldown") and zoom.x > 0.1 and !glob.pause: zoom /= 1.1
+	
 	
 	if get_window().size.x <= 1010 && glob.hudscaling == false :
 		$ui/topright.position.y = 64
@@ -147,6 +155,7 @@ func _process(delta):
 		$tool/anim.play("use")
 		if glob.tool == 1: $tool/hammernoise.play()
 		if glob.tool == 4: spawn_particle("photon")
+		if glob.tool == 9: spawn_electron_toy()
 	if Input.is_action_just_pressed("rmb"): glob.tool = 0
 	
 	if Input.is_action_just_pressed("esc"): 
@@ -227,6 +236,10 @@ func _on_blackhole_pressed():
 func _on_pet_pressed():
 	if glob.tool == 8: glob.tool = 0
 	else: glob.tool = 8
+func _on_electron_toy_pressed():
+	if glob.tool == 9: glob.tool = 0
+	else: glob.tool = 9
+
 func _on_elementpicker_pressed():
 	glob.inv_open = true
 func _on_pause_pressed(): # pause button
@@ -316,6 +329,8 @@ func _on_elementpicker_mouse_entered():
 	$ui/topleft/tooldesc.text = "Purriodic Table\nSpawn element cattos!"
 func _on_pet_mouse_entered():
 	$ui/topleft/tooldesc.text = "Pet Cattos\nPet pet pet..."
+func _on_electrontoy_mouse_entered():
+	$ui/topleft/tooldesc.text = "Fake Electron Ball\nSpawns a fake electron toy the cattos can play with."
 
 func _on_quit_pressed():
 	get_tree().paused = false
