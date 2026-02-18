@@ -87,7 +87,9 @@ var rad_level = 0.1
 var date = [Time.get_datetime_dict_from_system().month,Time.get_datetime_dict_from_system().day]
 
 var proc = FastNoiseLite.new() #for procedural synthetic elements later down the line
-var petted = 0
+var petted = false
+var pet_thresh:int = 0
+var pet_num:int = 0
 
 func _ready():
 	glob.cattos += 1
@@ -96,8 +98,14 @@ func _ready():
 	if protons == 0: antimuons = 1
 	flash()
 	#$HTTPRequest.request("https://wttr.in/Darmstadt?format=%t") to implement Darmstadtiums temp
-
-
+	
+	match protons:
+		3: pet_thresh = 15
+		11, 19: pet_thresh = 2
+		27: pet_thresh = 8
+		37, 55: pet_thresh = protons
+		87: pet_thresh = 5
+		
 
 func _process(delta):
 	#if glob.cattos <= -1:
@@ -339,6 +347,10 @@ func _process(delta):
 		if knocked_out > 1.0: $model/face/facetext.text = str(randf_range(10000,99999))
 		else: $model/face/facetext.text = str(Time.get_time_string_from_system())
 		$model/face/facetext.visible_characters = 5
+		
+		if petted:
+			$model/face/facetext.text = ":3"
+			$model/face/facetext.visible_characters = -1
 	if protons == 110: 
 		$model/face/facetext.modulate = Color8(255,160,0)
 		if knocked_out > 0: $model/face/facetext.text = "!?!?!"
@@ -351,6 +363,9 @@ func _process(delta):
 		elif nearby == null:
 			if looktimer > 2: $model/face/facetext.text = str(snapped(glob.temperature-273.15,0.01)) + "°C"
 			else: $model/face/facetext.text = "ZÜGE"
+			
+		if petted:
+			$model/face/facetext.text = "<3"
 	
 	#info
 	$model/select.visible = glob.selected == self
@@ -676,6 +691,9 @@ func _process(delta):
 	elif rad_level < 1000000: $model/face/spot/dy_dosi.text = str(snapped(rad_level/1000.0,0.1)) + " msv"
 	else: $model/face/spot/dy_dosi.text = str(snapped(rad_level/1000000.0,0.1)) + " sv"
 	
+	if petted:
+		$model/face/spot/dy_dosi.text = ":3"
+	
 	#AI range thing
 	if $range.scale < Vector2.ONE: $range.scale += Vector2.ONE*delta
 	
@@ -708,18 +726,22 @@ func _process(delta):
 			$radiation.modulate.a = 1
 			$geiger.base_vol = 0
 			$geiger.pitch_scale = 2
-		if glob.tool == 8: # thanks flamebium <3
+		if glob.tool == 8 and Input.is_action_just_pressed("lmb"): # thanks flamebium <3
 			if (get_global_mouse_position() - position).length() < 128:
 				petted = true
+				prints(pet_num, pet_thresh)
+				if pet_num < pet_thresh:
+					pet_num += 1
+					
 				if protons == 110:
 					$model/face/facetext.text = "<3"
 				if group == "alkali metal":
-					if protons != 87:
+					if pet_num < pet_thresh:
 						match protons:
 							3: #lithium
 								eye1 = 11
 								eye2 = 11
-							protons when protons in [11, 19]: #sodium, potassium
+							11, 19: #sodium, potassium
 								mouth = 2
 								eye1 = 20
 								eye2 = 20
@@ -729,27 +751,40 @@ func _process(delta):
 					else:
 						$purr.play()
 						$model/face/eye1.play("happy")
-						if mouth != 0: mouth = 0
-				elif protons in [33]:
-					$hiss.play()
-					$model/face/eye1.play("shut")
-				elif protons in [27]:
-					$purr.play()
-					$model/face/eye1.play("shut")
-					if mouth != 1: mouth = 1
+						if mouth != 0:
+							mouth = 0
 				else:
 					$purr.play()
 					if group != "noble gas":
-							$model/face/eye1.play("happy")
-							if mouth != 0:
-								mouth = 0
-								
-							match protons:
-								protons when protons in [25,85,101,109,114]:
-									$model/face/pupils.visible = false
-							if $model/face/eye3.visible:
-								$model/face/eye3.play("happy")
-					else:
+						$model/face/eye1.play("happy")
+						if mouth != 0:
+							mouth = 0
+						match protons:
+							protons when protons in [25,85,101,109,114]:
+								$model/face/pupils.visible = false
+						if $model/face/eye3.visible:
+							$model/face/eye3.play("happy")
+						match protons:
+							33: # arsenic
+								$hiss.play()
+								$model/face/eye1.play("shut")
+								mouth = 2
+							27: # cobalt
+								print("ah")
+								$purr.play()
+								if pet_num < pet_thresh:
+									print("ah")
+									$model/face/eye1.play("shut")
+									if mouth != 1: mouth = 1
+								else:
+									mouth = 0
+							38: # strontium, only one eye closes
+								$model/face/eye1.play("happy")
+								$model/face/eye2.play("default")
+							109: # meitnerium
+								$model/face/eye1.visible = true
+								$model/face/eye2.visible = true
+					else: # catto is noble gassy
 						if protons not in [2, 10]:
 							mouth = 0
 				$model/face/mouth.frame = mouth
@@ -2090,8 +2125,16 @@ func _on_range_body_entered(body):
 			if glob.tool == 6: attractor = body
 			if group != "noble gas" and glob.catto_ai == true:
 				if glob.tool in [1,7] and protons > 1: disinterest = body
-				if glob.tool == 8 and protons in [3,11,19,27,33,37]: disinterest = body
-				if glob.tool == 8 and protons == 27: eye1 = 2
+				if glob.tool == 8 and protons in [3,11,19,27,33,37]:
+					match protons:
+						3, 11, 19, 27, 37:
+							if pet_num < pet_thresh:
+								disinterest = body
+							else:
+								disinterest = null
+						_: disinterest = body
+				if glob.tool == 8 and protons == 27: 
+					if pet_num < pet_thresh: eye1 = 2
 				if [protons,mass] == [33,75] and glob.tool == 2: disinterest = body
 				if glob.tool == 8 and protons in [60]: interest = body
 		if body is particle and glob.catto_ai == true:

@@ -48,10 +48,14 @@ var onfire = false
 
 var id = randf_range(0,1000)
 
+var pet_thresh = 0
 func _ready():
 	update()
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("R"):
+		queue_free()
+	
 	#states of matter
 	if glob.temperature > boiltemp: 
 		state = "gas"
