@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://uajlqrlfvvff" path="res://ec_assets/objects/particle.gd" id="1"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
-[ext_resource type="Texture2D" uid="uid://bo1ur2nha7amq" path="res://ec_assets/textures/particles/fermions.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="4"]
-[ext_resource type="AudioStream" uid="uid://c0urryb7eujbj" path="res://ec_assets/sounds/placeparticle.mp3" id="5"]
+[ext_resource type="Texture2D" uid="uid://caauk26spbpi" path="res://ec_assets/textures/particles/fermions.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c34oinudy1iae" path="res://ec_assets/textures/particles/neutron.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://c7ljcms0yqwon" path="res://ec_assets/sounds/placeparticle.mp3" id="5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="7"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="7_u17vy"]
