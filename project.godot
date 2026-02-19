@@ -126,6 +126,10 @@ Fullscreen={
 ]
 }
 
+[navigation]
+
+pathfinding/max_threads=-1
+
 [physics]
 
 2d/run_on_separate_thread=true
