@@ -39,8 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://d1bnil3lvcs2b" path="res://ec_assets/textures/ui/button_pet2.png" id="32_enj2x"]
 [ext_resource type="Texture2D" uid="uid://coxkkmvate66l" path="res://ec_assets/textures/ui/button_reset1.png" id="32_knf1o"]
 [ext_resource type="Texture2D" uid="uid://0c81hxyt4upe" path="res://ec_assets/textures/ui/button_quit2.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://drdbd43vfxqft" path="res://ec_assets/textures/ui/button_balls.png" id="33_25m3f"]
 [ext_resource type="Texture2D" uid="uid://1bi34hdn172g" path="res://ec_assets/textures/ui/button_reset2.png" id="33_ybjw0"]
 [ext_resource type="Texture2D" uid="uid://ovki6bifytjh" path="res://ec_assets/textures/ui/button_help1.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://dls48iqqynjaj" path="res://ec_assets/textures/ui/button_blank.png" id="34_27un4"]
 [ext_resource type="Texture2D" uid="uid://ds12cmak0gfw2" path="res://ec_assets/textures/ui/button_setting1.png" id="34_2158e"]
 [ext_resource type="Texture2D" uid="uid://dtgo40wyw4qul" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
 [ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
@@ -518,14 +520,14 @@ texture_hover = ExtResource("32_enj2x")
 
 [node name="electrontoy" type="TextureButton" parent="ui/topleft" unique_id=1364936248]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 48.0
-offset_right = 80.0
-offset_bottom = 80.0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 40.0
+offset_bottom = 120.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("21")
-texture_pressed = ExtResource("22")
-texture_hover = ExtResource("22")
+texture_normal = ExtResource("33_25m3f")
+texture_pressed = ExtResource("34_27un4")
+texture_hover = ExtResource("18")
 
 [node name="particlecount" type="Label" parent="ui/topleft" unique_id=1073584284]
 layout_mode = 0
