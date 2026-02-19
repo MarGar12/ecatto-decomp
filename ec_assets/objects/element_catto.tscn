@@ -225,6 +225,7 @@
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="208_ok4eu"]
 [ext_resource type="AudioStream" uid="uid://djrqecf5w12ku" path="res://ec_assets/sounds/cat purring.wav" id="222_jloec"]
 [ext_resource type="AudioStream" uid="uid://csg4mwespnwp1" path="res://ec_assets/sounds/hiss.wav" id="223_i24qu"]
+[ext_resource type="AudioStream" uid="uid://kkhc7nvm857k" path="res://ec_assets/sounds/punch.wav" id="225_i24qu"]
 
 [sub_resource type="Gradient" id="Gradient_wu5qn"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -2213,6 +2214,11 @@ script = ExtResource("186")
 stream = ExtResource("194")
 volume_db = 5.0
 attenuation = 0.0
+script = ExtResource("186")
+
+[node name="punch" type="AudioStreamPlayer2D" parent="." unique_id=413501827]
+stream = ExtResource("225_i24qu")
+attenuation = 3.4822016
 script = ExtResource("186")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=212484836]

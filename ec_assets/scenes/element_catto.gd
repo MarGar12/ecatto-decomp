@@ -738,7 +738,7 @@ func _physics_process(delta: float) -> void:
 		if glob.tool == 8 and Input.is_action_just_pressed("lmb"): # thanks flamebium <3
 			if (get_global_mouse_position() - position).length() < 128:
 				petted = true
-				prints(pet_num, pet_thresh)
+				#prints(pet_num, pet_thresh)
 				if pet_num < pet_thresh:
 					pet_num += 1
 					
@@ -2083,6 +2083,14 @@ func _on_body_entered(body):
 					$model/face/eye1.play("shut")
 		if body is bungy and protons == 43:
 			$model/face/eye1.play("happy")
+			
+		if body is particle_ball:
+			if body.velocity.length() > 1500:
+				$punch.play()
+				if group != "noble gas": 
+					knocked_out = randf_range(10,20)
+				if glob.catto_rotat: 
+					rotation_degrees += randf_range(30,180) * [-1,1].pick_random()
 
 func _on_body_exited(body):
 	if body != null:

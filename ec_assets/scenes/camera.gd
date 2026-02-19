@@ -72,7 +72,7 @@ func sync_settings():
 	$ui/pause/tab/Video/hudtrans.value = glob.hudparency
 
 func spawn_electron_toy():
-	var electron_toy = load("res://ec_assets/objects/fake_electron_ball.tscn")
+	var electron_toy = load("res://ec_assets/objects/particle_ball.tscn")
 	var toy_instance = electron_toy.instantiate()
 	toy_instance.position = get_global_mouse_position()
 	add_sibling.call_deferred(toy_instance)
