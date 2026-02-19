@@ -417,7 +417,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("Q"): rotation -= delta
 		if Input.is_action_pressed("E"): rotation += delta
 	
-	move_and_slide()
+	var collision = move_and_slide()
+	if collision:
+		var col:KinematicCollision2D = get_last_slide_collision()
+		var colliding_body = col.get_collider()
+		if colliding_body is particle_ball:
+			colliding_body.velocity = velocity
+			
+	
 	
 	#dragging the catto
 	if glob.selected == self and Input.is_action_pressed("lmb"):
@@ -2085,7 +2092,7 @@ func _on_body_entered(body):
 			$model/face/eye1.play("happy")
 			
 		if body is particle_ball:
-			if body.velocity.length() > 1500:
+			if body.velocity.length() > 1500 * glob.rate:
 				$punch.play()
 				if group != "noble gas": 
 					knocked_out = randf_range(10,20)
@@ -2247,6 +2254,8 @@ func _on_range_body_entered(body):
 			body.spawn_catto(6,6,6)
 			body.spawn_catto(1,0,1)
 			body.destroy("poof")
+		if body is particle_ball:
+			interest = body
 
 func _on_range_body_exited(body):
 	if body != null:
@@ -2259,6 +2268,8 @@ func _on_range_body_exited(body):
 			if [protons,mass] == [42,94]:
 				eye1 = 0
 				eye2 = 0
+		if body is particle and body != self:
+			interest = null
 
 func _on_veryclose_body_entered(body):
 	if body != null:
