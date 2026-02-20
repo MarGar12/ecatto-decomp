@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bwr6xx8lexbbp"]
 
 [ext_resource type="Script" uid="uid://deaci66igc4yr" path="res://ec_assets/objects/explosion.gd" id="1"]
-[ext_resource type="AudioStream" uid="uid://ba0taq7r543vb" path="res://ec_assets/sounds/kablam.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://dvyrgc8uup8" path="res://ec_assets/sounds/kablam.wav" id="2"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="3"]
-[ext_resource type="AudioStream" uid="uid://b31mtssx7wdyt" path="res://ec_assets/sounds/pop.mp3" id="4"]
+[ext_resource type="AudioStream" uid="uid://co2o2gpdp7mvp" path="res://ec_assets/sounds/pop.mp3" id="4"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="5"]
-[ext_resource type="Texture2D" uid="uid://c5q2nkypjham8" path="res://ec_assets/textures/effects/smoke.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://1aq08ujma2km" path="res://ec_assets/textures/cattos/pupil_astatine.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b8cs8yfjlyqy4" path="res://ec_assets/textures/effects/smoke.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d1d61so23dk3y" path="res://ec_assets/textures/cattos/pupil_astatine.png" id="7"]
 
 [sub_resource type="Gradient" id="Gradient_ujyrg"]
 offsets = PackedFloat32Array(0, 0.1, 0.2, 0.4, 1)

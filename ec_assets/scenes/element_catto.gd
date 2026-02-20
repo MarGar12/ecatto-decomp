@@ -194,7 +194,7 @@ func _process(delta: float) -> void:
 	
 	# ruthenium hat thingies
 	if protons == 44:
-		if absf(rotation_degrees) > 90 and !ruth_hat_off:
+		if absf(rotation_degrees) > 90 and !ruth_hat_off and glob.catto_rotat:
 			spawn_ruth_hat()
 	#delete when resetting
 	if Input.is_action_just_pressed("R"):
@@ -204,6 +204,8 @@ func spawn_ruth_hat():
 	var hat:CharacterBody2D = load("res://ec_assets/objects/ruth_hat.tscn").instantiate()
 	hat.rotation = rotation
 	hat.position = position
+	hat.velocity = velocity / 2
+	hat.velocity.y *= 10
 	add_sibling.call_deferred(hat)
 	ruth_hat_off = true
 
