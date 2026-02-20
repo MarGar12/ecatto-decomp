@@ -1,0 +1,123 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cyqo6svgeycui"]
+
+[ext_resource type="Texture2D" uid="uid://dgsrr5nnbn2pq" path="res://ec_assets/textures/cattos/elements/solid/silicon-spot.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dvmnk80wchuvh" path="res://ec_assets/textures/cattos/elements/gas/chlorine-spot.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://l0cebcgbcpwp" path="res://ec_assets/textures/cattos/elements/solid/titanium-spot.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://hgae6fgfbgjr" path="res://ec_assets/textures/cattos/elements/solid/vanadium-spot.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://chjc42asneb0j" path="res://ec_assets/textures/cattos/elements/solid/iron-spot.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://2nl6iepvrl1t" path="res://ec_assets/textures/cattos/elements/solid/cobalt-blush.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cej6wvf2qhno7" path="res://ec_assets/textures/cattos/elements/solid/copper-spot.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://deks1fj4ogxt" path="res://ec_assets/textures/cattos/elements/solid/zinc-spot.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://csdjgvqwinua3" path="res://ec_assets/textures/cattos/elements/solid/molybdenum-spot.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dad0cuk1w2i36" path="res://ec_assets/textures/cattos/elements/solid/silver-spot.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://b6llyy6x5vnb5" path="res://ec_assets/textures/cattos/elements/gas/xenon-spot.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://m3tmkch0nriv" path="res://ec_assets/textures/cattos/elements/solid/dysprosium-spot.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bgdr8ooklyou3" path="res://ec_assets/textures/cattos/elements/solid/ytterbium-spot.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dwbsfj002575h" path="res://ec_assets/textures/cattos/elements/solid/rhenium-windshield.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://0bxcy760eyfl" path="res://ec_assets/textures/cattos/elements/solid/platinum-spot.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bmmxtef0g7can" path="res://ec_assets/textures/cattos/elements/solid/thallium-spot.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://m63dr0ltly0y" path="res://ec_assets/textures/cattos/elements/solid/radium-spots.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://b8yxe5hhcjhi5" path="res://ec_assets/textures/cattos/elements/solid/plutonium-spot.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://ckq1gkgdho5u" path="res://ec_assets/textures/cattos/elements/solid/nihonium-spot.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cqkhcuplbips1" path="res://ec_assets/textures/cattos/elements/solid/tennessine-spot.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://cp4mvrxlv1wov" path="res://ec_assets/textures/cattos/elements/isotopes/fe54-spot.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://bivk7l2vng33t" path="res://ec_assets/textures/cattos/elements/isotopes/fe60-spot.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://d4e2o6x0mnbay" path="res://ec_assets/textures/cattos/elements/isotopes/tl201-spot.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://ddyfg1uvb4l2h" path="res://ec_assets/textures/cattos/elements/isotopes/ts295-spot.png" id="24_ccxee"]
+[ext_resource type="Texture2D" uid="uid://cts386aghlic4" path="res://ec_assets/textures/cattos/elements/isotopes/cs137-spot.png" id="25_6gmf4"]
+[ext_resource type="Texture2D" uid="uid://bvh8fv8hkcrhg" path="res://ec_assets/textures/cattos/elements/isotopes/ts292-spot.png" id="26_a37ri"]
+[ext_resource type="Texture2D" uid="uid://cjgy7rir6c7t2" path="res://ec_assets/textures/cattos/elements/isotopes/ts293-spot.png" id="27_k4vds"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ccxee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6gmf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_a37ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_k4vds")
+}],
+"loop": true,
+"name": &"isotopes",
+"speed": 5.0
+}]

@@ -1,0 +1,187 @@
+[gd_scene load_steps=14 format=3 uid="uid://bsqkovruh2en5"]
+
+[ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://c04fpqkpnxisl" path="res://ec_assets/textures/effects/cloud1.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://b2l31ex487oxl" path="res://ec_assets/sounds/nova.mp3" id="3"]
+[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="4"]
+
+[sub_resource type="Gradient" id="Gradient_32lgr"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vnkqw"]
+gradient = SubResource("Gradient_32lgr")
+
+[sub_resource type="Curve" id="Curve_p5iuw"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_hdeon"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.25098, 0.501961, 1, 1, 1, 1, 0.501961, 1, 1, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_p3b6b"]
+offsets = PackedFloat32Array(0.1, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v6kp1"]
+gradient = SubResource("Gradient_p3b6b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_awtev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flash:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("flash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plasma:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e5y5p"]
+resource_name = "bang"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flash:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(2, 2, 2),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1000, 1000), Vector2(0.1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("flash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("plasma:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 5),
+"transitions": PackedFloat32Array(2, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 0, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 5),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7kvi"]
+_data = {
+"RESET": SubResource("Animation_awtev"),
+"bang": SubResource("Animation_e5y5p")
+}
+
+[node name="big_bang" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(500, 500)
+texture = SubResource("GradientTexture2D_vnkqw")
+
+[node name="plasma" type="CPUParticles2D" parent="."]
+texture_filter = 2
+material = ExtResource("1")
+amount = 500
+lifetime = 3.0
+speed_scale = 5.0
+local_coords = true
+texture = ExtResource("2")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 1000.0
+angle_max = 720.0
+scale_amount_min = 0.0
+scale_amount_max = 100.0
+scale_amount_curve = SubResource("Curve_p5iuw")
+color_ramp = SubResource("Gradient_hdeon")
+
+[node name="flash" type="Sprite2D" parent="."]
+texture_filter = 2
+material = ExtResource("1")
+scale = Vector2(0.1, 0.1)
+texture = SubResource("GradientTexture2D_v6kp1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bang"
+libraries = {
+"": SubResource("AnimationLibrary_s7kvi")
+}
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3")
+autoplay = true
+max_distance = 100000.0
+attenuation = 0.0
+panning_strength = 0.0
+script = ExtResource("4")
