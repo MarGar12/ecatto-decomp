@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d4h23iyc3fska"]
+
+[ext_resource type="Texture2D" uid="uid://ds8s0uegyd784" path="res://ec_assets/textures/cattos/elements/solid/ruthenium-hat.png" id="1_6wsjh"]
+[ext_resource type="Script" uid="uid://1f5o5snqmr1g" path="res://ec_assets/objects/ruth_hat.gd" id="1_fj8v0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fj8v0"]
+radius = 18.0
+height = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ay8p2"]
+radius = 6.3639603
+height = 28.284271
+
+[node name="ruth_hat" type="CharacterBody2D" unique_id=436345739]
+input_pickable = true
+script = ExtResource("1_fj8v0")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=559435956]
+texture = ExtResource("1_6wsjh")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1528574281]
+position = Vector2(0, -2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fj8v0")
+
+[node name="collision2" type="CollisionShape2D" parent="." unique_id=1344301838]
+position = Vector2(-27, 19)
+rotation = 0.6684611
+shape = SubResource("CapsuleShape2D_ay8p2")
+
+[node name="collision3" type="CollisionShape2D" parent="." unique_id=1800931120]
+position = Vector2(27, 19)
+rotation = -0.6684611
+shape = SubResource("CapsuleShape2D_ay8p2")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

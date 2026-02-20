@@ -82,6 +82,7 @@ var nuclidemap_value = 0.0
 var decaymap_value = 0.0
 
 var eu_glassesdown = false
+var ruth_hat_off = false
 var rad_level = 0.1
 
 var date = [Time.get_datetime_dict_from_system().month,Time.get_datetime_dict_from_system().day]
@@ -193,6 +194,13 @@ func _process(delta: float) -> void:
 	#delete when resetting
 	if Input.is_action_just_pressed("R"):
 		queue_free()
+
+func spawn_ruth_hat():
+	var hat:CharacterBody2D = load("res://ec_assets/objects/ruth_hat.tscn").instantiate()
+	hat.rotation = rotation
+	hat.position = position
+	add_sibling.call_deferred(hat)
+	ruth_hat_off = true
 
 func _physics_process(delta: float) -> void:
 	#print(delta)
