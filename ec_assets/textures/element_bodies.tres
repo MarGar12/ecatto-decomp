@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://csub24rrsmjk5"]
 
 [ext_resource type="Texture2D" uid="uid://ddb7b5pw85d6r" path="res://ec_assets/textures/cattos/elements/gas/muonium.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c6whypx2i6635" path="res://ec_assets/textures/cattos/elements/solid/ruthenium-hatless.png" id="1_7aome"]
 [ext_resource type="Texture2D" uid="uid://ba206tg8fhe0m" path="res://ec_assets/textures/cattos/elements/gas/hydrogen.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cl66aerq0ixaj" path="res://ec_assets/textures/cattos/elements/gas/helium.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://c0rthofd4mnvi" path="res://ec_assets/textures/cattos/elements/solid/lithium.png" id="4"]
@@ -230,6 +231,14 @@
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7aome")
+}],
+"loop": true,
+"name": &"alternate",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1")

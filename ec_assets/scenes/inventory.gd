@@ -180,7 +180,7 @@ func _process(_delta):
 		sel_desc = "AKA Tech. Unique transition metal with no stable isotopes. Besties with Rhenium, considers him her brother. Not a hat.\nHalf-life: 211,000 years"
 	elif $ru.selected == true:
 		sel_name = "Ruthenium"
-		sel_desc = "AKA Ruth, named after Russia, kind of."
+		sel_desc = "AKA Ruth, named after Russia, kind of. If you shake her too much her hat will fall off."
 	elif $rh.selected == true:
 		sel_name = "Rhodium"
 		sel_desc = "Palladium's spouse. Big fan of catalytic converters."

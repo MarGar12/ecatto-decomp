@@ -1657,6 +1657,7 @@ offset = Vector2(-250, 0)
 
 [node name="body" type="AnimatedSprite2D" parent="model" unique_id=1678524136]
 sprite_frames = ExtResource("145")
+animation = &"alternate"
 speed_scale = 0.0
 
 [node name="scars" type="AnimatedSprite2D" parent="model/body" unique_id=133561395]

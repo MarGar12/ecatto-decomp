@@ -191,6 +191,11 @@ func _process(delta: float) -> void:
 		$model/effects/cn_earth.position.x = -sin(decay*2)*32
 		$model/effects/cn_earth.position.y = 8 + cos(decay*2)*8
 	$model/effects/cn_earth.z_index = sign($model/effects/cn_earth.position.y-8)
+	
+	# ruthenium hat thingies
+	if protons == 44:
+		if absf(rotation_degrees) > 90 and !ruth_hat_off:
+			spawn_ruth_hat()
 	#delete when resetting
 	if Input.is_action_just_pressed("R"):
 		queue_free()
@@ -1063,8 +1068,11 @@ func generate_features():
 func update():
 	#catto appearance
 	if protons < $model/body.sprite_frames.get_frame_count("default"):
-		$model/body.play("default")
-		$model/body.frame = protons
+		if protons == 44 and ruth_hat_off:
+			$model/body.play("alternate")
+		else:
+			$model/body.play("default")
+			$model/body.frame = protons
 	else: 
 		$model/body.play("placeholder")
 	
@@ -2143,6 +2151,12 @@ func _on_body_entered(body):
 					knocked_out = randf_range(10,20)
 				if glob.catto_rotat: 
 					rotation_degrees += randf_range(30,180) * [-1,1].pick_random()
+		if body is ruthenium_hat:
+			if protons == 44:
+				body.queue_free()
+				$model/body.play("default")
+				$model/body.frame = protons
+				ruth_hat_off = false
 
 func _on_body_exited(body):
 	if body != null:
@@ -2301,6 +2315,9 @@ func _on_range_body_entered(body):
 			body.destroy("poof")
 		if body is particle_ball:
 			interest = body
+		if body is ruthenium_hat:
+			if protons == 44:
+				interest = body
 
 func _on_range_body_exited(body):
 	if body != null:
@@ -2313,8 +2330,10 @@ func _on_range_body_exited(body):
 			if [protons,mass] == [42,94]:
 				eye1 = 0
 				eye2 = 0
-		if body is particle and body != self:
+		elif body is particle_ball and body != self:
 			interest = null
+		elif body is ruthenium_hat and body != self and protons == 44:
+			interest = body
 
 func _on_veryclose_body_entered(body):
 	if body != null:
