@@ -22,13 +22,18 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
-boot_splash/image="uid://r7or7cvkukek"
+boot_splash/image="uid://c433qu46ldooj"
 config/icon="uid://cav7q3mcutdia"
 config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp.ico"
 
 [autoload]
 
 glob="*res://glob.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
+settings/stdout/print_gpu_profile=true
 
 [display]
 
@@ -137,8 +142,6 @@ pathfinding/max_threads=-1
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.313726, 0.313726, 0.313726, 1)
