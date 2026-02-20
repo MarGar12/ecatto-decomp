@@ -2,50 +2,50 @@
 
 [ext_resource type="Script" uid="uid://cxmd2p7wcmeod" path="res://ec_assets/scenes/main.gd" id="1"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
-[ext_resource type="Texture2D" uid="uid://d2hpxx50pjljv" path="res://ec_assets/textures/items/earth2.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://d02cq0myp1k3f" path="res://ec_assets/textures/backgrounds/moon_terrain.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://bqwcebnbjx7hd" path="res://ec_assets/textures/backgrounds/moon_ground.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://bt3cv6nsjgyv6" path="res://ec_assets/textures/backgrounds/catseye-neb.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://dvqhiogsgnrvu" path="res://ec_assets/textures/backgrounds/catseye-wave.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://n04s8a81j0tc" path="res://ec_assets/textures/effects/star0.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://b45q3m32gfsaq" path="res://ec_assets/textures/backgrounds/metalwall.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dedp3r7j0t56" path="res://ec_assets/textures/items/earth2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bcaehmiuduggr" path="res://ec_assets/textures/backgrounds/moon_terrain.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cl21h1njsxm02" path="res://ec_assets/textures/backgrounds/moon_ground.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://djbirnbrmlsxp" path="res://ec_assets/textures/backgrounds/catseye-neb.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bkn866pvw8jsb" path="res://ec_assets/textures/backgrounds/catseye-wave.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://vrllpt3m13aj" path="res://ec_assets/textures/effects/star0.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://ciaiewoip5ys" path="res://ec_assets/textures/effects/zoomcloud0.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dq7t6olajx1hf" path="res://ec_assets/textures/backgrounds/metalwall.png" id="10"]
 [ext_resource type="Gradient" uid="uid://dsngr2qkprenu" path="res://ec_assets/scenes/ca.tres" id="10_klq3v"]
 [ext_resource type="Texture2D" uid="uid://cuki786q8hhnq" path="res://ec_assets/textures/backgrounds/cloud.png" id="10_kxnor"]
-[ext_resource type="Texture2D" uid="uid://cmbnwp1uw18e8" path="res://ec_assets/xmas_art/1ketheboss_merryxmas.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cecdtt1nhfvx1" path="res://ec_assets/xmas_art/1ketheboss_merryxmas.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://emmnxd8gh0b4" path="res://ec_assets/textures/backgrounds/grass.png" id="11_k25mk"]
-[ext_resource type="FontFile" uid="uid://cfesmi0gujs0b" path="res://ec_assets/fonts/CENTURY.TTF" id="12"]
+[ext_resource type="FontFile" uid="uid://ddmceft4g4nxd" path="res://ec_assets/fonts/CENTURY.TTF" id="12"]
 [ext_resource type="Texture2D" uid="uid://cnd1otk3qovhr" path="res://ec_assets/textures/backgrounds/everest.png" id="12_ctupa"]
-[ext_resource type="Texture2D" uid="uid://cthi4ajr2ytjp" path="res://ec_assets/xmas_art/ckb_nak.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://bpikp6oexcaax" path="res://ec_assets/xmas_art/inky_primexmas.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://b35ka8rlk7vc0" path="res://ec_assets/xmas_art/beehive3465_happyholidays.jpg" id="15"]
-[ext_resource type="Texture2D" uid="uid://bprfq3tsncog6" path="res://ec_assets/xmas_art/megamawilite_arsecoal-cens.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://dnu067n30do00" path="res://ec_assets/xmas_art/oxygendox_sponch.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://v6v487y4oajw" path="res://ec_assets/xmas_art/ritatastic_halogens.png" id="18"]
-[ext_resource type="Texture2D" uid="uid://s0kwgpyquy2t" path="res://ec_assets/xmas_art/saturn_cesiumtree.png" id="19"]
-[ext_resource type="Texture2D" uid="uid://cex40j3k2iddg" path="res://ec_assets/xmas_art/senchent_everyone.JPG" id="20"]
-[ext_resource type="Texture2D" uid="uid://cd4sknumo7ara" path="res://ec_assets/xmas_art/ticktock_meltedjaw.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://dnhn3yk6gnsd7" path="res://ec_assets/xmas_art/triton_osmiumplatinum.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://bbteny68ynl3x" path="res://ec_assets/xmas_art/triton_carbonmonoxide.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://pa6fxy1jae2l" path="res://ec_assets/xmas_art/triton_berkelium.png" id="24"]
-[ext_resource type="Texture2D" uid="uid://0tj1kkdmht1a" path="res://ec_assets/xmas_art/audiovox_oganessontennessine.jpg" id="25"]
-[ext_resource type="Texture2D" uid="uid://dmmieth003ji0" path="res://ec_assets/textures/ui/tutorial_catto.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://depfhktfs7ue6" path="res://ec_assets/xmas_art/ckb_nak.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://8bg7vmmnd7jf" path="res://ec_assets/xmas_art/inky_primexmas.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://chs3td2ejxvsb" path="res://ec_assets/xmas_art/beehive3465_happyholidays.jpg" id="15"]
+[ext_resource type="Texture2D" uid="uid://bb36jmg117c2r" path="res://ec_assets/xmas_art/megamawilite_arsecoal-cens.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c25t8ldjsf3ep" path="res://ec_assets/xmas_art/oxygendox_sponch.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://doehlc5rue3fw" path="res://ec_assets/xmas_art/ritatastic_halogens.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://nd6xrp6cs1xt" path="res://ec_assets/xmas_art/saturn_cesiumtree.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://b8ogi6ymb7wkv" path="res://ec_assets/xmas_art/senchent_everyone.JPG" id="20"]
+[ext_resource type="Texture2D" uid="uid://cm41gv81ublle" path="res://ec_assets/xmas_art/ticktock_meltedjaw.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cqfg7hfufxc86" path="res://ec_assets/xmas_art/triton_osmiumplatinum.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://qmoff0r0l4oh" path="res://ec_assets/xmas_art/triton_carbonmonoxide.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://nc5vhpo5itnn" path="res://ec_assets/xmas_art/triton_berkelium.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://b5xc0c6yoi8nn" path="res://ec_assets/xmas_art/audiovox_oganessontennessine.jpg" id="25"]
+[ext_resource type="Texture2D" uid="uid://bojyq5r6yq0xj" path="res://ec_assets/textures/ui/tutorial_catto.png" id="26"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="26_cql6i"]
-[ext_resource type="Texture2D" uid="uid://dw0uj0y4flamx" path="res://ec_assets/textures/ui/tutorial_table.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://decqxaxh5d2yg" path="res://ec_assets/textures/ui/tutorial_table.png" id="27"]
 [ext_resource type="PackedScene" uid="uid://cc5lnxjqdlpj" path="res://ec_assets/scenes/camera.tscn" id="28"]
 [ext_resource type="Script" uid="uid://bbf0pu4c023l1" path="res://ec_assets/scenes/music.gd" id="29"]
-[ext_resource type="AudioStream" uid="uid://ck0t7g13a34ny" path="res://ec_assets/music/Vibe Ace.mp3" id="30"]
+[ext_resource type="AudioStream" uid="uid://c64fkf848odql" path="res://ec_assets/music/Vibe Ace.mp3" id="30"]
 [ext_resource type="Script" uid="uid://bweu07l2apik0" path="res://ec_assets/scenes/music_track.gd" id="31"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="31_3s43j"]
-[ext_resource type="AudioStream" uid="uid://dh6p2xs3ex0i8" path="res://ec_assets/music/Bathed in the Light.mp3" id="32"]
-[ext_resource type="AudioStream" uid="uid://durqlh2j82dw3" path="res://ec_assets/music/Pamgaea.mp3" id="33"]
-[ext_resource type="AudioStream" uid="uid://puccjqhqogd8" path="res://ec_assets/music/Frozen Star.mp3" id="34"]
-[ext_resource type="AudioStream" uid="uid://btsxqpktvj2pe" path="res://ec_assets/music/How it Begins.mp3" id="35"]
-[ext_resource type="AudioStream" uid="uid://5ebg318ykj68" path="res://ec_assets/music/MeowersOfTen.mp3" id="36"]
-[ext_resource type="AudioStream" uid="uid://cfc735y4xtjjs" path="res://ec_assets/sounds/burning1.wav" id="37"]
-[ext_resource type="AudioStream" uid="uid://b35ovjebecx10" path="res://ec_assets/music/BigBang.mp3" id="37_x1wsj"]
-[ext_resource type="AudioStream" uid="uid://dvg04athofoa6" path="res://ec_assets/music/Blippy Trance.mp3" id="38_cql6i"]
-[ext_resource type="AudioStream" uid="uid://bjcxc5gq38oos" path="res://ec_assets/music/Deliberate Thought.mp3" id="39_kxnor"]
+[ext_resource type="AudioStream" uid="uid://dcfwwjpydtpk2" path="res://ec_assets/music/Bathed in the Light.mp3" id="32"]
+[ext_resource type="AudioStream" uid="uid://c67ghsbsht0da" path="res://ec_assets/music/Pamgaea.mp3" id="33"]
+[ext_resource type="AudioStream" uid="uid://evhv00j2obcg" path="res://ec_assets/music/Frozen Star.mp3" id="34"]
+[ext_resource type="AudioStream" uid="uid://7kqve45r4qqv" path="res://ec_assets/music/How it Begins.mp3" id="35"]
+[ext_resource type="AudioStream" uid="uid://dlhevi3kivf86" path="res://ec_assets/music/MeowersOfTen.mp3" id="36"]
+[ext_resource type="AudioStream" uid="uid://pvp1bg7txdwv" path="res://ec_assets/sounds/burning1.wav" id="37"]
+[ext_resource type="AudioStream" uid="uid://bs6d8hw7863c4" path="res://ec_assets/music/BigBang.mp3" id="37_x1wsj"]
+[ext_resource type="AudioStream" uid="uid://bbe0wlga2ro8f" path="res://ec_assets/music/Blippy Trance.mp3" id="38_cql6i"]
+[ext_resource type="AudioStream" uid="uid://c1tmthl438md1" path="res://ec_assets/music/Deliberate Thought.mp3" id="39_kxnor"]
 [ext_resource type="AudioStream" uid="uid://by5t6ikhmk7fc" path="res://ec_assets/music/FreshlyAcquainted.ogg" id="41_cql6i"]
 
 [sub_resource type="Gradient" id="Gradient_6bmi1"]
@@ -352,7 +352,6 @@ color = Color(0.25098, 0.501961, 1, 1)
 color_ramp = SubResource("Gradient_fv4en")
 
 [node name="earth_fk" type="Node2D" parent="bg" unique_id=860448242]
-visible = false
 texture_filter = 1
 
 [node name="sky" type="Parallax2D" parent="bg/earth_fk" unique_id=369584759]
@@ -439,6 +438,8 @@ texture = ExtResource("12_ctupa")
 [node name="grass_far2" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=699860108]
 scroll_scale = Vector2(0.15, 0.15)
 scroll_offset = Vector2(0, 375)
+repeat_size = Vector2(5000, 0)
+repeat_times = 13
 
 [node name="grass" type="Sprite2D" parent="bg/earth_fk/ground3/grass_far2" unique_id=1785705999]
 self_modulate = Color(0, 1, 1, 1)
@@ -447,12 +448,14 @@ texture_repeat = 2
 position = Vector2(0, 176)
 texture = ExtResource("11_k25mk")
 region_enabled = true
-region_rect = Rect2(0, 0, 20000, 280)
+region_rect = Rect2(0, 0, 5000, 280)
 
 [node name="grass_far1" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=589245141]
 scale = Vector2(2, 2)
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(0, 625)
+repeat_size = Vector2(5000, 0)
+repeat_times = 7
 
 [node name="grass_far" type="Sprite2D" parent="bg/earth_fk/ground3/grass_far1" unique_id=1010201932]
 self_modulate = Color(0.7529412, 1, 1, 1)
@@ -460,12 +463,13 @@ texture_filter = 1
 texture_repeat = 2
 texture = ExtResource("11_k25mk")
 region_enabled = true
-region_rect = Rect2(0, 0, 20000, 280)
+region_rect = Rect2(0, 0, 5000, 280)
 
 [node name="cloud_front3" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=683096169]
 scroll_scale = Vector2(0.05, 0.05)
 repeat_size = Vector2(100000, 0)
 autoscroll = Vector2(2, 0)
+repeat_times = 2
 
 [node name="cloud1" type="Sprite2D" parent="bg/earth_fk/ground3/cloud_front3" unique_id=954234661]
 visible = false
@@ -478,6 +482,7 @@ scroll_scale = Vector2(0.065, 0.065)
 scroll_offset = Vector2(0, 4)
 repeat_size = Vector2(1000000, 0)
 autoscroll = Vector2(3, 0)
+repeat_times = 2
 
 [node name="cloud1" type="Sprite2D" parent="bg/earth_fk/ground3/cloud_front2" unique_id=872672995]
 visible = false
@@ -489,6 +494,7 @@ texture = ExtResource("10_kxnor")
 scroll_scale = Vector2(0.08, 0.08)
 repeat_size = Vector2(1000000, 0)
 autoscroll = Vector2(8, 0)
+repeat_times = 2
 
 [node name="cloud1" type="Sprite2D" parent="bg/earth_fk/ground3/cloud_front1" unique_id=241427984]
 visible = false
@@ -496,42 +502,56 @@ modulate = Color(0.7529412, 0.8745098, 1, 1)
 position = Vector2(0, -123)
 texture = ExtResource("10_kxnor")
 
+[node name="infblack" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=323276502]
+top_level = true
+scale = Vector2(3000, 3000)
+scroll_scale = Vector2(0, 1)
+
+[node name="black2" type="Sprite2D" parent="bg/earth_fk/ground3/infblack" unique_id=690316864]
+texture = SubResource("GradientTexture2D_w6njf")
+offset = Vector2(0, 32)
+
 [node name="grass_bg" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=1341241145]
 scale = Vector2(2, 2)
 scroll_scale = Vector2(0.8, 1)
 scroll_offset = Vector2(0, 200)
-repeat_size = Vector2(20000, 0)
+repeat_size = Vector2(5000, 0)
+repeat_times = 4
 
 [node name="grass_bg" type="Sprite2D" parent="bg/earth_fk/ground3/grass_bg" unique_id=584834635]
 texture_filter = 1
 texture_repeat = 2
 texture = ExtResource("11_k25mk")
 region_enabled = true
-region_rect = Rect2(0, 0, 20000, 280)
+region_rect = Rect2(0, 0, 5000, 280)
 
-[node name="grass_fg" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=508198133]
+[node name="grass_fg" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=365783786]
 top_level = true
+scale = Vector2(2, 2)
+scroll_offset = Vector2(0, 20)
+repeat_size = Vector2(5000, 0)
+repeat_times = 9
+
+[node name="grass_bg2" type="Sprite2D" parent="bg/earth_fk/ground3/grass_fg" unique_id=1905621573]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(0, 229)
-scale = Vector2(2, 2)
+position = Vector2(0, 100)
 texture = ExtResource("11_k25mk")
 region_enabled = true
-region_rect = Rect2(0, 0, 20000, 280)
+region_rect = Rect2(0, 0, 5000, 280)
 
-[node name="dark" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=1529404411]
+[node name="dark" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=1280708474]
 top_level = true
-texture_filter = 2
-position = Vector2(-3.2186508e-06, 20.000061)
 scale = Vector2(75, 136.99998)
+scroll_scale = Vector2(0, 1)
+scroll_offset = Vector2(22, 1647.425)
+
+[node name="dark" type="Sprite2D" parent="bg/earth_fk/ground3/dark" unique_id=1529404411]
+texture_filter = 2
+position = Vector2(4.291519e-08, -10.9781)
+scale = Vector2(5, 1)
 texture = SubResource("GradientTexture2D_sclsh")
 offset = Vector2(0, 2.5)
-
-[node name="black2" type="Sprite2D" parent="bg/earth_fk/ground3" unique_id=690316864]
-position = Vector2(0, 677)
-scale = Vector2(3000, 3000)
-texture = SubResource("GradientTexture2D_w6njf")
-offset = Vector2(0, 32)
 
 [node name="air" type="Sprite2D" parent="." unique_id=469472985]
 modulate = Color(0.501961, 0.752941, 1, 0.12549)
@@ -824,6 +844,7 @@ theme_override_font_sizes/font_size = 16
 text = "Christmas Art: off"
 
 [node name="Sprite" type="Sprite2D" parent="walls" unique_id=584762892]
+visible = false
 modulate = Color(1, 1, 1, 0.12549)
 z_index = -10
 texture_filter = 2

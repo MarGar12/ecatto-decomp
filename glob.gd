@@ -47,6 +47,10 @@ var earth_exploded = false
 
 var hudparency = 1.0
 
+# play area variables
+var box_x = 0.0
+var box_y = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_cfg()

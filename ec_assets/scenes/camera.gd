@@ -70,6 +70,8 @@ func sync_settings():
 	$ui/pause/tab/Gameplay/ai.button_pressed = glob.catto_ai
 	$ui/pause/tab/Gameplay/rotate.button_pressed = glob.catto_rotat
 	$ui/pause/tab/Video/hudtrans.value = glob.hudparency
+	$ui/pause/tab/Gameplay/box_x.value = glob.box_x
+	$ui/pause/tab/Gameplay/box_y.value = glob.box_y
 
 func spawn_electron_toy():
 	var electron_toy = load("res://ec_assets/objects/particle_ball.tscn")
@@ -172,6 +174,14 @@ func _process(delta):
 	else:
 		$ui/pause/tab/Gameplay/fusethres/value.text = "No Fusion"
 	$ui/pause/tab/Gameplay/endworld.disabled = !glob.earth_exploded
+	if glob.box_x != 5000.1 and glob.box_y != 5000.1:
+		$ui/pause/tab/Gameplay/box_x/value.text = "(" + str(glob.box_x) + "," + str(glob.box_y) + ")"
+	elif glob.box_x != 5000.1 and glob.box_y == 5000.1:
+		$ui/pause/tab/Gameplay/box_x/value.text = "(" + str(glob.box_x) + ",Disabled)"
+	elif glob.box_x == 5000.1 and glob.box_y != 5000.1:
+		$ui/pause/tab/Gameplay/box_x/value.text = "(Disabled," + str(glob.box_y) + ")"
+	else:
+		$ui/pause/tab/Gameplay/box_x/value.text = "No Ceiling and Walls"
 	$ui/pause/tab/Video/hudtrans/value.text = "HUD Transparency: " + str(glob.hudparency * 100).pad_decimals(0) + "%"
 
 func _on_rateslider_value_changed(value):
@@ -208,6 +218,10 @@ func _on_rotat_toggled(button_pressed):
 	glob.catto_rotat = button_pressed
 func _on_hudtrans_value_changed(value):
 	glob.hudparency = value
+func _on_box_x_value_changed(value):
+	glob.box_x = value
+func _on_box_y_value_changed(value):
+	glob.box_y = value
 
 func _on_nucleus_toggled(button_pressed):
 	glob.spawn_nucleus = button_pressed
@@ -384,6 +398,9 @@ func reset_settings():
 	glob.catto_ai = true
 	glob.catto_rotat = true
 	glob.hudscaling = true
+	glob.hudparency = 1.0
+	glob.box_x = 0.0
+	glob.box_y = 0.0
 
 func _on_settings_reset_pressed():
 	reset_settings()

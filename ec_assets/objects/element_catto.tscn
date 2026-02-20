@@ -161,6 +161,7 @@
 [ext_resource type="Texture2D" uid="uid://7ix4imct30cn" path="res://ec_assets/textures/particles/nucleus_au.png" id="152"]
 [ext_resource type="Texture2D" uid="uid://bpf2cguqxieq8" path="res://ec_assets/textures/cattos/elements/isotopes/ne22-tail.png" id="152_7rv7g"]
 [ext_resource type="Texture2D" uid="uid://cn44ismhem2l" path="res://ec_assets/textures/items/cn_earth.png" id="153"]
+[ext_resource type="Texture2D" uid="uid://0of4q6ydtrs3" path="res://ec_assets/textures/cattos/elements/isotopes/eu158-tail.png" id="153_3vhun"]
 [ext_resource type="SpriteFrames" uid="uid://cyqo6svgeycui" path="res://ec_assets/textures/element_spots.tres" id="154"]
 [ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="155"]
 [ext_resource type="Texture2D" uid="uid://33u6pmob8roe" path="res://ec_assets/textures/cattos/elements/isotopes/ca48-fangs.png" id="155_tpqhr"]
@@ -192,9 +193,12 @@
 [ext_resource type="Texture2D" uid="uid://bv7ayye66lk7b" path="res://ec_assets/textures/cattos/glasses_fl.png" id="178"]
 [ext_resource type="Texture2D" uid="uid://dx5iekti6al50" path="res://ec_assets/textures/cattos/elements/solid/dubnium_rings.png" id="179"]
 [ext_resource type="Texture2D" uid="uid://cpigbtv6c808s" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="180"]
+[ext_resource type="Texture2D" uid="uid://doh0i7linmwdm" path="res://ec_assets/textures/cattos/mouth_ba154.png" id="180_h40v8"]
 [ext_resource type="Texture2D" uid="uid://cdfewah5l2ulk" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="181"]
+[ext_resource type="Texture2D" uid="uid://bbt6c6kdam5la" path="res://ec_assets/textures/cattos/mouth_tl201.png" id="181_vkvpp"]
 [ext_resource type="Texture2D" uid="uid://cyqinfl484fcw" path="res://ec_assets/textures/cattos/elements/isotopes/mo92-hair.png" id="182"]
 [ext_resource type="Texture2D" uid="uid://bf0td8iauhahq" path="res://ec_assets/textures/cattos/elements/isotopes/mo95-hair.png" id="183"]
+[ext_resource type="Texture2D" uid="uid://3mk18loth00q" path="res://ec_assets/textures/cattos/mouth_eu158.png" id="183_kaqhv"]
 [ext_resource type="Texture2D" uid="uid://b3nfns6ugicdp" path="res://ec_assets/textures/cattos/elements/isotopes/mo100-hair.png" id="184"]
 [ext_resource type="AudioStream" uid="uid://dwbkoed4ah4r4" path="res://ec_assets/sounds/drywall_footstep1.wav" id="185"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="185_2i7d5"]
@@ -213,6 +217,7 @@
 [ext_resource type="AudioStream" uid="uid://bybx1t8n4wvv5" path="res://ec_assets/sounds/MAUW.wav" id="193"]
 [ext_resource type="AudioStream" uid="uid://dbaapl67otkmk" path="res://ec_assets/sounds/anime_spark_thing.wav" id="194"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="195"]
+[ext_resource type="Texture2D" uid="uid://cp0aggyvo4r3h" path="res://ec_assets/textures/cattos/elements/isotopes/mnote_eu158.png" id="196_kaqhv"]
 [ext_resource type="Texture2D" uid="uid://djx7x5jgc385d" path="res://ec_assets/textures/cattos/elements/isotopes/ts295-hair.png" id="196_tgcry"]
 [ext_resource type="Texture2D" uid="uid://bkyfr34kp4nm2" path="res://ec_assets/textures/cattos/elements/isotopes/os185-hair.png" id="198_oow6s"]
 [ext_resource type="Texture2D" uid="uid://c0bkob86c7l24" path="res://ec_assets/textures/cattos/elements/isotopes/os194-hair.png" id="200_ok4eu"]
@@ -773,6 +778,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("152_7rv7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_3vhun")
 }],
 "loop": true,
 "name": &"isotopes",
@@ -916,6 +924,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("167")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_h40v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_vkvpp")
 }],
 "loop": true,
 "name": &"default",
@@ -924,6 +938,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("168")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_kaqhv")
 }],
 "loop": true,
 "name": &"europium",
@@ -1173,6 +1190,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("190_kjeq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_kaqhv")
 }],
 "loop": true,
 "name": &"default",
@@ -1622,7 +1642,6 @@ texture = SubResource("GradientTexture2D_0hom1")
 position = Vector2(0, 64)
 sprite_frames = SubResource("SpriteFrames_bhg3s")
 animation = &"isotopes"
-frame = 8
 speed_scale = 0.0
 offset = Vector2(-32, -32)
 
@@ -1811,6 +1830,7 @@ texture = ExtResource("156")
 [node name="eye1" type="AnimatedSprite2D" parent="model/face" unique_id=1081601559]
 position = Vector2(-14, -4)
 sprite_frames = ExtResource("7")
+animation = &"isotopes"
 speed_scale = 0.0
 
 [node name="sonar" type="CPUParticles2D" parent="model/face/eye1" unique_id=848351228]
@@ -1897,6 +1917,7 @@ texture = ExtResource("173_tpqhr")
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 12)
 sprite_frames = SubResource("SpriteFrames_lioc7")
+animation = &"europium"
 speed_scale = 0.0
 
 [node name="fangs" type="Sprite2D" parent="model/face/mouth" unique_id=472363195]

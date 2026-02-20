@@ -210,7 +210,7 @@ func _physics_process(delta: float) -> void:
 	
 	#out of bounds
 	#if abs(position.x) > 2500: position.x = 2500*sign(position.x)
-	if position.y < -2048: position.y = -2048
+	#if position.y < -2048: position.y = -2048
 	
 	#states of matter
 	if glob.temperature > boiltemp: 
@@ -511,17 +511,26 @@ func _physics_process(delta: float) -> void:
 			elif protons == 73: eye2 = 29
 			elif protons == 107: eye2 = 52
 			else: eye2 = 0
-		elif !([protons,mass] in [[22,44],[26,57],[87,212]]): eye2 = eye1
+		elif !([protons,mass] in [[22,44],[26,57],[56,154],[81,201],[87,212]]): eye2 = eye1
 	if protons == 87 and mass == 212 and electrons != 0:
 		$model/face/eye1.offset.y = -18
 		$model/face/eye2.offset.y = -18
+		$model/face/eye1.offset.x = 8
+		$model/face/eye2.offset.x = -8
 		$model/face/mouth.offset.y = -14
 		#$model/face/mouth.offset.x = -1
 	elif protons == 56 and mass == 154 and electrons != 0:
 		$model/face/eye1.offset.y = -16
 		$model/face/eye2.offset.y = -16
-		$model/face/mouth.offset.y = -12
+		$model/face/mouth.offset.y = -19
+		$model/face/eye1.offset.x = 3
+		$model/face/eye2.offset.x = -3
 		#$model/face/mouth.offset.x = -1
+	elif protons == 63 and mass == 158 and electrons != 0:
+		$model/face/eye1.offset.y = -2
+		$model/face/eye2.offset.y = -2
+		$model/face/eye1.offset.x = 3
+		$model/face/eye2.offset.x = -2
 	else:
 		$model/face/eye1.offset.y = 0
 		$model/face/eye2.offset.y = 0
@@ -537,7 +546,7 @@ func _physics_process(delta: float) -> void:
 		if protons in [6,34,35,63,64,75,85,86,97,109,111,118]: $model/face/eye1.frame = 1
 		elif protons == 117 and mass == 292: $model/face/eye1.frame = 1
 		else: $model/face/eye1.frame = 0
-		if protons == 63: $model/face/eye1.modulate = Color8(255,0,0)
+		if protons == 63 and not mass == 158: $model/face/eye1.modulate = Color8(255,0,0)
 		elif protons == 64: $model/face/eye1.modulate = Color8(128,128,128)
 		elif protons == 111: $model/face/eye1.modulate = Color8(128,200,255)
 		else: $model/face/eye1.modulate = Color8(255,255,255)
@@ -560,6 +569,9 @@ func _physics_process(delta: float) -> void:
 			elif protons in [3,33,55,87,96,102,106] or [protons,mass] == [79,195]: mouth = 2
 			elif protons == 42 and mass != 92: mouth = 2
 			elif protons == 60 and mass == 163: mouth = 2
+			elif protons == 56 and mass == 154: mouth = 3
+			elif protons == 63 and mass == 158: mouth = 1
+			elif protons == 81 and mass == 201: mouth = 4
 			elif [protons,mass] != [6,14]: mouth = 0
 	elif interest != null: mouth = 0
 	elif disinterest != null: mouth = 2
@@ -772,13 +784,13 @@ func _physics_process(delta: float) -> void:
 					else:
 						$purr.play()
 						$model/face/eye1.play("happy")
-						if mouth != 0:
+						if mouth != 0 and not [protons,mass] == [63,158]:
 							mouth = 0
 				else:
 					$purr.play()
 					if group != "noble gas":
 						$model/face/eye1.play("happy")
-						if mouth != 0:
+						if mouth != 0 and not [protons,mass] == [63,158]:
 							mouth = 0
 						match protons:
 							protons when protons in [25,85,94,101,109,114]:
@@ -796,7 +808,7 @@ func _physics_process(delta: float) -> void:
 								if pet_num < pet_thresh:
 									print("ah")
 									$model/face/eye1.play("shut")
-									if mouth != 1: mouth = 1
+									if mouth != 1 and not [protons,mass] == [63,158]: mouth = 1
 								else:
 									mouth = 0
 							38: # strontium, only one eye closes
@@ -933,9 +945,12 @@ func generate_features():
 	#mouths
 	$model/face/mouth.visible = !(protons in [2,20,22,97,105,111,114,120] or [protons,mass] == [79,199] or knocked_out > 0)
 	if protons == 10: $model/face/mouth.animation = "neon"
-	elif protons == 63: $model/face/mouth.animation = "europium"
+	elif protons == 63:
+		$model/face/mouth.animation = "europium"
 	else: $model/face/mouth.animation = "default"
-	if protons == 63:
+	if protons == 63 and mass == 158:
+		$model/face/mouth.self_modulate = Color8(255,255,255)
+	elif protons == 63:
 		$model/face/mouth.self_modulate = Color8(255,0,0)
 	elif protons in [6,10,25,35,85,86,118,119]: 
 		$model/face/mouth.self_modulate = Color8(255,255,255)
@@ -987,7 +1002,10 @@ func generate_features():
 		if protons == 47: $model/tail.frame = 1
 		if protons == 48: $model/tail.frame = 2
 		if protons == 57: $model/tail.frame = 3
-		if protons == 63: $model/tail.frame = 4
+		if protons == 63 and mass == 158:
+			$model/tail.play("isotopes")
+			$model/tail.frame = 9
+		elif protons == 63: $model/tail.frame = 4
 		if protons == 66: $model/tail.frame = 5
 		if protons == 97: $model/tail.frame = 6
 		if protons == 98: $model/tail.frame = 7
@@ -1556,6 +1574,8 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 50
 			eye2 = 51
+			mouth = 3
+			#$model/face/mouth.modulate = Color("ff5500")
 			$model/face/mouth.self_modulate = Color("ff5500ff")
 		elif [protons,mass] == [59,142]:
 			halflife = 3600*19.12
@@ -1577,6 +1597,16 @@ func update():
 			$model/face/eye2.play("isotopes")
 			eye1 = 39
 			eye2 = 39
+		elif [protons,mass] == [63,158]:
+			$model/body.frame = 104
+			$model/face/eye1.play("isotopes")
+			$model/face/eye2.play("isotopes")
+			$model/face/glasses.visible = true
+			$model/face/glasses.offset.y = -6
+			$model/face/glasses.offset.x = 1
+			eye1 = 54
+			eye2 = 54
+			glasses = 9
 		elif [protons,mass] == [64,160]:
 			$model/body.frame = 96
 		elif [protons,mass] == [76,184]:
@@ -1670,7 +1700,7 @@ func update():
 			$model/face/eye2.play("isotopes")
 			$model/face/spot.play("isotopes")
 			eye1 = 29
-			eye2 = 29
+			eye2 = 53	
 			spot = 2
 		elif [protons,mass] == [81,203]:
 			$model/body.frame = 47
@@ -1857,16 +1887,16 @@ func update():
 	@warning_ignore("integer_division")
 	$rift.modulate.a = (protons-120)/1000
 	
-	# Designer credits --- isotopes
+	# Designer credits --- isotopes !! Don't use an array if theres only one isotope credited
 	if [protons,mass] in [[1,4],[1,6],[1,7]]:
 		credit = "CiaaiK"
 	elif [protons,mass] in [[1,5],[3,6],[7,13],[8,15],[13,26]]:
 		credit = "gammaray-burst"
-	elif [protons,mass] in [20,47]:
+	elif [protons,mass] == [20,47]:
 		credit = "starri-cosmikat"
 	elif [protons,mass] in [[20,48],[60,163],[87,212],[95,243]]:
 		credit = "theticktock_ticky"
-	elif [protons,mass] in [[20,52],[36,81],[39,90],[53,135],[54,135],[54,136],[54,140],[55,137],[76,185],[81,201],[90,230],[92,236],[96,242],[117,295]]:
+	elif [protons,mass] in [[20,52],[36,81],[39,90],[53,135],[54,135],[54,136],[54,140],[55,137],[76,185],[90,230],[92,236],[96,242],[117,295]]:
 		credit = "Inky"
 	elif [protons,mass] in [[22,44],[26,60],[27,60],[33,71],[33,72],[33,73],[33,74],[33,76],[33,77],[42,92],[42,93],[42,94],[42,95],[42,96],[42,97],[42,99],[42,100],[76,186],[77,192],[78,190],[79,195],[79,196],[79,198],[79,199],[99,251]]:
 		credit = "SciphonPylon"
@@ -1874,23 +1904,25 @@ func update():
 		credit = "thatmarkerdude"
 	elif [protons,mass] in [[26,57],[81,201],[81,203],[76,190]]:
 		credit = "ir1sh"
-	elif [protons,mass] in [37,87]:
+	elif [protons,mass] == [37,87]:
 		credit = "T.S.Smith"
-	elif [protons,mass] in [49,114]:
+	elif [protons,mass] == [49,114]:
 		credit = "ingrid-pulchrea"
-	elif [protons,mass] in [56,138]:
+	elif [protons,mass] == [56,154]:
 		credit = "Nostuyx"
 	elif [protons,mass] in [[60,144],[60,146],[60,148],[60,150],[118,298],[118,299]]:
 		credit = "Mr.Media2K"
+	elif [protons,mass] == [63, 158]:
+		credit = "capitanerge"
 	elif [protons,mass] in [[76,188],[118,300]]:
 		credit = "Senchium"
 	elif [protons,mass] in [[76,187],[76,184]]:
 		credit = "Oxygendox"
-	elif [protons,mass] in [76,189]:
+	elif [protons,mass] == [76,189]:
 		credit = "bhapydageek"
 	elif [protons,mass] in [[76,188],[76,194]]:
 		credit = "Amy Isolea"
-	elif [protons,mass] in [85,210]:
+	elif [protons,mass] == [85,210]:
 		credit = "Shard"
 	elif [protons,mass] in [[87,221],[94,243],[112,277],[112,285],[112,288]]:
 		credit = "twitcheeer"

@@ -19,6 +19,8 @@ config/description="Monatomic kitty sandbox!"
 config/version="1.4"
 run/main_scene="res://ec_assets/scenes/menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/low_processor_mode=true
+run/delta_smoothing=false
 boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
@@ -26,14 +28,13 @@ boot_splash/image="uid://c433qu46ldooj"
 config/icon="uid://cav7q3mcutdia"
 config/windows_native_icon="res://ec_assets/textures/ui/ecgame_icon_happy_decomp.ico"
 
+[audio]
+
+driver/mix_rate=48000
+
 [autoload]
 
 glob="*res://glob.gd"
-
-[debug]
-
-settings/stdout/print_fps=true
-settings/stdout/print_gpu_profile=true
 
 [display]
 
@@ -47,7 +48,6 @@ project/assembly_name="Element Cattos Decomp"
 [editor]
 
 movie_writer/movie_file="/home/mups/exports/sm.ogv"
-movie_writer/disable_vsync=true
 
 [gui]
 
@@ -131,6 +131,10 @@ Fullscreen={
 ]
 }
 
+[input_devices]
+
+pointing/android/enable_pan_and_scale_gestures=true
+
 [navigation]
 
 pathfinding/max_threads=-1
@@ -138,10 +142,16 @@ pathfinding/max_threads=-1
 [physics]
 
 2d/run_on_separate_thread=true
+common/max_physics_steps_per_frame=1
+common/physics_jitter_fix=0.0
+3d/physics_engine="Dummy"
+common/physics_interpolation=true
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.313726, 0.313726, 0.313726, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

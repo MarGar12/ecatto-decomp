@@ -17,33 +17,33 @@ func _ready():
 	# var sector = Vector2.ZERO
 	# var proc = FastNoiseLite.new()
 	# var color = Vector2.ZERO
-	for c in range(25):
+	for c in range(150):
 		var cloud = $bg/earth_fk/ground3/cloud_front1/cloud1.duplicate() # dupe the frontest cloud
 		cloud.visible = true
-		cloud.position.x = randf_range(-15000,15000)
-		cloud.position.y = randf_range(-800,-200)
+		cloud.position.x = randf_range(-80000,80000)
+		cloud.position.y = randf_range(-2000,-200)
 		cloud.scale *= randf_range(1,2)
 		cloud.flip_h = [true,false].pick_random()
 		$bg/earth_fk/ground3/cloud_front1.add_child(cloud)
 		var cloud2 = $bg/earth_fk/ground3/cloud_front2/cloud1.duplicate() # dupe back front cloud
 		cloud2.visible = true
-		cloud2.position.x = randf_range(-15000,15000)
-		cloud2.position.y = randf_range(-800,-200)
+		cloud2.position.x = randf_range(-80000,80000)
+		cloud2.position.y = randf_range(-3000,-200)
 		cloud2.scale *= randf_range(1,2)
 		cloud2.flip_h = [true,false].pick_random()
 		$bg/earth_fk/ground3/cloud_front2.add_child(cloud2)
 		var cloud3 = $bg/earth_fk/ground3/cloud_front3/cloud1.duplicate() # dupe most back front cloud
 		cloud3.visible = true
-		cloud3.position.x = randf_range(-15000,15000)
-		cloud3.position.y = randf_range(-800,-200)
+		cloud3.position.x = randf_range(-80000,80000)
+		cloud3.position.y = randf_range(-3000,-200)
 		cloud3.scale *= randf_range(0,1.5)
 		cloud3.flip_h = [true,false].pick_random()
 		$bg/earth_fk/ground3/cloud_front3.add_child(cloud3)
-	for c in range(38): # dupe back clouds
+	for c in range(100): # dupe back clouds
 		var cloud = $bg/earth_fk/cloud_back/cloud1.duplicate()
 		cloud.visible = true
-		cloud.position.x = randf_range(-30000,30000)
-		cloud.position.y = randf_range(-600,-400)
+		cloud.position.x = randf_range(-80000,80000)
+		cloud.position.y = randf_range(-2000,-400)
 		cloud.scale *= randf_range(0,1)
 		cloud.flip_h = [true,false].pick_random()
 		$bg/earth_fk/cloud_back.add_child(cloud)
@@ -60,6 +60,10 @@ func _ready():
 		mountain2.scale *= randf_range(0.5,1.5)
 		mountain2.flip_h = [true,false].pick_random()
 		$bg/earth_fk/mountains2.add_child(mountain2)
+		
+	$bg/earth_fk/ground3/cloud_front3.autoscroll = Vector2(randf_range(2,5),0)
+	$bg/earth_fk/ground3/cloud_front2.autoscroll = Vector2(randf_range(3,8),0)
+	$bg/earth_fk/ground3/cloud_front1.autoscroll = Vector2(randf_range(6,18),0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -96,6 +100,13 @@ func _process(delta):
 	$bg/space.visible = $camera.preset == 3
 	$bg/sun.visible = $camera.preset == 4
 	
+	$walls/CollisionShape2D.position = Vector2(2500+glob.box_x, 0)
+	$walls/CollisionShape2D2.position = Vector2(-2500-glob.box_x, 0)
+	$ceiling/CollisionShape2D.position = Vector2(0, glob.box_y)
+	
+	$walls/CollisionShape2D.disabled = glob.box_x == 5000.1
+	$walls/CollisionShape2D2.disabled = glob.box_x == 5000.1
+	$ceiling/CollisionShape2D.disabled = glob.box_y == 5000.1
 	
 	
 func spawn(obj,x,y):
