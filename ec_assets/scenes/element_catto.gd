@@ -90,14 +90,19 @@ var proc = FastNoiseLite.new() #for procedural synthetic elements later down the
 var petted = false
 var pet_thresh:int = 0
 var pet_num:int = 0
-
-
+var affinity:float = 73
+var affinities:Dictionary = {1: 72.769, 2: -48, 3: 59.6326, 4: -48, 5: 26.989, 6: 121.7763, 7: -6.8, 8: 140.97597, 9: 328.1649, 10: -116, 11: 52.867, 12: -40, 13: 41.762, 14: 134.0684, 15: 72.037, 16: 200.411, 17: 348.575, 18: -96, 19: 48.383, 20: 2.37, 21: 17.3076, 22: 7.289, 23: 50.911, 24: 65.2172, 25: -50, 26: 14.785, 27: 63.8979, 28: 111.65, 29: 119.235, 30: -58, 31: 29.0581, 32: 118.9352, 33: 77.6211, 34: 194.9587, 35: 324.5369, 36: -96, 37: 46.884, 38: 5.023, 39: 30.035, 40: 41.806, 41: 88.516, 42: 72.097, 43: 53, 44: 100.95, 45: 110.27, 46: 54.24, 47: 125.862, 48: -68, 49: 37.043, 50: 107.2984, 51: 101.059, 52: 190.161, 53: 295.1531, 54: -77, 55: 45.5023, 56: 13.954, 57: 53.795, 58: 57.9067, 59: 10.539, 60: 9.406, 61: 12.45, 62: 15.63, 63: 11.2, 64: 20.5, 65: 12.67, 66: 1.45, 67: 32.61, 68: 30.1, 69: 99, 70: -1.93, 71: 23.04, 72: 17.18, 73: 31.731, 74: 78.783, 75: 5.8273, 76: 103.9785, 77: 150.9086, 78: 205.041, 79: 222.747, 80: -48, 81: 30.884, 82: 34.4183, 83: 90.924, 84: 136, 85: 233.087, 86: -68, 87: 46.89, 88: 9.6485, 89: 33.77, 90: 58.633, 91: 53.03, 92: 30.39, 93: 45.85, 94: -48.33, 95: 9.93, 96: 27.17, 97: -165.24, 98: -97.31, 99: -28.6, 100: 33.96, 101: 93.91, 102: -223.22, 103: -30.04, 104: 0, 105: 0, 106: 0, 107: 0, 108: 0, 109: 0, 110: 0, 111: 151, 112: 0, 113: 66.6, 114: 0, 115: 35.3, 116: 74.9, 117: 165.9, 118: 7.72, 119: 63.87, 120: 2.03, 121: 55}
 func _ready():
 	glob.cattos += 1
 	movetimer = randf_range(0,10)
 	if protons < 119 and player_spawned == true: neutrons = main_isotopes[protons]-protons
 	if protons == 0: antimuons = 1
 	flash()
+
+	if affinities.has(protons):
+		affinity = affinities[protons]
+	else:
+		affinity = 0
 	
 	if protons == 110:
 		pass
@@ -417,8 +422,15 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("Q"): rotation -= delta
 		if Input.is_action_pressed("E"): rotation += delta
 	
-	move_and_slide()
-	
+	var collision = move_and_slide()
+	if collision:
+		var col:KinematicCollision2D = get_last_slide_collision()
+		var colliding_body = col.get_collider()
+		if colliding_body is particle_ball:
+			if !is_zero_approx(velocity.length()):
+				colliding_body.velocity = velocity
+				velocity /= 2
+
 	#dragging the catto
 	if glob.selected == self and Input.is_action_pressed("lmb"):
 		if glob.tool == 8: # thanks flamebium <3
@@ -2083,7 +2095,7 @@ func _on_body_entered(body):
 					$model/face/eye1.play("shut")
 		if body is bungy and protons == 43:
 			$model/face/eye1.play("happy")
-			
+		
 		if body is particle_ball:
 			if body.velocity.length() > 1500:
 				$punch.play()
@@ -2247,6 +2259,8 @@ func _on_range_body_entered(body):
 			body.spawn_catto(6,6,6)
 			body.spawn_catto(1,0,1)
 			body.destroy("poof")
+		if body is particle_ball:
+			interest = body
 
 func _on_range_body_exited(body):
 	if body != null:
@@ -2259,6 +2273,8 @@ func _on_range_body_exited(body):
 			if [protons,mass] == [42,94]:
 				eye1 = 0
 				eye2 = 0
+		if body is particle and body != self:
+			interest = null
 
 func _on_veryclose_body_entered(body):
 	if body != null:

@@ -8,6 +8,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gavj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_golfs"]
+radius = 77.00649
+
 [node name="particle_ball" type="CharacterBody2D" unique_id=1288683225]
 scale = Vector2(2, 2)
 input_pickable = true
@@ -15,6 +18,11 @@ script = ExtResource("1_iuyld")
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1415996932]
 shape = SubResource("CircleShape2D_4gavj")
+
+[node name="range" type="Area2D" parent="." unique_id=2024888040]
+
+[node name="coll" type="CollisionShape2D" parent="range" unique_id=861110397]
+shape = SubResource("CircleShape2D_golfs")
 
 [node name="electron" type="Sprite2D" parent="." unique_id=348215413]
 texture = ExtResource("2_golfs")
@@ -33,3 +41,5 @@ script = ExtResource("4_golfs")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

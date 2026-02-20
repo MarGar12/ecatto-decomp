@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxdb45r22t460"
+path="res://.godot/imported/Radio Martini.mp3-f14e99a7eafc0d9b947cb6cf96296c1d.mp3str"
+
+[deps]
+
+source_file="res://ec_assets/music/Radio Martini.mp3"
+dest_files=["res://.godot/imported/Radio Martini.mp3-f14e99a7eafc0d9b947cb6cf96296c1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
