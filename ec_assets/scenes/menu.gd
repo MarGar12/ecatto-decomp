@@ -184,6 +184,14 @@ func _process(delta):
 	$settings/tab/Gameplay/temp/value.text = "Temperature Slider Speed: " + str(glob.t_speed)
 	$settings/tab/Gameplay/endworld.disabled = !glob.earth_exploded
 	$settings/tab/Video/hudtrans/value.text = "HUD Transparency: " + str(glob.hudparency * 100).pad_decimals(0) + "%"
+	if glob.box_x != 10000.1 and glob.box_y != 10000.1:
+		$settings/tab/Gameplay/box_x/value.text = "Box Size: (W:" + str(glob.box_x) + ",H:" + str(glob.box_y).pad_decimals(1) + ")"
+	elif glob.box_x != 10000.1 and glob.box_y == 10000.1:
+		$settings/tab/Gameplay/box_x/value.text = "Box Size:(W:" + str(glob.box_x) + ",None)"
+	elif glob.box_x == 10000.1 and glob.box_y != 10000.1:
+		$settings/tab/Gameplay/box_x/value.text = "Box Size:(None,H:" + str(glob.box_y).pad_decimals(1) + ")"
+	else:
+		$settings/tab/Gameplay/box_x/value.text = "Only Floor Collision"
 	
 	if Input.is_action_just_pressed("esc") and not $main.visible:
 		$click.play()
@@ -273,6 +281,19 @@ func _on_mvol_value_changed(value):
 func _on_hudtrans_value_changed(value):
 	glob.hudparency = value
 	
+func _on_box_x_value_changed(value):
+	glob.box_x = value
+
+func _on_box_y_value_changed(value):
+	glob.box_y = value
+
+func _on_lowperf_toggled(button_pressed):
+	glob.lowperf = button_pressed
+	if glob.lowperf == true:
+		Engine.physics_ticks_per_second = 15
+	else:
+		Engine.physics_ticks_per_second = 60
+	
 func sync_options():
 	$settings/tab/Gameplay/explode.button_pressed = glob.explosions
 	$settings/tab/Gameplay/opaque.button_pressed = glob.opaquewalls
@@ -288,3 +309,6 @@ func sync_options():
 	$settings/tab/Audio/mvol.value = glob.music_volume
 	$settings/tab/Gameplay/endworld.button_pressed = glob.endable_world
 	$settings/tab/Video/hudtrans.value = glob.hudparency
+	$settings/tab/Gameplay/box_x.value = glob.box_x
+	$settings/tab/Gameplay/box_y.value = glob.box_y
+	$settings/tab/Video/lowperf.button_pressed = glob.lowperf

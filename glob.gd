@@ -56,6 +56,10 @@ var lowperf = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_cfg()
+	if glob.lowperf == true:
+		Engine.physics_ticks_per_second = 15
+	else:
+		Engine.physics_ticks_per_second = 60
 	if err != OK:
 		pass
 	
@@ -75,9 +79,12 @@ func save():
 	config.set_value("Gameplay", "tutorialpressed", tutorial)
 	config.set_value("Gameplay", "endable_world", endable_world)
 	config.set_value("Gameplay", "weakforce", weakforce)
+	config.set_value("Gameplay", "box_x", box_x)
+	config.set_value("Gameplay", "box_y", box_y)
 	config.set_value("Video", "left_click_drag", lcdrag)
 	config.set_value("Video", "hudscaling", hudscaling)
 	config.set_value("Video", "hud_transparency", hudparency)
+	config.set_value("Video", "lowperf", lowperf)
 	config.save(path)
 	
 func load_cfg():
@@ -95,9 +102,12 @@ func load_cfg():
 	tutorial = config.get_value("Gameplay", "tutorialpressed", true)
 	endable_world = config.get_value("Gameplay", "endable_world", true)
 	weakforce = config.get_value("Gameplay", "weakforce", true)
+	box_x = config.get_value("Gameplay", "box_x", 2500.0)
+	box_y = config.get_value("Gameplay", "box_y", 0.0)
 	lcdrag = config.get_value("Video", "left_click_drag", false)
 	hudscaling = config.get_value("Video", "hudscaling", true)
 	hudparency = config.get_value("Video", "hud_transparency", 1.0)
+	lowperf = config.get_value("Video", "lowperf", false)
 	
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

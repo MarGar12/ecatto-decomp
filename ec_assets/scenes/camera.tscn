@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://dtgo40wyw4qul" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
 [ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
 [ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="38_pe5jw"]
+[ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="40_25m3f"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="44_aenir"]
 
 [sub_resource type="Curve" id="Curve_cgg83"]
@@ -1265,7 +1266,6 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
-visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1300,11 +1300,11 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("38_pe5jw")
 theme_override_font_sizes/font_size = 16
-current_tab = 1
+current_tab = 0
 
 [node name="Gameplay" type="TabBar" parent="ui/pause/tab" unique_id=2016678190]
-visible = false
 layout_mode = 2
+theme = ExtResource("40_25m3f")
 metadata/_tab_index = 0
 
 [node name="explode" type="CheckButton" parent="ui/pause/tab/Gameplay" unique_id=509633782]
@@ -1463,7 +1463,8 @@ offset_top = 405.0
 offset_right = 633.0
 offset_bottom = 421.0
 scale = Vector2(2, 2)
-tooltip_text = "Adjusts how fast you can change the temperature."
+tooltip_text = "Changes how wide the play area is.
+Default: 2500"
 min_value = 75.0
 max_value = 10000.1
 step = 0.1
@@ -1485,13 +1486,16 @@ offset_top = 461.0
 offset_right = 633.0
 offset_bottom = 477.0
 scale = Vector2(2, 2)
-tooltip_text = "Adjusts how fast you can change the temperature."
+tooltip_text = "Changes how tall the play area is.
+Default: 0"
 min_value = -1980.0
 max_value = 10000.1
 step = 0.1
 
 [node name="Video" type="TabBar" parent="ui/pause/tab" unique_id=1029871777]
+visible = false
 layout_mode = 2
+theme = ExtResource("40_25m3f")
 metadata/_tab_index = 1
 
 [node name="scale" type="CheckButton" parent="ui/pause/tab/Video" unique_id=1907008698]
@@ -1541,6 +1545,7 @@ text = "HUD Transparency: "
 [node name="Audio" type="TabBar" parent="ui/pause/tab" unique_id=1246514239]
 visible = false
 layout_mode = 2
+theme = ExtResource("40_25m3f")
 metadata/_tab_index = 2
 
 [node name="svol" type="HSlider" parent="ui/pause/tab/Audio" unique_id=1091207519]
@@ -1588,6 +1593,7 @@ offset_left = -192.0
 offset_top = -182.66629
 offset_right = 192.0
 offset_bottom = -116.66629
+theme = ExtResource("40_25m3f")
 theme_override_font_sizes/font_size = 42
 text = "Paused"
 horizontal_alignment = 1
@@ -1601,6 +1607,7 @@ offset_top = -140.5
 offset_right = 444.0
 offset_bottom = -83.5
 scale = Vector2(0.5, 0.5)
+theme = ExtResource("40_25m3f")
 theme_override_font_sizes/font_size = 21
 text = "Hover over a button or slider for more info"
 horizontal_alignment = 1

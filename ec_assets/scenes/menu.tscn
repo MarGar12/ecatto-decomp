@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://br6jdtf30ogv2" path="res://ec_assets/sounds/atom.mp3" id="36"]
 [ext_resource type="Texture2D" uid="uid://cm5mktdycjakp" path="res://ec_assets/textures/ui/iris.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://d3xxi4mpk5ynu" path="res://ec_assets/textures/ui/ec_logo_decomp.png" id="40_xwdnf"]
+[ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="45_tjthn"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="48_u6mje"]
 
 [sub_resource type="Gradient" id="Gradient_s7vfl"]
@@ -2968,9 +2969,9 @@ offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "Play"
 flat = true
@@ -2989,9 +2990,9 @@ offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.6725274, 0.4879107, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "About"
 flat = true
@@ -3009,6 +3010,7 @@ offset_right = 71.0
 offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
 theme_override_font_sizes/font_size = 42
@@ -3029,9 +3031,9 @@ offset_bottom = 268.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "Credits"
 flat = true
@@ -3050,9 +3052,9 @@ offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "Quit"
 flat = true
@@ -3067,8 +3069,7 @@ offset_top = 27.0
 offset_right = 224.0
 offset_bottom = 221.0
 grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("48_u6mje")
-theme_override_font_sizes/normal_font_size = 21
+theme = ExtResource("45_tjthn")
 bbcode_enabled = true
 text = "Fact of the day:
 The most common form of hydrogen is protium, an atom with one proton, one electron and no neutrons."
@@ -3175,12 +3176,12 @@ offset_right = 444.5
 offset_bottom = 329.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("25")
 theme_override_font_sizes/font_size = 16
 current_tab = 0
 
 [node name="Gameplay" type="TabBar" parent="settings/tab" unique_id=1098881048]
 layout_mode = 2
+theme = ExtResource("45_tjthn")
 metadata/_tab_index = 0
 
 [node name="explode" type="CheckButton" parent="settings/tab/Gameplay" unique_id=729151219]
@@ -3193,6 +3194,7 @@ scale = Vector2(2, 2)
 tooltip_text = "Toggles explosion effects. Helpful if you're photosensitive."
 theme_override_colors/font_pressed_color = Color(1, 0.44313726, 0.105882354, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.5372549, 0, 1)
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Explosions"
 icon_alignment = 2
@@ -3205,6 +3207,7 @@ offset_right = 192.0
 offset_bottom = 93.0
 scale = Vector2(2, 2)
 tooltip_text = "Particles like photons will be unable to escape the room."
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Opaque Walls"
 icon_alignment = 2
@@ -3217,6 +3220,7 @@ offset_right = 192.0
 offset_bottom = 149.0
 scale = Vector2(2, 2)
 tooltip_text = "Toggles the gaseous cattos turning into a cloud when they are hit hard enough."
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Poofing Gases"
 icon_alignment = 2
@@ -3231,6 +3235,7 @@ scale = Vector2(2, 2)
 tooltip_text = "Toggles radioactive decay."
 theme_override_colors/font_pressed_color = Color(0.19215687, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.49019608, 1, 1, 1)
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Weak Nuclear
 Force"
@@ -3244,6 +3249,7 @@ offset_right = 192.0
 offset_bottom = 316.0
 scale = Vector2(2, 2)
 tooltip_text = "Toggles the behavior of Cattos. Useful if you want to stack Cattos without them moving."
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Catto AI"
 icon_alignment = 2
@@ -3257,6 +3263,7 @@ offset_bottom = 372.0
 scale = Vector2(2, 2)
 tooltip_text = "Toggles whether or not the cattos will automatically rotate.
 If toggled off, Q will rotate left and E will rotate right"
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Catto Rotation"
 icon_alignment = 2
@@ -3272,6 +3279,7 @@ tooltip_text = "Toggles world destruction scenes."
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.08627451, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.8745098, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 button_pressed = true
 text = "Endable World"
@@ -3285,6 +3293,7 @@ offset_right = 192.0
 offset_bottom = 455.0
 scale = Vector2(2, 2)
 tooltip_text = "Toggles whether the left mouse button will drag the camera too. Useful for screens which use the left mouse button for touch inputs instead of real touch inputs."
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Left Click
 Drags Camera"
@@ -3307,6 +3316,7 @@ layout_mode = 0
 offset_top = 22.0
 offset_right = 147.0
 offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Fusion Threshold: value"
 
@@ -3328,13 +3338,52 @@ layout_mode = 0
 offset_top = 22.0
 offset_right = 237.0
 offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 21
 text = "Temperature Slider Speed: value"
 autowrap_mode = 2
 
+[node name="box_x" type="HSlider" parent="settings/tab/Gameplay" unique_id=8749103]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 359.0
+offset_right = 633.0
+offset_bottom = 375.0
+scale = Vector2(2, 2)
+tooltip_text = "Changes how wide the play area is.
+Default: 2500"
+min_value = 75.0
+max_value = 10000.1
+step = 0.1
+value = 2500.0
+
+[node name="value" type="Label" parent="settings/tab/Gameplay/box_x" unique_id=176765241]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 237.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("48_u6mje")
+theme_override_font_sizes/font_size = 21
+text = "X:value Y:value"
+autowrap_mode = 2
+
+[node name="box_y" type="HSlider" parent="settings/tab/Gameplay" unique_id=1621348313]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 415.0
+offset_right = 633.0
+offset_bottom = 431.0
+scale = Vector2(2, 2)
+tooltip_text = "Changes how tall the play area is.
+Default: 0"
+min_value = -1980.0
+max_value = 10000.1
+step = 0.1
+
 [node name="Video" type="TabBar" parent="settings/tab" unique_id=1812280098]
 visible = false
 layout_mode = 2
+theme = ExtResource("45_tjthn")
 metadata/_tab_index = 1
 
 [node name="scale" type="CheckButton" parent="settings/tab/Video" unique_id=557734119]
@@ -3345,7 +3394,7 @@ offset_right = 192.0
 offset_bottom = 37.0
 scale = Vector2(2, 2)
 tooltip_text = "Scales the HUD relative to your resolution."
-theme_override_font_sizes/font_size = 21
+theme = ExtResource("45_tjthn")
 text = "Scale HUD"
 icon_alignment = 2
 
@@ -3357,6 +3406,7 @@ offset_right = 645.5
 offset_bottom = 37.0
 scale = Vector2(2, 2)
 tooltip_text = "Change how transparent the UI is."
+theme = ExtResource("45_tjthn")
 max_value = 1.0
 step = 0.01
 
@@ -3365,12 +3415,26 @@ layout_mode = 0
 offset_top = 28.0
 offset_right = 111.0
 offset_bottom = 55.0
-theme_override_font_sizes/font_size = 21
+theme = ExtResource("45_tjthn")
 text = "HUD Transparency: "
+
+[node name="lowperf" type="CheckButton" parent="settings/tab/Video" unique_id=1820299812]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 139.0
+scale = Vector2(2, 2)
+tooltip_text = "Lowers Physics tickrate to 15 from 60, useful for lower end computers."
+theme = ExtResource("45_tjthn")
+text = "Low Performance Mode (buggy)"
+autowrap_mode = 2
+icon_alignment = 2
 
 [node name="Audio" type="TabBar" parent="settings/tab" unique_id=1586280481]
 visible = false
 layout_mode = 2
+theme = ExtResource("45_tjthn")
 metadata/_tab_index = 2
 
 [node name="svol" type="HSlider" parent="settings/tab/Audio" unique_id=1853771445]
@@ -3389,7 +3453,7 @@ layout_mode = 0
 offset_top = 28.0
 offset_right = 111.0
 offset_bottom = 55.0
-theme_override_font_sizes/font_size = 21
+theme = ExtResource("45_tjthn")
 text = "Sound Volume:"
 
 [node name="mvol" type="HSlider" parent="settings/tab/Audio" unique_id=256382980]
@@ -3408,7 +3472,7 @@ layout_mode = 0
 offset_top = 28.0
 offset_right = 107.0
 offset_bottom = 55.0
-theme_override_font_sizes/font_size = 21
+theme = ExtResource("45_tjthn")
 text = "Music Volume:"
 
 [node name="about" type="Label" parent="settings" unique_id=1117733771]
@@ -3436,7 +3500,7 @@ offset_right = 139.5
 offset_bottom = -310.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 21
+theme = ExtResource("45_tjthn")
 text = "Hover on something for more info"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3473,6 +3537,7 @@ offset_top = 32.0
 offset_right = 70.5
 offset_bottom = 113.0
 grow_horizontal = 2
+theme = ExtResource("45_tjthn")
 theme_override_font_sizes/font_size = 63
 text = "Credits"
 
@@ -3775,8 +3840,8 @@ offset_top = 20.0
 offset_right = 153.0
 offset_bottom = 84.0
 mouse_default_cursor_shape = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "< Back"
 flat = true
@@ -3793,6 +3858,7 @@ offset_top = 32.0
 offset_right = 70.5
 offset_bottom = 113.0
 grow_horizontal = 2
+theme = ExtResource("45_tjthn")
 theme_override_font_sizes/font_size = 63
 text = "About"
 
@@ -3835,8 +3901,8 @@ offset_top = 20.0
 offset_right = 153.0
 offset_bottom = 84.0
 mouse_default_cursor_shape = 2
+theme = ExtResource("45_tjthn")
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("48_u6mje")
 theme_override_font_sizes/font_size = 42
 text = "< Back"
 flat = true
@@ -3952,8 +4018,8 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/settings" to="." method="_button_press"]
 [connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
@@ -3973,8 +4039,11 @@ texture = ExtResource("37")
 [connection signal="toggled" from="settings/tab/Gameplay/drag" to="." method="_on_drag_toggled"]
 [connection signal="value_changed" from="settings/tab/Gameplay/fusethres" to="." method="_on_fusethres_value_changed"]
 [connection signal="value_changed" from="settings/tab/Gameplay/temp" to="." method="_on_temp_value_changed"]
+[connection signal="value_changed" from="settings/tab/Gameplay/box_x" to="." method="_on_box_x_value_changed"]
+[connection signal="value_changed" from="settings/tab/Gameplay/box_y" to="." method="_on_box_y_value_changed"]
 [connection signal="toggled" from="settings/tab/Video/scale" to="." method="_on_scale_toggled"]
 [connection signal="value_changed" from="settings/tab/Video/hudtrans" to="." method="_on_hudtrans_value_changed"]
+[connection signal="toggled" from="settings/tab/Video/lowperf" to="." method="_on_lowperf_toggled"]
 [connection signal="value_changed" from="settings/tab/Audio/svol" to="." method="_on_svol_value_changed"]
 [connection signal="value_changed" from="settings/tab/Audio/mvol" to="." method="_on_mvol_value_changed"]
 [connection signal="mouse_entered" from="settings/back" to="." method="_button_hover"]

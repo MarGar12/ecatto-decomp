@@ -36,6 +36,7 @@ driver/mix_rate=48000
 
 ModLoaderStore="*uid://b2phhqppc81mt"
 ModLoader="*uid://l7cs6hm3nout"
+Panku="*uid://cyftuo4syatlv"
 glob="*res://glob.gd"
 
 [display]
@@ -53,7 +54,7 @@ movie_writer/movie_file="/home/mups/exports/sm.ogv"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [gui]
 
@@ -61,7 +62,7 @@ fonts/dynamic_fonts/use_oversampling=false
 theme/default_font_antialiasing=0
 theme/default_font_hinting=0
 theme/default_font_subpixel_positioning=0
-theme/custom_font="uid://disvywawmnoe2"
+theme/custom_font="uid://db87dk2ekcjcw"
 
 [input]
 

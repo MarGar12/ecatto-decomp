@@ -175,13 +175,13 @@ func _process(delta):
 		$ui/pause/tab/Gameplay/fusethres/value.text = "No Fusion"
 	$ui/pause/tab/Gameplay/endworld.disabled = !glob.earth_exploded
 	if glob.box_x != 10000.1 and glob.box_y != 10000.1:
-		$ui/pause/tab/Gameplay/box_x/value.text = "(" + str(glob.box_x) + "," + str(glob.box_y) + ")"
+		$ui/pause/tab/Gameplay/box_x/value.text = "Box Size: (W:" + str(glob.box_x) + ",H:" + str(glob.box_y).pad_decimals(1) + ")"
 	elif glob.box_x != 10000.1 and glob.box_y == 10000.1:
-		$ui/pause/tab/Gameplay/box_x/value.text = "(" + str(glob.box_x) + ",Disabled)"
+		$ui/pause/tab/Gameplay/box_x/value.text = "Box Size:(W:" + str(glob.box_x) + ",None)"
 	elif glob.box_x == 10000.1 and glob.box_y != 10000.1:
-		$ui/pause/tab/Gameplay/box_x/value.text = "(Disabled," + str(glob.box_y) + ")"
+		$ui/pause/tab/Gameplay/box_x/value.text = "Box Size:(None,H:" + str(glob.box_y).pad_decimals(1) + ")"
 	else:
-		$ui/pause/tab/Gameplay/box_x/value.text = "No Ceiling and Walls"
+		$ui/pause/tab/Gameplay/box_x/value.text = "Only Floor Collision"
 	$ui/pause/tab/Video/hudtrans/value.text = "HUD Transparency: " + str(glob.hudparency * 100).pad_decimals(0) + "%"
 
 func _on_rateslider_value_changed(value):

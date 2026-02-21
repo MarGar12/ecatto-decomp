@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dsbxagoqifbsk"]
+
+[ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="1_d3wud"]
+
+[resource]
+default_font = ExtResource("1_d3wud")
+default_font_size = 21

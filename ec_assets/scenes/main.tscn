@@ -634,6 +634,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2500, 16)
 
 [node name="floor_noscorll2" type="Parallax2D" parent="ceiling/CollisionShape2D" unique_id=85872789]
+show_behind_parent = true
 top_level = true
 rotation = -3.14159
 scroll_scale = Vector2(0, 1)
