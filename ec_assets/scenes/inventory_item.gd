@@ -18,19 +18,24 @@ func _process(_delta):
 	if $select.visible == true and Input.is_action_pressed("lmb") and glob.spawning == null: 
 		glob.spawning = item
 	if glob.spawning == item and Input.is_action_just_released("lmb"):
-		if item == "proton": spawn_catto(1,0,0)
-		elif item == "neutron": spawn_particle("neutron")
-		elif item == "electron": spawn_particle("electron")
-		elif item == "purrcent": spawn_object("purrcent")
-		elif item == "bungy": spawn_object("bungy")
-		elif item == "compound_catto": spawn_object("compound_catto")
-		elif item == "up quark": spawn_particle("up quark")
-		elif item == "down quark": spawn_particle("down quark")
-		elif item == "neutrino": spawn_particle("neutrino")
-		elif item == "antineutrino": spawn_particle("antineutrino")
-		elif item == "positron": spawn_particle("positron")
-		elif glob.spawn_nucleus == true: spawn_catto(get_index()-6,get_index()-6,0)
-		else: spawn_catto(get_index()-6,get_index()-6,get_index()-6)
+		match item:
+			"proton": spawn_catto(1,0,0)
+			"neutron": spawn_particle("neutron")
+			"electron": spawn_particle("electron")
+			"purrcent": spawn_object("purrcent")
+			"bungy": spawn_object("bungy")
+			"compound_catto": spawn_object("compound_catto")
+			"up quark": spawn_particle("up quark")
+			"down quark": spawn_particle("down quark")
+			"neutrino": spawn_particle("neutrino")
+			"antineutrino": spawn_particle("antineutrino")
+			"positron": spawn_particle("positron")
+			"square": spawn_shape("square")
+			_:
+				if glob.spawn_nucleus: 
+					spawn_catto(get_index()-6,get_index()-6,0)
+				else: 
+					spawn_catto(get_index()-6,get_index()-6,get_index()-6)
 		glob.spawning = null
 	
 	selected = $select.visible
@@ -70,6 +75,9 @@ func spawn_catto(p,n,e):
 	if instance.protons == 1: instance.neutrons = 0
 	instance.player_spawned = true
 	get_tree().current_scene.add_child.call_deferred(instance)
+
+func spawn_shape(t):
+	pass
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton: glob.inv_open = false

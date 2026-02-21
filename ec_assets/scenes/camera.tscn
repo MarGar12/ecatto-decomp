@@ -783,7 +783,6 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 
 [node name="inventory" type="Node2D" parent="ui/center" unique_id=1219933114]
-visible = false
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("28")
@@ -1182,6 +1181,9 @@ position = Vector2(121, -257)
 
 [node name="compound_catto" parent="ui/center/inventory" unique_id=1440266125 instance=ExtResource("30")]
 position = Vector2(-124, -257)
+
+[node name="square" parent="ui/center/inventory" unique_id=904013996 instance=ExtResource("30")]
+position = Vector2(170, -257)
 
 [node name="hint" type="Label" parent="ui/center/inventory" unique_id=703734208]
 offset_left = -322.0
