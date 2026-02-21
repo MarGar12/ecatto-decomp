@@ -35,7 +35,3 @@ func _on_range_body_entered(body):
 			body.velocity = -(global_position-body.global_position).normalized() * 1000 * glob.rate
 			if body.group != "noble gas": body.knocked_out = randf_range(2,6)
 			if glob.catto_rotat == true: body.rotation_degrees += randf_range(30,180) * [-1,1].pick_random()
-			
-			if body is element_catto:
-				if body.protons == 44:
-					body.spawn_ruth_hat()

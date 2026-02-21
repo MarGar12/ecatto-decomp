@@ -199,6 +199,8 @@ func _process(delta: float) -> void:
 	#delete when resetting
 	if Input.is_action_just_pressed("R"):
 		queue_free()
+	
+	#print($model/tail.frame)
 
 func spawn_ruth_hat():
 	var hat:CharacterBody2D = load("res://ec_assets/objects/ruth_hat.tscn").instantiate()
@@ -206,8 +208,10 @@ func spawn_ruth_hat():
 	hat.position = position
 	hat.velocity = velocity / 2
 	hat.velocity.y *= 10
+	hat.velocity.x *= [-1, 1].pick_random()
 	add_sibling.call_deferred(hat)
 	ruth_hat_off = true
+	update()
 
 func _physics_process(delta: float) -> void:
 	#print(delta)
@@ -372,7 +376,7 @@ func _physics_process(delta: float) -> void:
 	#text display
 	$model/face/facetext.visible = protons in [71,110]
 	if protons == 71: 
-		$model/face/facetext.modulate = Color8(0,255,0)
+		$model/face/facetext.modulate = Color.from_rgba8(0,255,0)
 		if knocked_out > 1.0: $model/face/facetext.text = str(randf_range(10000,99999))
 		else: $model/face/facetext.text = str(Time.get_time_string_from_system())
 		$model/face/facetext.visible_characters = 5
@@ -381,7 +385,7 @@ func _physics_process(delta: float) -> void:
 			$model/face/facetext.text = ":3"
 			$model/face/facetext.visible_characters = -1
 	if protons == 110: 
-		$model/face/facetext.modulate = Color8(255,160,0)
+		$model/face/facetext.modulate = Color.from_rgba8(255,160,0)
 		if knocked_out > 0: $model/face/facetext.text = "!?!?!"
 		elif decay < 1: $model/face/facetext.text = "BYE :3"
 		#elif glob.tool == 8 and Input.is_action_pressed("lmb") and glob.selected == self:
@@ -561,10 +565,10 @@ func _physics_process(delta: float) -> void:
 		if protons in [6,34,35,63,64,75,85,86,97,109,111,118]: $model/face/eye1.frame = 1
 		elif protons == 117 and mass == 292: $model/face/eye1.frame = 1
 		else: $model/face/eye1.frame = 0
-		if protons == 63 and not mass == 158: $model/face/eye1.modulate = Color8(255,0,0)
-		elif protons == 64: $model/face/eye1.modulate = Color8(128,128,128)
-		elif protons == 111: $model/face/eye1.modulate = Color8(128,200,255)
-		else: $model/face/eye1.modulate = Color8(255,255,255)
+		if protons == 63 and not mass == 158: $model/face/eye1.modulate = Color.from_rgba8(255,0,0)
+		elif protons == 64: $model/face/eye1.modulate = Color.from_rgba8(128,128,128)
+		elif protons == 111: $model/face/eye1.modulate = Color.from_rgba8(128,200,255)
+		else: $model/face/eye1.modulate = Color.from_rgba8(255,255,255)
 		$model/face/eye2.frame = $model/face/eye1.frame
 		$model/face/eye2.modulate = $model/face/eye1.modulate
 		$model/face/eye3.modulate = $model/face/eye1.modulate
@@ -818,10 +822,8 @@ func _physics_process(delta: float) -> void:
 								$model/face/eye1.play("shut")
 								mouth = 2
 							27: # cobalt
-								print("ah")
 								$purr.play()
 								if pet_num < pet_thresh:
-									print("ah")
 									$model/face/eye1.play("shut")
 									if mouth != 1 and not [protons,mass] == [63,158]: mouth = 1
 								else:
@@ -880,7 +882,7 @@ func generate_features():
 	$model/face/eye2.play("default")
 	$model/face/eye3.play("default")
 	$model/face/spot.play("default")
-	$model/face/spot.modulate = Color8(255,255,255)
+	$model/face/spot.modulate = Color.from_rgba8(255,255,255)
 	$model/hair.play("default")
 	
 	#eyes
@@ -964,15 +966,15 @@ func generate_features():
 		$model/face/mouth.animation = "europium"
 	else: $model/face/mouth.animation = "default"
 	if protons == 63 and mass == 158:
-		$model/face/mouth.self_modulate = Color8(255,255,255)
+		$model/face/mouth.self_modulate = Color.from_rgba8(255,255,255)
 	elif protons == 63:
-		$model/face/mouth.self_modulate = Color8(255,0,0)
+		$model/face/mouth.self_modulate = Color.from_rgba8(255,0,0)
 	elif protons in [6,10,25,35,85,86,118,119]: 
-		$model/face/mouth.self_modulate = Color8(255,255,255)
+		$model/face/mouth.self_modulate = Color.from_rgba8(255,255,255)
 	elif protons == 64: 
-		$model/face/mouth.self_modulate = Color8(192,192,192)
+		$model/face/mouth.self_modulate = Color.from_rgba8(192,192,192)
 	else: 
-		$model/face/mouth.self_modulate = Color8(0,0,0)
+		$model/face/mouth.self_modulate = Color.from_rgba8(0,0,0)
 	if protons == 91: $model/face/mouth.self_modulate.b = 1
 	
 	#spots
@@ -1017,20 +1019,24 @@ func generate_features():
 		if protons == 47: $model/tail.frame = 1
 		if protons == 48: $model/tail.frame = 2
 		if protons == 57: $model/tail.frame = 3
-		if protons == 63 and mass == 158:
+		if [protons,mass] == [63,158]:
 			$model/tail.play("isotopes")
 			$model/tail.frame = 9
 		elif protons == 63: $model/tail.frame = 4
 		if protons == 66: $model/tail.frame = 5
 		if protons == 97: $model/tail.frame = 6
 		if protons == 98: $model/tail.frame = 7
-		if protons == 102: $model/tail.frame = 8
+		if protons == 102: 
+			print("ah")
+			$model/tail.frame = 8
 	elif [protons,mass] in [[1,4],[1,5],[10,22],[13,26],[20,47],[60,163],[76,189],[76,190],[77,192]]:
 		$model/tail.visible = true
 		$model/tail.play("isotopes")
 		if mass == 4: $model/tail.frame = 0
 		if mass == 5: $model/tail.frame = 1
-		if mass == 22: $model/tail.frame = 8
+		if mass == 22: 
+			print("ah")
+			$model/tail.frame = 8
 		if mass == 26: $model/tail.frame = 2
 		if mass == 47: $model/tail.frame = 3
 		if mass == 163: $model/tail.frame = 7
@@ -1263,6 +1269,8 @@ func update():
 	if protons == 2 and neutrons == 2 and electrons == 0: $info/name.text = "Alpha particle"
 	
 	#isotopes
+	
+	# oh my goodness this needs a rewrite - flamebit / flamebium (might add my isotpes on there too?) :eyes:
 	if protons < 119 and mass != main_isotopes[protons]:
 		$model/body.play("isotopes")
 		if [protons,mass] == [1,2]:
@@ -1424,7 +1432,7 @@ func update():
 			$model/body.frame = 22
 			$model/face/eye1.play("isotopes")
 			$model/face/eye2.play("isotopes")
-			$model/face/spot.modulate = Color8(255,220,150)
+			$model/face/spot.modulate = Color.from_rgba8(255,220,150)
 			eye1 = 11
 			eye2 = 11
 		elif [protons,mass] == [27,56]:
@@ -1619,9 +1627,14 @@ func update():
 			$model/body.frame = 104
 			$model/face/eye1.play("isotopes")
 			$model/face/eye2.play("isotopes")
+			$model/tail.play("isotopes")
+			$model/face/glasses.frame = 9
 			$model/face/glasses.visible = true
 			$model/face/glasses.offset.y = -6
 			$model/face/glasses.offset.x = 1
+			$model/tail.frame = 9
+			print($model/tail.frame)
+			mouth = 1
 			eye1 = 54
 			eye2 = 54
 			glasses = 9
@@ -2155,10 +2168,11 @@ func _on_body_entered(body):
 					rotation_degrees += randf_range(30,180) * [-1,1].pick_random()
 		if body is ruthenium_hat:
 			if protons == 44:
-				body.queue_free()
-				$model/body.play("default")
-				$model/body.frame = protons
-				ruth_hat_off = false
+				if !absf(rotation_degrees) > 90:
+					body.queue_free()
+					$model/body.play("default")
+					$model/body.frame = protons
+					ruth_hat_off = false
 
 func _on_body_exited(body):
 	if body != null:
