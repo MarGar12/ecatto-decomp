@@ -177,8 +177,18 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g8qqm"]
 
+[sub_resource type="Gradient" id="Gradient_3s43j"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7c46"]
+gradient = SubResource("Gradient_3s43j")
+width = 1
+height = 16
+fill_from = Vector2(1, 0.26785713)
+fill_to = Vector2(1, 1)
+
 [sub_resource type="Gradient" id="Gradient_7ab6f"]
-offsets = PackedFloat32Array(0.9, 1)
+offsets = PackedFloat32Array(0.9875, 1)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mgsi3"]
@@ -352,6 +362,7 @@ color = Color(0.25098, 0.501961, 1, 1)
 color_ramp = SubResource("Gradient_fv4en")
 
 [node name="earth_fk" type="Node2D" parent="bg" unique_id=860448242]
+visible = false
 texture_filter = 1
 
 [node name="sky" type="Parallax2D" parent="bg/earth_fk" unique_id=369584759]
@@ -553,7 +564,11 @@ scale = Vector2(5, 1)
 texture = SubResource("GradientTexture2D_sclsh")
 offset = Vector2(0, 2.5)
 
-[node name="air" type="Sprite2D" parent="." unique_id=469472985]
+[node name="air" type="Parallax2D" parent="." unique_id=929677835]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(80000, 32768)
+
+[node name="air" type="Sprite2D" parent="air" unique_id=469472985]
 modulate = Color(0.501961, 0.752941, 1, 0.12549)
 z_index = -9
 texture_filter = 2
@@ -564,7 +579,7 @@ scale = Vector2(128, 128)
 texture = SubResource("NoiseTexture2D_non60")
 region_rect = Rect2(0, 0, 625, 300)
 
-[node name="heat" type="AnimationPlayer" parent="air" unique_id=1468900670]
+[node name="heat" type="AnimationPlayer" parent="air/air" unique_id=1468900670]
 callback_mode_process = 2
 libraries/ = SubResource("AnimationLibrary_vwokr")
 autoplay = &"heat"
@@ -576,6 +591,28 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1215472406]
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
 
+[node name="Sprite2D" type="Sprite2D" parent="floor/CollisionShape2D" unique_id=696592834]
+modulate = Color(1, 1, 1, 0.1254902)
+texture_filter = 2
+position = Vector2(0, -8)
+scale = Vector2(1.997, 1)
+texture = SubResource("GradientTexture2D_l7c46")
+region_enabled = true
+region_rect = Rect2(0, 0, 2500, 16)
+
+[node name="floor_noscorll" type="Parallax2D" parent="floor" unique_id=1969851462]
+scroll_scale = Vector2(0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor/floor_noscorll" unique_id=241799234]
+visible = false
+modulate = Color(1, 1, 1, 0.1254902)
+texture_filter = 2
+position = Vector2(0, -8)
+scale = Vector2(1.997, 1)
+texture = SubResource("GradientTexture2D_l7c46")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 16)
+
 [node name="ceiling" type="StaticBody2D" parent="." unique_id=1287230044]
 position = Vector2(0, -2048)
 rotation = 3.14159
@@ -584,6 +621,32 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling" unique_id=755101676]
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="ceiling/CollisionShape2D" unique_id=686686955]
+modulate = Color(1, 1, 1, 0.1254902)
+texture_filter = 2
+position = Vector2(0, -8)
+rotation = -3.14159
+scale = Vector2(1.997, 1)
+texture = SubResource("GradientTexture2D_l7c46")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 2500, 16)
+
+[node name="floor_noscorll2" type="Parallax2D" parent="ceiling/CollisionShape2D" unique_id=85872789]
+top_level = true
+rotation = -3.14159
+scroll_scale = Vector2(0, 1)
+
+[node name="ceiling" type="Sprite2D" parent="ceiling/CollisionShape2D/floor_noscorll2" unique_id=1696150700]
+visible = false
+modulate = Color(1, 1, 1, 0.1254902)
+texture_filter = 2
+position = Vector2(0.010161219, 2042)
+scale = Vector2(1.997, 1)
+texture = SubResource("GradientTexture2D_l7c46")
+region_enabled = true
+region_rect = Rect2(0, 0, 25000, 16)
 
 [node name="walls" type="StaticBody2D" parent="." unique_id=1350544310]
 position = Vector2(0, -1024)
@@ -595,10 +658,32 @@ position = Vector2(2500, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
 
+[node name="Sprite2D" type="Sprite2D" parent="walls/CollisionShape2D" unique_id=955095403]
+modulate = Color(1, 1, 1, 0.1254902)
+texture_filter = 2
+position = Vector2(-0.9999745, -7.9999037)
+rotation = 3.1415927
+scale = Vector2(1.997, 1)
+texture = SubResource("GradientTexture2D_l7c46")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 1027, 16)
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="walls" unique_id=418868501]
 position = Vector2(-2500, 0)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_g8qqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="walls/CollisionShape2D2" unique_id=343115659]
+modulate = Color(1, 1, 1, 0.1254902)
+texture_filter = 2
+position = Vector2(-3.8146973e-05, -7.999972)
+rotation = -3.1415927
+scale = Vector2(1.997, 1)
+texture = SubResource("GradientTexture2D_l7c46")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 1027, 16)
 
 [node name="opaque" type="Sprite2D" parent="walls" unique_id=470372138]
 visible = false
@@ -851,6 +936,8 @@ texture_filter = 2
 material = ExtResource("2")
 scale = Vector2(8, 8)
 texture = SubResource("GradientTexture2D_mgsi3")
+region_enabled = true
+region_rect = Rect2(0, 0, 624, 256)
 
 [node name="hint" type="Node2D" parent="." unique_id=410334788]
 texture_filter = 1

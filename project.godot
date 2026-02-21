@@ -151,7 +151,6 @@ pathfinding/max_threads=-1
 common/max_physics_steps_per_frame=1
 common/physics_jitter_fix=0.0
 3d/physics_engine="Dummy"
-common/physics_interpolation=true
 
 [rendering]
 
@@ -160,4 +159,4 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.18717614, 0.18717614, 0.18717614, 1)

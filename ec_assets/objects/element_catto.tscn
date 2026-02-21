@@ -1415,6 +1415,7 @@ metadata/_snap_enabled = true
 radius = 400.0
 
 [node name="element_catto" type="CharacterBody2D" unique_id=1931923626]
+top_level = true
 input_pickable = true
 script = ExtResource("1")
 

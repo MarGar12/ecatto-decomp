@@ -69,9 +69,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$hint.visible = glob.tutorial
-	$air.self_modulate.a = glob.pressure/5.0
-	$air.texture.noise.offset.z += delta*10
-	$air/heat.advance(glob.t_power*0.1+0.2-$air/heat.current_animation_position)
+	$air/air.self_modulate.a = glob.pressure/5.0
+	$air/air.texture.noise.offset.z += delta*10
+	$air/air/heat.advance(glob.t_power*0.1+0.2-$air/air/heat.current_animation_position)
 	
 	glob.t_power = clamp(glob.t_power,-30,29.5)
 	#glob.t_power /= 1+delta*glob.pressure/100.0
@@ -100,13 +100,28 @@ func _process(delta):
 	$bg/space.visible = $camera.preset == 3
 	$bg/sun.visible = $camera.preset == 4
 	
-	$walls/CollisionShape2D.position = Vector2(2500+glob.box_x, 0)
-	$walls/CollisionShape2D2.position = Vector2(-2500-glob.box_x, 0)
+	$walls/CollisionShape2D.position = Vector2(glob.box_x, 0)
+	$walls/CollisionShape2D2.position = Vector2(-glob.box_x, 0)
 	$ceiling/CollisionShape2D.position = Vector2(0, glob.box_y)
 	
-	$walls/CollisionShape2D.disabled = glob.box_x == 5000.1
-	$walls/CollisionShape2D2.disabled = glob.box_x == 5000.1
-	$ceiling/CollisionShape2D.disabled = glob.box_y == 5000.1
+	$walls/CollisionShape2D.disabled = glob.box_x == 10000.1
+	$walls/CollisionShape2D2.disabled = glob.box_x == 10000.1
+	$ceiling/CollisionShape2D.disabled = glob.box_y == 10000.1
+	
+	$walls/CollisionShape2D/Sprite2D.visible = glob.box_x != 10000.1
+	$walls/CollisionShape2D2/Sprite2D.visible = glob.box_x != 10000.1
+	
+	$ceiling/CollisionShape2D/Sprite2D.visible = glob.box_y != 10000.1
+	$ceiling/CollisionShape2D/Sprite2D.visible = glob.box_x != 10000.1
+	$floor/CollisionShape2D/Sprite2D.visible = glob.box_x != 10000.1
+	
+	$floor/floor_noscorll/Sprite2D.visible = glob.box_x == 10000.1
+	$ceiling/floor_noscorll2/ceiling.visible = glob.box_x == 10000.1 and glob.box_y != 10000.1
+	
+	$floor/CollisionShape2D/Sprite2D.region_rect = Rect2(0, 0, glob.box_x, 16)
+	$ceiling/CollisionShape2D/Sprite2D.region_rect = Rect2(0, 0, glob.box_x, 16)
+	$walls/CollisionShape2D/Sprite2D.region_rect = Rect2(0, 0, (glob.box_y + 1027), 16)
+	$walls/CollisionShape2D2/Sprite2D.region_rect = Rect2(0, 0, (glob.box_y + 1027), 16)
 	
 	
 func spawn(obj,x,y):

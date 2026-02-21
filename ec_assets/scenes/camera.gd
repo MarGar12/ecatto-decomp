@@ -174,11 +174,11 @@ func _process(delta):
 	else:
 		$ui/pause/tab/Gameplay/fusethres/value.text = "No Fusion"
 	$ui/pause/tab/Gameplay/endworld.disabled = !glob.earth_exploded
-	if glob.box_x != 5000.1 and glob.box_y != 5000.1:
+	if glob.box_x != 10000.1 and glob.box_y != 10000.1:
 		$ui/pause/tab/Gameplay/box_x/value.text = "(" + str(glob.box_x) + "," + str(glob.box_y) + ")"
-	elif glob.box_x != 5000.1 and glob.box_y == 5000.1:
+	elif glob.box_x != 10000.1 and glob.box_y == 10000.1:
 		$ui/pause/tab/Gameplay/box_x/value.text = "(" + str(glob.box_x) + ",Disabled)"
-	elif glob.box_x == 5000.1 and glob.box_y != 5000.1:
+	elif glob.box_x == 10000.1 and glob.box_y != 10000.1:
 		$ui/pause/tab/Gameplay/box_x/value.text = "(Disabled," + str(glob.box_y) + ")"
 	else:
 		$ui/pause/tab/Gameplay/box_x/value.text = "No Ceiling and Walls"
@@ -222,6 +222,12 @@ func _on_box_x_value_changed(value):
 	glob.box_x = value
 func _on_box_y_value_changed(value):
 	glob.box_y = value
+func _on_lowperf_toggled(button_pressed):
+	glob.lowperf = button_pressed
+	if glob.lowperf == true:
+		Engine.physics_ticks_per_second = 15
+	else:
+		Engine.physics_ticks_per_second = 60
 
 func _on_nucleus_toggled(button_pressed):
 	glob.spawn_nucleus = button_pressed

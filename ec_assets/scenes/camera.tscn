@@ -783,6 +783,7 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 
 [node name="inventory" type="Node2D" parent="ui/center" unique_id=1219933114]
+visible = false
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("28")
@@ -1299,9 +1300,10 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("38_pe5jw")
 theme_override_font_sizes/font_size = 16
-current_tab = 0
+current_tab = 1
 
 [node name="Gameplay" type="TabBar" parent="ui/pause/tab" unique_id=2016678190]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -1462,9 +1464,10 @@ offset_right = 633.0
 offset_bottom = 421.0
 scale = Vector2(2, 2)
 tooltip_text = "Adjusts how fast you can change the temperature."
-max_value = 5000.1
+min_value = 75.0
+max_value = 10000.1
 step = 0.1
-value = 1.0
+value = 2500.0
 
 [node name="value" type="Label" parent="ui/pause/tab/Gameplay/box_x" unique_id=143147530]
 layout_mode = 0
@@ -1483,12 +1486,11 @@ offset_right = 633.0
 offset_bottom = 477.0
 scale = Vector2(2, 2)
 tooltip_text = "Adjusts how fast you can change the temperature."
-max_value = 5000.1
+min_value = -1980.0
+max_value = 10000.1
 step = 0.1
-value = 1.0
 
 [node name="Video" type="TabBar" parent="ui/pause/tab" unique_id=1029871777]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -1502,6 +1504,19 @@ scale = Vector2(2, 2)
 tooltip_text = "Scales the HUD relative to your resolution."
 theme_override_font_sizes/font_size = 21
 text = "Scale HUD"
+icon_alignment = 2
+
+[node name="lowperf" type="CheckButton" parent="ui/pause/tab/Video" unique_id=2057264259]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 98.0
+offset_right = 192.0
+offset_bottom = 187.0
+scale = Vector2(2, 2)
+tooltip_text = "Lowers Physics tickrate to 15 from 60, useful for lower end computers."
+theme_override_font_sizes/font_size = 21
+text = "Low Performance Mode (buggy)"
+autowrap_mode = 2
 icon_alignment = 2
 
 [node name="hudtrans" type="HSlider" parent="ui/pause/tab/Video" unique_id=1434055153]
@@ -2102,6 +2117,7 @@ texture_hover = ExtResource("35")
 [connection signal="value_changed" from="ui/pause/tab/Gameplay/box_x" to="." method="_on_box_x_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Gameplay/box_y" to="." method="_on_box_y_value_changed"]
 [connection signal="toggled" from="ui/pause/tab/Video/scale" to="." method="_on_hud_scale_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Video/lowperf" to="." method="_on_lowperf_toggled"]
 [connection signal="value_changed" from="ui/pause/tab/Video/hudtrans" to="." method="_on_hudtrans_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Audio/svol" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Audio/mvol" to="." method="_on_mus_volume_value_changed"]
