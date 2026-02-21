@@ -163,6 +163,7 @@
 [ext_resource type="Texture2D" uid="uid://cn44ismhem2l" path="res://ec_assets/textures/items/cn_earth.png" id="153"]
 [ext_resource type="Texture2D" uid="uid://0of4q6ydtrs3" path="res://ec_assets/textures/cattos/elements/isotopes/eu158-tail.png" id="153_jv4g6"]
 [ext_resource type="SpriteFrames" uid="uid://cyqo6svgeycui" path="res://ec_assets/textures/element_spots.tres" id="154"]
+[ext_resource type="Texture2D" uid="uid://btcov5rhj6pft" path="res://ec_assets/textures/cattos/elements/isotopes/mt270-tail.png" id="154_kaqhv"]
 [ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="155"]
 [ext_resource type="Texture2D" uid="uid://33u6pmob8roe" path="res://ec_assets/textures/cattos/elements/isotopes/ca48-fangs.png" id="155_tpqhr"]
 [ext_resource type="Texture2D" uid="uid://dl2r2173jaim6" path="res://ec_assets/textures/cattos/elements/solid/meitnerium-glasses.png" id="156"]
@@ -181,6 +182,7 @@
 [ext_resource type="Texture2D" uid="uid://ctnnd18v0cnv7" path="res://ec_assets/textures/cattos/mouth_frown0inv.png" id="167"]
 [ext_resource type="Texture2D" uid="uid://d1b6m56hk2054" path="res://ec_assets/textures/cattos/mouth_smile0europium.png" id="168"]
 [ext_resource type="Texture2D" uid="uid://be8tgpgx8cbuu" path="res://ec_assets/textures/cattos/mouth_neon.png" id="169"]
+[ext_resource type="Texture2D" uid="uid://clo8daeaxjy41" path="res://ec_assets/textures/cattos/glasses_mt270.png" id="169_3vhun"]
 [ext_resource type="Texture2D" uid="uid://brtfdgb4qxcj5" path="res://ec_assets/textures/cattos/fangs0.png" id="170"]
 [ext_resource type="Texture2D" uid="uid://ipom6fhu8gqx" path="res://ec_assets/textures/cattos/glasses_he.png" id="171"]
 [ext_resource type="Texture2D" uid="uid://kf8em22sev1b" path="res://ec_assets/textures/cattos/glasses_si.png" id="172"]
@@ -779,6 +781,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("153_jv4g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_kaqhv")
 }],
 "loop": true,
 "name": &"isotopes",
@@ -862,6 +867,20 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 metadata/_snap_enabled = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kaqhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_3vhun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_lcbvy"]
 offsets = PackedFloat32Array(0.5, 1)
@@ -1814,10 +1833,10 @@ texture = SubResource("GradientTexture1D_vusgp")
 rotation = 1.5708
 texture = SubResource("GradientTexture1D_vusgp")
 
-[node name="mt_glasses" type="Sprite2D" parent="model/face" unique_id=1332295107]
+[node name="mt_glasses" type="AnimatedSprite2D" parent="model/face" unique_id=536135016]
 visible = false
 position = Vector2(0, -28)
-texture = ExtResource("156")
+sprite_frames = SubResource("SpriteFrames_kaqhv")
 
 [node name="eye1" type="AnimatedSprite2D" parent="model/face" unique_id=1081601559]
 position = Vector2(-14, -4)

@@ -1026,23 +1026,21 @@ func generate_features():
 		if protons == 66: $model/tail.frame = 5
 		if protons == 97: $model/tail.frame = 6
 		if protons == 98: $model/tail.frame = 7
-		if protons == 102: 
-			print("ah")
-			$model/tail.frame = 8
+		if protons == 102: $model/tail.frame = 8
 	elif [protons,mass] in [[1,4],[1,5],[10,22],[13,26],[20,47],[60,163],[76,189],[76,190],[77,192]]:
 		$model/tail.visible = true
 		$model/tail.play("isotopes")
 		if mass == 4: $model/tail.frame = 0
 		if mass == 5: $model/tail.frame = 1
-		if mass == 22: 
-			print("ah")
-			$model/tail.frame = 8
+		if mass == 22: $model/tail.frame = 8
 		if mass == 26: $model/tail.frame = 2
 		if mass == 47: $model/tail.frame = 3
 		if mass == 163: $model/tail.frame = 7
 		if mass == 189: $model/tail.frame = 5
 		if mass == 190: $model/tail.frame = 6
 		if mass == 192: $model/tail.frame = 4
+	elif [protons, mass] == [109, 270]:
+		$model/tail.frame = 10
 	else:
 		$model/tail.visible = false
 	
@@ -1820,6 +1818,16 @@ func update():
 			glasses = 8
 			eye1 = 33
 			eye2 = 33
+		elif protons == 109:
+			if mass == 270:
+				$model/body.play("isotopes")
+				$model/body.frame = 105
+				$model/tail.visible = true
+				$model/face/mt_glasses.frame = 1
+			else: # this is fuckn stupid 
+				$model/body.play("default")
+				$model/body.frame = protons
+				$model/face/mt_glasses.frame = 0
 		elif [protons,mass] == [112,277]:
 			$model/body.frame = 56
 			$model/face/eye1.play("isotopes")
@@ -1963,6 +1971,10 @@ func update():
 		credit = "alvy-ingenerum, haniszar36"
 	elif [protons,mass] in [117,292]:
 		credit = "Ruins"
+	elif [protons, mass] == [109, 270]:
+		credit = "flamebit, Oxygendox"
+	elif [protons, mass] in [107, 266]:
+		credit = "flamebit"
 	# Designer credits --- main
 	elif protons == 18: credit = "Oberorka & baltdev"
 	elif protons in [21,27]: credit = "mobropro"

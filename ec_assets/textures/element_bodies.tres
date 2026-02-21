@@ -228,6 +228,7 @@
 [ext_resource type="Texture2D" uid="uid://d6pu2sgkqevu" path="res://ec_assets/textures/cattos/elements/isotopes/kr81.png" id="224_tllnb"]
 [ext_resource type="Texture2D" uid="uid://btltelst6no54" path="res://ec_assets/textures/cattos/elements/isotopes/li3.png" id="225_kow4s"]
 [ext_resource type="Texture2D" uid="uid://cygrty2to2ghm" path="res://ec_assets/textures/cattos/elements/isotopes/eu158.png" id="226_7aome"]
+[ext_resource type="Texture2D" uid="uid://bsfwb2rtr22qr" path="res://ec_assets/textures/cattos/elements/isotopes/mt270.png" id="228_aan77"]
 
 [resource]
 animations = [{
@@ -922,6 +923,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("226_7aome")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_aan77")
 }],
 "loop": true,
 "name": &"isotopes",

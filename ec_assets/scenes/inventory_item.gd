@@ -77,7 +77,9 @@ func spawn_catto(p,n,e):
 	get_tree().current_scene.add_child.call_deferred(instance)
 
 func spawn_shape(t):
-	pass
+	var instance:Shape = load("res://ec_assets/objects/shapes/"+ t + ".tscn").instantiate()
+	instance.global_position = $"../../../../spawning".global_position
+	get_tree().current_scene.add_child.call_deferred(instance)
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton: glob.inv_open = false
