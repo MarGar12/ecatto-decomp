@@ -36,7 +36,6 @@ driver/mix_rate=48000
 
 ModLoaderStore="*uid://b2phhqppc81mt"
 ModLoader="*uid://l7cs6hm3nout"
-Panku="*uid://cyftuo4syatlv"
 glob="*res://glob.gd"
 
 [display]
@@ -54,7 +53,7 @@ movie_writer/movie_file="/home/mups/exports/sm.ogv"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg")
 
 [gui]
 
