@@ -34,6 +34,8 @@ driver/mix_rate=48000
 
 [autoload]
 
+ModLoaderStore="*uid://b2phhqppc81mt"
+ModLoader="*uid://l7cs6hm3nout"
 glob="*res://glob.gd"
 
 [display]
@@ -48,6 +50,10 @@ project/assembly_name="Element Cattos Decomp"
 [editor]
 
 movie_writer/movie_file="/home/mups/exports/sm.ogv"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mod_loader/_export_plugin/plugin.cfg")
 
 [gui]
 
