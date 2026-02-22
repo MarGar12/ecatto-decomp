@@ -3,22 +3,28 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$range/col.disabled = !glob.explosions
+	$range/col.disabled = !glob.explosions and glob.explosion < 25
+	glob.explosion += 1
 	
-	if glob.explosions == true:
-		$sound.pitch_scale = randf_range(0.8,1)
-		$sound.play()
-		$smoke.emitting = true
-		$sparks.emitting = true
-	else:
-		$pop.play()
-		$poof.emitting = true
+	if glob.explosion < 25:
+		if glob.explosions == true:
+			$sound.pitch_scale = randf_range(0.8,2)
+			$sound.play()
+			$smoke.emitting = true
+			$sparks.emitting = true
+		else:
+			$pop.play()
+			$poof.emitting = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if glob.explosions == true and $smoke.emitting == false: queue_free()
-	if glob.explosions == false and $poof.emitting == false: queue_free()
+	if glob.explosions == true and $smoke.emitting == false: 
+		queue_free()
+		glob.explosion -= 1
+	if glob.explosions == false and $poof.emitting == false:
+		queue_free()
+		glob.explosion -= 1
 	$range.scale /= 2
 
 

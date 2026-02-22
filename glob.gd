@@ -52,6 +52,7 @@ var box_x = 2500.0
 var box_y = 0.0
 
 var lowperf = false
+var explosion = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -207,7 +207,6 @@ z_index = -20
 texture_filter = 2
 
 [node name="moon" type="Node2D" parent="bg" unique_id=784298813]
-visible = false
 
 [node name="space" type="Parallax2D" parent="bg/moon" unique_id=252903266]
 scroll_scale = Vector2(0.001, 0.001)
@@ -217,6 +216,7 @@ scale = Vector2(1000, 1000)
 texture = SubResource("GradientTexture2D_w6njf")
 
 [node name="stars" type="CPUParticles2D" parent="bg/moon/space" unique_id=1396455487]
+visible = false
 material = ExtResource("2")
 position = Vector2(0, -128)
 scale = Vector2(10, 10)
@@ -227,6 +227,23 @@ preprocess = 10.0
 local_coords = true
 emission_shape = 1
 emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_2eqy1")
+
+[node name="stars2" type="CPUParticles2D" parent="bg/moon/space" unique_id=594409842]
+material = ExtResource("2")
+position = Vector2(0, -128)
+scale = Vector2(10, 10)
+amount = 2000
+texture = SubResource("GradientTexture2D_egruk")
+lifetime = 5.0
+preprocess = 10.0
+speed_scale = 0.5
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(300, 300)
 gravity = Vector2(0, 0)
 scale_amount_min = 0.0
 scale_amount_max = 0.2
@@ -251,6 +268,7 @@ texture = SubResource("GradientTexture2D_mny0v")
 
 [node name="terrain" type="Parallax2D" parent="bg/moon" unique_id=455652070]
 scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(30000, 0)
 
 [node name="terrain" type="Sprite2D" parent="bg/moon/terrain" unique_id=1230895080]
 texture_repeat = 2
@@ -259,21 +277,29 @@ offset = Vector2(0, -25)
 region_enabled = true
 region_rect = Rect2(0, 2, 30000, 98)
 
-[node name="ground" type="Sprite2D" parent="bg/moon" unique_id=1187431183]
+[node name="ground" type="Parallax2D" parent="bg/moon" unique_id=299155912]
+repeat_size = Vector2(30000, 0)
+
+[node name="ground" type="Sprite2D" parent="bg/moon/ground" unique_id=1187431183]
 texture_repeat = 2
 texture = ExtResource("5")
 offset = Vector2(0, 100)
 region_enabled = true
 region_rect = Rect2(0, 0, 30000, 200)
 
-[node name="dark" type="Sprite2D" parent="bg/moon" unique_id=887511720]
+[node name="dark2" type="Parallax2D" parent="bg/moon" unique_id=471534055]
 scale = Vector2(75, 75)
+scroll_scale = Vector2(0, 1)
+
+[node name="dark" type="Sprite2D" parent="bg/moon/dark2" unique_id=887511720]
+scale = Vector2(5, 1)
 texture = SubResource("GradientTexture2D_sclsh")
 offset = Vector2(0, 2.5)
+region_rect = Rect2(0, 0, 400, 5)
 
-[node name="black" type="Sprite2D" parent="bg/moon" unique_id=1435914954]
-position = Vector2(0, 200)
-scale = Vector2(3000, 3000)
+[node name="black" type="Sprite2D" parent="bg/moon/dark2" unique_id=1435914954]
+position = Vector2(0, 2.6666667)
+scale = Vector2(40, 40)
 texture = SubResource("GradientTexture2D_w6njf")
 offset = Vector2(0, 32)
 
@@ -321,14 +347,15 @@ scroll_offset = Vector2(500, 0)
 [node name="stars" type="CPUParticles2D" parent="bg/space/stars2" unique_id=1050368704]
 material = ExtResource("2")
 position = Vector2(0, -128)
-scale = Vector2(9.999999, 9.999999)
-amount = 500
+scale = Vector2(10, 10)
+amount = 2000
 texture = SubResource("GradientTexture2D_egruk")
 lifetime = 5.0
 preprocess = 10.0
+speed_scale = 0.5
 local_coords = true
-emission_shape = 1
-emission_sphere_radius = 128.0
+emission_shape = 3
+emission_rect_extents = Vector2(300, 300)
 gravity = Vector2(0, 0)
 scale_amount_min = 0.0
 scale_amount_max = 0.2
