@@ -56,6 +56,7 @@ var explosion = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	OS.request_permissions()
 	load_cfg()
 	if glob.lowperf == true:
 		Engine.physics_ticks_per_second = 15
@@ -120,5 +121,6 @@ func _input(event: InputEvent) -> void:
 		var is_window: bool = winmode != DisplayServer.WINDOW_MODE_FULLSCREEN
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(_delta):
-#	get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"
+func _process(_delta):
+	if !OS.has_feature("movie"):
+		get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"
