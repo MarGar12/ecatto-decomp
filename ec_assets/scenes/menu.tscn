@@ -3163,7 +3163,6 @@ text = "[Back]"
 flat = true
 
 [node name="settings" type="CanvasLayer" parent="." unique_id=1518252111]
-visible = false
 
 [node name="tab" type="TabContainer" parent="settings" unique_id=219305690]
 anchors_preset = 8
@@ -3178,9 +3177,10 @@ offset_bottom = 329.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
-current_tab = 0
+current_tab = 1
 
 [node name="Gameplay" type="TabBar" parent="settings/tab" unique_id=1098881048]
+visible = false
 layout_mode = 2
 theme = ExtResource("45_tjthn")
 metadata/_tab_index = 0
@@ -3382,7 +3382,6 @@ max_value = 10000.1
 step = 0.1
 
 [node name="Video" type="TabBar" parent="settings/tab" unique_id=1812280098]
-visible = false
 layout_mode = 2
 theme = ExtResource("45_tjthn")
 metadata/_tab_index = 1
@@ -3426,10 +3425,22 @@ offset_top = 50.0
 offset_right = 192.0
 offset_bottom = 139.0
 scale = Vector2(2, 2)
-tooltip_text = "Lowers Physics tickrate to 15 from 60, useful for lower end computers."
+tooltip_text = "Lowers physics tickrate to 15 from 60, useful for lower end computers."
 theme = ExtResource("45_tjthn")
 text = "Low Performance Mode (buggy)"
 autowrap_mode = 2
+icon_alignment = 2
+
+[node name="frameskip" type="CheckButton" parent="settings/tab/Video" unique_id=450494913]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 216.0
+offset_right = 192.0
+offset_bottom = 251.0
+scale = Vector2(2, 2)
+tooltip_text = "Skips video frames to keep the physics tick rate running at 60."
+theme_override_font_sizes/font_size = 21
+text = "Frameskip"
 icon_alignment = 2
 
 [node name="Audio" type="TabBar" parent="settings/tab" unique_id=1586280481]
@@ -4013,14 +4024,14 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
+[connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="mouse_entered" from="main/settings" to="." method="_button_hover"]
 [connection signal="pressed" from="main/settings" to="." method="_button_press"]
 [connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
@@ -4045,6 +4056,7 @@ texture = ExtResource("37")
 [connection signal="toggled" from="settings/tab/Video/scale" to="." method="_on_scale_toggled"]
 [connection signal="value_changed" from="settings/tab/Video/hudtrans" to="." method="_on_hudtrans_value_changed"]
 [connection signal="toggled" from="settings/tab/Video/lowperf" to="." method="_on_lowperf_toggled"]
+[connection signal="toggled" from="settings/tab/Video/frameskip" to="." method="_on_frameskip_toggled"]
 [connection signal="value_changed" from="settings/tab/Audio/svol" to="." method="_on_svol_value_changed"]
 [connection signal="value_changed" from="settings/tab/Audio/mvol" to="." method="_on_mvol_value_changed"]
 [connection signal="mouse_entered" from="settings/back" to="." method="_button_hover"]

@@ -1275,7 +1275,6 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
-visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1310,9 +1309,10 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("38_pe5jw")
 theme_override_font_sizes/font_size = 16
-current_tab = 0
+current_tab = 1
 
 [node name="Gameplay" type="TabBar" parent="ui/pause/tab" unique_id=2016678190]
+visible = false
 layout_mode = 2
 theme = ExtResource("40_25m3f")
 metadata/_tab_index = 0
@@ -1503,7 +1503,6 @@ max_value = 10000.1
 step = 0.1
 
 [node name="Video" type="TabBar" parent="ui/pause/tab" unique_id=1029871777]
-visible = false
 layout_mode = 2
 theme = ExtResource("40_25m3f")
 metadata/_tab_index = 1
@@ -1527,10 +1526,22 @@ offset_top = 98.0
 offset_right = 192.0
 offset_bottom = 187.0
 scale = Vector2(2, 2)
-tooltip_text = "Lowers Physics tickrate to 15 from 60, useful for lower end computers."
+tooltip_text = "Lowers physics tickrate to 15 from 60, useful for lower end computers."
 theme_override_font_sizes/font_size = 21
 text = "Low Performance Mode (buggy)"
 autowrap_mode = 2
+icon_alignment = 2
+
+[node name="frameskip" type="CheckButton" parent="ui/pause/tab/Video" unique_id=349401909]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 257.0
+offset_right = 192.0
+offset_bottom = 292.0
+scale = Vector2(2, 2)
+tooltip_text = "Skips video frames to keep the physics tick rate running at 60."
+theme_override_font_sizes/font_size = 21
+text = "Frameskip"
 icon_alignment = 2
 
 [node name="hudtrans" type="HSlider" parent="ui/pause/tab/Video" unique_id=1434055153]
@@ -1621,302 +1632,6 @@ theme = ExtResource("40_25m3f")
 theme_override_font_sizes/font_size = 21
 text = "Hover over a button or slider for more info"
 horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="explosions" type="CheckButton" parent="ui/pause" unique_id=1655645485]
-visible = false
-layout_mode = 0
-offset_left = -160.1667
-offset_top = -96.0
-offset_right = -116.1667
-offset_bottom = -64.0
-tooltip_text = "Toggles explosion effects. Helpful if you're photosensitive."
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/explosions" unique_id=1899095101]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -88.0
-offset_right = 40.0
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Explosions"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="opaquewalls" type="CheckButton" parent="ui/pause" unique_id=1481333470]
-visible = false
-layout_mode = 0
-offset_left = 15.8333435
-offset_top = -96.0
-offset_right = 59.83335
-offset_bottom = -64.0
-tooltip_text = "Particles like photons will be unable to escape the room."
-
-[node name="label" type="Label" parent="ui/pause/opaquewalls" unique_id=1880945395]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -112.0
-offset_right = 16.0
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Opaque Walls"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="lcdrag" type="CheckButton" parent="ui/pause" unique_id=1931667413]
-visible = false
-layout_mode = 0
-offset_left = 191.83331
-offset_top = -96.0
-offset_right = 235.83331
-offset_bottom = -64.0
-tooltip_text = "Let left click drag the camera."
-
-[node name="label" type="Label" parent="ui/pause/lcdrag" unique_id=731053359]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -117.333374
-offset_right = 10.666626
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Left Click Drag"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="mus_volume" type="HSlider" parent="ui/pause" unique_id=643292938]
-visible = false
-layout_mode = 0
-offset_left = 48.0
-offset_top = -56.0
-offset_right = 200.0
-offset_bottom = -40.0
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="label" type="Label" parent="ui/pause/mus_volume" unique_id=1835328880]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -248.0
-offset_top = -8.0
-offset_right = -40.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Music volume"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="sfx_volume" type="HSlider" parent="ui/pause" unique_id=152319889]
-visible = false
-layout_mode = 0
-offset_left = 48.0
-offset_top = -32.0
-offset_right = 200.0
-offset_bottom = -16.0
-max_value = 1.0
-step = 0.01
-value = 1.0
-
-[node name="label" type="Label" parent="ui/pause/sfx_volume" unique_id=1103723420]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -248.0
-offset_top = -8.0
-offset_right = -40.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Sound effects volume"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="t_speed" type="HSlider" parent="ui/pause" unique_id=1379561619]
-visible = false
-layout_mode = 0
-offset_left = 48.0
-offset_top = 8.0
-offset_right = 200.0
-offset_bottom = 24.0
-tooltip_text = "Adjusts how fast you can change the temperature."
-min_value = 0.1
-max_value = 10.0
-step = 0.1
-value = 1.0
-
-[node name="label" type="Label" parent="ui/pause/t_speed" unique_id=532842570]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -248.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Temperature slider speed: 1"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="fus_thres" type="HSlider" parent="ui/pause" unique_id=1887162250]
-visible = false
-layout_mode = 0
-offset_left = 48.0
-offset_top = 32.0
-offset_right = 200.0
-offset_bottom = 48.0
-tooltip_text = "Adjusts how easily the cattos fuse upon contact."
-max_value = 3.0
-step = 0.05
-value = 1.0
-
-[node name="label" type="Label" parent="ui/pause/fus_thres" unique_id=615191885]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -248.0
-offset_top = -8.0
-offset_right = -40.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Fusion threshold: 1"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="gaspoof" type="CheckButton" parent="ui/pause" unique_id=561959044]
-visible = false
-layout_mode = 0
-offset_left = -32.0
-offset_top = 56.0
-offset_right = 12.0
-offset_bottom = 88.0
-tooltip_text = "Toggles the gaseous cattos turning into a cloud when they are hit hard enough."
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/gaspoof" unique_id=117235531]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -152.0
-offset_right = 56.0
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "\"Poofing\" gases"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="weakforce" type="CheckButton" parent="ui/pause" unique_id=63940214]
-visible = false
-layout_mode = 0
-offset_left = -32.0
-offset_top = 80.0
-offset_right = 12.0
-offset_bottom = 112.0
-tooltip_text = "Toggles radioactive decay."
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/weakforce" unique_id=140101848]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -152.0
-offset_right = 56.0
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Weak Nuclear Force"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="end_world" type="CheckButton" parent="ui/pause" unique_id=1792553391]
-visible = false
-layout_mode = 0
-offset_left = 135.99997
-offset_top = 104.0
-offset_right = 179.99997
-offset_bottom = 136.0
-tooltip_text = "Toggles \"world destruction\" cutscenes."
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/end_world" unique_id=1137490635]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -110.66669
-offset_right = 5.333313
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Endable World"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="hud_scale" type="CheckButton" parent="ui/pause" unique_id=932473265]
-visible = false
-layout_mode = 0
-offset_left = -32.00003
-offset_top = 104.0
-offset_right = 11.9999695
-offset_bottom = 136.0
-tooltip_text = "Scale Hud relative to resolution."
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/hud_scale" unique_id=956217904]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -153.33334
-offset_right = -37.333344
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Scale Hud"
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="catto_ai" type="CheckButton" parent="ui/pause" unique_id=2122628880]
-visible = false
-layout_mode = 0
-offset_left = 136.0
-offset_top = 56.0
-offset_right = 180.0
-offset_bottom = 88.0
-tooltip_text = "Toggles the movement of cattos."
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/catto_ai" unique_id=2094213636]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -128.0
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Catto AI"
-horizontal_alignment = 2
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="rotat" type="CheckButton" parent="ui/pause" unique_id=1889122789]
-visible = false
-layout_mode = 0
-offset_left = 136.0
-offset_top = 80.0
-offset_right = 180.0
-offset_bottom = 112.0
-tooltip_text = "Toggles whether or not the cattos will automatically rotate.
-If toggled off, Q will rotate left and E will rotate right"
-button_pressed = true
-
-[node name="label" type="Label" parent="ui/pause/rotat" unique_id=508680388]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_left = -128.0
-offset_bottom = 32.0
-theme_override_fonts/font = ExtResource("30_618eh")
-theme_override_font_sizes/font_size = 16
-text = "Catto Rotation"
-horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -2138,22 +1853,10 @@ texture_hover = ExtResource("35")
 [connection signal="value_changed" from="ui/pause/tab/Gameplay/box_y" to="." method="_on_box_y_value_changed"]
 [connection signal="toggled" from="ui/pause/tab/Video/scale" to="." method="_on_hud_scale_toggled"]
 [connection signal="toggled" from="ui/pause/tab/Video/lowperf" to="." method="_on_lowperf_toggled"]
+[connection signal="toggled" from="ui/pause/tab/Video/frameskip" to="." method="_on_frameskip_toggled"]
 [connection signal="value_changed" from="ui/pause/tab/Video/hudtrans" to="." method="_on_hudtrans_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Audio/svol" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="value_changed" from="ui/pause/tab/Audio/mvol" to="." method="_on_mus_volume_value_changed"]
-[connection signal="toggled" from="ui/pause/explosions" to="." method="_on_explosions_toggled"]
-[connection signal="toggled" from="ui/pause/opaquewalls" to="." method="_on_opaquewalls_toggled"]
-[connection signal="toggled" from="ui/pause/lcdrag" to="." method="_on_lcdrag_toggled"]
-[connection signal="value_changed" from="ui/pause/mus_volume" to="." method="_on_mus_volume_value_changed"]
-[connection signal="value_changed" from="ui/pause/sfx_volume" to="." method="_on_sfx_volume_value_changed"]
-[connection signal="value_changed" from="ui/pause/t_speed" to="." method="_on_t_speed_value_changed"]
-[connection signal="value_changed" from="ui/pause/fus_thres" to="." method="_on_fus_thres_value_changed"]
-[connection signal="toggled" from="ui/pause/gaspoof" to="." method="_on_gaspoof_toggled"]
-[connection signal="toggled" from="ui/pause/weakforce" to="." method="_on_weakforce_toggled"]
-[connection signal="toggled" from="ui/pause/end_world" to="." method="_on_end_world_toggled"]
-[connection signal="toggled" from="ui/pause/hud_scale" to="." method="_on_hud_scale_toggled"]
-[connection signal="toggled" from="ui/pause/catto_ai" to="." method="_on_catto_ai_toggled"]
-[connection signal="toggled" from="ui/pause/rotat" to="." method="_on_rotat_toggled"]
 [connection signal="pressed" from="ui/pause/mainmenu" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ui/pause/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ui/pause/settings_reset" to="." method="_on_settings_reset_pressed"]

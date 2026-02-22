@@ -72,6 +72,7 @@ func sync_settings():
 	$ui/pause/tab/Video/hudtrans.value = glob.hudparency
 	$ui/pause/tab/Gameplay/box_x.value = glob.box_x
 	$ui/pause/tab/Gameplay/box_y.value = glob.box_y
+	$ui/pause/tab/Video/frameskip.button_pressed = glob.frameskip
 
 func spawn_electron_toy():
 	var electron_toy = load("res://ec_assets/objects/particle_ball.tscn")
@@ -228,6 +229,12 @@ func _on_lowperf_toggled(button_pressed):
 		Engine.physics_ticks_per_second = 15
 	else:
 		Engine.physics_ticks_per_second = 60
+func _on_frameskip_toggled(button_pressed):
+	glob.frameskip = button_pressed
+	if glob.frameskip == true:
+		Engine.max_physics_steps_per_frame = 8
+	else:
+		Engine.max_physics_steps_per_frame = 1
 
 func _on_nucleus_toggled(button_pressed):
 	glob.spawn_nucleus = button_pressed

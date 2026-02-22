@@ -52,6 +52,7 @@ var box_x = 2500.0
 var box_y = 0.0
 
 var lowperf = false
+var frameskip = false
 var explosion = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -62,6 +63,10 @@ func _ready():
 		Engine.physics_ticks_per_second = 15
 	else:
 		Engine.physics_ticks_per_second = 60
+	if glob.frameskip == true:
+		Engine.max_physics_steps_per_frame = 8
+	else:
+		Engine.max_physics_steps_per_frame = 1
 	if err != OK:
 		pass
 	
@@ -87,6 +92,7 @@ func save():
 	config.set_value("Video", "hudscaling", hudscaling)
 	config.set_value("Video", "hud_transparency", hudparency)
 	config.set_value("Video", "lowperf", lowperf)
+	config.set_value("Video", "frameskip", frameskip)
 	config.save(path)
 	
 func load_cfg():
@@ -110,6 +116,7 @@ func load_cfg():
 	hudscaling = config.get_value("Video", "hudscaling", true)
 	hudparency = config.get_value("Video", "hud_transparency", 1.0)
 	lowperf = config.get_value("Video", "lowperf", false)
+	frameskip = config.get_value("Video", "frameskip", false)
 	
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

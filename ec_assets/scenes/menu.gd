@@ -293,6 +293,13 @@ func _on_lowperf_toggled(button_pressed):
 		Engine.physics_ticks_per_second = 15
 	else:
 		Engine.physics_ticks_per_second = 60
+		
+func _on_frameskip_toggled(button_pressed):
+	glob.frameskip = button_pressed
+	if glob.frameskip == true:
+		Engine.max_physics_steps_per_frame = 8
+	else:
+		Engine.max_physics_steps_per_frame = 1
 	
 func sync_options():
 	$settings/tab/Gameplay/explode.button_pressed = glob.explosions
@@ -312,3 +319,5 @@ func sync_options():
 	$settings/tab/Gameplay/box_x.value = glob.box_x
 	$settings/tab/Gameplay/box_y.value = glob.box_y
 	$settings/tab/Video/lowperf.button_pressed = glob.lowperf
+	$settings/tab/Video/frameskip.button_pressed = glob.frameskip
+	
