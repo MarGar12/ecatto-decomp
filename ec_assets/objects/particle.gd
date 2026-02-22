@@ -110,14 +110,14 @@ func _process(delta):
 	else: $info/type.text = group + ["-","","+"][charge+1]
 	
 	if glob.opaquewalls == true or type == "neutron":
-		if abs(position.x) > glob.box_x: 
+		if abs(position.x) > glob.box_x and glob.box_x != 10000.1: 
 			position.x = glob.box_x*sign(position.x)
 			v.x *= -1
 		if position.y > 0: 
 			if type == "neutron": position.y = -15
 			else: position.y = 0
 			v.y *= -1
-		if position.y < (glob.box_y*-1)-2048: 
+		if position.y < (glob.box_y*-1)-2048 and glob.box_y != 10000.1: 
 			position.y = (glob.box_y*-1)-2048
 			v.y *= -1
 	
@@ -140,7 +140,7 @@ func _process(delta):
 	$boson.modulate = $sprite.modulate
 	
 	#lag prevention
-	if glob.particles > 100 or position.length() > glob.box_x+10000:
+	if position.length() > glob.box_x+10000 and (glob.box_x != 10000.1 or glob.box_x != 10000.1):
 		#glob.particles -= 1
 		queue_free()
 	
