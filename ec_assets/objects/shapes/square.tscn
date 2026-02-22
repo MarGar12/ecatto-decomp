@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b3qu0kvickqvl"]
+
+[ext_resource type="Script" uid="uid://hfwxgfyi5n6t" path="res://ec_assets/objects/shapes/square.gd" id="1_u4o44"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4o44"]
+size = Vector2(80, 80)
+
+[node name="Square" type="CharacterBody2D" unique_id=282726923]
+script = ExtResource("1_u4o44")
+metadata/_custom_type_script = "uid://du6ifoieytqpq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941871274]
+shape = SubResource("RectangleShape2D_u4o44")

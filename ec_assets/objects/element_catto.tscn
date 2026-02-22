@@ -161,7 +161,9 @@
 [ext_resource type="Texture2D" uid="uid://7ix4imct30cn" path="res://ec_assets/textures/particles/nucleus_au.png" id="152"]
 [ext_resource type="Texture2D" uid="uid://bpf2cguqxieq8" path="res://ec_assets/textures/cattos/elements/isotopes/ne22-tail.png" id="152_7rv7g"]
 [ext_resource type="Texture2D" uid="uid://cn44ismhem2l" path="res://ec_assets/textures/items/cn_earth.png" id="153"]
+[ext_resource type="Texture2D" uid="uid://0of4q6ydtrs3" path="res://ec_assets/textures/cattos/elements/isotopes/eu158-tail.png" id="153_jv4g6"]
 [ext_resource type="SpriteFrames" uid="uid://cyqo6svgeycui" path="res://ec_assets/textures/element_spots.tres" id="154"]
+[ext_resource type="Texture2D" uid="uid://btcov5rhj6pft" path="res://ec_assets/textures/cattos/elements/isotopes/mt270-tail.png" id="154_kaqhv"]
 [ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="155"]
 [ext_resource type="Texture2D" uid="uid://33u6pmob8roe" path="res://ec_assets/textures/cattos/elements/isotopes/ca48-fangs.png" id="155_tpqhr"]
 [ext_resource type="Texture2D" uid="uid://dl2r2173jaim6" path="res://ec_assets/textures/cattos/elements/solid/meitnerium-glasses.png" id="156"]
@@ -180,6 +182,7 @@
 [ext_resource type="Texture2D" uid="uid://ctnnd18v0cnv7" path="res://ec_assets/textures/cattos/mouth_frown0inv.png" id="167"]
 [ext_resource type="Texture2D" uid="uid://d1b6m56hk2054" path="res://ec_assets/textures/cattos/mouth_smile0europium.png" id="168"]
 [ext_resource type="Texture2D" uid="uid://be8tgpgx8cbuu" path="res://ec_assets/textures/cattos/mouth_neon.png" id="169"]
+[ext_resource type="Texture2D" uid="uid://clo8daeaxjy41" path="res://ec_assets/textures/cattos/glasses_mt270.png" id="169_3vhun"]
 [ext_resource type="Texture2D" uid="uid://brtfdgb4qxcj5" path="res://ec_assets/textures/cattos/fangs0.png" id="170"]
 [ext_resource type="Texture2D" uid="uid://ipom6fhu8gqx" path="res://ec_assets/textures/cattos/glasses_he.png" id="171"]
 [ext_resource type="Texture2D" uid="uid://kf8em22sev1b" path="res://ec_assets/textures/cattos/glasses_si.png" id="172"]
@@ -193,6 +196,7 @@
 [ext_resource type="Texture2D" uid="uid://dx5iekti6al50" path="res://ec_assets/textures/cattos/elements/solid/dubnium_rings.png" id="179"]
 [ext_resource type="Texture2D" uid="uid://cpigbtv6c808s" path="res://ec_assets/textures/cattos/elements/solid/osmium-hair.png" id="180"]
 [ext_resource type="Texture2D" uid="uid://cdfewah5l2ulk" path="res://ec_assets/textures/cattos/elements/solid/bismuth-hair.png" id="181"]
+[ext_resource type="Texture2D" uid="uid://3mk18loth00q" path="res://ec_assets/textures/cattos/mouth_eu158.png" id="181_vkvpp"]
 [ext_resource type="Texture2D" uid="uid://cyqinfl484fcw" path="res://ec_assets/textures/cattos/elements/isotopes/mo92-hair.png" id="182"]
 [ext_resource type="Texture2D" uid="uid://bf0td8iauhahq" path="res://ec_assets/textures/cattos/elements/isotopes/mo95-hair.png" id="183"]
 [ext_resource type="Texture2D" uid="uid://b3nfns6ugicdp" path="res://ec_assets/textures/cattos/elements/isotopes/mo100-hair.png" id="184"]
@@ -209,6 +213,7 @@
 [ext_resource type="AudioStream" uid="uid://c7ljcms0yqwon" path="res://ec_assets/sounds/placeparticle.mp3" id="191"]
 [ext_resource type="AudioStream" uid="uid://b6rvw3g4iro4q" path="res://ec_assets/sounds/metal_solid_impact_soft1.wav" id="191_eofrb"]
 [ext_resource type="AudioStream" uid="uid://cpymd0gwyq71s" path="res://ec_assets/sounds/geiger3.wav" id="192"]
+[ext_resource type="Texture2D" uid="uid://krv8sr2j7cyp" path="res://ec_assets/textures/cattos/glasses_eu158.png" id="192_h40v8"]
 [ext_resource type="AudioStream" uid="uid://5sf1i8p3x7vx" path="res://ec_assets/sounds/metal_solid_impact_soft2.wav" id="192_hyml4"]
 [ext_resource type="AudioStream" uid="uid://bybx1t8n4wvv5" path="res://ec_assets/sounds/MAUW.wav" id="193"]
 [ext_resource type="AudioStream" uid="uid://dbaapl67otkmk" path="res://ec_assets/sounds/anime_spark_thing.wav" id="194"]
@@ -773,6 +778,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("152_7rv7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_jv4g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_kaqhv")
 }],
 "loop": true,
 "name": &"isotopes",
@@ -857,6 +868,20 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 metadata/_snap_enabled = true
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_kaqhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_3vhun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Gradient" id="Gradient_lcbvy"]
 offsets = PackedFloat32Array(0.5, 1)
 colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1)
@@ -924,6 +949,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("168")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_vkvpp")
 }],
 "loop": true,
 "name": &"europium",
@@ -1173,6 +1201,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("190_kjeq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_h40v8")
 }],
 "loop": true,
 "name": &"default",
@@ -1622,7 +1653,6 @@ texture = SubResource("GradientTexture2D_0hom1")
 position = Vector2(0, 64)
 sprite_frames = SubResource("SpriteFrames_bhg3s")
 animation = &"isotopes"
-frame = 8
 speed_scale = 0.0
 offset = Vector2(-32, -32)
 
@@ -1657,7 +1687,7 @@ offset = Vector2(-250, 0)
 
 [node name="body" type="AnimatedSprite2D" parent="model" unique_id=1678524136]
 sprite_frames = ExtResource("145")
-animation = &"alternate"
+animation = &"isotopes"
 speed_scale = 0.0
 
 [node name="scars" type="AnimatedSprite2D" parent="model/body" unique_id=133561395]
@@ -1803,10 +1833,10 @@ texture = SubResource("GradientTexture1D_vusgp")
 rotation = 1.5708
 texture = SubResource("GradientTexture1D_vusgp")
 
-[node name="mt_glasses" type="Sprite2D" parent="model/face" unique_id=1332295107]
+[node name="mt_glasses" type="AnimatedSprite2D" parent="model/face" unique_id=536135016]
 visible = false
 position = Vector2(0, -28)
-texture = ExtResource("156")
+sprite_frames = SubResource("SpriteFrames_kaqhv")
 
 [node name="eye1" type="AnimatedSprite2D" parent="model/face" unique_id=1081601559]
 position = Vector2(-14, -4)
@@ -1897,6 +1927,7 @@ texture = ExtResource("173_tpqhr")
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(0, 12)
 sprite_frames = SubResource("SpriteFrames_lioc7")
+animation = &"europium"
 speed_scale = 0.0
 
 [node name="fangs" type="Sprite2D" parent="model/face/mouth" unique_id=472363195]
@@ -1912,7 +1943,6 @@ autoplay = &"blink"
 [node name="glasses" type="AnimatedSprite2D" parent="model/face" unique_id=1407142788]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_e437r")
-frame = 2
 
 [node name="facetext" type="Label" parent="model/face" unique_id=391513565]
 visible = false
