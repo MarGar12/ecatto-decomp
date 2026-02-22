@@ -51,7 +51,7 @@ var id = randf_range(0,1000)
 var pet_thresh = 0
 func _ready():
 	flash()
-	glob.cattos += 1	
+	#glob.cattos += 1	
 	update()
 
 func _physics_process(delta):
@@ -232,7 +232,7 @@ func flash():
 	tween.tween_property($flash, "modulate", Color(1,1,1,0), 0.25)
 
 func destroy(eff):
-	glob.cattos -= 1
+	#glob.cattos -= 1
 	var scene = load("res://ec_assets/objects/"+eff+".tscn")
 	var instance = scene.instantiate()
 	instance.position = position
@@ -269,3 +269,11 @@ func _on_body_exited(_body):
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_tree_entered() -> void:
+	glob.cattos += 1
+
+
+func _on_tree_exiting() -> void:
+	glob.cattos -= 1

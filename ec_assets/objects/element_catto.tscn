@@ -2290,6 +2290,8 @@ script = ExtResource("195")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="finished" from="purr" to="." method="_on_pet_finished"]
 [connection signal="finished" from="hiss" to="." method="_on_pet_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered" flags=3]

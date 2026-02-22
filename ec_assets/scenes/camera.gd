@@ -132,9 +132,9 @@ func _process(delta):
 		glob.inv_open = !glob.inv_open
 	$ui/center/inventory.visible = glob.inv_open and !glob.pause
 	
-	if Input.is_action_just_pressed("R"):
-		glob.cattos = 0
-		glob.particles = 0
+	#if Input.is_action_just_pressed("R"):
+		#glob.cattos = 0
+		#glob.particles = 0
 	
 	$spawning.global_position = get_global_mouse_position()
 	$spawning.visible = glob.spawning != null

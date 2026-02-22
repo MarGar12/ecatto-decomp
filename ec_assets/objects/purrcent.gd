@@ -236,8 +236,15 @@ func _on_area_entered(area):
 	if area != null:
 		if area is particle:
 			if area.type == "photon":
-				glob.particles -= 1
+				#glob.particles -= 1
 				area.queue_free()
 				$spawn.play()
 			if area.type == "positron":
 				area.destroy("explosion")
+
+
+func _on_tree_entered() -> void:
+	glob.cattos += 1
+	
+func _on_tree_exiting() -> void:
+	glob.cattos -= 1

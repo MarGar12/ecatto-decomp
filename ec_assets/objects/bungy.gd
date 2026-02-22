@@ -209,3 +209,10 @@ func _on_area_entered(area):
 			if area.type == "photon":
 				area.v = position-area.position
 				$spawn.play()
+
+
+func _on_tree_entered() -> void:
+	glob.cattos += 1
+	
+func _on_tree_exiting() -> void:
+	glob.cattos -= 1

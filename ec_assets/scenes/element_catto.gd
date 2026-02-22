@@ -94,7 +94,7 @@ var pet_num:int = 0
 var affinity:float = 73
 var affinities:Dictionary = {1: 72.769, 2: -48, 3: 59.6326, 4: -48, 5: 26.989, 6: 121.7763, 7: -6.8, 8: 140.97597, 9: 328.1649, 10: -116, 11: 52.867, 12: -40, 13: 41.762, 14: 134.0684, 15: 72.037, 16: 200.411, 17: 348.575, 18: -96, 19: 48.383, 20: 2.37, 21: 17.3076, 22: 7.289, 23: 50.911, 24: 65.2172, 25: -50, 26: 14.785, 27: 63.8979, 28: 111.65, 29: 119.235, 30: -58, 31: 29.0581, 32: 118.9352, 33: 77.6211, 34: 194.9587, 35: 324.5369, 36: -96, 37: 46.884, 38: 5.023, 39: 30.035, 40: 41.806, 41: 88.516, 42: 72.097, 43: 53, 44: 100.95, 45: 110.27, 46: 54.24, 47: 125.862, 48: -68, 49: 37.043, 50: 107.2984, 51: 101.059, 52: 190.161, 53: 295.1531, 54: -77, 55: 45.5023, 56: 13.954, 57: 53.795, 58: 57.9067, 59: 10.539, 60: 9.406, 61: 12.45, 62: 15.63, 63: 11.2, 64: 20.5, 65: 12.67, 66: 1.45, 67: 32.61, 68: 30.1, 69: 99, 70: -1.93, 71: 23.04, 72: 17.18, 73: 31.731, 74: 78.783, 75: 5.8273, 76: 103.9785, 77: 150.9086, 78: 205.041, 79: 222.747, 80: -48, 81: 30.884, 82: 34.4183, 83: 90.924, 84: 136, 85: 233.087, 86: -68, 87: 46.89, 88: 9.6485, 89: 33.77, 90: 58.633, 91: 53.03, 92: 30.39, 93: 45.85, 94: -48.33, 95: 9.93, 96: 27.17, 97: -165.24, 98: -97.31, 99: -28.6, 100: 33.96, 101: 93.91, 102: -223.22, 103: -30.04, 104: 0, 105: 0, 106: 0, 107: 0, 108: 0, 109: 0, 110: 0, 111: 151, 112: 0, 113: 66.6, 114: 0, 115: 35.3, 116: 74.9, 117: 165.9, 118: 7.72, 119: 63.87, 120: 2.03, 121: 55}
 func _ready():
-	glob.cattos += 1
+	#glob.cattos += 1
 	movetimer = randf_range(0,10)
 	if protons < 119 and player_spawned == true: neutrons = main_isotopes[protons]-protons
 	if protons == 0: antimuons = 1
@@ -859,7 +859,7 @@ func flash():
 	tween.tween_property($flash, "modulate", Color(1,1,1,0), 0.25)
 
 func destroy(eff):
-	glob.cattos -= 1
+	#glob.cattos -= 1
 	if Engine.get_frames_per_second() < 20: eff = "poof"
 	var scene = load("res://ec_assets/objects/"+eff+".tscn")
 	var instance = scene.instantiate()
@@ -1217,7 +1217,7 @@ func update():
 	generate_features()
 	
 	#collision
-	if protons == 2: 
+	if protons == 2 and not mass == 2: 
 		$col_body.position.y = 1
 	elif protons == 42: 
 		$col_body.position.y = 6
@@ -2146,7 +2146,7 @@ func _on_body_entered(body):
 				antimuons += body.antimuons
 				flash()
 				position += (body.position-position)/2
-				glob.cattos -= 1
+				#glob.cattos -= 1
 				body.queue_free()
 			if body.protons != protons:
 				if protons == 27 and body.protons == 60:
@@ -2196,7 +2196,7 @@ func _on_area_entered(area):
 			if area.type == "electron" and electrons < max_electrons:
 				electrons += 1
 				flash()
-				glob.particles -= 1
+				#glob.particles -= 1
 				area.queue_free()
 				if protons != 25: $meow.play()
 			if area.type == "neutron":
@@ -2205,7 +2205,7 @@ func _on_area_entered(area):
 					neutrons += 1
 					decay = INF
 				flash()
-				glob.particles -= 1
+				#glob.particles -= 1
 				area.queue_free()
 				if protons != 25: $meow.play()
 			if area.type == "positron" and electrons > 0:
@@ -2216,8 +2216,8 @@ func _on_area_entered(area):
 			if area.type == "photon":
 				#photoelectric effect
 				if area.v.length() > 1000: 
-					for e in floor(area.v.length()/1000):
-						velocity += area.v*0.1
+					for e in floor(clamp(area.v.length(),0,250000)/1000):
+						velocity += area.v
 						if electrons > 0:
 							emit("electron")
 							electrons -= 1
@@ -2245,7 +2245,7 @@ func _on_area_entered(area):
 					$sparkle.play()
 					flash()
 				else:
-					glob.particles -= 1
+					#glob.particles -= 1
 					area.queue_free()
 					flash()
 					velocity.y -= 1000 * glob.rate
@@ -2382,3 +2382,11 @@ func _on_veryclose_body_exited(body):
 
 func _on_pet_finished() -> void:
 	petted = false
+
+
+func _on_tree_entered() -> void:
+	glob.cattos += 1
+
+
+func _on_tree_exiting() -> void:
+	glob.cattos -= 1 

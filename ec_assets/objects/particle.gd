@@ -19,7 +19,7 @@ var dragged = false
 
 # Called when the node enters the scene tree for the first anti.
 func _ready():
-	glob.particles += 1
+	#glob.particles += 1
 	if type != "neutron":
 		v.x = randf_range(-300,300)
 		v.y = randf_range(-300,300)
@@ -32,6 +32,8 @@ func _process(delta):
 	#delete when resetting
 	if Input.is_action_just_pressed("R"): 
 		queue_free()
+	
+	$vel.text = str(v)
 	
 	if emit > 0: emit -= delta
 	
@@ -110,15 +112,15 @@ func _process(delta):
 	else: $info/type.text = group + ["-","","+"][charge+1]
 	
 	if glob.opaquewalls == true or type == "neutron":
-		if abs(position.x) > 2500: 
-			position.x = 2500*sign(position.x)
+		if abs(position.x) > glob.box_x: 
+			position.x = glob.box_x*sign(position.x)
 			v.x *= -1
 		if position.y > 0: 
 			if type == "neutron": position.y = -15
 			else: position.y = 0
 			v.y *= -1
-		if position.y < -2048: 
-			position.y = -2048
+		if position.y < (glob.box_y*-1)-2048: 
+			position.y = (glob.box_y*-1)-2048
 			v.y *= -1
 	
 	#dragging the particle
@@ -140,8 +142,8 @@ func _process(delta):
 	$boson.modulate = $sprite.modulate
 	
 	#lag prevention
-	if glob.particles > 100 or position.length() > 10000:
-		glob.particles -= 1
+	if glob.particles > 100 or position.length() > glob.box_x+10000:
+		#glob.particles -= 1
 		queue_free()
 	
 	#using tools
@@ -158,7 +160,7 @@ func _process(delta):
 	if glob.tool == 7 and Input.is_action_pressed("lmb"):
 		v += (get_global_mouse_position()-position).normalized()/(get_global_mouse_position()-position).length()*delta*100000
 		if (get_global_mouse_position()-position).length() < 64: 
-			glob.particles -= 1
+			#glob.particles -= 1
 			queue_free()
 
 func _on_mouse_entered():
@@ -213,9 +215,17 @@ func _on_area_entered(area):
 			emit = 0.1
 
 func destroy(eff):
-	glob.particles -= 1
+	#glob.particles -= 1
 	var scene = load("res://ec_assets/objects/"+eff+".tscn")
 	var instance = scene.instantiate()
 	instance.position = position
 	add_sibling(instance)
 	queue_free()
+
+
+func _on_tree_entered() -> void:
+	glob.particles += 1
+
+
+func _on_tree_exiting() -> void:
+	glob.particles -= 1
