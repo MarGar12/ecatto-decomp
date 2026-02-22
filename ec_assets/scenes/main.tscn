@@ -30,11 +30,11 @@
 [ext_resource type="Texture2D" uid="uid://nc5vhpo5itnn" path="res://ec_assets/xmas_art/triton_berkelium.png" id="24"]
 [ext_resource type="Texture2D" uid="uid://b5xc0c6yoi8nn" path="res://ec_assets/xmas_art/audiovox_oganessontennessine.jpg" id="25"]
 [ext_resource type="Texture2D" uid="uid://bojyq5r6yq0xj" path="res://ec_assets/textures/ui/tutorial_catto.png" id="26"]
-[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="26_cql6i"]
 [ext_resource type="Texture2D" uid="uid://decqxaxh5d2yg" path="res://ec_assets/textures/ui/tutorial_table.png" id="27"]
 [ext_resource type="PackedScene" uid="uid://cc5lnxjqdlpj" path="res://ec_assets/scenes/camera.tscn" id="28"]
 [ext_resource type="Script" uid="uid://bbf0pu4c023l1" path="res://ec_assets/scenes/music.gd" id="29"]
 [ext_resource type="AudioStream" uid="uid://c64fkf848odql" path="res://ec_assets/music/Vibe Ace.mp3" id="30"]
+[ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="30_3s43j"]
 [ext_resource type="Script" uid="uid://bweu07l2apik0" path="res://ec_assets/scenes/music_track.gd" id="31"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="31_3s43j"]
 [ext_resource type="AudioStream" uid="uid://dcfwwjpydtpk2" path="res://ec_assets/music/Bathed in the Light.mp3" id="32"]
@@ -207,6 +207,7 @@ z_index = -20
 texture_filter = 2
 
 [node name="moon" type="Node2D" parent="bg" unique_id=784298813]
+visible = false
 
 [node name="space" type="Parallax2D" parent="bg/moon" unique_id=252903266]
 scroll_scale = Vector2(0.001, 0.001)
@@ -714,18 +715,15 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1027, 16)
 
 [node name="opaque" type="Sprite2D" parent="walls" unique_id=470372138]
-visible = false
 self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
 z_index = -10
-texture_filter = 2
 texture_repeat = 2
-scale = Vector2(4, 4)
 texture = ExtResource("10")
 region_enabled = true
-region_rect = Rect2(0, 0, 1250, 512)
+region_rect = Rect2(0, 0, 5000, 2048)
 
 [node name="xmas_art" type="Node2D" parent="walls/opaque" unique_id=283494091]
-visible = false
+position = Vector2(-15.999992, 472)
 scale = Vector2(0.25, 0.25)
 
 [node name="1" type="Sprite2D" parent="walls/opaque/xmas_art" unique_id=1205613243]
@@ -947,13 +945,254 @@ horizontal_alignment = 2
 
 [node name="xmasart" type="Button" parent="walls/opaque" unique_id=1748714895]
 texture_filter = 1
-offset_left = -96.0
-offset_top = 154.0
-offset_right = 24.0
-offset_bottom = 185.0
-scale = Vector2(0.4, 0.4)
-theme_override_fonts/font = ExtResource("26_cql6i")
+offset_left = -89.25001
+offset_top = 1036.25
+offset_right = 88.74999
+offset_bottom = 1071.25
+theme = ExtResource("30_3s43j")
+text = "Christmas Art: off"
+
+[node name="Parallax2D" type="Parallax2D" parent="walls" unique_id=763551125]
+repeat_size = Vector2(25000, 0)
+
+[node name="opaque" type="Sprite2D" parent="walls/Parallax2D" unique_id=1579672374]
+self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
+z_index = -10
+texture_repeat = 2
+texture = ExtResource("10")
+region_enabled = true
+region_rect = Rect2(0, 0, 25000, 2048)
+
+[node name="xmas_art" type="Node2D" parent="walls/Parallax2D/opaque" unique_id=847602968]
+visible = false
+position = Vector2(-15.999992, 472)
+scale = Vector2(0.25, 0.25)
+
+[node name="1" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1305979357]
+position = Vector2(-768, 768)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/1" unique_id=334743245]
+offset_left = -128.0
+offset_top = -400.0
+offset_right = 640.0
+offset_bottom = -304.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 64
+text = "1ketheboss"
+horizontal_alignment = 2
+
+[node name="2" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1626595781]
+position = Vector2(-160, 424)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/2" unique_id=1853867351]
+modulate = Color(0, 0, 0, 1)
+offset_left = 96.0
+offset_top = -576.0
+offset_right = 864.0
+offset_bottom = -480.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 64
+text = "CKB"
+horizontal_alignment = 2
+
+[node name="3" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1244344989]
+position = Vector2(584, 768)
+texture = ExtResource("14")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/3" unique_id=1002153248]
+modulate = Color(0, 0, 0, 1)
+offset_left = -520.0
+offset_top = -200.0
+offset_right = 248.0
+offset_bottom = -104.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 32
+text = "Inky"
+horizontal_alignment = 2
+
+[node name="4" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=416802312]
+position = Vector2(1280, 512)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/4" unique_id=1830087728]
+offset_left = -512.0
+offset_top = -1760.0
+offset_right = 512.0
+offset_bottom = -1536.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 128
+text = "beehive3465"
+horizontal_alignment = 1
+
+[node name="5" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=853235659]
+position = Vector2(512, 320)
+texture = ExtResource("16")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/5" unique_id=1046955637]
+modulate = Color(0, 0, 0, 1)
+offset_left = -408.0
+offset_top = 152.0
+offset_right = 360.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 32
+text = "Mawilite"
+horizontal_alignment = 2
+
+[node name="6" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=2100799603]
+position = Vector2(-640, 384)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/6" unique_id=941685333]
+modulate = Color(0, 0, 0, 1)
+offset_left = -384.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 352.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 32
+text = "Oxygendox"
+
+[node name="7" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1480129140]
+position = Vector2(-160, -32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("18")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/7" unique_id=1729915815]
+modulate = Color(0, 0, 0, 1)
+offset_left = -704.0
+offset_top = 864.0
+offset_right = 64.0
+offset_bottom = 964.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 80
+text = "Ritatastic"
+
+[node name="8" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1488600241]
+position = Vector2(-1120, 288)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/8" unique_id=373405951]
+offset_left = -416.0
+offset_top = 320.0
+offset_right = 352.0
+offset_bottom = 420.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 64
+text = "Saturn"
+
+[node name="9" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1918069809]
+position = Vector2(720, -392)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/9" unique_id=1363039185]
+offset_left = -1200.0
+offset_top = -944.0
+offset_right = -432.0
+offset_bottom = -844.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 80
+text = "Senchent 2ndary"
+
+[node name="10" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1814606717]
+position = Vector2(-624, -24)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("21")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/10" unique_id=1409502818]
+modulate = Color(0, 0, 0, 1)
+offset_left = -2000.0
+offset_top = -2000.0
+offset_right = -1232.0
+offset_bottom = -1842.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 192
+text = "Ticktock"
+
+[node name="11" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=935428338]
+position = Vector2(-1320, 736)
+texture = ExtResource("22")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/11" unique_id=1184836323]
+modulate = Color(0, 0, 0, 1)
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 576.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 32
+text = "Triton"
+
+[node name="12" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1786026870]
+position = Vector2(-1072, -136)
+texture = ExtResource("23")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/12" unique_id=1165759098]
+modulate = Color(0, 0, 0, 1)
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 608.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 32
+text = "Triton"
+
+[node name="13" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=180617234]
+position = Vector2(-832, -576)
+texture = ExtResource("24")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/13" unique_id=1024002998]
+offset_left = -184.0
+offset_top = -192.0
+offset_right = 584.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 32
+text = "Triton"
+
+[node name="Label2" type="Label" parent="walls/Parallax2D/opaque/xmas_art/13" unique_id=1449689264]
+modulate = Color(0, 0, 0, 1)
+offset_left = -200.0
+offset_top = 200.0
+offset_right = 568.0
+offset_bottom = 435.0
+theme_override_fonts/font = ExtResource("12")
 theme_override_font_sizes/font_size = 16
+text = "(this one isn't really Xmas-themed but it was the
+first submission to the art competition so :P)"
+
+[node name="14" type="Sprite2D" parent="walls/Parallax2D/opaque/xmas_art" unique_id=1329909832]
+position = Vector2(-256, -512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25")
+
+[node name="Label" type="Label" parent="walls/Parallax2D/opaque/xmas_art/14" unique_id=514059359]
+modulate = Color(0, 0, 0, 1)
+offset_left = -144.0
+offset_top = -352.0
+offset_right = 624.0
+offset_bottom = -117.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 64
+text = "Audiovox Vod10PS2"
+horizontal_alignment = 2
+
+[node name="xmasart" type="Button" parent="walls/Parallax2D/opaque" unique_id=1352674276]
+visible = false
+texture_filter = 1
+offset_left = -89.25001
+offset_top = 1036.25
+offset_right = 88.74999
+offset_bottom = 1071.25
+theme = ExtResource("30_3s43j")
 text = "Christmas Art: off"
 
 [node name="Sprite" type="Sprite2D" parent="walls" unique_id=584762892]
@@ -1066,6 +1305,7 @@ volume_db = -5.0
 pitch_scale = 0.3
 
 [connection signal="pressed" from="walls/opaque/xmasart" to="." method="_on_xmasart_pressed"]
+[connection signal="pressed" from="walls/Parallax2D/opaque/xmasart" to="." method="_on_xmasart_pressed"]
 [connection signal="pressed" from="hint/ok" to="." method="_on_ok_pressed"]
 [connection signal="finished" from="music/a" to="music" method="_on_track_finished"]
 [connection signal="finished" from="music/b" to="music" method="_on_track_finished"]

@@ -33,8 +33,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("R"): 
 		queue_free()
 	
-	$vel.text = str(v)
-	
 	if emit > 0: emit -= delta
 	
 	position += v * delta * glob.rate

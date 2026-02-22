@@ -94,11 +94,13 @@ func _process(delta):
 	glob.air_density = (glob.pressure*10000*30/1000.0)/(8.314*glob.temperature)*10
 	
 	#background visibility
-	$walls/opaque.visible = glob.opaquewalls
+	$walls/opaque.visible = glob.opaquewalls and (glob.box_x != 10000.1 and glob.box_y != 10000.1)
 	$bg/earth_fk.visible = $camera.preset == 1
 	$bg/moon.visible = $camera.preset == 2
 	$bg/space.visible = $camera.preset == 3
 	$bg/sun.visible = $camera.preset == 4
+	
+	
 	
 	$walls/CollisionShape2D.position = Vector2(glob.box_x, -(glob.box_y*0.5))
 	$walls/CollisionShape2D2.position = Vector2(-glob.box_x, -(glob.box_y*0.5))
@@ -123,6 +125,25 @@ func _process(delta):
 	$ceiling/CollisionShape2D/Sprite2D.region_rect = Rect2(0, 0, glob.box_x, 16)
 	$walls/CollisionShape2D/Sprite2D.region_rect = Rect2(0, 0, ((glob.box_y*0.5005) + 1027), 16)
 	$walls/CollisionShape2D2/Sprite2D.region_rect = Rect2(0, 0, ((glob.box_y*0.5005) + 1027), 16)
+	
+	#walls/opaque.region_rect = Rect2(0,0,glob.box_x*2, glob.box_y+2048)
+	$walls/opaque.offset.y = -(glob.box_y*0.5)
+	$walls/Parallax2D/opaque.offset.y = -(glob.box_y*0.5)
+	
+	if glob.box_x != 10000.1 and glob.box_y == 10000.1:
+		$walls/Parallax2D/opaque.region_rect = Rect2(0,0,glob.box_x*2, 2048)
+		$walls/Parallax2D.repeat_size = Vector2(0, 2048)
+		$walls/Parallax2D.repeat_times = 7
+		$walls/Parallax2D.visible = glob.opaquewalls
+	elif glob.box_x == 10000.1 and glob.box_y != 10000.1:
+		$walls/Parallax2D/opaque.region_rect = Rect2(0,0,25000, glob.box_y+2048)
+		$walls/Parallax2D.repeat_size = Vector2(25000, 0)
+		$walls/Parallax2D.repeat_times = 7
+		$walls/Parallax2D.visible = glob.opaquewalls
+	else:
+		$walls/opaque.region_rect = Rect2(0,0,glob.box_x*2, glob.box_y+2048)
+		$walls/Parallax2D.repeat_size = Vector2(0, 0)
+		$walls/Parallax2D.visible = 0
 	
 	
 func spawn(obj,x,y):
