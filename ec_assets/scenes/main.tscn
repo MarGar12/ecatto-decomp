@@ -715,6 +715,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1027, 16)
 
 [node name="opaque" type="Sprite2D" parent="walls" unique_id=470372138]
+visible = false
 self_modulate = Color(0.627451, 0.627451, 0.627451, 1)
 z_index = -10
 texture_repeat = 2
@@ -954,6 +955,7 @@ theme = ExtResource("30_3s43j")
 text = "Christmas Art: off"
 
 [node name="Parallax2D" type="Parallax2D" parent="walls" unique_id=763551125]
+visible = false
 repeat_size = Vector2(25000, 0)
 
 [node name="opaque" type="Sprite2D" parent="walls/Parallax2D" unique_id=1579672374]
