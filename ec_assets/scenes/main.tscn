@@ -723,6 +723,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 5000, 2048)
 
 [node name="xmas_art" type="Node2D" parent="walls/opaque" unique_id=283494091]
+visible = false
 position = Vector2(-15.999992, 472)
 scale = Vector2(0.25, 0.25)
 

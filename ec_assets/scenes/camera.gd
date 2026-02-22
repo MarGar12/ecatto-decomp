@@ -119,7 +119,6 @@ func _process(delta):
 	#	$ui/topright/temp.text = "T=1e" + str(snapped(glob.t_power+2.5,0.1)) + "K"
 	$ui/topright/pres.text = "Air Pressure: " + str(snapped(glob.pressure,0.01)) + " bar"
 	$ui/topright/grav.text = "Gravity: " + str(snapped(glob.gravity/9.81,0.01)) + "g"
-	$ui/topright/test.text = str(glob.explosion)
   
 	$ui/topleft/cattocount.text = str(glob.cattos)
 	$ui/topleft/particlecount.text = str(glob.particles)
