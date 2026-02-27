@@ -45,7 +45,12 @@
 [ext_resource type="Texture2D" uid="uid://ds12cmak0gfw2" path="res://ec_assets/textures/ui/button_setting1.png" id="34_2158e"]
 [ext_resource type="Texture2D" uid="uid://dtgo40wyw4qul" path="res://ec_assets/textures/ui/button_help2.png" id="35"]
 [ext_resource type="Texture2D" uid="uid://ckcoymlqlvi7o" path="res://ec_assets/textures/ui/button_setting2.png" id="35_arbcm"]
+[ext_resource type="Texture2D" uid="uid://dxddwqko63bom" path="res://ec_assets/textures/ui/none_icon.png" id="36_1eqwi"]
+[ext_resource type="Texture2D" uid="uid://cn44ismhem2l" path="res://ec_assets/textures/items/cn_earth.png" id="36_eup1h"]
+[ext_resource type="Texture2D" uid="uid://cppk0nwytv4kt" path="res://ec_assets/textures/ui/moon_ico.png" id="37_ujqsv"]
 [ext_resource type="FontFile" uid="uid://db87dk2ekcjcw" path="res://ec_assets/fonts/ofont.ru_Fixedsys.ttf" id="38_pe5jw"]
+[ext_resource type="Texture2D" uid="uid://b006e3rm1xh52" path="res://ec_assets/textures/ui/catseye-neb_icon.png" id="38_ujqsv"]
+[ext_resource type="Texture2D" uid="uid://bigwujh5m0pt5" path="res://ec_assets/textures/ui/sun_icon.png" id="39_yh276"]
 [ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="40_25m3f"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="44_aenir"]
 
@@ -689,14 +694,19 @@ selected = 0
 allow_reselect = true
 item_count = 5
 popup/item_0/text = "None"
+popup/item_0/icon = ExtResource("36_1eqwi")
 popup/item_0/id = 0
 popup/item_1/text = "Earth"
+popup/item_1/icon = ExtResource("36_eup1h")
 popup/item_1/id = 1
 popup/item_2/text = "The Moon"
+popup/item_2/icon = ExtResource("37_ujqsv")
 popup/item_2/id = 2
 popup/item_3/text = "Deep Space"
+popup/item_3/icon = ExtResource("38_ujqsv")
 popup/item_3/id = 3
 popup/item_4/text = "Sun Core"
+popup/item_4/icon = ExtResource("39_yh276")
 popup/item_4/id = 4
 
 [node name="reset" type="TextureButton" parent="ui/topright" unique_id=1476896210]
@@ -1275,7 +1285,6 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
-visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1310,9 +1319,10 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("38_pe5jw")
 theme_override_font_sizes/font_size = 16
-current_tab = 0
+current_tab = 2
 
 [node name="Gameplay" type="TabBar" parent="ui/pause/tab" unique_id=2016678190]
+visible = false
 layout_mode = 2
 theme = ExtResource("40_25m3f")
 metadata/_tab_index = 0
@@ -1565,7 +1575,6 @@ theme_override_font_sizes/font_size = 21
 text = "HUD Transparency: "
 
 [node name="Audio" type="TabBar" parent="ui/pause/tab" unique_id=1246514239]
-visible = false
 layout_mode = 2
 theme = ExtResource("40_25m3f")
 metadata/_tab_index = 2

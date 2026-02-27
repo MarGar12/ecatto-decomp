@@ -39,7 +39,7 @@ radius = 320.0
 z_index = 2
 script = ExtResource("1")
 
-[node name="sound" type="AudioStreamPlayer2D" parent="." unique_id=1508583274]
+[node name="sound" type="AudioStreamPlayer2D" parent="." unique_id=1352485831]
 stream = ExtResource("2")
 volume_db = 15.0
 max_distance = 4000.0

@@ -3935,6 +3935,7 @@ flat = true
 stream = ExtResource("34")
 pitch_scale = 0.7
 autoplay = true
+max_polyphony = 2
 parameters/looping = true
 
 [node name="hover" type="AudioStreamPlayer" parent="." unique_id=290651654]
@@ -4009,8 +4010,8 @@ scale = Vector2(2000, 2000)
 texture = ExtResource("37")
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
-[connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
+[connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
@@ -4018,8 +4019,8 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/settings" to="." method="_button_press"]
 [connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
+[connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
