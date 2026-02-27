@@ -48,8 +48,11 @@
 [ext_resource type="Texture2D" uid="uid://cm5mktdycjakp" path="res://ec_assets/textures/ui/iris.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://cvcdsormakf2a" path="res://ec_assets/textures/ui/ec_logo.png" id="40_tjthn"]
 [ext_resource type="FontFile" uid="uid://ddmceft4g4nxd" path="res://ec_assets/fonts/CENTURY.TTF" id="41_e4r45"]
+[ext_resource type="Texture2D" uid="uid://6fxi4a18iukf" path="res://ec_assets/textures/ui/ecgame_icon.png" id="43_s7vfl"]
+[ext_resource type="Texture2D" uid="uid://c34oinudy1iae" path="res://ec_assets/textures/particles/neutron.png" id="44_nwvbu"]
 [ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="45_tjthn"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="48_u6mje"]
+[ext_resource type="Texture2D" uid="uid://d1jd5tqxuen53" path="res://ec_assets/textures/ui/tumblrico.png" id="50_6lt7n"]
 
 [sub_resource type="Gradient" id="Gradient_s7vfl"]
 offsets = PackedFloat32Array(0)
@@ -2982,10 +2985,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.5
-offset_top = 96.0
+offset_left = -80.0
+offset_top = 98.0
 offset_right = 79.5
-offset_bottom = 158.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
@@ -2994,7 +2997,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.6725274, 0.4879107, 1)
 theme_override_font_sizes/font_size = 42
 text = "About"
+icon = ExtResource("43_s7vfl")
 flat = true
+icon_alignment = 2
+expand_icon = true
 
 [node name="settings" type="Button" parent="main" unique_id=1308190376]
 texture_filter = 1
@@ -3024,9 +3030,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
+offset_left = -90.0
 offset_top = 206.0
-offset_right = 64.0
+offset_right = 85.0
 offset_bottom = 268.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -3036,6 +3042,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
 theme_override_font_sizes/font_size = 42
 text = "Credits"
+icon = ExtResource("44_nwvbu")
 flat = true
 
 [node name="quit" type="Button" parent="main" unique_id=2021964447]
@@ -3549,6 +3556,14 @@ flat = true
 [node name="credits" type="CanvasLayer" parent="." unique_id=642598301]
 visible = false
 
+[node name="background" type="ColorRect" parent="credits" unique_id=2129389074]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3764706)
+
 [node name="about" type="Label" parent="credits" unique_id=719330424]
 anchors_preset = 5
 anchor_left = 0.5
@@ -3564,15 +3579,10 @@ text = "Credits"
 
 [node name="text" type="RichTextLabel" parent="credits" unique_id=1045177171]
 texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -420.5
-offset_top = -257.0
-offset_right = 420.5
-offset_bottom = 317.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -3852,6 +3862,7 @@ Xe-133"
 horizontal_alignment = 1
 vertical_alignment = 1
 meta_underlined = false
+threaded = true
 selection_enabled = true
 
 [node name="back" type="Button" parent="credits" unique_id=7324477]
@@ -3870,6 +3881,14 @@ flat = true
 [node name="decompcredits" type="CanvasLayer" parent="." unique_id=1813541368]
 visible = false
 
+[node name="background" type="ColorRect" parent="decompcredits" unique_id=240408684]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3764706)
+
 [node name="about" type="Label" parent="decompcredits" unique_id=199351933]
 anchors_preset = 5
 anchor_left = 0.5
@@ -3881,19 +3900,17 @@ offset_bottom = 113.0
 grow_horizontal = 2
 theme = ExtResource("45_tjthn")
 theme_override_font_sizes/font_size = 63
-text = "About"
+text = "What Is This Game?"
 
 [node name="text" type="RichTextLabel" parent="decompcredits" unique_id=476544576]
 texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -420.5
-offset_top = -301.0
-offset_right = 420.5
-offset_bottom = 333.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 91.5
+offset_top = 83.0
+offset_right = -91.5
+offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -3906,8 +3923,7 @@ text = "This is a sandbox where you can play around with kitties based on the ch
 
 The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
 
-This project was made by [color=Turquoise]Lily P. Irie[/color], made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at[rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos]
-https://tumblr.com/elementcattos[/url][/wave][/rainbow]
+This project was made by [color=Turquoise]Lily P. Irie[/color], made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at[br][rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos][img]res://ec_assets/textures/ui/tumblrico.png[/img] https://tumblr.com/elementcattos[img]res://ec_assets/textures/ui/tumblrico.png[/img][/url][/wave][/rainbow]
 
 Find the source code here:
 [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://git.gay/mupsie/ecatto-decomp.git]https://git.gay/mupsie/ecatto-decomp.git[/url]
@@ -3972,6 +3988,21 @@ scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_c88ps")
 
 [node name="version" type="CanvasLayer" parent="." unique_id=1701963459]
+
+[node name="tumblr" type="LinkButton" parent="version" unique_id=510328795]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -40.0
+offset_right = 88.0
+grow_vertical = 0
+uri = "https://tumblr.com/elementcattos"
+
+[node name="icon" type="Sprite2D" parent="version/tumblr" unique_id=869112621]
+position = Vector2(20, 20)
+texture = ExtResource("50_6lt7n")
 
 [node name="iris" type="Control" parent="version" unique_id=81502510]
 visible = false
@@ -4059,3 +4090,5 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
+[connection signal="mouse_entered" from="version/tumblr" to="." method="_button_hover"]
+[connection signal="pressed" from="version/tumblr" to="." method="_button_press"]

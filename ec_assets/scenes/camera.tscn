@@ -1285,6 +1285,7 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
+visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3
@@ -1319,10 +1320,9 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("38_pe5jw")
 theme_override_font_sizes/font_size = 16
-current_tab = 2
+current_tab = 0
 
 [node name="Gameplay" type="TabBar" parent="ui/pause/tab" unique_id=2016678190]
-visible = false
 layout_mode = 2
 theme = ExtResource("40_25m3f")
 metadata/_tab_index = 0
@@ -1575,6 +1575,7 @@ theme_override_font_sizes/font_size = 21
 text = "HUD Transparency: "
 
 [node name="Audio" type="TabBar" parent="ui/pause/tab" unique_id=1246514239]
+visible = false
 layout_mode = 2
 theme = ExtResource("40_25m3f")
 metadata/_tab_index = 2
