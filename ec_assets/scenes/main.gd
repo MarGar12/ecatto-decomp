@@ -11,7 +11,7 @@ func _ready():
 	glob.pause = false
 	glob.cattos = 0
 	glob.particles = 0
-	get_window().title = "Element Cattos Decomp"
+	get_window().title = "Element Cattos"
 	
 	#flying kitty stuff
 	# var sector = Vector2.ZERO

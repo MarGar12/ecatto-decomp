@@ -46,7 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://c7ljcms0yqwon" path="res://ec_assets/sounds/placeparticle.mp3" id="35"]
 [ext_resource type="AudioStream" uid="uid://br6jdtf30ogv2" path="res://ec_assets/sounds/atom.mp3" id="36"]
 [ext_resource type="Texture2D" uid="uid://cm5mktdycjakp" path="res://ec_assets/textures/ui/iris.png" id="37"]
-[ext_resource type="Texture2D" uid="uid://d3xxi4mpk5ynu" path="res://ec_assets/textures/ui/ec_logo_decomp.png" id="40_xwdnf"]
+[ext_resource type="Texture2D" uid="uid://cvcdsormakf2a" path="res://ec_assets/textures/ui/ec_logo.png" id="40_tjthn"]
 [ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="45_tjthn"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="48_u6mje"]
 
@@ -2934,7 +2934,7 @@ texture = ExtResource("16")
 texture_filter = 1
 position = Vector2(0, -48)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("40_xwdnf")
+texture = ExtResource("40_tjthn")
 
 [node name="version" type="Label" parent="logo" unique_id=1283657918]
 visible = false
@@ -3163,6 +3163,7 @@ text = "[Back]"
 flat = true
 
 [node name="settings" type="CanvasLayer" parent="." unique_id=1518252111]
+visible = false
 
 [node name="tab" type="TabContainer" parent="settings" unique_id=219305690]
 anchors_preset = 8
@@ -3177,10 +3178,9 @@ offset_bottom = 329.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
-current_tab = 1
+current_tab = 0
 
 [node name="Gameplay" type="TabBar" parent="settings/tab" unique_id=1098881048]
-visible = false
 layout_mode = 2
 theme = ExtResource("45_tjthn")
 metadata/_tab_index = 0
@@ -3382,6 +3382,7 @@ max_value = 10000.1
 step = 0.1
 
 [node name="Video" type="TabBar" parent="settings/tab" unique_id=1812280098]
+visible = false
 layout_mode = 2
 theme = ExtResource("45_tjthn")
 metadata/_tab_index = 1
@@ -3897,10 +3898,13 @@ text = "This is a sandbox where you can play around with kitties based on the ch
 
 The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
 
-This project was made by [color=Turquoise]Lily P. Irie[/color] and mod by [color=fuchsia]Mups[/color], made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at   [rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos]https://tumblr.com/elementcattos[/url][/wave][/rainbow]
+This project was made by [color=Turquoise]Lily P. Irie[/color], made largely made possible by the amazing Element Cattos community! Be sure to check out the original blog at[rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://tumblr.com/elementcattos]
+https://tumblr.com/elementcattos[/url][/wave][/rainbow]
 
 Find the source code here:
-[rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://git.gay/mupsie/ecatto-decomp.git]https://git.gay/mupsie/ecatto-decomp.git[/url][/wave][/rainbow]"
+[rainbow freq=0.3 sat=1 val=0.8 speed=1.0][wave amp=25.0 freq=2.0 connected=1][url=https://git.gay/mupsie/ecatto-decomp.git]https://git.gay/mupsie/ecatto-decomp.git[/url]
+[url=https://github.com/MarGar12/ecatto-decomp.git]https://github.com/MarGar12/ecatto-decomp.git[/url][/wave][/rainbow]
+[color=white] (Github Mirror)"
 horizontal_alignment = 1
 vertical_alignment = 1
 meta_underlined = false
@@ -3972,16 +3976,13 @@ color_ramp = SubResource("Gradient_c88ps")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
+offset_left = 43.0
 offset_top = -48.0
-offset_right = 55.0
+offset_right = 95.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.7919991, 0.79199916, 0.7919991, 0.6431373)
 theme_override_constants/line_spacing = -6
-theme_override_fonts/font = ExtResource("48_u6mje")
-theme_override_font_sizes/font_size = 21
-text = "a0.13
-v1.4"
+text = "a0.14"
 vertical_alignment = 2
 
 [node name="iris" type="Control" parent="version" unique_id=81502510]
@@ -4021,26 +4022,26 @@ scale = Vector2(2000, 2000)
 texture = ExtResource("37")
 
 [connection signal="mouse_entered" from="main/play" to="." method="_button_hover"]
-[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
+[connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/settings" to="." method="_button_hover"]
-[connection signal="pressed" from="main/settings" to="." method="_button_press"]
 [connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="main/settings" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
-[connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
-[connection signal="pressed" from="about/back" to="." method="_button_press"]
 [connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="about/back" to="." method="_button_press"]
 [connection signal="mouse_entered" from="credit/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credit/back" to="." method="_button_press"]
 [connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="credit/back" to="." method="_button_press"]
 [connection signal="toggled" from="settings/tab/Gameplay/explode" to="." method="_on_explode_toggled"]
 [connection signal="toggled" from="settings/tab/Gameplay/opaque" to="." method="_on_opaque_toggled"]
 [connection signal="toggled" from="settings/tab/Gameplay/poof" to="." method="_on_poof_toggled"]
@@ -4060,13 +4061,13 @@ texture = ExtResource("37")
 [connection signal="value_changed" from="settings/tab/Audio/svol" to="." method="_on_svol_value_changed"]
 [connection signal="value_changed" from="settings/tab/Audio/mvol" to="." method="_on_mvol_value_changed"]
 [connection signal="mouse_entered" from="settings/back" to="." method="_button_hover"]
-[connection signal="pressed" from="settings/back" to="." method="_button_press"]
 [connection signal="pressed" from="settings/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="settings/back" to="." method="_button_press"]
 [connection signal="meta_clicked" from="credits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="credits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="credits/back" to="." method="_button_press"]
 [connection signal="meta_clicked" from="decompcredits/text" to="." method="_on_text_meta_clicked"]
 [connection signal="mouse_entered" from="decompcredits/back" to="." method="_button_hover"]
-[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]
 [connection signal="pressed" from="decompcredits/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="decompcredits/back" to="." method="_button_press"]

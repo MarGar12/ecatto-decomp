@@ -130,4 +130,4 @@ func _input(event: InputEvent) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if !OS.has_feature("movie"):
-		get_window().title = "Element Cattos Decomp (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"
+		get_window().title = "Element Cattos (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"

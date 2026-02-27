@@ -1538,7 +1538,6 @@ visible = false
 [node name="eye1" type="AnimatedSprite2D" parent="cloud/face" unique_id=15756796]
 position = Vector2(-12, 4)
 sprite_frames = ExtResource("7")
-animation = &"isotopes"
 
 [node name="eye2" type="AnimatedSprite2D" parent="cloud/face" unique_id=1901400853]
 position = Vector2(12, 4)
@@ -2232,6 +2231,7 @@ script = ExtResource("186")
 
 [node name="purr" type="AudioStreamPlayer2D" parent="." unique_id=1543185084]
 stream = ExtResource("222_jloec")
+pitch_scale = 1.4
 attenuation = 2.0
 script = ExtResource("186")
 

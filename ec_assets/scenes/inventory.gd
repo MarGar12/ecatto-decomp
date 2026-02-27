@@ -47,7 +47,7 @@ func _process(_delta):
 		sel_name = "Positron"
 		sel_desc = "The antimatter counterpart to electrons. Like all antimatter, they are mostly created by decaying atoms. Free positrons will scatter photons (change their direction). If a positron meets an electron, they will both become photons."
 	elif $compound_catto.selected == true:
-		sel_name = "Oiter"
+		sel_name = "Water"
 		sel_desc = "She solos."
 	elif $h.selected == true:
 		sel_name = "Hydrogen"

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c87700utuotmf"]
+
+[ext_resource type="Script" uid="uid://bw5uxqfv3sxe3" path="res://debug.gd" id="1_1uwqr"]
+
+[node name="Debug" type="CanvasLayer" unique_id=1670321914]
+script = ExtResource("1_1uwqr")
+
+[node name="gui" type="VBoxContainer" parent="." unique_id=493866693]
+modulate = Color(1, 1, 1, 0.23921569)
+top_level = true
+z_index = 99
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_right = -49.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="fps" type="Label" parent="gui" unique_id=1572325741]
+layout_mode = 2
+text = "Hi"

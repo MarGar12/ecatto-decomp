@@ -388,8 +388,6 @@ func _physics_process(delta: float) -> void:
 		$model/face/facetext.modulate = Color.from_rgba8(255,160,0)
 		if knocked_out > 0: $model/face/facetext.text = "!?!?!"
 		elif decay < 1: $model/face/facetext.text = "BYE :3"
-		#elif glob.tool == 8 and Input.is_action_pressed("lmb") and glob.selected == self:
-		#	$model/face/facetext.text = ">   <"
 		elif position.y < -500: $model/face/facetext.text = "AAAAH"
 		elif dragged == true: $model/face/facetext.text = "HAI :3"
 		elif velocity.y < 0: $model/face/facetext.text = "HUP!"
@@ -803,12 +801,19 @@ func _physics_process(delta: float) -> void:
 					else:
 						$purr.play()
 						$model/face/eye1.play("happy")
+						$nucleus/face/eye1.play("happy")
+						$nucleus/face/eye2.play("happy")
 						if mouth != 0 and not [protons,mass] == [63,158]:
 							mouth = 0
 				else:
-					$purr.play()
+					if protons == 33:
+						pass
+					else:
+						$purr.play()
 					if group != "noble gas":
 						$model/face/eye1.play("happy")
+						$nucleus/face/eye1.play("happy")
+						$nucleus/face/eye2.play("happy")
 						if mouth != 0 and not [protons,mass] == [63,158]:
 							mouth = 0
 						match protons:
@@ -820,16 +825,22 @@ func _physics_process(delta: float) -> void:
 							33: # arsenic
 								$hiss.play()
 								$model/face/eye1.play("shut")
+								$nucleus/face/eye1.play("shut")
+								$nucleus/face/eye2.play("shut")
 								mouth = 2
 							27: # cobalt
 								$purr.play()
 								if pet_num < pet_thresh:
 									$model/face/eye1.play("shut")
+									$nucleus/face/eye1.play("shut")
+									$nucleus/face/eye2.play("shut")
 									if mouth != 1 and not [protons,mass] == [63,158]: mouth = 1
 								else:
 									mouth = 0
 							38: # strontium, only one eye closes
 								$model/face/eye1.play("happy")
+								$nucleus/face/eye1.play("happy")
+								$nucleus/face/eye2.play("default")
 								$model/face/eye2.play("default")
 							109: # meitnerium
 								$model/face/eye1.visible = true
@@ -838,6 +849,12 @@ func _physics_process(delta: float) -> void:
 						if protons not in [2, 10]:
 							mouth = 0
 				$model/face/mouth.frame = mouth
+		if electrons == 0:
+			$purr.pitch_scale = 1.4
+			$hiss.pitch_scale = 1.4
+		else:
+			$purr.pitch_scale = 1
+			$hiss.pitch_scale = 1
 		
 	if glob.tool == 7 and Input.is_action_pressed("lmb"):
 		velocity += (get_global_mouse_position()-position).normalized()/(get_global_mouse_position()-position).length()*delta*100000

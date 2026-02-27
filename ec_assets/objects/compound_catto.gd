@@ -58,6 +58,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("R"):
 		queue_free()
 	
+	# react with blackhole
+	if glob.tool == 7 and Input.is_action_pressed("lmb"):
+		velocity += (get_global_mouse_position()-position).normalized()/(get_global_mouse_position()-position).length()*delta*100000
+		if (get_global_mouse_position()-position).length() < 64: destroy("poof")
+	
 	#states of matter
 	if glob.temperature > boiltemp: 
 		state = "gas"
@@ -150,7 +155,13 @@ func _physics_process(delta):
 	if knocked_out < 0: 
 		update()
 		knocked_out = 0
-	if knocked_out > 1.0: $model/face/eye1.play("shut")
+	if knocked_out > 1.0:
+		$model/face/eye1.play("shut")
+		$model/face/eye2.play("shut")
+	else:
+		$model/face/eye1.play("default")
+		$model/face/eye2.play("default")
+		$model/face/eye2.frame = 2
 	
 	#movement
 	if glob.catto_ai == true and knocked_out <= 0:
