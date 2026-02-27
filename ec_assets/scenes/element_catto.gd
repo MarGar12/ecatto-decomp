@@ -468,7 +468,7 @@ func _physics_process(delta: float) -> void:
 	
 	#looking around
 	if knocked_out <= 0:
-		if group == "noble gas" or protons == 22 or $model/face/eye1.animation == "shut" or $model/face/eye1.animation == "happy": 
+		if group == "noble gas" or protons == 22 or $model/face/eye1.animation == "shut" or $model/face/eye1.animation == "happy" or (protons == 87 and mass == 212): 
 			$model/face/anim.play("RESET")
 		else:
 				$model/face/anim.play("blink")
@@ -532,8 +532,8 @@ func _physics_process(delta: float) -> void:
 	if protons == 87 and mass == 212 and electrons != 0:
 		$model/face/eye1.offset.y = -18
 		$model/face/eye2.offset.y = -18
-		$model/face/eye1.offset.x = 8
-		$model/face/eye2.offset.x = -8
+		$model/face/eye1.offset.x = 2
+		$model/face/eye2.offset.x = -2
 		$model/face/mouth.offset.y = -14
 		#$model/face/mouth.offset.x = -1
 	elif protons == 56 and mass == 154 and electrons != 0:
@@ -552,6 +552,8 @@ func _physics_process(delta: float) -> void:
 		$model/face/eye1.offset.y = 0
 		$model/face/eye2.offset.y = 0
 		$model/face/mouth.offset.y = 0
+		$model/face/eye1.offset.x = 0
+		$model/face/eye2.offset.x = 0
 		#$model/face/mouth.offset.x = 0
 	if !protons in [3,8,33,101]:
 		$nucleus/face/eye1.frame = eye1
@@ -1648,7 +1650,7 @@ func update():
 			$model/face/glasses.offset.y = -6
 			$model/face/glasses.offset.x = 1
 			$model/tail.frame = 9
-			print($model/tail.frame)
+			#print($model/tail.frame)
 			mouth = 1
 			eye1 = 54
 			eye2 = 54
@@ -1690,7 +1692,6 @@ func update():
 			$model/hair.visible = 1
 			$model/hair.play("isotopes")
 			$model/hair.frame = 6
-			credit = "Oxygendox"
 		elif [protons,mass] == [76,194]:
 			$model/body.frame = 74
 			$model/hair.visible = 1
