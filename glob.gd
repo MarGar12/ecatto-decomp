@@ -127,7 +127,7 @@ func _input(event: InputEvent) -> void:
 		var winmode := DisplayServer.window_get_mode()
 		var is_window: bool = winmode != DisplayServer.WINDOW_MODE_FULLSCREEN
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
 	if !OS.has_feature("movie"):
 		get_window().title = "Element Cattos (" + str(Engine.get_frames_per_second()).pad_decimals(0) + " FPS)"

@@ -1275,6 +1275,7 @@ vertical_alignment = 1
 
 [node name="pause" type="Control" parent="ui" unique_id=723045570]
 process_mode = 3
+visible = false
 z_index = 20
 texture_filter = 1
 layout_mode = 3

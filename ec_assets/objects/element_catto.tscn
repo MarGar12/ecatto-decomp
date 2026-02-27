@@ -2162,58 +2162,68 @@ stream = ExtResource("185")
 volume_db = 5.0
 pitch_scale = 2.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="clank2" type="AudioStreamPlayer2D" parent="." unique_id=1835167580]
 stream = ExtResource("187")
 volume_db = -5.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="clank3" type="AudioStreamPlayer2D" parent="." unique_id=1779731907]
 stream = ExtResource("191_eofrb")
 volume_db = -10.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="clank4" type="AudioStreamPlayer2D" parent="." unique_id=1720883347]
 stream = ExtResource("192_hyml4")
 volume_db = -10.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="clank5" type="AudioStreamPlayer2D" parent="." unique_id=500712649]
 stream = ExtResource("189_67n54")
 volume_db = -10.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="clank6" type="AudioStreamPlayer2D" parent="." unique_id=1969570303]
 stream = ExtResource("190_2i7d5")
 volume_db = -10.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="clank7" type="AudioStreamPlayer2D" parent="." unique_id=1404533066]
 stream = ExtResource("188")
 volume_db = -10.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="splash" type="AudioStreamPlayer2D" parent="." unique_id=1122395909]
 stream = ExtResource("189")
 pitch_scale = 2.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="poof" type="AudioStreamPlayer2D" parent="." unique_id=928574825]
 stream = ExtResource("190")
 pitch_scale = 1.5
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="spawn" type="AudioStreamPlayer2D" parent="." unique_id=664180717]
 stream = ExtResource("191")
 volume_db = 5.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="geiger" type="AudioStreamPlayer2D" parent="." unique_id=1967377537]
@@ -2221,34 +2231,40 @@ stream = ExtResource("192")
 pitch_scale = 1.74
 max_distance = 1000.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="meow" type="AudioStreamPlayer2D" parent="." unique_id=1204071832]
 stream = ExtResource("193")
 volume_db = 5.0
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="purr" type="AudioStreamPlayer2D" parent="." unique_id=1543185084]
 stream = ExtResource("222_jloec")
 pitch_scale = 1.4
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="hiss" type="AudioStreamPlayer2D" parent="." unique_id=2091651569]
 stream = ExtResource("223_i24qu")
 attenuation = 2.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="sparkle" type="AudioStreamPlayer2D" parent="." unique_id=2130213333]
 stream = ExtResource("194")
 volume_db = 5.0
 attenuation = 0.0
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="punch" type="AudioStreamPlayer2D" parent="." unique_id=413501827]
 stream = ExtResource("225_i24qu")
 attenuation = 3.4822016
+panning_strength = 3.0
 script = ExtResource("186")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=212484836]

@@ -144,6 +144,7 @@ func _process(delta):
 		$walls/opaque.region_rect = Rect2(0,0,glob.box_x*2, glob.box_y+2048)
 		$walls/Parallax2D.repeat_size = Vector2(0, 0)
 		$walls/Parallax2D.visible = 0
+		
 	
 	
 func spawn(obj,x,y):

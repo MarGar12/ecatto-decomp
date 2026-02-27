@@ -54,6 +54,7 @@ func _ready():
 		$decompcredits/back.set("theme_override_colors/font_color", white)
 		$credits/about.set("theme_override_colors/font_color", white)
 		$decompcredits/about.set("theme_override_colors/font_color", white)
+		$logo/version.set("theme_override_colors/font_color", white)
 		$earth_fk.hide()
 		$space.hide()
 		$moon.show()
@@ -75,6 +76,7 @@ func _ready():
 		$decompcredits/back.set("theme_override_colors/font_color", black)
 		$credits/about.set("theme_override_colors/font_color", black)
 		$decompcredits/about.set("theme_override_colors/font_color", black)
+		$logo/version.set("theme_override_colors/font_color", black)
 		$earth_fk.show()
 		$moon.hide()
 		$space.hide()
@@ -96,6 +98,7 @@ func _ready():
 		$decompcredits/back.set("theme_override_colors/font_color", white)
 		$credits/about.set("theme_override_colors/font_color", white)
 		$decompcredits/about.set("theme_override_colors/font_color", white)
+		$logo/version.set("theme_override_colors/font_color", white)
 		$earth_fk.hide()
 		$moon.hide()
 		$space.show()
@@ -104,6 +107,13 @@ func _ready():
 	sync_options()
 	
 	$main/fact.text = "[wave amp=25.0 freq=1.0 connected=1][color=yellow]Random Science Fact:\n" + facts.pick_random()
+	
+	if Time.get_datetime_dict_from_system().month == 12:
+		$snow.show()
+		$main/happy.show()
+	else:
+		$snow.hide()
+		$main/happy.hide()
 	
 	# BG :3
 	for c in range(25):

@@ -37,7 +37,6 @@ general/2d_panning_strength=1.0
 ModLoaderStore="*uid://b2phhqppc81mt"
 ModLoader="*uid://l7cs6hm3nout"
 glob="*res://glob.gd"
-Debug="*uid://c87700utuotmf"
 
 [display]
 

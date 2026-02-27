@@ -47,6 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://br6jdtf30ogv2" path="res://ec_assets/sounds/atom.mp3" id="36"]
 [ext_resource type="Texture2D" uid="uid://cm5mktdycjakp" path="res://ec_assets/textures/ui/iris.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://cvcdsormakf2a" path="res://ec_assets/textures/ui/ec_logo.png" id="40_tjthn"]
+[ext_resource type="FontFile" uid="uid://ddmceft4g4nxd" path="res://ec_assets/fonts/CENTURY.TTF" id="41_e4r45"]
 [ext_resource type="Theme" uid="uid://dsbxagoqifbsk" path="res://ec_assets/blugter.tres" id="45_tjthn"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="48_u6mje"]
 
@@ -2937,18 +2938,16 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("40_tjthn")
 
 [node name="version" type="Label" parent="logo" unique_id=1283657918]
-visible = false
 self_modulate = Color(1, 1, 1, 0.501961)
 texture_filter = 1
-offset_left = -276.66656
-offset_top = -39.99998
-offset_right = 171.33344
-offset_bottom = 56.00002
+offset_left = -292.6665
+offset_top = -50.666645
+offset_right = 155.3335
+offset_bottom = 45.333355
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32_1v85t")
-theme_override_font_sizes/font_size = 8
-text = "Alpha 0.13
-Decomp 1.4"
+theme_override_fonts/font = ExtResource("41_e4r45")
+theme_override_font_sizes/font_size = 16
+text = "Alpha 0.14"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -3078,12 +3077,21 @@ autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="happyholidays" type="Sprite2D" parent="main" unique_id=121086354]
+[node name="happy" type="Control" parent="main" unique_id=1205004340]
 visible = false
-texture_filter = 2
-position = Vector2(576, 320)
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -227.0
+offset_top = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="holidays" type="Sprite2D" parent="main/happy" unique_id=121086354]
 texture = ExtResource("33")
-offset = Vector2(-250, -130)
 
 [node name="about" type="Node2D" parent="." unique_id=1377147883]
 visible = false
@@ -3923,15 +3931,6 @@ theme_override_font_sizes/font_size = 42
 text = "< Back"
 flat = true
 
-[node name="LinkButton" type="LinkButton" parent="decompcredits" unique_id=142104823]
-visible = false
-offset_left = 532.0
-offset_top = 415.0
-offset_right = 819.0
-offset_bottom = 437.0
-text = "ttt"
-uri = "https://tumblr.com/elementcattos"
-
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1127277210]
 stream = ExtResource("34")
 pitch_scale = 0.7
@@ -3953,6 +3952,7 @@ speed_scale = 0.7
 
 [node name="snow" type="CPUParticles2D" parent="." unique_id=1871340321]
 visible = false
+modulate = Color(1, 1, 1, 0.41568628)
 texture_filter = 2
 position = Vector2(0, -344)
 amount = 200
@@ -3971,19 +3971,6 @@ scale_amount_max = 10.0
 color_ramp = SubResource("Gradient_c88ps")
 
 [node name="version" type="CanvasLayer" parent="." unique_id=1701963459]
-
-[node name="version" type="Label" parent="version" unique_id=1097176348]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 43.0
-offset_top = -48.0
-offset_right = 95.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.7919991, 0.79199916, 0.7919991, 0.6431373)
-theme_override_constants/line_spacing = -6
-text = "a0.14"
-vertical_alignment = 2
 
 [node name="iris" type="Control" parent="version" unique_id=81502510]
 visible = false
@@ -4028,14 +4015,14 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/settings" to="." method="_button_hover"]
-[connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="main/settings" to="." method="_button_press"]
+[connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="main/credits" to="." method="_button_hover"]
 [connection signal="pressed" from="main/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main/credits" to="." method="_button_press"]
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
-[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
+[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
 [connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="about/back" to="." method="_button_press"]
