@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cnd1otk3qovhr" path="res://ec_assets/textures/backgrounds/everest.png" id="12_ctupa"]
 [ext_resource type="Texture2D" uid="uid://depfhktfs7ue6" path="res://ec_assets/xmas_art/ckb_nak.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://8bg7vmmnd7jf" path="res://ec_assets/xmas_art/inky_primexmas.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dh4qd14s5fgd" path="res://ec_assets/textures/backgrounds/ground.tres" id="14_l7c46"]
 [ext_resource type="Texture2D" uid="uid://chs3td2ejxvsb" path="res://ec_assets/xmas_art/beehive3465_happyholidays.jpg" id="15"]
 [ext_resource type="Texture2D" uid="uid://bb36jmg117c2r" path="res://ec_assets/xmas_art/megamawilite_arsecoal-cens.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://c25t8ldjsf3ep" path="res://ec_assets/xmas_art/oxygendox_sponch.png" id="17"]
@@ -48,12 +49,12 @@
 [ext_resource type="AudioStream" uid="uid://c1tmthl438md1" path="res://ec_assets/music/Deliberate Thought.mp3" id="39_kxnor"]
 [ext_resource type="AudioStream" uid="uid://by5t6ikhmk7fc" path="res://ec_assets/music/FreshlyAcquainted.ogg" id="41_cql6i"]
 
-[sub_resource type="Gradient" id="Gradient_6bmi1"]
+[sub_resource type="Gradient" id="Gradient_l7c46"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6njf"]
-gradient = SubResource("Gradient_6bmi1")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mjdj5"]
+gradient = SubResource("Gradient_l7c46")
 
 [sub_resource type="Gradient" id="Gradient_ckr22"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
@@ -92,6 +93,20 @@ fill = 1
 fill_from = Vector2(0.5, 0)
 metadata/_snap_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_mjdj5"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mgiuc"]
+gradient = SubResource("Gradient_mjdj5")
+
+[sub_resource type="Gradient" id="Gradient_ea03s"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8i6qy"]
+gradient = SubResource("Gradient_ea03s")
+
 [sub_resource type="Curve" id="Curve_6k2jl"]
 _data = [Vector2(0, 0.5), 0.0, 0.5, 0, 1, Vector2(1, 1), 0.5, 0.0, 1, 0]
 point_count = 2
@@ -100,6 +115,13 @@ metadata/_snap_enabled = true
 [sub_resource type="Gradient" id="Gradient_00at2"]
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_6bmi1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.1254902, 0.2509804, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6njf"]
+gradient = SubResource("Gradient_6bmi1")
 
 [sub_resource type="Gradient" id="Gradient_cen8k"]
 offsets = PackedFloat32Array(0, 0.4, 0.5, 1)
@@ -125,6 +147,27 @@ colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ctupa"]
 gradient = ExtResource("10_klq3v")
+
+[sub_resource type="Gradient" id="Gradient_juvpr"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ea03s"]
+gradient = SubResource("Gradient_juvpr")
+
+[sub_resource type="Gradient" id="Gradient_8i6qy"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i1m53"]
+gradient = SubResource("Gradient_8i6qy")
+
+[sub_resource type="Gradient" id="Gradient_mgiuc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_juvpr"]
+gradient = SubResource("Gradient_mgiuc")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_32sdk"]
 noise_type = 0
@@ -214,7 +257,7 @@ scroll_scale = Vector2(0.001, 0.001)
 
 [node name="space" type="Sprite2D" parent="bg/moon/space" unique_id=1976505081]
 scale = Vector2(1000, 1000)
-texture = SubResource("GradientTexture2D_w6njf")
+texture = SubResource("GradientTexture2D_mjdj5")
 
 [node name="stars" type="CPUParticles2D" parent="bg/moon/space" unique_id=1396455487]
 visible = false
@@ -301,7 +344,7 @@ region_rect = Rect2(0, 0, 400, 5)
 [node name="black" type="Sprite2D" parent="bg/moon/dark2" unique_id=1435914954]
 position = Vector2(0, 2.6666667)
 scale = Vector2(40, 40)
-texture = SubResource("GradientTexture2D_w6njf")
+texture = SubResource("GradientTexture2D_mgiuc")
 offset = Vector2(0, 32)
 
 [node name="space" type="Node2D" parent="bg" unique_id=1084796305]
@@ -312,7 +355,7 @@ scroll_scale = Vector2(0, 0)
 
 [node name="space" type="Sprite2D" parent="bg/space/space" unique_id=317399029]
 scale = Vector2(1000, 1000)
-texture = SubResource("GradientTexture2D_w6njf")
+texture = SubResource("GradientTexture2D_8i6qy")
 
 [node name="nebula_par" type="Parallax2D" parent="bg/space" unique_id=1915846542]
 scale = Vector2(10, 10)
@@ -428,7 +471,7 @@ region_rect = Rect2(0, 0, 64, 20000)
 position = Vector2(-292.68002, -5.9999876)
 rotation = -1.5707964
 scale = Vector2(20, 4.0799985)
-texture = SubResource("GradientTexture2D_w6njf")
+texture = SubResource("GradientTexture2D_ea03s")
 offset = Vector2(0, 32)
 
 [node name="black4" type="Sprite2D" parent="bg/earth_fk/sky/sky" unique_id=1163597909]
@@ -436,7 +479,7 @@ show_behind_parent = true
 position = Vector2(31.979998, -6.0000014)
 rotation = -1.5707964
 scale = Vector2(20, 4.0799985)
-texture = SubResource("GradientTexture2D_w6njf")
+texture = SubResource("GradientTexture2D_i1m53")
 offset = Vector2(0, 32)
 
 [node name="cloud_back" type="Parallax2D" parent="bg/earth_fk" unique_id=184533487]
@@ -547,7 +590,7 @@ scale = Vector2(3000, 3000)
 scroll_scale = Vector2(0, 1)
 
 [node name="black2" type="Sprite2D" parent="bg/earth_fk/ground3/infblack" unique_id=690316864]
-texture = SubResource("GradientTexture2D_w6njf")
+texture = SubResource("GradientTexture2D_juvpr")
 offset = Vector2(0, 32)
 
 [node name="grass_bg" type="Parallax2D" parent="bg/earth_fk/ground3" unique_id=1341241145]
@@ -591,6 +634,66 @@ position = Vector2(4.291519e-08, -10.9781)
 scale = Vector2(5, 1)
 texture = SubResource("GradientTexture2D_sclsh")
 offset = Vector2(0, 2.5)
+
+[node name="evsim" type="Node2D" parent="bg" unique_id=943293904]
+visible = false
+
+[node name="space" type="Parallax2D" parent="bg/evsim" unique_id=1143185209]
+scroll_scale = Vector2(0.001, 0.001)
+
+[node name="space" type="Sprite2D" parent="bg/evsim/space" unique_id=1664132659]
+scale = Vector2(1000, 1000)
+texture = SubResource("GradientTexture2D_w6njf")
+
+[node name="stars" type="CPUParticles2D" parent="bg/evsim/space" unique_id=2025968644]
+visible = false
+material = ExtResource("2")
+position = Vector2(0, -128)
+scale = Vector2(10, 10)
+amount = 500
+texture = SubResource("GradientTexture2D_egruk")
+lifetime = 5.0
+preprocess = 10.0
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_2eqy1")
+
+[node name="stars2" type="CPUParticles2D" parent="bg/evsim/space" unique_id=1233228947]
+material = ExtResource("2")
+position = Vector2(0, -128)
+scale = Vector2(10, 10)
+amount = 2000
+texture = SubResource("GradientTexture2D_egruk")
+lifetime = 5.0
+preprocess = 10.0
+speed_scale = 0.5
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(300, 300)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_2eqy1")
+
+[node name="grass_fg" type="Parallax2D" parent="bg/evsim" unique_id=721584878]
+top_level = true
+scale = Vector2(2, 2)
+scroll_offset = Vector2(0, 80)
+repeat_size = Vector2(5000, 0)
+repeat_times = 9
+
+[node name="grass_bg" type="Sprite2D" parent="bg/evsim/grass_fg" unique_id=1115361082]
+modulate = Color(0.5019608, 1, 0.5019608, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 835)
+texture = ExtResource("14_l7c46")
+region_enabled = true
+region_rect = Rect2(0, 0, 5000, 1750)
 
 [node name="air" type="Parallax2D" parent="." unique_id=929677835]
 scroll_scale = Vector2(0.3, 0.3)

@@ -313,6 +313,12 @@ func _on_preset_item_selected(index):
 		glob.gravity = 0
 		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
 		$"../walls/Parallax2D/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
+	if preset == 6:
+		glob.t_power = 0
+		glob.pressure = 1
+		glob.gravity = 9.81 
+		$"../walls/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
+		$"../walls/Parallax2D/opaque".self_modulate = Color(0.62,0.62,0.62,0.15)
 	
 	$ui/topright/presslider.value = glob.pressure
 	$ui/topright/gravslider.value = glob.gravity/9.81

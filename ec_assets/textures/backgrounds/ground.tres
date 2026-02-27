@@ -1,0 +1,17 @@
+[gd_resource type="NoiseTexture2D" format=3 uid="uid://dh4qd14s5fgd"]
+
+[sub_resource type="Gradient" id="Gradient_gt52w"]
+colors = PackedColorArray(0.376471, 0.376471, 0.376471, 1, 0.752941, 0.752941, 0.752941, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_klefj"]
+noise_type = 0
+fractal_octaves = 4
+
+[resource]
+width = 256
+height = 256
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_klefj")
+color_ramp = SubResource("Gradient_gt52w")
+seamless = true
+normalize = false

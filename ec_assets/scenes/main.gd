@@ -99,6 +99,7 @@ func _process(delta):
 	$bg/moon.visible = $camera.preset == 2
 	$bg/space.visible = $camera.preset == 3
 	$bg/sun.visible = $camera.preset == 4
+	$bg/evsim.visible = $camera.preset == 6
 	
 	
 	

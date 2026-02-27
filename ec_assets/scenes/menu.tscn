@@ -176,6 +176,13 @@ fill_from = Vector2(0, 0.6)
 fill_to = Vector2(0, 0.4)
 metadata/_snap_enabled = true
 
+[sub_resource type="Gradient" id="Gradient_pfj1e"]
+offsets = PackedFloat32Array(0, 0.6875)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xjnr1"]
+gradient = SubResource("Gradient_pfj1e")
+fill_from = Vector2(1, 1)
+
 [sub_resource type="Curve" id="Curve_0c68l"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
@@ -668,7 +675,14 @@ position = Vector2(0, -32)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2")
 
+[node name="bg2" type="Sprite2D" parent="." unique_id=47949510]
+modulate = Color(1, 1, 1, 0.19607843)
+texture_filter = 4
+scale = Vector2(50, 50)
+texture = SubResource("GradientTexture2D_xjnr1")
+
 [node name="particles" type="CPUParticles2D" parent="." unique_id=940049593]
+visible = false
 material = ExtResource("3")
 scale = Vector2(3, 3)
 amount = 50
@@ -2947,7 +2961,7 @@ offset_left = -292.6665
 offset_top = -50.666645
 offset_right = 155.3335
 offset_bottom = 45.333355
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("41_e4r45")
 theme_override_font_sizes/font_size = 16
 text = "Alpha 0.14"
@@ -2972,7 +2986,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("45_tjthn")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
 theme_override_font_sizes/font_size = 42
 text = "Play"
@@ -2993,7 +3006,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("45_tjthn")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0.6725274, 0.4879107, 1)
 theme_override_font_sizes/font_size = 42
 text = "About"
@@ -3017,7 +3029,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("45_tjthn")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.996094, 0.414063, 0, 1)
 theme_override_font_sizes/font_size = 42
 text = "Settings"
@@ -3038,7 +3049,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("45_tjthn")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.496094, 0.496094, 0.996094, 1)
 theme_override_font_sizes/font_size = 42
 text = "Credits"
@@ -3060,7 +3070,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("45_tjthn")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.988281, 0, 0.0078125, 1)
 theme_override_font_sizes/font_size = 42
 text = "Quit"
@@ -3068,14 +3077,17 @@ flat = true
 
 [node name="fact" type="RichTextLabel" parent="main" unique_id=1439186521]
 texture_filter = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -224.0
-offset_top = 27.0
+offset_top = -357.0
 offset_right = 224.0
-offset_bottom = 221.0
+offset_bottom = -163.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("45_tjthn")
 bbcode_enabled = true
 text = "Fact of the day:
@@ -3908,7 +3920,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 91.5
-offset_top = 83.0
+offset_top = 109.0
 offset_right = -91.5
 offset_bottom = -51.0
 grow_horizontal = 2
