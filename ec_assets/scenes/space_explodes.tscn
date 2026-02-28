@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://4bhlhg8wpc63"]
 
 [ext_resource type="Script" uid="uid://bc1rc5b28x8gk" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://b4enfkw6gpio2" path="res://ec_assets/textures/backgrounds/milkyway.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ctbnjotke2nrl" path="res://ec_assets/textures/backgrounds/milkyway.png" id="2"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
-[ext_resource type="Texture2D" uid="uid://n04s8a81j0tc" path="res://ec_assets/textures/effects/star0.png" id="4"]
-[ext_resource type="AudioStream" uid="uid://pslna8m5a3uh" path="res://ec_assets/sounds/ding.wav" id="5"]
+[ext_resource type="Texture2D" uid="uid://vrllpt3m13aj" path="res://ec_assets/textures/effects/star0.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://bk1mpwibu8i0s" path="res://ec_assets/sounds/ding.wav" id="5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
 
 [sub_resource type="Gradient" id="Gradient_32lgr"]

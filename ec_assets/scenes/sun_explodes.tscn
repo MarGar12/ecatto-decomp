@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://baodf2yd71yva"]
 
 [ext_resource type="Script" uid="uid://bc1rc5b28x8gk" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://d2hpxx50pjljv" path="res://ec_assets/textures/items/earth2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dedp3r7j0t56" path="res://ec_assets/textures/items/earth2.png" id="2"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="3"]
-[ext_resource type="Texture2D" uid="uid://bt3cv6nsjgyv6" path="res://ec_assets/textures/backgrounds/catseye-neb.png" id="4"]
-[ext_resource type="AudioStream" uid="uid://b2l31ex487oxl" path="res://ec_assets/sounds/nova.mp3" id="5"]
+[ext_resource type="Texture2D" uid="uid://djbirnbrmlsxp" path="res://ec_assets/textures/backgrounds/catseye-neb.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://bxmbstp5pyy52" path="res://ec_assets/sounds/nova.mp3" id="5"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="6"]
-[ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://ciaiewoip5ys" path="res://ec_assets/textures/effects/zoomcloud0.png" id="7"]
 
 [sub_resource type="Gradient" id="Gradient_32lgr"]
 offsets = PackedFloat32Array(0)

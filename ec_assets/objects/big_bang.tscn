@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsqkovruh2en5"]
+[gd_scene format=3 uid="uid://bsqkovruh2en5"]
 
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="1"]
-[ext_resource type="Texture2D" uid="uid://c04fpqkpnxisl" path="res://ec_assets/textures/effects/cloud1.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://b2l31ex487oxl" path="res://ec_assets/sounds/nova.mp3" id="3"]
-[ext_resource type="Script" path="res://ec_assets/objects/sound_effect.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://doacu33s6y85d" path="res://ec_assets/textures/effects/cloud1.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://bxmbstp5pyy52" path="res://ec_assets/sounds/nova.mp3" id="3"]
+[ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="4"]
 
 [sub_resource type="Gradient" id="Gradient_32lgr"]
 offsets = PackedFloat32Array(0)
@@ -137,26 +137,26 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7kvi"]
 _data = {
-"RESET": SubResource("Animation_awtev"),
-"bang": SubResource("Animation_e5y5p")
+&"RESET": SubResource("Animation_awtev"),
+&"bang": SubResource("Animation_e5y5p")
 }
 
-[node name="big_bang" type="Node2D"]
+[node name="big_bang" type="Node2D" unique_id=882990610]
 scale = Vector2(2, 2)
 
-[node name="bg" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="." unique_id=1639625687]
 modulate = Color(1, 1, 1, 0)
 scale = Vector2(500, 500)
 texture = SubResource("GradientTexture2D_vnkqw")
 
-[node name="plasma" type="CPUParticles2D" parent="."]
+[node name="plasma" type="CPUParticles2D" parent="." unique_id=551483631]
 texture_filter = 2
 material = ExtResource("1")
 amount = 500
+texture = ExtResource("2")
 lifetime = 3.0
 speed_scale = 5.0
 local_coords = true
-texture = ExtResource("2")
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_max = 1000.0
@@ -166,19 +166,17 @@ scale_amount_max = 100.0
 scale_amount_curve = SubResource("Curve_p5iuw")
 color_ramp = SubResource("Gradient_hdeon")
 
-[node name="flash" type="Sprite2D" parent="."]
+[node name="flash" type="Sprite2D" parent="." unique_id=533981984]
 texture_filter = 2
 material = ExtResource("1")
 scale = Vector2(0.1, 0.1)
 texture = SubResource("GradientTexture2D_v6kp1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "bang"
-libraries = {
-"": SubResource("AnimationLibrary_s7kvi")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1493530994]
+libraries/ = SubResource("AnimationLibrary_s7kvi")
+autoplay = &"bang"
 
-[node name="sound" type="AudioStreamPlayer2D" parent="."]
+[node name="sound" type="AudioStreamPlayer2D" parent="." unique_id=1547343839]
 stream = ExtResource("3")
 autoplay = true
 max_distance = 100000.0

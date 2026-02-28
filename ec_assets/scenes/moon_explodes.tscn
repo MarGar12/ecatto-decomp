@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dioxlcx4dila5"]
 
 [ext_resource type="Script" uid="uid://bc1rc5b28x8gk" path="res://ec_assets/scenes/earth_explodes.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://d2hpxx50pjljv" path="res://ec_assets/textures/items/earth2.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://rvpkhvj24e1p" path="res://ec_assets/textures/items/moon.png" id="3"]
-[ext_resource type="AudioStream" uid="uid://ba0taq7r543vb" path="res://ec_assets/sounds/kablam.wav" id="4"]
+[ext_resource type="Texture2D" uid="uid://dedp3r7j0t56" path="res://ec_assets/textures/items/earth2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://drr0fl1iksh5s" path="res://ec_assets/textures/items/moon.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://dvyrgc8uup8" path="res://ec_assets/sounds/kablam.wav" id="4"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="5"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="6"]
-[ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://dlar3qfeiy57n" path="res://ec_assets/textures/items/asteroid1.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://ciaiewoip5ys" path="res://ec_assets/textures/effects/zoomcloud0.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dcyggj55yunhr" path="res://ec_assets/textures/items/asteroid1.png" id="8"]
 
 [sub_resource type="Gradient" id="Gradient_32lgr"]
 offsets = PackedFloat32Array(0)

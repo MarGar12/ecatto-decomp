@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://q07jq5lwkbdf" path="res://ec_assets/objects/quark_gluon_plasma.gd" id="1"]
 [ext_resource type="Material" uid="uid://d0gel3gux24hq" path="res://ec_assets/additive.tres" id="2"]
-[ext_resource type="Texture2D" uid="uid://ct7xuboqmghm7" path="res://ec_assets/textures/effects/zoomcloud0.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ciaiewoip5ys" path="res://ec_assets/textures/effects/zoomcloud0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c34oinudy1iae" path="res://ec_assets/textures/particles/neutron.png" id="4"]
 [ext_resource type="SpriteFrames" uid="uid://bit7ybgb1ps46" path="res://ec_assets/textures/element_eyes.tres" id="5"]
-[ext_resource type="AudioStream" uid="uid://bdmhkdgcqlfwu" path="res://ec_assets/sounds/atom.mp3" id="6"]
+[ext_resource type="AudioStream" uid="uid://br6jdtf30ogv2" path="res://ec_assets/sounds/atom.mp3" id="6"]
 [ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="6_0vfqc"]
 [ext_resource type="Script" uid="uid://b0p6w8lkui4s1" path="res://ec_assets/objects/sound_effect.gd" id="7"]
-[ext_resource type="AudioStream" uid="uid://cgibu6a6fvlih" path="res://ec_assets/sounds/cartoonsplort.mp3" id="8"]
+[ext_resource type="AudioStream" uid="uid://ce63gcpsh7sm1" path="res://ec_assets/sounds/cartoonsplort.mp3" id="8"]
 [ext_resource type="Script" uid="uid://dya55vroy053d" path="res://ec_assets/objects/exp_tooltip.gd" id="9"]
 
 [sub_resource type="Curve" id="Curve_amr68"]

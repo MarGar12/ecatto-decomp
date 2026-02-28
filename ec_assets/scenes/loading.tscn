@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://db2qnt1c6achb"]
 
 [ext_resource type="Script" uid="uid://dchaw2i6uclyv" path="res://ec_assets/scenes/loading.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://btqbxy04i5c0t" path="res://ec_assets/textures/cattos/elements/ions/ion-kr.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://uw800pg7ys7f" path="res://ec_assets/textures/particles/orbital.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b0ifgyrrjpisi" path="res://ec_assets/textures/cattos/elements/ions/ion-kr.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://tmbjq2p3xskg" path="res://ec_assets/textures/particles/orbital.png" id="3"]
 [ext_resource type="Script" uid="uid://d026v1t3uxjk3" path="res://ec_assets/scenes/loading_atom_orbital.gd" id="4"]
-[ext_resource type="Texture2D" uid="uid://do8lftr6wqfx6" path="res://ec_assets/textures/particles/tinyball.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ci03vqls4d732" path="res://ec_assets/textures/particles/tinyball.png" id="5"]
 [ext_resource type="FontFile" uid="uid://disvywawmnoe2" path="res://ec_assets/fonts/chemical-formula.ttf" id="7_u0eh2"]
 
 [sub_resource type="Gradient" id="Gradient_8pq4q"]

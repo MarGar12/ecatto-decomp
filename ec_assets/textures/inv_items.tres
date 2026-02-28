@@ -1,7 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b8vdl8dk0nb8k"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b8vdl8dk0nb8k"]
 
-[ext_resource type="Texture2D" uid="uid://do8lftr6wqfx6" path="res://ec_assets/textures/particles/tinyball.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://3xrsmq2oyw6a" path="res://ec_assets/textures/particles/neutron.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ci03vqls4d732" path="res://ec_assets/textures/particles/tinyball.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c34oinudy1iae" path="res://ec_assets/textures/particles/neutron.png" id="2"]
 
 [resource]
 animations = [{

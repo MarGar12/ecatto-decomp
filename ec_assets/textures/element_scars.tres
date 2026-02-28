@@ -1,6 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://3pvlsy1u03di"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://3pvlsy1u03di"]
 
-[ext_resource type="Texture2D" uid="uid://cmkesprt5j2tx" path="res://ec_assets/textures/cattos/scars_pu.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ca516ie1vrk0t" path="res://ec_assets/textures/cattos/scars_pu.png" id="1"]
 
 [resource]
 animations = [{
