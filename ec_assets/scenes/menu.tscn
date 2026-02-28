@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://kf8em22sev1b" path="res://ec_assets/textures/cattos/glasses_si.png" id="28"]
 [ext_resource type="Texture2D" uid="uid://chh7hkeejn37j" path="res://ec_assets/textures/cattos/elements/solid/calcium-fangs.png" id="29"]
 [ext_resource type="Texture2D" uid="uid://cqw8sm0h38ynp" path="res://ec_assets/textures/cattos/eye_titanium.png" id="30"]
-[ext_resource type="FontFile" uid="uid://cqb672ltyq5wd" path="res://ec_assets/fonts/PIXEARG_.TTF" id="32_1v85t"]
 [ext_resource type="Texture2D" uid="uid://x330rdigaeid" path="res://ec_assets/textures/ui/happyholidays.png" id="33"]
 [ext_resource type="FontFile" uid="uid://brdellfwi1f81" path="res://ec_assets/fonts/catarchean.ttf" id="33_6xj2l"]
 [ext_resource type="AudioStream" uid="uid://dd5c467nxmy5e" path="res://ec_assets/music/ElementcattosMenu.ogg" id="34"]
@@ -3112,83 +3111,6 @@ grow_vertical = 0
 [node name="holidays" type="Sprite2D" parent="main/happy" unique_id=121086354]
 texture = ExtResource("33")
 
-[node name="about" type="Node2D" parent="." unique_id=1377147883]
-visible = false
-texture_filter = 2
-
-[node name="text" type="Label" parent="about" unique_id=2142435675]
-texture_filter = 1
-offset_left = -304.0
-offset_top = -351.0
-offset_right = 304.0
-offset_bottom = 305.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32_1v85t")
-theme_override_font_sizes/font_size = 16
-text = "This is a sandbox where you can play around
-with kitties based on the chemical elements. Each catto's personality and appearance is based on the properties, applications, or sometimes just the namesake, of their respective element.
-
-The game is a work in progress. Things like chemical reactions are still being worked on and will be implemented soon enough.
-
-This project was made by Lily P. Irie and largely made possible by the amazing Element Cattos
-community! Be sure to check out the original
-blog at tumblr.com/elementcattos!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="back" type="Button" parent="about" unique_id=1807191699]
-texture_filter = 1
-offset_left = -64.0
-offset_top = 176.0
-offset_right = 64.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "[Back]"
-flat = true
-
-[node name="credit" type="Node2D" parent="." unique_id=2090914016]
-visible = false
-texture_filter = 2
-
-[node name="text" type="Label" parent="credit" unique_id=327720537]
-texture_filter = 1
-offset_left = -288.0
-offset_top = -328.0
-offset_right = 288.0
-offset_bottom = 328.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("32_1v85t")
-theme_override_font_sizes/font_size = 16
-text = "Music - Oberorka, Kevin MacLeod
-
-Programming - Oberorka
-Some EC+ Code and Assets - Unexian
-
-
-Spritework - Oberorka, SciphonPylon, Velcrow101, Mobropro, CiaaiK, Shard, ir1sh, truserwav, wk
-
-The author(s) of each catto's design is/are credited when you hover over them, as well as in the ReadMe file"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="back" type="Button" parent="credit" unique_id=899434541]
-texture_filter = 1
-offset_left = -64.0
-offset_top = 176.0
-offset_right = 64.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.921875, 0.523438, 0.859375, 1)
-theme_override_fonts/font = ExtResource("33_6xj2l")
-theme_override_font_sizes/font_size = 32
-text = "[Back]"
-flat = true
-
 [node name="settings" type="CanvasLayer" parent="." unique_id=1518252111]
 visible = false
 
@@ -3514,19 +3436,6 @@ offset_right = 107.0
 offset_bottom = 55.0
 theme = ExtResource("45_tjthn")
 text = "Music Volume:"
-
-[node name="about" type="Label" parent="settings" unique_id=1117733771]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.5
-offset_top = 32.0
-offset_right = 100.5
-offset_bottom = 113.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 63
-text = "Settings"
 
 [node name="hint" type="Label" parent="settings" unique_id=878132383]
 anchors_preset = 8
@@ -4056,8 +3965,8 @@ texture = ExtResource("37")
 [connection signal="pressed" from="main/play" to="." method="_button_press"]
 [connection signal="pressed" from="main/play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="main/decompcredits" to="." method="_button_hover"]
-[connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="pressed" from="main/decompcredits" to="." method="_button_press"]
+[connection signal="pressed" from="main/decompcredits" to="." method="_on_decompcredits_pressed"]
 [connection signal="mouse_entered" from="main/settings" to="." method="_button_hover"]
 [connection signal="pressed" from="main/settings" to="." method="_button_press"]
 [connection signal="pressed" from="main/settings" to="." method="_on_settings_pressed"]
@@ -4067,12 +3976,6 @@ texture = ExtResource("37")
 [connection signal="mouse_entered" from="main/quit" to="." method="_button_hover"]
 [connection signal="pressed" from="main/quit" to="." method="_button_press"]
 [connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="about/back" to="." method="_button_hover"]
-[connection signal="pressed" from="about/back" to="." method="_button_press"]
-[connection signal="pressed" from="about/back" to="." method="_on_back_pressed"]
-[connection signal="mouse_entered" from="credit/back" to="." method="_button_hover"]
-[connection signal="pressed" from="credit/back" to="." method="_button_press"]
-[connection signal="pressed" from="credit/back" to="." method="_on_back_pressed"]
 [connection signal="toggled" from="settings/tab/Gameplay/explode" to="." method="_on_explode_toggled"]
 [connection signal="toggled" from="settings/tab/Gameplay/opaque" to="." method="_on_opaque_toggled"]
 [connection signal="toggled" from="settings/tab/Gameplay/poof" to="." method="_on_poof_toggled"]

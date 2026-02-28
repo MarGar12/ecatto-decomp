@@ -683,17 +683,18 @@ color_ramp = SubResource("Gradient_2eqy1")
 top_level = true
 scale = Vector2(2, 2)
 scroll_offset = Vector2(0, 80)
-repeat_size = Vector2(5000, 0)
-repeat_times = 9
+repeat_size = Vector2(8194, 0)
+repeat_times = 4
 
 [node name="grass_bg" type="Sprite2D" parent="bg/evsim/grass_fg" unique_id=1115361082]
 modulate = Color(0.5019608, 1, 0.5019608, 1)
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(0, 835)
+position = Vector2(0, 1835.0001)
+scale = Vector2(3, 3)
 texture = ExtResource("14_l7c46")
 region_enabled = true
-region_rect = Rect2(0, 0, 5000, 1750)
+region_rect = Rect2(0, 0, 4096, 1250)
 
 [node name="air" type="Parallax2D" parent="." unique_id=929677835]
 scroll_scale = Vector2(0.3, 0.3)
